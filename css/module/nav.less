@@ -1,0 +1,70 @@
+.c-nav{
+	background-color:#eee;
+	.size(100%,94px);//padding:10px 0;
+	border-bottom:1px solid #ddd;
+
+	.wp{
+		.pr;
+	}
+	
+	.logo{
+		.size(165px,74px);.pa;.lt(0,10px);
+		background:url('@{url}header/jx3pve-logo1.png') no-repeat 0 0;
+		a{.db;.full;.indent;}
+	}
+
+	.nav-list{
+		margin-left:178px;
+		.clearfix;
+		li{
+			.fl;margin:0 5px;
+			a{
+				transition:0.1s ease-in-out;
+				.db;.x;.fz(16px,2);
+				padding:(74px - 46px)/2+9px 20px;
+				span{
+					.db;color:#999;
+					.fz(12px,1.2);
+				}
+			}
+		}
+		.on{
+			a{
+				border-bottom:2px solid #b42841;
+				//background: #fff;
+  				color: #111;
+			}
+		}
+	}
+
+
+}
+
+//黑色
+.c-nav-black{
+	background-color:#222;
+	border-top:1px solid #555;
+
+	.logo{
+		background-image:url('@{url}header/jx3pve-logo2.png');
+	}
+
+	.nav-list{
+		li{
+			a{
+				color:#ccc;
+				span{color:#666;}
+				&:hover{
+					color:@blue;
+				}
+			}
+		}
+		.on{
+			a{
+				color:#fff;
+				border-bottom:2px solid @blue;
+				background-color:#333;
+			}
+		}
+	}
+}

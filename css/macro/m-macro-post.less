@@ -1,0 +1,70 @@
+//宏发布页面侧边
+.macro-container{
+
+	.macro-post-tips{
+		.tips(yel);
+		padding: 5px 10px;
+		a{
+			text-decoration:underline;
+		}
+	}
+
+	.macro-grammar{
+		margin-top:20px;
+		border:1px solid #222;padding:2px 5px;background-color:#444;.x;
+		span{
+			font-weight:bold;line-height:2;
+			&.macro-mg-action{color:#00ccff;}
+			&.macro-mg-if{color:#ff3399;}
+			&.macro-mg-do{color:#00ff00;}
+		}
+	}
+	.macro-mg-des{
+		li{
+			line-height:1.8;
+			border-bottom:1px dashed #ddd;
+			&:before{
+				content: '\e622';
+				.iconfont;
+			}
+		}
+	}
+	.macro-mg-table{
+		border-radius:4px;
+		tr:first-child td{
+			background-color:#555;
+			color:#ccc;
+		}
+		td{
+			font-family: Verdana;
+			border:1px solid #ddd;
+			padding: 3px 6px;
+			background: #fff;
+			color: #666;
+			letter-spacing: 0.5px;
+		}
+	}
+
+
+}
+
+//正文区
+.macro-postpage{
+	.pve-article{
+		//输入框
+		input,textarea{
+			box-shadow:0 0 2px #ddd;border:1px solid #ccc;border-radius:3px;background:#fff;
+		}
+		input:focus,textarea:focus{
+			box-shadow:0 0 2px #00ccff;
+		}
+		//标题输入框
+		#subject.px {
+			width:35em !important;height:28px;line-height:28px;border-radius:3px;
+		}
+		//textarea输入框
+		.bbda textarea{
+			width:80%;height:200px;
+		}
+	}
+}

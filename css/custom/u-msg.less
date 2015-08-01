@@ -1,0 +1,38 @@
+//折叠展开除主楼以外楼层
+.u-msg-posttips{
+	.pointer;
+	background: #F59603;
+	color: #fff;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	&:hover{
+		background-color:lighten(#F59603,5%);
+	}
+	i{
+		.dbi;.y;.size(20px);margin-right:8px;
+		background:url('@{url}icon/icon-tgpost_20.png') no-repeat 0 0;
+		&.on{
+			background-position:0 -20px;
+		}
+	}
+}
+
+//回复灌水提醒
+.u-msg-replytips{
+	background: #f2f2f2;
+	padding: 5px 10px;
+	line-height: 2;
+	letter-spacing: 0.2px;
+	border-radius:3px;
+	b{
+		.bold;
+		color:#f00;
+	}
+	.u-vip{
+		color: #F7A309;
+  		font-weight: bold;
+	}
+}

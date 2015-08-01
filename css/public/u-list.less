@@ -1,0 +1,154 @@
+/*
+ * Name: u-list.less
+ * HtmlTag: u-list-*
+ * Description: 列表常用预设样式
+ * Creator: iRuxu
+ * Modify: iRuxu
+ * Create: 2015-5-6
+ * Update: 2015-5-20
+ */
+	
+	.u-list{
+		.first{margin-left:0;} 	//第一个元素无最前边距
+		.last{margin-right:0;} 	//最后一个元素无最后边距
+	}
+
+	/* 通用列表a，浮动布局，指定格式
+	--------------------------------------------------------
+	1.html部分：div>ul>li*N
+	2.函数应用：div
+	3.参数说明：
+		@item-width:列表项宽度,@item-spacing:列表项间距,@item-count:每行数目
+		@item-padding:内补白总值;@item-border:边框总值
+	--------------------------------------------------------*/
+	.u-list(a,@item-width,@item-spacing,@item-count,@item-padding:0,@item-border:0){
+		//div宽度等于（列表项宽+列表项间距）×每行项目数 - 列表项间距
+		width:(@item-width + @item-spacing)*@item-count - @item-spacing;
+		//默认遮盖溢出显示
+		.clip;*position:relative;
+		//默认居中显示
+		.auto(x);
+		ul{
+			//ul宽度等于（列表项宽+列表项间距）×每行项目数
+			width:(@item-width + @item-spacing)*@item-count;
+			//浮动闭合
+			.clearfix;
+			li{
+				width:@item-width - @item-padding - @item-border;
+				*overflow:hidden;
+				//每个列表项li浮动，默认下侧外边距等同右边距
+				.fl;
+				margin-right:@item-spacing;
+				margin-bottom:@item-spacing;
+			}
+		} 	
+	}
+
+	/*通用列表b，浮动布局，指定格式，自定义选择器
+	--------------------------------------------------------
+	1.html部分：div(outerwrapper)>自定义元素innerwrapper>自定义元素loopelement
+	2.函数应用：div(outerwrapper)
+	3.参数说明：
+		@innerwrapper:内层包裹class名例如$-ul,@loopelement:循环单元class命例如$-li
+		@item-width:列表项宽度,@item-spacing:列表项间距,@item-count:每行数目
+		@item-padding:内补白总值;@item-border:边框总值
+	--------------------------------------------------------*/
+	.u-list(b,@innerwrapper,@loopelement,@item-width,@item-spacing,@item-count,@item-padding:0,@item-border:0){
+		//div宽度等于（列表项宽+列表项间距）×每行项目数 - 列表项间距
+		width:(@item-width + @item-spacing)*@item-count - @item-spacing;
+		//默认遮盖溢出
+		.clip;*position:relative;
+		//默认居中显示
+		.auto(x);
+		.@{innerwrapper}{
+			//ul宽度等于（列表项宽+列表项间距）×每行项目数
+			width:(@item-width + @item-spacing)*@item-count;
+			//浮动闭合
+			.clearfix;
+			.@{loopelement}{
+				width:@item-width - @item-padding - @item-border;
+				*overflow:hidden;
+				//每个列表项li浮动，默认下侧外边距等同右边距
+				.fl;
+				margin-right:@item-spacing;
+				margin-bottom:@item-spacing;
+			}
+		} 	
+	}
+
+	/* 通用列表c，内联块级布局，指定格式
+	--------------------------------------------------------
+	1.html部分：div>ul>li*N
+	2.函数应用：div
+	3.参数说明：
+		@item-width:列表项宽度,@item-spacing:列表项间距,@item-count:每行数目
+		@item-padding:内补白总值;@item-border:边框总值
+	4.补充说明：布局方式不同于ab，无向下边距，总是不折行
+	--------------------------------------------------------*/
+	.u-list(c,@item-width,@item-spacing,@item-count,@item-padding:0,@item-border:0){
+		//div宽度等于（列表项宽+列表项间距）×每行项目数 - 列表项间距
+		width:(@item-width + @item-spacing)*@item-count - @item-spacing;
+		//默认遮盖溢出显示
+		.clip;*position:relative;
+		//默认居中显示
+		.auto(x);
+		ul{
+			//ul宽度自动
+			width:auto;
+			//不允许折行
+			white-space:nowrap;
+			//去除间隙
+			font-size:0;
+			li{
+				width:@item-width - @item-padding - @item-border;
+				*overflow:hidden;
+				//恢复正常
+				white-space:normal;
+				//每个列表项内联排列，
+				.dbi;.y(top);
+				//恢复字体，需自己再次复写
+				font-size:12px;
+				//向右间距
+				margin-right:@item-spacing;
+			}
+		} 	
+	}
+
+	/*通用列表d，内联块级布局，自定义选择器
+	--------------------------------------------------------
+	1.html部分：div(outerwrapper)>自定义元素innerwrapper>自定义元素loopelement
+	2.函数应用：div(outerwrapper)
+	3.参数说明：
+		@innerwrapper:内层包裹class名例如$-ul,@loopelement:循环单元class命例如$-li
+		@item-width:列表项宽度,@item-spacing:列表项间距,@item-count:每行数目
+		@item-padding:内补白总值;@item-border:边框总值
+	4.补充说明：布局方式不同于ab，无向下边距，总是不折行
+	--------------------------------------------------------*/
+	.u-list(d,@innerwrapper,@loopelement,@item-width,@item-spacing,@item-count,@item-padding:0,@item-border:0){
+		//div宽度等于（列表项宽+列表项间距）×每行项目数 - 列表项间距
+		width:(@item-width + @item-spacing)*@item-count - @item-spacing;
+		//默认遮盖溢出显示
+		.clip;*position:relative;
+		//默认居中显示
+		.auto(x);
+		.@{innerwrapper}{
+			//ul宽度自动
+			width:auto;
+			//不允许折行
+			white-space:nowrap;
+			//去除间隙
+			font-size:0;
+			.@{loopelement}{
+				width:@item-width - @item-padding - @item-border;
+				*overflow:hidden;
+				//恢复正常
+				white-space:normal;
+				//每个列表项内联排列，
+				.dbi;.y(top);.fl(7);
+				//恢复字体，需自己再次复写
+				font-size:12px;
+				//向右间距
+				margin-right:@item-spacing;
+			}
+		} 	
+	}

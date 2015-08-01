@@ -1,0 +1,269 @@
+<!--{template common/header}-->
+ 
+
+<!--{subtemplate home/spacecp_header}-->
+ 
+			<!--{if $validate}-->
+				<p class="tbmu mbm">{lang validator_comment}</p>
+				<form action="member.php?mod=regverify" method="post" autocomplete="off">
+				<input type="hidden" value="{FORMHASH}" name="formhash" />
+				<table summary="{lang memcp_profile}" cellspacing="0" cellpadding="0" class="tfm">
+					<tr>
+						<th>{lang validator_remark}</th>
+						<td>$validate[remark]</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<th>{lang validator_message}</th>
+						<td><input type="text" class="px" name="regmessagenew" value="" /></td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<th>&nbsp;</th>
+						<td colspan="2">
+							<button type="submit" name="verifysubmit" value="true" class="pn pnc" /><strong>{lang validator_submit}</strong></button>
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+
+		<div class="appl">
+			<!--{subtemplate home/spacecp_footer}-->
+		</div>
+
+	<!--{else}-->
+
+		<!--{if $operation == 'password'}-->
+			<script type="text/javascript" src="{$_G[setting][jspath]}register.js?{VERHASH}"></script>
+			<p class="bbda pbm mbm">
+				<!--{if !$_G['member']['freeze']}-->
+					<!--{if !$_G['setting']['connect']['allow'] || !$conisregister}-->{lang old_password_comment}<!--{else}-->{lang connect_config_newpassword_comment}<!--{/if}-->
+				<!--{elseif $_G['member']['freeze'] == 1}-->
+					<strong class="xi1">{lang freeze_pw_tips}</strong>
+				<!--{elseif $_G['member']['freeze'] == 2}-->
+					<strong class="xi1">{lang freeze_email_tips}</strong>
+				<!--{/if}-->
+			</p>
+
+			<form action="home.php?mod=spacecp&ac=profile" method="post" autocomplete="off">
+				<input type="hidden" value="{FORMHASH}" name="formhash" />
+				<table summary="{lang memcp_profile}" cellspacing="0" cellpadding="0" class="tfm">
+					<!--{if !$_G['setting']['connect']['allow'] || !$conisregister}-->
+						<tr>
+							<th><span class="rq" title="{lang required}">*</span>{lang old_password}</th>
+							<td><input type="password" name="oldpassword" id="oldpassword" class="px" /></td>
+						</tr>
+					<!--{/if}-->
+					<tr>
+						<th>{lang new_password}</th>
+						<td>
+							<input type="password" name="newpassword" id="newpassword" class="px" />
+							<p class="d" id="chk_newpassword">{lang memcp_profile_passwd_comment}</p>
+						</td>
+					</tr>
+					<tr>
+						<th>{lang new_password_confirm}</th>
+						<td>
+							<input type="password" name="newpassword2" id="newpassword2"class="px" />
+							<p class="d" id="chk_newpassword2">{lang memcp_profile_passwd_comment}</p>
+						</td>
+					</tr>
+					<tr id="contact"{if $_GET[from] == 'contact'} style="background-color: {$_G['style']['specialbg']};"{/if}>
+						<th>{lang email}</th>
+						<td>
+							<input type="text" name="emailnew" id="emailnew" value="$space[email]" class="px" />
+							<p class="d">
+								<!--{if empty($space['newemail'])}-->
+									{lang email_been_active}
+								<!--{else}-->
+									$acitvemessage
+								<!--{/if}-->
+							</p>
+							<!--{if $_G['setting']['regverify'] == 1 && (($_G['group']['grouptype'] == 'member' && $_G['adminid'] == 0) || $_G['groupid'] == 8) || $_G['member']['freeze']}--><p class="d">{lang memcp_profile_email_comment}</p><!--{/if}-->
+						</td>
+					</tr>
+					
+					<!--{if $_G['member']['freeze'] == 2}-->
+					<tr>
+						<th>{lang freeze_reason}</th>
+						<td>
+							<textarea rows="3" cols="80" name="freezereson" class="pt">$space[freezereson]</textarea>
+							<p class="d" id="chk_newpassword2">{lang freeze_reason_comment}</p>
+						</td>
+					</tr>
+					<!--{/if}-->
+
+					<tr>
+						<th>{lang security_question}</th>
+						<td>
+							<select name="questionidnew" id="questionidnew">
+								<option value="" selected>{lang memcp_profile_security_keep}</option>
+								<option value="0">{lang security_question_0}</option>
+								<option value="1">{lang security_question_1}</option>
+								<option value="2">{lang security_question_2}</option>
+								<option value="3">{lang security_question_3}</option>
+								<option value="4">{lang security_question_4}</option>
+								<option value="5">{lang security_question_5}</option>
+								<option value="6">{lang security_question_6}</option>
+								<option value="7">{lang security_question_7}</option>
+							</select>
+							<p class="d">{lang memcp_profile_security_comment}</p>
+						</td>
+					</tr>
+
+					<tr>
+						<th>{lang security_answer}</th>
+						<td>
+							<input type="text" name="answernew" id="answernew" class="px" />
+							<p class="d">{lang memcp_profile_security_answer_comment}</p>
+						</td>
+					</tr>					
+					<!--{if $secqaacheck || $seccodecheck}-->
+					</table>
+						<!--{eval $sectpl = '<table cellspacing="0" cellpadding="0" class="tfm"><tr><th><sec></th><td><sec><p class="d"><sec></p></td></tr></table>';}-->
+						<!--{subtemplate common/seccheck}-->
+					<table summary="{lang memcp_profile}" cellspacing="0" cellpadding="0" class="tfm">
+					<!--{/if}-->					
+					<tr>
+						<th>&nbsp;</th>
+						<td><button type="submit" name="pwdsubmit" value="true" class="pn pnc" /><strong>{lang save}</strong></button></td>
+					</tr>
+				</table>
+				<input type="hidden" name="passwordsubmit" value="true" />
+			</form>
+			<script type="text/javascript">
+				var strongpw = new Array();
+				<!--{if $_G['setting']['strongpw']}-->
+					<!--{loop $_G['setting']['strongpw'] $key $val}-->
+					strongpw[$key] = $val;
+					<!--{/loop}-->
+				<!--{/if}-->
+				var pwlength = <!--{if $_G['setting']['pwlength']}-->$_G['setting']['pwlength']<!--{else}-->0<!--{/if}-->;
+				checkPwdComplexity($('newpassword'), $('newpassword2'), true);
+			</script>
+
+		<!--{else}-->
+
+		<!--{hook/spacecp_profile_top}-->
+		 
+		 <div class="user-os">
+
+			 <div class="user-os-content">
+				 	<div class="user-os-header">
+
+						 <div class="user-os-profile">
+
+								<ul class="base-info">
+
+								 	<li class="useravt">
+								 		<a href="home.php?mod=space&uid=$_G[uid]" target="_blank"><!--{avatar($_G[uid],small)}--></a>
+								 	</li>
+
+								 	<li class="username">
+										<!-- <label>用户名</label>  -->
+										<b>$_G[member][username]</b> 
+										<i>( UID: {$space[uid]} )</i>
+										<a href="home.php?mod=space&uid=$_G[uid]" target="_blank">[ 我的个人空间 ]</a>
+									</li>
+
+									<li class="usermail">
+										<em>$space[email]</em> 
+										( <i id="user-email-status">
+										<!--{if $space[emailstatus] > 0}-->{lang profile_verified}
+										<!--{else}-->{lang profile_no_verified}
+										<!--{/if}-->
+										</i> )
+									</li>
+
+									<div class="user-important">
+										<!--{block/1003}-->
+									</div>
+
+								</ul>
+
+								<ul class="extend-info">
+
+										<li class="cre">
+											<label>米 币</label> 
+											<span><!--{echo getuserprofile('extcredits4');}--></span> 
+											<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=credit&op=buy" class="btn-cre"></a>
+										</li>
+
+										<li class="usergroup">
+											<label>用户组</label> 
+											<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup">$_G[group][grouptitle]</a></span> <img class="icon-groupicon" src=$groupicon />
+										</li>
+
+										<li class="verf">
+											<label>认 证</label> 
+											<span>$verify</span>
+										</li>
+
+								</ul>
+							
+						 </div>
+
+						 <div class="banner">
+						 	<!--{block/1001}-->
+						 </div>
+					 
+					</div>
+
+					<div class="user-os-primary">
+						<!--{block/1002}-->
+					</div>
+					 
+					<div class="user-os-footer">
+						<!--{block/442}-->
+					</div>
+			 </div>
+			
+			<!-- sidebar -->
+			<div class="user-os-sidebar">
+				<!--{block/441}-->
+			</div>
+		 </div>
+			 
+			<script type="text/javascript">
+				function show_error(fieldid, extrainfo) {
+					var elem = $('th_'+fieldid);
+					if(elem) {
+						elem.className = "rq";
+						fieldname = elem.innerHTML;
+						extrainfo = (typeof extrainfo == "string") ? extrainfo : "";
+						$('showerror_'+fieldid).innerHTML = "{lang check_date_item} " + extrainfo;
+						$(fieldid).focus();
+					}
+				}
+				function show_success(message) {
+					message = message == '' ? '{lang update_date_success}' : message;
+					showDialog(message, 'right', '{lang reminder}', function(){
+						top.window.location.href = top.window.location.href;
+					}, 0, null, '', '', '', '', 3);
+				}
+				function clearErrorInfo() {
+					var spanObj = $('profilelist').getElementsByTagName("div");
+					for(var i in spanObj) {
+						if(typeof spanObj[i].id != "undefined" && spanObj[i].id.indexOf("_")) {
+							var ids = explode('_', spanObj[i].id);
+							if(ids[0] == "showerror") {
+								spanObj[i].innerHTML = '';
+								$('th_'+ids[1]).className = '';
+							}
+						}
+					}
+				}
+			</script>
+		<!--{/if}-->
+		</div>
+	</div>
+
+	<div class="appl">
+		<!--{subtemplate home/spacecp_footer}-->
+	</div>
+	<!--{/if}-->
+</div>
+
+<!--{template common/footer}-->

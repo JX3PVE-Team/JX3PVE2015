@@ -1,0 +1,159 @@
+//会员页面
+.tips(yel){
+	border: 1px solid #f0ea8e;
+  	background: #fffddf;
+}
+
+.notice{
+	border: 1px solid #f0ea8e;
+	background-color: #fffddf;
+	background-position:8px 8px;
+	padding: 5px 10px 5px 25px;
+	color: #c00;
+	.bold;
+}
+
+.popupcredit{
+	.pc_inner{
+		.tobuy{
+			.color(#0cf,#ff0);
+		}
+	}
+}
+
+.user-vip-fail-tips{
+	.tips(yel);
+	padding: 5px 10px;
+	i{
+		background:url('@{url}icon/icon-report-16.png') no-repeat 0 0;.size(16px);
+		.dbi;
+		vertical-align: -3px;margin-right: 4px;
+	}
+}
+
+//原始购买入口
+.user-vip-origin{
+	//.none;
+	border: 1px solid #ddd;
+	.th{
+		.u-btn-gray(c);
+	}
+	th,td{padding-left:10px;}
+
+	.buy-vip-font{
+		.u-btn-blue(b);
+		padding: 3px 10px;
+		border-radius: 3px;
+		margin-right:5px;
+	}
+}
+
+//新会员内容
+.user-vip-index{
+
+	//块头
+	.block{.clear;}
+
+	//标题
+	.getvip{
+		line-height:28px;height:28px;background:#f2f2f2;border-radius:20px;
+		padding-left:20px;color:#999;font-weight:normal;margin-bottom:10px;
+		span{.fr;padding-right:20px;text-transform:uppercase;font-family:Trebuchet MS;letter-spacing:0.5px;}
+	}
+
+	//个人信息
+	.user-vip-header{
+		.fl;.clearfix;padding:10px;margin:15px 0 0 10px;
+		.user-avt{
+			.fl;width:48px;height:48px;padding:2px;border:1px solid #ddd;border-radius:4px;box-shadow:0 0 4px #ddd;
+			margin:0 10px 10px 0;
+		}
+		.profile{
+			//.fl;
+			margin-bottom:5px;
+			li{
+				line-height:24px;
+				img{.y;}
+			}
+		}
+		.vip-tips{
+			.clear;
+			.tips(yel);
+			padding:10px;margin:10px 0;
+			a{color:#ff0000;.bold;}
+		}
+	}
+
+	//产品信息
+	.user-vip-product{
+		.fl;.pr;border-right:1px solid #ddd;margin-right:10px;height:140px;
+		padding:15px 10px 0 216px;background:url('@{url}vip/vip-product1.png') no-repeat 0 0;
+		.product-info{
+			//padding-top:10px;
+			li{
+				line-height:24px;
+				img{.y;}
+			}
+			.need{
+				b{.bold;color:@yel;}
+			}
+			.mycre{
+				b{.bold;}
+				.ok{color:#009C00;}
+				.fail{color:#ff0000;}
+			}
+		}
+		.product-btn{
+			//.pa;right:0;bottom:0;width:220px;height:40px;
+
+			.btn-cre-size2(){
+				color:#fff;width:87px;height:38px;line-height:38px;
+				border:none;display: block;cursor:pointer;text-align: center;
+			}
+			
+			.clearfix;
+			.user-vip-btnbuy,.user-vip-btncre{
+				.fl;
+				.btn-cre-size2()
+			}
+
+			.user-vip-btnbuy{
+				background:url('@{url}vip/btn-red.png') no-repeat 0 0;
+				&:hover{
+					background-position: 0 -38px;
+				}
+			}
+			.user-vip-btncre{
+				color:#fff;
+				background:url('@{url}vip/btn-blue.png') no-repeat 0 0;
+				&:hover{
+					background-position: 0 -38px;
+				}
+			}
+		}
+	}
+
+	//会员简介
+	.user-vip-intro{
+		background:url("@{url}vip/nav-bg.png") no-repeat center top;
+		height:129px;
+	}
+	
+	//会员详细介绍
+	.user-vip-moreinfo{
+		.clear;
+		.details{
+			.fl;width:@wp - 200px - 240px;
+			table{width:100%;}
+			td{border:1px solid #ddd;padding:2px 5px;line-height:24px;color:#777;}
+		}
+
+		.vip-mogu{
+			.fr;width:223px;height:304px;
+			background:url("@{url}vip/mogubg.png") no-repeat top left;
+		}
+	}
+
+
+}
+

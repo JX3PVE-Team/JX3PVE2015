@@ -1,0 +1,38 @@
+@c-role-imgurl:'@{url}role/';
+
+.m-role-nav{
+	ul{
+		.clearfix;
+		li{
+			.w(50%);.fl;
+			a{
+				.db;.full(x);.fz(12px,32px);
+				i{
+					background:url('@{c-role-imgurl}m-role-nav.png') no-repeat;
+					.size(32px);.dbi;.y;
+					margin-right:5px;
+				}
+				&:hover{
+					.bold;
+					color:#333;
+				}
+			}
+		}
+	}
+
+	.bgis(@x,@y){
+		a i{background-position:@x @y;}
+	}
+	.qx{.bgis(0,0);}
+	.wh{.bgis(-33px,0);}
+	.wd{.bgis(-66px,0);}
+	.tc{.bgis(-99px,0);}
+	.mj{.bgis(-132px,0);}
+	.sl{.bgis(-165px,0);}
+	.cyun{.bgis(-198px,0);}
+	.cy{.bgis(-231px,0);}
+	.tm{.bgis(-264px,0);}
+	.cj{.bgis(-297px,0);}
+	.gb{.bgis(-330px,0);}
+	.ty{.bgis(-363px,0);}
+}

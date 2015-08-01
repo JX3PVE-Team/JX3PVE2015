@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*定于全局样式*/
+.sytax-system{ color:#0000ff;} 
+.sytax-system-string{ color:#333;} /*头部字段*/
+.sytax-comment{ color:#2f912f;} /*注释*/
+.sytax-keyword{ color:#ffb100;} /* skill */
+.sytax-key{ color:#ff0000;} /*系统符号*/
+.sytax-condition{ color:#555;} /*？？？*/
+.sytax-skill-name{ color:#555;} /*技能名称*/
+.sytax-param{ color:#fb06db;} /*hello？*/
+
+/*细化单独样式*/
+.sytax-system-name{ color:#ff0000;}
+.sytax-system-hello{ color:#0000ff;}
+.sytax-system-tip{ color:#0000ff;}
+.sytax-system-icon{ color:#0000ff;}
+.sytax-system-delay{ color:#0000ff;}
+.sytax-system-bantest{ color:#0000ff;}
+.sytax-system-skillbox{ color:#0000ff;}
+.sytax-system-varbool{ color:#0000ff;}
+.sytax-system-varnum{ color:#0000ff;}
+
+.sytax-keyword-if,
+.sytax-keyword-elseif,
+.sytax-keyword-else,
+.sytax-keyword-end{ color:#9000ff;}
+.sytax-keyword-skill,
+.sytax-keyword-cast{ color:#ffb100;}
+.sytax-keyword-use{ color:#ffb100;}
+.sytax-keyword-omwp,
+.sytax-keyword-equip,
+.sytax-keyword-umwp,
+.sytax-keyword-unequip{ color:#b0eb21;}
+.sytax-keyword-target{ color:#b0eb21;}
+.sytax-keyword-print{ color:#b0eb21;}
+.sytax-keyword-delbuff,
+.sytax-keyword-cbuff{ color:#b0eb21;}
+.sytax-keyword-return{ color:#ff0000;}
+.sytax-keyword-var{ color:#00ccff;}
+.sytax-keyword-macro{ color:#ff008a;}
+.sytax-keyword-bansk{ color:#ff008a;}
+.sytax-keyword-allsk{ color:#ff008a;}
+.sytax-keyword-inter{ color:#ff008a;}
+.sytax-keyword-dia{ color:#05e5d3;}

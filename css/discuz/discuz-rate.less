@@ -1,0 +1,38 @@
+//配合mod/rate.js
+//仅第一次打开评分窗口有效。字符串空白
+#fwin_rate #rateform .c{
+	//米币评分提示
+	.mibi{
+		.pointer;
+		em{
+			background: #f00;
+			color: #fff;
+			padding: 0 5px;
+			border-radius: 3px;
+			margin-left: 10px;
+			.pr;
+			.arrow(l,4px,#f00);
+			&:after{
+				content:'此项将消耗自己积分';
+				.db;.pa;.lt(-40px,-30px);
+				.tips(yel);
+				padding:2px 5px;
+				border-radius:3px;
+				width: 120px;
+				text-align: center;
+				color:#555;
+				.none;
+			}
+		}
+		&:hover{
+			@keyframes rateMBtips{
+			    from{opacity:0;transform:translateY(50%);}
+			    to{opacity:1;transform:translateY(0);}
+			}
+			em:after{
+				.db;
+				animation:rateMBtips 0.3s ease-in-out;
+			}
+		}
+	}
+}

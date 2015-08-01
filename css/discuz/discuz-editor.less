@@ -1,0 +1,264 @@
+.c-editor-extend{
+
+	.pr;overflow:hidden;
+	background-color:#f7f7f7;
+	border: 1px solid #CDCDCD;
+	margin:20px auto;
+	&.folder{
+		.h(50px);
+		transition:0.3s ease-in-out;
+	}
+
+	.c-editor-extend-tg{
+		.z(2);
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		display: block;
+		width: 60px;
+		height: 28px;
+		line-height: 28px;
+		text-align: center;
+		background: #7DBD20;
+		border-radius: 4px;
+		color: #fff;
+		.pointer;
+	}
+
+	.m-editor-extend-more{
+		line-height:24px;.x;
+		background-color:#eee;
+		.pointer;
+		margin-top:-10px;
+		&:hover{
+			background-color:#E6F4F5;
+		}
+	}
+
+	#post_extra{}
+
+	#post_extra_tb{.none;}
+
+	#post_extra_c{}
+
+	.m-editor-mod{
+		line-height:28px;
+		border-bottom: 1px dotted #ccc;
+		margin-bottom:10px;
+		&:last-child{
+			border-bottom:none;
+		}
+		.exfm{
+			background: none !important;
+			border:none !important;
+			margin:0 !important;
+			table td{
+				padding:2px 2px;
+			}
+		}
+	}
+
+	.m-title{
+		.pr;
+		b{
+			color: #fff;
+			background: #0084ff;
+			width: 80px;
+			border-radius: 3px;
+			text-align: center;
+			margin-left: 12px;
+			.db;
+		}
+		span{
+			.pa;.rt(15px,10px);color:#999;
+		}
+	}
+
+	.m-editor-common{
+		//删除按钮
+		.u-btn-delete{
+			background-color:#cc0000;
+			border:1px solid #c00;
+			&:hover{
+				background-color:lighten(#c00,5%);
+			}
+		}
+		@keyframes hiddenTipshow{
+		    from{opacity:0;transform:translateY(50%);}
+		    to{opacity:1;transform:translateY(0);}
+		}
+		//仅楼主可见
+		.hiddenreplies{
+			.pr;
+			text-decoration: underline;
+			i{
+				background:url('@{url}icon/icon-report-16.png') no-repeat 0 0;.size(16px);
+				.dbi;
+				vertical-align: -3px;margin-left: 4px;
+			}
+			&:after{.none;
+				content:'当勾选此项时，所有回帖仅你可见';
+				.pa;.lt(-37px,-29px);
+				.tips(yel);
+				.size(180px,24px);padding:0 5px;border-radius:4px;
+				text-decoration:none;
+			}
+			&:hover{
+				&:after{
+					.db;
+					animation:hiddenTipshow 0.2s ease-in-out;
+				}
+			}
+		}
+		.u-msg-delete-warning{
+			color:#999;
+		}
+		.u-msg-deltips{
+			border: 1px dashed #ccc;
+			background-color:#FCFADF;
+			padding: 5px;
+			display: block;
+			i{
+				background:url('@{url}icon/icon-report-16.png') no-repeat 0 0;
+				.size(16px);.dbi;.y(-3px);margin-right:5px;
+			}
+			a{
+				color: #369;
+  				text-decoration: underline;
+  				&:hover{color:#c00;}
+  			}
+		}
+	}
+
+	.m-editor-price{
+		b{
+			font-weight: 700;
+			margin-right:10px;
+		}
+		#price{
+			.w(100px) !important;
+		}
+		.u-msg-saletips{
+			color:#999;
+		}
+		.xg1{
+			color:@yel !important;
+		}
+	}
+
+	.m-editor-allow{
+		.xw1{.w(70px);}
+	}
+
+	.m-editor-pubtime{}
+
+	.m-editor-replys{}
+
+	.m-editor-tag{}
+
+	.m-editor-pubtime{}
+
+	.m-editor-activity{
+		.sinf{
+			.fl;
+			background: none;
+			border:none;
+			border-right:1px dashed #ccc;
+		}
+		.sadd{
+			padding-top: 10px;
+			.w(400px);margin-left:20px;
+			dl dd{
+				.w(auto);
+			}
+		}
+	}
+
+	.m-editor-allow,.m-editor-pubtime,.m-editor-replys,.m-editor-tag,.m-editor-activity{.none;}
+	&.showall{
+		.m-editor-allow,.m-editor-pubtime,.m-editor-replys,.m-editor-tag,.m-editor-activity{
+			.db;
+			animation:fadeIn 0.3s ease-in-out;
+		}
+	}
+
+}
+
+
+#postbox{
+
+	//编辑区
+	.edt .pt{
+		height:600px !important;
+	}
+
+	
+	.pnpost{
+		//#adddynamicspan{.none;}
+		//转播给听众
+		.m-tofollows{
+			
+			.m-tofollows-tips{
+				.pr;
+				background: #E3FCCF;
+				padding: 5px;
+				border-radius: 3px;
+				color: #589336;
+				.arrow(l,8px,#E3FCCF);
+				margin-left:8px;
+			}
+		}
+		//来自群组
+		.m-groups{
+			.none;
+		}
+	}
+
+	//发布按钮
+	.u-postbtn{
+		.w(160px);.lh(40px);
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//百度网盘
+.pbn #e_cst__virtualpan_param_1{
+	width:100% !important;
+}
+
+//默认附件
+.fwinmask{
+	.dbank_small_tips{
+		.none;
+	}
+	#e_dbankplugin_c iframe{
+		border:none;
+	}
+	//注册条例
+	.m_c .c{
+		.acolor(@bluex,#cc0000);
+	}
+}
+

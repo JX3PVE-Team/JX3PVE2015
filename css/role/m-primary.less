@@ -1,0 +1,224 @@
+.pve-primary{
+	.module *{
+		margin:0;
+		padding:0;
+		li{
+			height:auto;
+		}
+	}
+	.m-til{
+		.h(26px);
+		.fz(13px,26px);//.bold;
+		.pr;
+		h2{
+			
+			i{
+				background:url('@{url}icon/icon-key_12.png') no-repeat 0 0;
+				.dbi;.size(12px);margin-right:5px;
+			}
+		}
+		.folder{
+			.pa;.rt(0,0);.fzlh(12px,24px);
+			letter-spacing: 3px;
+			background: #f2f2f2;
+			padding: 0 10px;
+			border: 1px solid #ddd;
+			border-radius: 2px;
+			.pointer;
+			i{
+				.fz(24px,24px);
+				.pr;top:-2px;
+			}
+			em{
+				.pr;top:-4px;
+			}
+			&:hover,&.on{
+				background-color:@basecolor;
+				color:#fff;
+				border-color:darken(@basecolor,5%);
+			}
+		}
+	}
+
+	.m-ct{
+		.m-compass{
+
+			.top{
+				padding:5px 0;
+				border-bottom:1px solid #ddd;
+				.clearfix;
+				h3,.module{
+					.fl;.fzlh(12px,24px);
+				}
+				h3{
+					color:#229d22;.bold;
+				}
+				.module a{
+
+				}
+			}
+
+			.key{.none;
+				padding:10px 0;
+				border-bottom:1px solid #ddd;
+				ul{
+					.clearfix;
+					li{
+						.fl;
+						a{
+							.db;.lh(28px);.w(50px);
+							padding:0 90px 0 10px;
+							&:hover{
+								background-color:#f2f2f2;
+							}
+						}
+					}
+				}
+				.disabled{
+					li a{
+						color:#aaa;
+						&:hover{
+							background-color:transparent;
+							color:#aaa;
+						}
+					}
+				}
+			}
+
+			.show{
+				padding:10px 0;
+
+				.boxwp{.w(680px);}
+
+				.listbox{.none;}
+				.listbox:first-child{.db;}
+
+				.listbox{
+					.clearfix;
+				}
+
+				.rolebox{
+					.fl;.w(320px);margin-right:20px;
+				}
+
+				.list{
+					//.none;
+					//&:first-child{.db;}
+					li{
+						&:hover{
+							background-color:#f2f2f2;
+						}
+						a{
+							.db;.lh(26px);
+							.indent(22px);
+							background:url('@{url}icon/icon-arrow_8.png') no-repeat 2px center;
+							transition:background 0.15s ease-in;
+							&:hover{
+				  				background-position:10px center;
+							}
+						}
+					}
+
+
+					h3{
+						background: url("@{url}role/bps_li_bg.png") no-repeat 13px 2px;
+						span{
+							height:28px; width:118px; text-indent:45px; .fz(12px,28px);
+							display:block;
+							background-image:url('@{url}role/xinfa.png');
+							background-repeat: no-repeat;
+						}
+					}
+				}
+
+				.bx h3 span{background-position:0 0}
+				.ys h3 span{background-position: 0 -364px;}
+				.hj h3 span{background-position: 0 -28px;}
+				.nh h3 span{background-position: 0 -392px;}
+				.dj h3 span{background-position: 0 -56px;}
+				.nd h3 span{background-position: 0 -420px;}
+				.ax h3 span{background-position: 0 -84px;}
+				.tl h3 span{background-position: 0 -448px;}
+				.fy h3 span{background-position: 0 -112px;}
+				.mz h3 span{background-position: 0 -476px;}
+				.yj h3 span{background-position: 0 -140px;}
+				.xs h3 span{background-position: 0 -504px;}
+				.fs h3 span{background-position: 0 -336px;}
+				.tg h3 span{background-position: 0 -532px;}
+				.qc h3 span{background-position: 0 -168px;}
+				.jc h3 span{background-position: 0 -196px;}
+				.tm h3 span{background-position: 0 -224px;}
+				.jy h3 span{background-position: 0 -252px;}
+				.cj h3 span{background-position: 0 -280px;}
+				.gb h3 span{background-position: 0 -308px;}
+				.ty h3 span{background-position: 0 -561px;}
+
+			}
+		}
+
+		.m-sidebar{
+			padding:10px 0;
+
+			.authorbox{.none;}
+			.authorbox:first-child{.db;}
+
+			.authorbox{
+				.author{
+					.clearfix;
+					.logo{
+						.db;.fl;.size(60px);
+						background-color:#f2f2f2;
+						margin-right:10px;
+						border:1px solid #eee;
+						img{.full;}
+					}
+					.text{
+						.fz(12px,22px);
+						span{.db;}
+						em{
+							color:#666;
+						}
+					}
+				}
+				.extend{
+					.clear;
+					margin-top:10px;
+					background-color:#f2f2f2;
+					padding:5px 10px;
+
+					.til{
+						.db;.fz(12px,24px);color:#444;.bold;
+					}
+					.more{
+						.db;
+						.fz(12px,20px);color:#666;
+					}
+				}
+			}
+
+			.btn{
+				margin-top:10px;
+				a{
+					.u-btn;
+					.fz(14px,40px);
+					color:#fff;
+					border-radius:3px;
+					margin-bottom:5px;
+				}
+				.pub{
+					background-color:@basecolor;
+					&:hover{
+						background-color:lighten(@basecolor, 10%);
+					}
+				}
+				.pus{
+					background-color:#229D22;
+					&:hover{
+						background-color:lighten(#229D22, 4%);
+					}
+				}
+			}
+		}
+	}
+	
+}

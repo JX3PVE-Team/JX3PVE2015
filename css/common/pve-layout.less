@@ -1,0 +1,58 @@
+//全局布局
+.pve-container{
+	background-color: #f2f2f2;
+	padding:20px 0;
+}
+
+.pve-main{
+	.clearfix;
+}
+
+.pve-sidebar{
+	transition:position 0.2s ease-in-out;
+	.w(200px);
+	.fl;
+}
+
+.pve-content{
+	.fr;
+	.w(@ct);
+	.clearfix;
+}
+
+.pve-primary,.pve-article{
+	padding:20px;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 0 4px rgba(0,0,0,0.1);
+	border: 1px solid #ddd;
+}
+
+.pve-primary{
+	.clearfix;
+	margin-bottom:20px;
+
+	.m-compass{
+		.fl;
+		.w(@ct - 20px*2 - 240px - 20px);
+	}
+
+	.m-sidebar{
+		.w(240px);.fr;
+	}
+}
+
+.u-postbtn{
+	background:none !important;
+	.u-btn-blue(b) !important;
+}
+
+.pve-fastpost{
+	#fastpostsubmit{
+		.u-btn-blue(b) !important;
+	}
+}
+
+.pve-container{
+	.m-fj{.none;}
+}

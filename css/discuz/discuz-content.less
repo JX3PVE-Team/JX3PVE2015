@@ -1,0 +1,407 @@
+//每个楼层
+.c-fli{
+
+	//border-bottom:1px solid #eee;
+	margin-bottom:28px;
+	//tbody,tr,td
+
+	//印戳
+	#threadstamp{
+		.z(2);
+		img{
+			top: -65px;
+  			right:60px;
+  		}
+	}
+	
+	//侧边栏
+	.m-header{
+		border: 1px dotted #ccc;
+		.pr;
+
+		.pls,.c-fli-sidebar{
+			.w(910px);//.db !important;
+			background: none;
+			border:none;
+			.pr;
+
+			.favatar{
+				.pr;padding-top:10px;
+				.h(108px);
+			}
+
+			.m-avt{
+				.fl;
+				.avatar{
+					margin: 5px 10px;
+				}
+				.avtm{
+					.db;  
+					.size(80px);padding:3px;border-radius:80px;border:1px solid #eee;box-shadow:0 0 2px #ddd;
+					img{.full;border-radius:80px;.size(80px);padding:0;}
+				}
+			}
+
+			.m-pop{
+				//.h(88px);
+				padding:15px;
+				.m{margin-right:10px;}
+				.m a img{.size(80px);border-radius:80px;}
+				.i{overflow:hidden;.w(320px);}
+			}
+
+			.m-infobox{
+				.fl;.w(68%);
+				.m-hd{
+					.clearfix;.full(x);
+					border-bottom: 1px dashed #CDCDCD;
+				}
+
+				.m-diy{
+					.clearfix;
+				}
+			}
+
+			.m-user{
+				.fl;.lh(28px);
+				padding: 0;margin-bottom: 5px;padding-bottom:5px;border:none;
+				margin-right:20px;
+				.xw1{
+					margin-right:5px;.pr;top:2px;
+					max-width: 100px;
+					overflow: hidden;
+					display: block;
+					float: left;
+				}
+			}
+
+			.m-contact{
+				.fl;//.pa;.lt(300px,6px);
+				//.w(250px);
+				margin:0;
+				margin-right:15px;
+				li{
+					.lh(24px);
+					.w(auto);
+				}
+				.addflw{
+					max-width:140px;
+					min-width:90px;
+					margin-right:10px;
+					a{
+						.db;
+						&:hover{
+							span{
+								background-color:#0084ff;
+								color:#fff;
+								.arrow(l,5px,#0084ff);
+							}
+						}
+					}
+					span{
+						margin-left:8px;
+						background: #f2f2f2;
+						padding: 0 5px;
+						border-radius: 3px;
+						color: #999;
+						.pr;
+						.arrow(l,5px,#f2f2f2);
+						.dbi;.y;
+						text-indent:0;
+					}
+				}
+				.pm2{
+					.w(60px);
+				}
+			}
+
+			.m-only{
+				margin-right:10px;
+				.fl;//.pa;.rt(0,20px);
+				.u-btn-blue(b);
+				background-color:#ccc;
+				width: 100px;
+				height: 24px;
+				line-height: 24px;
+				border-radius: 3px;
+				text-align: center;
+				margin-top:2px;
+				a{
+					color:#fff;
+					.db;.full;
+				}
+			}
+
+			.m-fj{
+				//margin-top:10px;
+				.fl;
+				margin: 5px 0 0 10px;
+				.z{
+					color:#999;
+				}
+				.px{
+					.w(30px) !important;
+					background: none;
+  					border: 1px solid #ccc;
+  					border-radius:2px;
+  					box-shadow: 0 0 2px #ddd inset;
+				}
+			}
+
+			.m-info{
+				//.fl;.w(65%);
+				line-height:24px;
+				padding:5px 0;
+				//.pa;.lt(109px,50px);
+				color:#888;
+				
+				.game{
+					.clearfix;
+					li{
+						.fl;
+						.w(30%);
+						.nobreak;
+					}
+				}
+				.nic{
+					.nobreak;
+					
+				}
+			}
+
+
+			.m-love{.none;
+				.pa;.lt(445px,4px);
+			}
+
+			.m-admin{
+				.pa;.rt(0,82px);
+				.color(#999,#999,#c00);
+			}
+
+			.m-pubinfo{
+				.pa;.rt(0,0);
+				border:none;margin:0;padding:0;
+				.size(205px,100px);
+
+				.m-time{
+					//.pa;.rt(0,0);
+					padding:10px;
+					p{
+						margin-right:0;
+						background: #f2f2f2;
+						padding: 3px 5px;
+						border-radius: 3px;
+						box-shadow: 0 0 2px #ddd inset;
+					}
+					.x(right);
+					span{margin-right:5px;}
+				}
+
+			}
+
+		}
+	}
+
+	//内容区
+	.m-content{
+		.plc,.c-fli-content{
+			.w(100%);
+			.pct{
+				.pcb{
+
+					//0.出售帖子
+					.locked{
+						.tips(yel);
+						strong{color:#cc0000;}
+						a{color:#555;}
+					}
+
+					//1.分类信息
+					.typeoption{
+
+					}
+
+					//2.发帖内容
+					.t_fsz{
+						padding:10px 20px;
+
+						//默认内容
+						.t_f{
+							color:#555;.fz(13px,2);
+							embed,img{max-width:100%;}
+						
+							//最后编辑
+							.pstatus{}
+
+							//隐藏可见
+							.showhide,.locked{
+								border:1px dashed @bluex;
+								background-color:#fafdff;
+								font-size:12px;line-height:2;letter-spacing:0.5px;
+							}
+							.locked{
+								color:@bluex;
+								a{color:@bluex;}
+							}
+							.showhide{
+								h4{
+									color:@bluex;border-bottom:1px solid #cceafe;
+									line-height:26px;height:26px;
+								}
+							}
+
+							//引用文字
+							.quote{
+								background: none;
+								blockquote{background: none;}
+								padding:10px;
+								border:1px dashed #ddd;
+								background-color:#FCF9FA;
+								.fz(12px,2);
+								a{.fz(12px,2);}
+							}
+
+
+						}
+
+						//标签
+						.ptg{
+							.none;
+						}
+
+						//管理操作记录
+						.modact{
+							.color(#999,#999,#999);
+						}
+
+						//快速回复
+						#vfastpostform{
+							margin-top:20px;
+							.fullvfastpost{
+								border:1px solid #ddd;
+								margin:0;
+								border-radius:3px;
+								//box-shadow:0 0 4px rgba(0,204,255,0.5);
+								//animation:fastpostborder 0.5s ease-in 3s 2;
+								input,input:focus{box-shadow:none;border:none;}
+							}
+						}
+					}
+
+					//3.点评
+					.cm{}
+
+					//4.评分
+					.psth{}
+					.rate{}
+				}
+			}
+		}
+	}
+
+	//杂项
+	.m-misc{
+		//相关帖子
+		.mbw{.none;}
+
+		//签名
+		.sign{}
+	}
+
+	//扩展区
+	.m-extend,.plm{
+		//分享与评分
+		#p_btn{
+
+			a:hover{color:#ED9308;}
+			
+			//分享
+			.tshare{.none}
+			
+			//评分
+			#k_collect,.sharep,.followp{.none;}
+
+		}
+	}
+
+	//控制条
+	.m-panel{
+		.po{
+			//opacity:1;
+			border:none;
+		}
+		.pob{
+			.clearfix;
+			//.u-btn-gray(c);
+			border:1px solid #ddd;
+			line-height: 24px;
+			border-radius: 6px;
+			padding: 2px 10px;
+			margin-bottom:5px;
+			.color(#777,#777,#333);
+			background-color:#fcf9fa;
+		}
+		.control{
+			.fl;
+			a{
+				padding:3px 10px 3px 25px;
+				background-position:3px center;
+				&:hover{
+					background-color: #f2f2f2;
+					border-radius: 4px;
+					box-shadow: 0 0 2px #ddd inset;
+				}
+			}
+			//编辑
+			.editp{
+				
+			}
+			//点评
+			.cmmnt{
+				padding-left: 25px;
+			}
+			//回复
+			.fastre{
+				padding-left: 25px;
+			}
+			//道具
+			.magic{
+				background:url('@{url}icon/icon-setting-16.png') no-repeat 3px center;
+			}
+			//举报
+			.report{
+				background:url('@{url}icon/icon-report-16.png') no-repeat 3px center;
+			}
+			//--
+			.psave{}
+		}
+		.admin-control{
+			.fr;
+
+			//推送
+			.push{
+				padding-left: 25px;
+			}
+
+			//支持反对
+			.replyadd,.replysubtract{padding-left: 20px;}
+		}
+	}
+
+	//广告
+	.m-ad{
+
+	}
+
+}
+
+//pop信息
+.m-pop-info{
+	.group{margin-left:0;}
+	.medal{margin-left:0;overflow:hidden;}
+}
+
+.card_gender_2{
+	background-color:#EAE6F4;
+}

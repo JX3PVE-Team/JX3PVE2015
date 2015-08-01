@@ -1,0 +1,142 @@
+//分类导航skin
+.skin-bbslist-nav(li){
+	padding:0;
+	margin:0 8px 5px 0;
+}
+.skin-bbslist-nav(a){
+	.db;
+	padding:5px;.lh(16px);
+	.color(#555,#333);
+	border:1px solid #ddd;
+	border-radius:3px;
+	transition:0.1s ease-in-out;
+	margin:0;
+	&:hover{
+		color:#333;
+	}
+}
+.skin-bbslist-nav(hover){
+	border:1px solid #ccc;
+	background-color:#f2f2f2;
+	box-shadow:0 0 2px #ddd inset;
+	color:#444;
+}
+
+//主体分类
+.w-category-nav{
+	.pr;.clearfix;
+	border:none;
+	padding:0 45px 0 0;margin:0;
+	//普通
+	li{
+		.skin-bbslist-nav(li);
+		a{
+			.skin-bbslist-nav(a);
+			//隐藏数目
+			.num{
+				.none;
+			}
+		}
+	}
+	//全部
+	#ttp_all a,li a:hover{
+		.skin-bbslist-nav(hover);
+	}
+	//当前
+	.xw1{
+		a,a:hover{
+			.u-btn-blue(b);
+		}
+	}
+	//折叠
+	.fold{
+		
+	}
+	//分类信息
+	.pipe{.none;}
+	.xw1:last-child{.none;}
+}
+
+//分类信息
+.w-sortnav{
+	margin-bottom:20px;
+}
+//分类信息检索
+.w-sortnav-font,.w-sortnav-form{
+
+	.row{
+		.clearfix;
+	}
+
+	.label{
+		.fl;
+		.db;padding:5px;
+		.lh(16px);
+		border:1px solid #ccc;
+		background-color:#f2f2f2;
+		box-shadow:0 0 2px #ddd inset;
+		border-radius:3px;
+		margin-right:8px;
+	}
+
+	.itembox{
+		
+	}
+}
+//文字检索
+.w-sortnav-font{
+	border:none !important;
+
+	.itembox{
+		ul{
+			li{
+				.skin-bbslist-nav(li);
+				a{
+					.skin-bbslist-nav(a);
+					&:hover{
+						.skin-bbslist-nav(hover);
+					}
+				}
+				&.a{
+					a{
+						.u-btn-blue(b);
+					}
+				}
+			}
+		}
+	}
+}
+//表单检索
+.w-sortnav-form{
+	form{
+		padding:0;
+	}
+	.itembox{
+		label{.lh(16px);.dbi;padding:5px;}
+	}
+	.row{
+		.vm{
+			.lh(22px);
+		}
+		.ps{
+			.lh(27px);
+		}
+		.px{
+			.w(220px);
+			border: 1px solid #ddd;
+			background-color:#fff;
+			border-radius: 4px;
+			box-shadow: 0 0 4px #ddd inset;
+		}
+	}
+	.u-btnbox{
+		//.clear;
+	}
+	.u-button-search{
+		.u-btn-gray(c);
+		border:1px solid #ccc;
+		padding: 5px 10px;
+		.size(60px,28px);
+		border-radius:4px;
+	}
+}

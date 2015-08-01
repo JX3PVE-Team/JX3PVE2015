@@ -1,0 +1,8 @@
+<!-- jx3pve:宏侧边其他 -->
+<h2>广告告之</h2>
+<div class="m-fam-sideadd m-ad-sidebar">
+	<!-- TIPS -->
+	<div class="adplaceholder-sd"><!--{block/978}--></div>
+	<!-- NEW -->
+	<div class="ad-sd"><!--{ad/custom_2}--></div>
+</div>

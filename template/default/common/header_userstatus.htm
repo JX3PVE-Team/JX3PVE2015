@@ -1,0 +1,64 @@
+<!--{if $_G['uid']}-->
+	
+<div class="m-onlogin">
+
+	<span class="qd mod"><!--{hook/global_cpnav_extra2}--></span>
+
+	<!--{hook/global_usernav_extra3}-->
+
+	<a class="avt mod" href="home.php?mod=space&uid=$_G[uid]" title="{lang visit_my_space}"><!--{avatar($_G[uid],small)}--><i id="c-header-usergroup">$_G[group][grouptitle]</i></a>
+	
+	<a class="username mod" id="c-header-username" href="home.php" target="_blank">{$_G[member][username]}<i></i></a>
+
+	<a class="msg mod {if $_G[member][newprompt]} new{/if}" href="home.php?mod=space&do=notice" id="myprompt" onmouseover="showMenu({'ctrlid':'myprompt'});">
+		{lang remind}<!--{if $_G[member][newprompt]}-->($_G[member][newprompt])<!--{/if}-->
+	</a>
+	<span id="myprompt_check"></span>
+	<!--{if empty($_G['cookie']['ignore_notice']) && ($_G[member][newpm] || $_G[member][newprompt_num][follower] || $_G[member][newprompt_num][follow] || $_G[member][newprompt])}--><script language="javascript">delayShow($('myprompt'), function() {showMenu({'ctrlid':'myprompt','duration':3})});</script><!--{/if}-->
+
+	<!--{if ($_G['group']['allowmanagearticle'] || $_G['group']['allowpostarticle'] || $_G['group']['allowdiy'] || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 6) || getstatus($_G['member']['allowadmincp'], 2) || getstatus($_G['member']['allowadmincp'], 3))}-->
+	<span class="pipe mod">|</span><a class="admin1 mod" href="portal.php?mod=portalcp"><!--{if $_G['setting']['portalstatus'] }-->{lang portal_manage}<!--{else}-->{lang portal_block_manage}<!--{/if}--></a>
+	<!--{/if}-->
+
+	<!--{if $_G['uid'] && getstatus($_G['member']['allowadmincp'], 1)}-->
+	<span class="pipe mod">|</span><a class="admin2 mod" href="admin.php" target="_blank">{lang admincp}</a>
+	<!--{/if}-->
+
+	<span class="pipe mod">|</span><a class="exit mod" href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+
+</div>
+
+<!--{elseif !empty($_G['cookie']['loginuser'])}-->
+<p>
+	<strong><a id="loginuser" class="noborder"><!--{echo dhtmlspecialchars($_G['cookie']['loginuser'])}--></a></strong>
+	<span class="pipe">|</span><a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang activation}</a>
+	<span class="pipe">|</span><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+</p>
+<!--{elseif !$_G[connectguest]}-->
+	<!-- 未登录 -->
+	<div class="m-nologin">
+		<p class="extend">
+			<a href="http://www.jx3pve.com/connect.php?mod=login&op=init&referer=http%3A%2F%2Fwww.jx3pve.com%2F.%2F&statfrom=login" class="qq" title="用QQ登陆"></a> 
+			<a href="http://www.jx3pve.com/mpage_weibo-login.html" class="wb" title="用新浪微博登陆"></a> 
+			<a href="http://www.jx3pve.com/wechat-login.html" class="wx" title="微信扫一扫登陆"></a> 
+		</p>
+		<p class="default">
+			<a href="member.php?mod=logging&action=login">{lang login}</a> | 
+			<a href="member.php?mod=register">{lang register}</a>
+		</p>
+	</div>  
+	<!-- <!--{template member/login_simple}--> -->
+<!--{else}-->
+<div id="um">
+	<div class="avt y"><!--{avatar(0,small)}--></div>
+	<p>
+		<strong class="vwmy qq">{$_G[member][username]}</strong>
+		<!--{hook/global_usernav_extra1}-->
+		<span class="pipe">|</span><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+	</p>
+	<p>
+		<a href="home.php?mod=spacecp&ac=credit&showcredit=1">{lang credits}: 0</a>
+		<span class="pipe">|</span>{lang usergroup}: $_G[group][grouptitle]
+	</p>
+</div>
+<!--{/if}

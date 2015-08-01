@@ -1,0 +1,7 @@
+space_home			  		新用户中心
+os_header					os头
+os_primary					主体
+sidebar_l					左侧边栏
+sidebar_r					右侧边栏
+spacecp_credit_base.htm   	充值页面
+spacecp_usergroup.htm	  	会员页面

@@ -1,0 +1,52 @@
+/*
+ * Project: 公共底
+ * HTML: template/default/common/footer.htm
+ * PHP: -
+ * Style: system/footer.less
+ * Description: global footer
+ * Creat: iRuxu 2015.7.8
+ * Update : iRuxu 2015.7.8
+ */
+
+@c-footer-imgurl:"@{url}footer/";
+.c-footer{
+	border-top:1px solid #3c3c3c;color:#808080;background-color:#333;
+	padding:6.5px 0;
+	*padding:7px 0;
+	.acolor(#ccc,@blue);font-family:Trebuchet MS,"\5FAE\8F6F\96C5\9ED1";line-height:2;
+	
+	.wp{
+		background:url('@{c-footer-imgurl}wx-60.png') no-repeat right 50%;
+		.clearfix;
+		min-height:60px;
+	}
+
+	.lang{
+		.fl;padding:10px 0;
+		.lang-img{
+			background:url('@{c-footer-imgurl}lang.png') no-repeat;height:16px;margin-bottom:5px;
+			a{display:block;float:left;width:16px;height:16px;margin-right:12px;}
+		}
+		.lang-font{}
+	}
+
+	.copyright{
+		.fr;padding:10px 0;
+		padding-right:70px;.x(right);
+		.app{
+			.bbtips{color:@blue;padding:0 5px;}
+		}
+		.nav{
+			.pipe {color:#777;}
+		}
+	}
+
+}
+
+//底部插件更新提示
+.focus.plugin{
+	.none;
+}
+
+
+	

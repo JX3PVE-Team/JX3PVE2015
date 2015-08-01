@@ -1,0 +1,91 @@
+/*
+ * Iconfont.less v1.0 
+ * Author:iRuxu
+ * Creat:2014.8
+ * Update:2015.6.11
+ * check the icon from http://iconfont.cn/showProject
+ */
+
+.hasiconfont(){
+    @font-face {
+      font-family: 'iconfont';
+      src: url('http://at.alicdn.com/t/font_1424764002_5801144.eot');
+      src: url('http://at.alicdn.com/t/font_1424764002_5801144.eot?#iefix') format('embedded-opentype'),
+      url('http://at.alicdn.com/t/font_1424764002_5801144.woff') format('woff'),
+      url('http://at.alicdn.com/t/font_1424764002_5801144.ttf') format('truetype'),
+      url('http://at.alicdn.com/t/font_1424764002_5801144.svg#iconfont') format('svg');
+    }
+}
+/*@font-face {
+    font-family: 'yhicon';
+    src: url('http://at.alicdn.com/t/font_1421169244_920332.eot');
+    src: url('http://at.alicdn.com/t/font_1421169244_920332.eot?#iefix') format('embedded-opentype'),
+    url('http://at.alicdn.com/t/font_1421169244_920332.woff') format('woff'),
+    url('http://at.alicdn.com/t/font_1421169244_920332.ttf') format('truetype'),
+    url('http://at.alicdn.com/t/font_1421169244_920332.svg#iconfont') format('svg');
+}*/
+
+/*.iconfont {
+    font-family: "iconfont";
+}
+.yhicon {
+    font-family: "yhicon";
+}
+.iconfont, .yhicon {
+    font-style: normal;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+}*/
+
+.isiconfont(){
+    display:inline-block;*display:inline;*zoom:1;
+    vertical-align:middle;
+    font-family:"iconfont" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    cursor:pointer;
+}
+
+/* ---------------------------------------------
+ * HTML实体
+ * 默认居中对齐
+ -------------------------------------------------*/
+
+.iconfont{
+     .isiconfont;
+}
+
+/* ---------------------------------------------
+ * 伪元素
+ * 图标大小、图标颜色、图标对齐方式
+ -------------------------------------------------*/
+.iconfont(@iconfont;@fz:inherit;@color:inherit;@y:middle){
+    &:before{
+        .isiconfont;
+        content:@iconfont;
+        .fz(@fz);.size(@fz);
+        color:@color;
+        .y(@y);
+    }
+}
+
+//涂色雪碧图 - 简单的预设效果 
+.iconfonts(@iconfont,@fz:inherit,@color-a,@color-b,@y:middle){
+    .size(@fz);.clip;
+    &:before,&:after{
+        .isiconfont;
+        content:@iconfont;
+        .fz(@fz);.size(@fz);
+        .y(@y);
+        transition:0.2s ease-in-out;
+    }
+    &:before{color:@color-a;}
+    &:after{color:@color-b;}
+    &:hover{
+        &:before{transform:translate3d(0,-100%,0);}
+        &:after{transform:translate3d(0,-100%,0);}
+    }
+}

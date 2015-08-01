@@ -1,0 +1,74 @@
+.user-os-primary{
+	ul{
+		.clearfix;
+		li{
+			.fl;margin-right:20px;
+			a{
+				.lh(24px);
+				.db;padding:3px 5px;
+				border-radius:3px;
+				&:hover{
+					background-color:#10aab0;
+					color:#fff;
+				}
+			}
+			a i {
+				background:url('@{url}user/qkos.png') no-repeat;
+				.dbi;.y(top);margin-right:5px;
+				.pr;
+			}
+			.bgpo(@a,@b,@c,@d){
+					i{background-position:@a @b;}
+				&:hover{
+					i{background-position:@c @d;}
+				}
+			}
+			
+			.magic{
+				.bgpo(0,0,-25px,0);
+				i{
+					.size(24px);
+					top:-1px;
+				}
+			}
+			.task{.bgpo(-88px,0,-88px,-22px);i{.size(21px);}}
+			.medal{
+				.bgpo(-50px,0,-69px,0);
+				i{
+					.size(18px,23px);
+					top:-1px;
+				}
+			}
+			.code{.bgpo(-40px,-25px,-60px,-24px);i{.size(19px);}}
+			.vip{.bgpo(-110px,0,-110px,-19px);i{.size(23px);}}
+			.gift{
+				.bgpo(0,-25px,-20px,-25px);i{.size(19px);}
+				.pr;
+				&:after{
+					content:'暂未开放';
+					.db;padding:0 5px;.lh(24px);
+					background-color:#f2f2f2;
+					border:1px solid #ddd;
+					border-radius:3px;
+					.pa;  
+					left: 83px;
+					top: 2px;
+					width: 60px;
+					text-align: center;
+					color:#555;
+					.none;
+				}
+				@keyframes giftTips{
+				    from{opacity:0;transform:translateX(-50%);}
+				    to{opacity:1;transform:translateX(0);}
+				}
+				&:hover{
+					&:after{
+						.db;
+						animation:giftTips 0.2s ease-in-out;
+					}
+				}
+			}
+		}
+	}
+}

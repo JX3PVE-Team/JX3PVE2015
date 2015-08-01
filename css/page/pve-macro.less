@@ -1,0 +1,43 @@
+/*
+ * Project: 宏库专栏
+ * HTML: template/role/*
+ * Style: role/pve-role.less
+ * Description: pve / role
+ * Creat: iRuxu 2015.7.9
+ * Update : iRuxu 2015.7.12
+ */
+
+
+@import url("import.less");
+
+@import url("macro/m-macro-nav.less");
+@import url("macro/m-macro-search.less");
+@import url("macro/m-macro-primary.less");
+@import url("macro/m-macro-page.less");
+@import url("macro/m-macro-post.less");
+@import url("macro/m-macro-sytax.less");
+
+.macro-container{
+	.m-only{
+		.none;
+	}
+}
+
+
+//侧边栏设置最小高度占位
+.m-macro-help{
+	min-height:180px;
+}
+
+.m-macro-sideadd{
+	min-height: 200px;
+}
+
+//隐藏分类信息
+.w-category-nav{
+	.none;
+}
+
+.macro-info-primary{
+	margin-top:10px;
+}

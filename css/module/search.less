@@ -1,0 +1,22 @@
+//搜索
+.mod-search(@width:200px,@height:28px){
+	.pa;top:5px;right:0;.clip;height:@height;padding:0;line-height:28px;width:auto;
+	&:hover{
+		.bdcs-search-form-submit{animation:goUp 0.3s ease-in forwards;}
+		.bdcs-search-form-input{width:250px;}
+	}
+	.bdcs-search-form-input{
+		width:@width;height:@height;line-height:@height;
+		padding:4px 30px 4px 5px;transition:width 0.3s ease-in;
+		border:none;border-radius:4px;box-sizing:border-box;
+		&:focus{
+			border:none;outline:0;
+			box-shadow:0 0 8px rgba(0,204,255,0.8) inset;
+			border:1px solid rgb(0,204,255);
+		}
+	}
+	.bdcs-search-form-submit{
+		.pa;right:0;top:0;width:30px;height:28px;cursor:pointer;background:none;border:none;.db;
+		background:url('@{url}system/header/sprite.png') no-repeat 0 -118px;
+	}
+}

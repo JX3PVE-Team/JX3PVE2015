@@ -1,0 +1,87 @@
+.iframe-header .w-dialog{.none !important;}
+
+.u-dialog-mask{
+	.fixed(lt);.z(110);
+	.tb(0,0,0,0.4);
+	.full;
+}
+
+.w-dialog{
+	.fixed(o,600,300);.z(120);
+	.size(600px,300px);
+
+	.m-primary{
+		width:600px - 20px;
+		height:300px - 20px;
+		background-color:#444;
+		border:10px solid #333;
+		box-shadow: 0 0 4px rgba(0,0,0,0.4);
+		border-radius:6px;
+
+		.m-til{
+			font-family:'微软雅黑';text-indent:10px;cursor:default;color:#999;text-shadow:1px 1px 0 #333;
+			border-bottom:1px solid #555;.fz(12px,30px);
+		}
+
+		.u-close{
+			.pa;top:10px;right:8px;.size(65px,30px);.x;.pointer;transition:0.3s ease-in;color:#999;
+			&:before{
+				content:'\e632';.iconfont;color:#888;line-height:30px;margin-right:5px;
+			}
+			&:hover{
+				color:#00ccff;text-shadow:0 0 4px #00ccff;
+				&:before{color:#00ccff;text-shadow:none;animation:closeit 0.5s ease-in forwards;}
+			}
+		}
+		.m-content{
+			color:#ccc;.fz(12px,1.8);padding:10px;
+			height:300px - 20px - 50px;.clip;text-shadow:1px 1px 0 #333;
+
+			.m-vip-btn{
+				.x;margin-top:20px;
+				a{
+					.dbi;width:220px;height:100px;
+					text-indent:-200%;overflow:hidden;.pr;
+
+					@keyframes buybutton{
+					    0{transform:translate3D(0,0,0);opacity:1;}
+					    50%{transform:translate3D(0,10%,0);opacity:0.8;}
+					    100%{transform:translate3D(0,0,0);opacity:1;}
+					}
+
+					i{
+						.dbi;width:20px;height:23px;left:25px;top:15px;.pa;
+						background:url('@{url}dialog/arrow.png') no-repeat 0 0;
+						
+					}
+					&:hover{
+						i{
+							animation:buybutton 0.8s ease infinite;
+						}
+					}
+				}
+				.btn1{background:url('@{url}dialog/down-buy.png') no-repeat 0 0;}
+				.btn2{background:url('@{url}dialog/down-credit.png') no-repeat 0 0;}
+			}
+			.m-vip-des{
+				.x;color:#ccc;padding-top:20px;border-top:1px solid #555;width:80%;margin:-10px auto;
+				.dialog-vip-buy{
+					.fz(16px,1.2);
+					a{color:@blue;font-weight:bold;
+						&:hover{transition:0.3s ease-in;color:#ffff00;}
+					}
+				}
+				.dialog-vip-more{
+					.fz(12px,2.5);color:#999;
+					a{}
+				}
+			}
+
+		}
+	}
+}
+
+
+
+
+

@@ -1,0 +1,98 @@
+.member-container{
+	
+}
+
+//登录页,注册页
+.member-login,.member-register{
+	padding:20px 0;
+
+	.rfm:last-child a{
+		margin-right:5px;	//第三方登录间隙
+	}
+
+	.pn{
+		.u-btn-blue(a);
+		.size(160px,40px);line-height:40px;
+	}
+	
+	.login_slct {//登录切换
+
+	}
+}
+
+//注册页
+.member-register{
+	.u-msg-codetips{
+		.default-way{
+			text-decoration:underline;
+		}
+		.other-way{
+			color:#888;
+		}
+	}
+}
+
+//弹出登录页
+#fwin_content_login,#messagelogin{
+	.member-login{
+		padding:0;
+
+		.pn{
+			.size(120px,28px);line-height:28px;
+		}
+
+		.rfm:last-child{
+			table,tbody,tr,th,td{
+				.db;
+			}
+			th{
+				.none;
+			}
+			td{
+				.w(410px);.auto(x);
+			}
+		}
+
+	}
+}
+
+//执行完窗口
+.nfl{
+	padding:60px 0;
+	.f_c{
+		margin:0 auto;
+		//跳转
+		a{
+			.pointer;
+		}
+		//标题
+		.alert_right, .alert_error, .alert_info{
+			line-height:40px;
+		}
+		&.altw{
+			.alert_right{
+				#succeedmessage{
+					color:#cc0000;font-weight:bold;
+				}
+				#succeedlocation{
+					.acolor(@bluex,#cc0000);
+				}
+				.alert_btnleft{
+					margin:0;
+				}
+			}
+		}
+	}
+}
+
+//提示登录页
+#messagelogin{
+	h3.flb{
+		.none;
+	}
+}
+
+//找回密码
+.member-password{
+
+}
