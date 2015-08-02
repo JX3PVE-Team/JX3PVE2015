@@ -1,6 +1,9 @@
 //每个楼层
 .c-fli{
 
+	//块级化
+	table,tbody,tr,td,th{.db;}
+
 	//border-bottom:1px solid #eee;
 	margin-bottom:28px;
 	//tbody,tr,td
@@ -23,11 +26,11 @@
 			.w(910px);//.db !important;
 			background: none;
 			border:none;
-			.pr;
+			.pr;overflow:visible;
 
 			.favatar{
 				.pr;padding-top:10px;
-				.h(108px);
+				.h(108px);.clearfix;
 			}
 
 			.m-avt{
