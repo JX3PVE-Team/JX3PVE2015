@@ -24,10 +24,15 @@
 @import url('global/var.less');			//变量
 @import url("global/common.less");		//字体
 @import url("global/layout.less");		//基本布局
-@import url("global/color.less");		//配色方案
-@import url("global/icon.less");		//图标
-@import url('global/skin.less');		//配色样式
 
+@import url("global/icon.less");		//图标
+
+/*skin 配色方案
+------------------------------------------*/
+@import url("skin/old.less");			//配色方案
+@import url('skin/button.less');		//配色样式
+@import url('skin/sweet.less');			//糖果按钮
+@import url('skin/tips.less');			//提示
 
 /*module 公共模块
 ------------------------------------------*/
@@ -102,12 +107,59 @@
 @import url("member/invitecode.less");			//购买邀请码
 
 
-/*bbs 综合论坛
+/*macro 宏栏目
 ------------------------------------------*/
-@import url("module/discuz.less");				//论坛导航
+@import url("macro/m-macro-nav.less");
+@import url("macro/m-macro-search.less");
+@import url("macro/m-macro-primary.less");
+@import url("macro/m-macro-page.less");
+@import url("macro/m-macro-post.less");
+@import url("macro/m-macro-sytax.less");
+
+/*tool 工具栏目
+------------------------------------------*/
+@import url("tool/m-tool-nav.less");
+@import url("tool/m-tool-search.less");
+@import url("tool/m-tool-pub.less");
+@import url("tool/m-tool-page.less");
+@import url("tool/m-tool-primary.less");
+@import url("tool/m-snow-primary.less");
+
+/*role 职业栏目
+------------------------------------------*/
+@import url("role/role.less");
+@import url("role/m-role-nav.less");
+@import url("role/m-primary.less");
 
 
+/*fam 副本栏目
+------------------------------------------*/
+@import url("fam/fam.less");
+@import url("fam/m-sidebar.less");
+@import url("fam/m-fam-search.less");
+@import url("fam/m-fam-zt.less");
+@import url("fam/m-fam-jiebao.less");
+@import url("fam/m-fam-primary.less");
+@import url("fam/m-fam-post.less");
 
+
+/*bbs 默认论坛模板
+------------------------------------------*/
+@import url("bbs/discuz.less");					//论坛导航
+@import url("bbs/default.less");				//论坛样式
+@import url("bbs/treeview.less");				//树形菜单
+
+
+/*yylmacro 超级宏（wordpress）
+------------------------------------------*/
+@import url('yylmacro/yylmacro-list.less');
+@import url('yylmacro/yylmacro-view.less');
+@import url('yylmacro/yylmacro-page.less');
+@import url('yylmacro/yylmacro-admin.less');
+@import url('yylmacro/yylmacro.less');
+@import url('yylmacro/yylmacro-teach.less');
+@import url('yylmacro/yylmacro-pub.less');
+@import url('yylmacro/yylmacro-addon.less');
 
 .hasiconfont;
 

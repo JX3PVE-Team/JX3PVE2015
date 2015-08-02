@@ -1,0 +1,53 @@
+/*
+* wordpress 后台管理
+* By iRuxu
+*/
+
+//隐藏管理栏
+#wpadminbar{display:none;}
+
+
+//后台登陆界面
+.yylmacro-admin{
+	.full;.fz(12px,24px);
+	.login{background:url("@{url}/yylmacro/admin/bg4.png") repeat center center;.full;
+		#login{
+			.ct(o,500,580);.size(500px,580px);
+			//logo
+			h1{
+				background:url("@{url}/yylmacro/admin/login-title.png") no-repeat center center;width:472px;height:155px;
+				a{
+					display:block;min-width:472px;height:155px;
+				}
+			}
+			//tips
+			.message{margin-bottom:5px;}
+			//form
+			#loginform{
+				position:relative;
+				.cloud-login,.cloud-pass{width:210px;height:30px;line-height:30px;}
+				.cloud-submit{.pa;right:0;top:-5px;}
+				.forgetmenot{margin:5px 0;
+					input{.y(text-bottom);}
+				}
+			}
+			//ac
+			.jx3_ac{
+				padding:10px;border:1px solid #fff;margin-bottom:20px;
+				background:#ff0000;color:#fff;
+				a{color:#fff;font-weight:bold;}
+			}
+
+		}
+	}
+}
+
+
+//what is this?
+#backtoblog{display:none;}		
+#otherpages {background:url("@{url}/yylmacro/admin/bg9.png") repeat top left;}
+
+.meta-authorsky{margin-left:10px;text-align:center;
+	a{color:#fff;background:url("@{url}/yylmacro/admin/author-label4.png") no-repeat 0 0;width:72px;height:24px;line-height:24px;display:inline-block;}
+	a:hover{color:#fff;background:url("@{url}/yylmacro/admin/author-label4.png") no-repeat 0 -24px;width:72px;height:24px;line-height:24px;display:inline-block;}
+}

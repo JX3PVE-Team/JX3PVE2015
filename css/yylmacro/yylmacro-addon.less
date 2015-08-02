@@ -1,0 +1,176 @@
+/* 插件站
+-------------------------------------------------------------- */
+/*插件导航*/
+
+.box{
+	.main{
+		.wp{
+			.content{
+				.addon-nav{
+					font-size:12px; padding-top:20px;
+					.z{
+						a{color:#444;}
+					}
+					.addon-share{
+						.fz(12px,16px); height:16px; .clearfix;
+						a{
+							.db; background:url('../img/yylmacro/addon/icons_0_16.png?v=d754dcc0.png');
+							background-repeat: no-repeat;
+							&:hover{color: #f39;}
+							&.bds_more{.fl; color:#333;background-position:0 0;}
+							&.bds_tsina{background-position:0 -104px;}
+							&.bds_weixin{background-position:0 -1612px;}
+						}
+					}
+					.addon_help{
+						.db; line-height:24px; height:24px;
+						a{
+							color:#222; display: inline-block;
+							&:hover{color: #f00;border-bottom: 2px solid #f00;}
+						}
+					}
+				}
+				.addon-page{
+					.fz(12px,24px); font-family:"宋体"; background-color:#fff;padding:10px 20px;border:1px dashed #ccc;border-radius:20px;
+					.addon-wp{
+						span{.db;}
+					}
+					.addon-icon{
+						height:200px; border:1px solid #ccc; background-color:#fff; padding:5px; margin-top:-10px; 
+						span{.db;}
+					}
+					.addon-ct{
+						.addon-qcin{
+							ul{
+								.clearfix;
+								li{
+									.fl; background-color:#f2f2f2; margin-right:20px; border-radius:9px;
+									width:80px; width:180px; text-align: center; font-family: "微软雅黑"; .fz(18px,60px);
+									a{.db; color:#fff;.full;}
+								}
+							}
+						}
+						.addon-ac{
+							font-family:"Verdana"; background-color:#f9f9f9; height:32px; line-height:32px; 
+							text-align:center; color:#bbb; margin:20px 0;letter-spacing: 50px;
+							span{color:#f00;}
+						}
+						.addon-list-index{
+							list-style: none;position: relative;min-height: 100px;padding: 10px 0;border-bottom: 1px dashed #ccc;
+							h2{width: 32px;height:200px;font-size:20px;font-family: 微软雅黑;font-weight: bold;float: left;padding: 0 10px 0 50px;color: #c00;}
+							p{z-index: 0;font-size: 18px;position: absolute;top: 5px;right: 5px;color: #eee;font-family: Verdana;}
+							ul{
+								.clearfix;
+								li{
+									 height:24px; .fl;
+									span{
+										a{.db; width:200px;}
+									}
+									
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+/*.addon-page{font-size:12px;font-family:宋体;line-height:24px;padding:10px 20px;background-color:#fff;border:1px dashed #ccc;    
+	-moz-border-radius: 20px;      Gecko browsers 
+    -webkit-border-radius: 20px;    Webkit browsers 
+    border-radius:20px;            W3C syntax }
+#addon-content{}
+.addon-content{}
+#addon-title{color:#333;position:relative;font-family:微软雅黑;font-size:24px;line-height:45px;background-color:#fff;border-bottom:2px solid #111;}
+.addon_share{position:absolute;bottom:10px;right:0;}
+#addon_help{position:absolute;bottom:0px;right:110px;font-size:12px;}
+#addon_help a{color:#222;}
+#addon_help a:hover{color:#ff0000;border-bottom:2px solid #ff0000;}
+#addon-icon{width:1125;height:200px;border:1px solid #ccc;background-color:#fff;padding:5px;margin-top:-10px;background:url("img/addon-banner.png") no-repeat center center;}
+#addon-meta{margin:10px 0;position:relative;}
+#addon-down{position:absolute;right:0;top:0;width:200px;height:60px;background:url("img/download-addon.png") no-repeat top left;}
+#addon-down a{display:block;width:200px;height:60px;}
+#addon-content2{width:900px;float:left;padding:20px 0;}
+#addon-content2 a{color:#cc0000;}
+#addon-content2 a:hover{color:#ff0000;border-bottom:1px dotted #333;}
+#addon-list{width:210px;float:left;margin:50px 0 10px 25px;}
+#addon-list ul {padding:0;}
+#addon-list ul li{padding:0;margin:0;list-style:none;line-height:26px;}
+#addon-list ul li a{display:block;}
+#addon-list ul li a:hover{display:block;color:#ff0000;background-color:#f9f9f9;}
+#addon-list h1 {font-size:12px;font-weight:bold;padding:0 10px;background-color:#f9f9f9;}
+.addon-nav-content{}
+#addon-qcin ul{margin:20px auto 0 auto;width:90%;}
+#addon-qcin ul li{float:left;background-color:#f2f2f2;margin-right:20px;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;}
+#addon-qcin ul li a{display:block;width:180px;height:80px;text-align:center;font-family:微软雅黑;font-size:18px;color:#fff;}
+#addon-qcin-1{background:url("img/addon-qcin-1.png") no-repeat top left;}
+#addon-qcin-1 a:hover{background:url("img/addon-qcin-1-light.png") no-repeat top left;}
+#addon-qcin-2{background:url("img/addon-qcin-2.png") no-repeat top left;}
+#addon-qcin-2 a:hover{background:url("img/addon-qcin-2-light.png") no-repeat top left;}
+#addon-qcin-3{background:url("img/addon-qcin-3.png") no-repeat top left;}
+#addon-qcin-3 a:hover{background:url("img/addon-qcin-3-light.png") no-repeat top left;}
+#addon-qcin-4{background:url("img/addon-qcin-4.png") no-repeat top left;}
+#addon-qcin-4 a:hover{background:url("img/addon-qcin-4-light.png") no-repeat top left;}
+#addon-qcin-5{background:url("img/addon-qcin-5.png") no-repeat top left;}
+#addon-qcin-5 a:hover{background:url("img/addon-qcin-5-light.png") no-repeat top left;}
+
+#addon-ac{font-family:Verdana;background-color:#f9f9f9;height:32px;line-height:32px;text-align:center;letter-spacing:50px;margin:20px 0;color:#bbb;}
+#fav-heart{color:#ff0000;}
+.addon-list-index{list-style:none;position:relative;min-height:100px;padding:10px 0;border-bottom:1px dashed #ccc;}
+.addon-list-index h2{width:32px;height:100px;font-size:14px;font-family:微软雅黑;font-weight:bold;float:left;padding:0 10px 0 50px;color:#cc0000;}
+#addon-1 h2{background:url("img/addon-icon-1.png") no-repeat 0px 3px;}
+#addon-2 h2{background:url("img/addon-icon-2.png") no-repeat 0px 3px;}
+#addon-3 h2{background:url("img/addon-icon-3.png") no-repeat 0px 3px;}
+#addon-4 h2{background:url("img/addon-icon-4.png") no-repeat 0px 3px;}
+#addon-5 h2{background:url("img/addon-icon-5.png") no-repeat 0px 3px;}
+#addon-6 h2{background:url("img/addon-icon-6.png") no-repeat 0px 3px;}
+.addon-list-index p{z-index:0;font-size:18px;position:absolute;top:5px;right:5px;color:#eee;font-family:Verdana;}
+.addon-list-index ul li{float:left;width:200px;overflow:hidden;height:32px;}
+.addon-list-index ul li a{display:block;padding:0 10px;z-index:55;color:#777;}
+.addon-list-index ul li a:hover{color:#cc0000;background-color:#f9f9f9;}
+#interface_docments{float:right;background-color:#f9f9f9;padding:20px 20px 20px 0;list-style-type:square;}
+#interface_docments_content{float:left;width:840px;}
+ #addon-1,#addon-3,#addon-5{background-color:#f9f9f9;} 
+
+
+文章内部编辑器格式
+-------------------------------------------------------------- 
+.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6 {margin: 10px 0;line-height: 24px;}
+.entry-content h1{font-size:16px;font-weight:bold;font-family:"Microsoft Yahei";padding:5px 0;}
+.entry-content h2{font-size:14px;font-weight:bold;font-family:宋体;padding:5px 0;border-bottom:1px dotted #ccc;text-indent:45px;background:url("img/h2.jpg") no-repeat center left;}
+.entry-content h3{font-size:12px;font-weight:bold;font-family:宋体;padding:5px 0;border-bottom:1px dashed #ccc;width:92%;margin-left:2%;text-indent:25px;background:url("img/h3.jpg") no-repeat center left;}
+.entry-content h4{font-size:12px;font-weight:bold;font-family:宋体;padding:5px 0;border-bottom:1px dashed #ccc;width:92%;margin-left:4%;text-indent:35px;background:url("img/h4.jpg") no-repeat center left;}
+.entry-content h5 {font-size:12px;font-weight:bold;font-family:宋体;padding:5px 0;border-bottom:1px dashed #ccc;width:92%;margin-left:4%;text-indent:35px;background:url("img/h5.jpg") no-repeat center left;}
+.entry-content h6{font-size:12px;font-weight:bold;font-family:宋体;padding:5px 0;border-bottom:1px dashed #ccc;width:92%;margin-left:4%;text-indent:35px;background:url("img/h6.jpg") no-repeat center left;}
+
+.entry-content p {line-height: 1.714285714;}
+.entry-content ul ul,.entry-content ol ol,.entry-content ul ol,.entry-content ol ul{margin-bottom: 0;}
+.entry-content ul {list-style: disc outside;}
+.entry-content ol {list-style: decimal outside;}
+.entry-content blockquote {margin: 10px 0;padding: 10px;font-size:12px;color:#777;border:1px solid #ccc;background-color:#fff;}
+.entry-content blockquote p:last-child{margin-bottom: 0;}
+.entry-content code {font-family: Consolas, Monaco, Lucida Console, monospace;font-size: 12px;font-size: 0.857142857rem;line-height: 2;}
+
+.entry-content abbr,.entry-content dfn,.entry-content acronym {border-bottom: 1px dotted #666;cursor: help;}
+.entry-content address {display: block;line-height: 1.714285714;margin: 0 0 24px;margin: 0 0 1.714285714rem;}
+
+img.alignleft {margin: 12px 24px 12px 0;margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;}
+img.alignright{margin: 12px 0 12px 24px;margin: 0.857142857rem 0 0.857142857rem 1.714285714rem;}
+img.aligncenter{clearfix: both;margin-top: 12px;margin-top: 0.857142857rem;margin-bottom: 12px;margin-bottom: 0.857142857rem;}
+
+.entry-content embed,.entry-content iframe,.entry-content object,.entry-content video {margin-bottom: 24px;margin-bottom: 1.714285714rem;}
+.entry-content dl {margin: 0 24px;margin: 0 1.714285714rem;}
+.entry-content dt {font-weight: bold;line-height: 1.714285714;}
+.entry-content dd {line-height: 1.714285714;margin-bottom: 24px;margin-bottom: 1.714285714rem;}
+
+.site-content article {padding-bottom: 24px;padding-bottom: 1.714285714rem;word-wrap: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;}
+.single-author .entry-meta .by-author {display: none;}
+*/

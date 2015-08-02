@@ -1,0 +1,75 @@
+<!--{template common/header}-->
+<!--[name]{血战天策·老一}[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div id="page" class="yz-page fb-xz-1">
+		<div id="wp" class="wp">
+
+<div class="trans-ct">
+	<div class="trans-ct-ct">
+		<!--{ad/articlelist/mbm hm/1}--><!--{ad/articlelist/mbm hm/2}-->
+		
+		<div class="fb-left">
+		<!--[diy=diyrighttop]--><div id="diyrighttop" class="area"></div><!--[/diy]-->
+		<div class="fromtips"><!--{block/234}--></div>
+		<!--[diy=diyrightbottom]--><div id="diyrightbottom" class="area"></div><!--[/diy]-->
+		<div class="fabu5j"><!--{block/235}--></div>
+		</div>
+		
+		<div class="fb-right">
+		<h1>$cat[catname] <span><!--{block/288}--></span></h1> 
+		<div id="fb-fx">
+		<div class="bdsharebuttonbox">
+		<a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></div>
+		
+		
+		<!--[diy=listcontenttop]--><div id="listcontenttop" class="area clear"></div><!--[/diy]-->
+		
+		<div class="fb-list">
+			<!--[diy=listloopbottom]--><div id="listloopbottom" class="area"></div><!--[/diy]-->	
+			<div class="fb-authors-info"><!--{block/343}--></div>
+			<div class="bm_c xld">
+			<!--{loop $list['list'] $value}-->
+				<!--{eval $highlight = article_title_style($value);}-->
+				<!--{eval $article_url = fetch_article_url($value);}-->
+				<dl class="bbda cl">
+					&raquo; <a href="$article_url" target="_blank" class="xi2" $highlight>$value[dateline] - $value[title]</a> <!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--> 
+					<!--{if $value[catname] && $cat[subs]}-->{lang category}: <label><a href="{$portalcategory[$value['catid']]['caturl']}" class="xi2">$value[catname]</a></label>&nbsp;&nbsp;<!--{/if}-->
+						<!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $value['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $value['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+						<span class="xg1">
+							<span class="pipe">|</span>
+							<label><a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$value[aid]">{lang edit}</a></label>
+							<span class="pipe">|</span>
+							<label><a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$value[aid]" id="article_delete_$value[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a></label>
+						</span>
+						<!--{/if}-->
+					<dd class="xs2 cl single">
+						<!--{if $value[pic]}--><div class="atc"><a href="$article_url" target="_blank"><img src="$value[pic]" alt="$value[title]" class="tn" /></a></div><!--{/if}-->
+						$value[summary]
+					</dd>
+				</dl>
+			<!--{/loop}-->
+			</div>
+			<!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+			
+		</div>	
+		<div class="fb-comment"><!--{block/238}-->	</div>
+		</div>
+		
+		<!--{ad/articlelist/mbm hm/3}--><!--{ad/articlelist/mbm hm/4}-->
+		<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+
+	<div class="clear"></div>
+	</div>
+</div>
+
+<div class="wp mtn">
+	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<!--{template common/footer}-->

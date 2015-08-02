@@ -1,0 +1,77 @@
+/*搜宏栏目
+* By Yuhan
+-------------------------------------------------------------- */
+.yylmacro{
+	.yylmacro-ac{
+		height:32px;line-height:32px;.x;color:@dk-blue;border:1px dashed @dk-blue;margin-bottom:20px;
+	}
+	.main{
+		.wp{
+			/*内容页*/
+			.mihong{
+				/*头部样式*/
+				.cat-nav{
+					.clearfix;margin-bottom: 20px;
+					h1{
+						width:120px;font-size: 24px;font-family: "Microsoft Yahei";.fl;
+					}
+					.cat-list{
+						margin-left:120px;.clearfix;
+						li{
+							display: block;float:left;text-align:center;
+							line-height:25px;font-size:12px; margin-right:20px;
+							a{.db; width:85px; }
+						}
+					}
+				}
+				/*列表样式*/
+				.cat-table{
+					ul{
+						li{
+							font-size:0;height:24px;width:100%;*overflow:hidden;
+							a{.db;.full;height:24px;*overflow:hidden;cursor:pointer;}
+							span{
+								display:inline-block;vertical-align:top;height:24px;line-height:24px;font-size:12px;
+								&.cat-cloudid{width:60px;text-align:center;border-radius:20px;font-weight:bold;}
+								&.cat-time{width:90px;text-align:center;}
+								&.cat-title{width:780px;.nobreak;}
+								&.cat-author {
+									text-align:center;width:180px;.nobreak;
+								}
+							}
+							
+						}
+					}
+					.list-hd{
+						li{
+							color:#999;border-bottom: 1px dotted #ccc;
+							span{
+								&.cat-cloudid{
+									background-color:#222;color:#f00;
+								}
+							}
+						}
+					}
+					.list-ct{
+						li{
+							margin:4px 0; background-color: #fff;border: 1px solid #ccc;border-radius: 20px;height:24px;line-height:24px;
+							a{
+								.db;.full;
+								span{
+									&.cat-cloudid{
+										background-color:#777;color:#fff;
+									}
+								}
+							}
+						}
+					}
+				}
+				//分页
+				.cat-pages{
+					color: #444;margin: 28px 20px 20px 20px; .x;
+					.wp-pagenavi{.dbi;}
+				}
+			}
+		}
+	}
+}

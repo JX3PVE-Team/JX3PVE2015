@@ -1,0 +1,51 @@
+<!--{template common/header}-->
+
+<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}topic/t1/style.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+
+		
+<div class="fb-qhl fb-qhl2">
+<div class="fb-qhl-main">
+	<div class="fb-qhl-sidebar">
+		<div class="fb-qhl-bt"><a href="http://www.jx3pve.com/fb/qhl"></a></div>
+		<div class="fb-qhl-bossnav">
+			<ul>
+				<li><a  href="http://www.jx3pve.com/fb/qhl/wj" title="王翦"></a></li>
+				<li><a  class="qhl-boss-2" href="http://www.jx3pve.com/fb/qhl/sql" title="石麒麟"></a></li>
+				<li><a  href="http://www.jx3pve.com/fb/qhl/tx" title="探雪"></a></li>
+				<li><a  href="http://www.jx3pve.com/fb/qhl/lhs" title="令狐伤"></a></li>
+				<li><a  href="http://www.jx3pve.com/fb/qhl/als" title="安禄山"></a></li>
+			</ul>
+		</div>
+		<div class="fb-qhl-sdother"><!--{block/729}--></div>
+		<div class="fb-qhl-sdmisc">
+		<div class="fb-qhl-fabu"><!--{block/722}--></div>
+		<div class="fb-qhl-rz"><!--{block/723}--></div>
+		</div>
+	</div>
+
+	<div class="fb-qhl-content">
+		<div class="fb-qhl-top"><!--{block/725}--></div>
+		<div class="fb-qhl-primary">
+			<div class="clear"></div>
+			<!--[diy=diypage]--><div id="diypage" class="area"></div><!--[/diy]-->
+			<div class="clear"></div>
+		</div>
+		<div class="fb-qhl-author"><!--{block/733}--></div>
+		<div class="fb-qhl-cmt">
+			<!--{if $topic['allowcomment']==1}-->
+				{eval
+					$data = &$topic;
+					$common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+					$form_url = "portal.php?mod=portalcp&ac=comment";
+					$commentlist = portaltopicgetcomment($topicid);	}
+				<!--{template portal/portal_comment}-->
+			<!--{/if}-->
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+	<script src="misc.php?mod=diyhelp&action=get&type=topic&diy=yes&topicid=$topicid&r={echo random(4)}" type="text/javascript"></script>
+</div>
+</div>
+<!--{template common/footer}-->

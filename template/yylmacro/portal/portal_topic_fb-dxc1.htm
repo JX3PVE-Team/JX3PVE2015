@@ -1,0 +1,43 @@
+<!--{template common/header}-->
+
+<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}topic/t1/style.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+
+		
+<div class="fb-dxc">
+<div class="fb-dxc-main">
+	<div class="fb-dxc-author"><!--{block/764}--></div>
+	<div class="fb-dxc-sidebar">
+		<ul>
+			<li><a class="dxc-s-1" href="http://www.jx3pve.com/fb/fxdxc/dxc1"></a></li>
+			<li><a href="http://www.jx3pve.com/fb/fxdxc/dxc2"></a></li>
+			<li><a href="http://www.jx3pve.com/fb/fxdxc/dxc3"></a></li>
+			<li><a href="http://www.jx3pve.com/fb/fxdxc/dxc4"></a></li>
+		</ul>
+		<div class="clear"></div>
+		<div class="fb-dxc-misc"><!--{block/765}--></div>
+	</div>
+
+	<div class="fb-dxc-content dxc-c-1">
+		<div class="fb-dxc-primary">
+			<div class="clear"></div>
+			<!--[diy=diypage]--><div id="diypage" class="area"></div><!--[/diy]-->
+			<div class="clear"></div>
+		</div>
+		<div class="fb-dxc-cmt">
+			<!--{if $topic['allowcomment']==1}-->
+				{eval
+					$data = &$topic;
+					$common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+					$form_url = "portal.php?mod=portalcp&ac=comment";
+					$commentlist = portaltopicgetcomment($topicid);	}
+				<!--{template portal/portal_comment}-->
+			<!--{/if}-->
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+	<script src="misc.php?mod=diyhelp&action=get&type=topic&diy=yes&topicid=$topicid&r={echo random(4)}" type="text/javascript"></script>
+</div>
+</div>
+<!--{template common/footer}-->

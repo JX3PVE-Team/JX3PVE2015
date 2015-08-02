@@ -68,7 +68,7 @@ H.ready(['jquery','fixSidebar'],function(){
         H.curpage('.u-role')
 
         //侧边栏
-        fixSidebar('.pve-sidebar',96,96,100)
+        H.fixSidebar('.pve-sidebar',96,96,100)
 
     });
 });

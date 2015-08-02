@@ -1,0 +1,32 @@
+<!--{template common/header}-->
+
+<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}topic/t1/style.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+
+<div class="bps bps-qx1">
+<div class="bps-ct">	
+<div class="bps-top top-ys"><!--{block/834}--></div>	
+<div class="bps-primary">		
+<!--[diy=diypage]--><div id="diypage" class="area"></div><!--[/diy]-->
+</div>			
+</div>
+<div class="clear"></div>			
+		<!--
+		<div class="bps-cmt">
+			<!--{if $topic['allowcomment']==1}-->
+				{eval
+					$data = &$topic;
+					$common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+					$form_url = "portal.php?mod=portalcp&ac=comment";
+					$commentlist = portaltopicgetcomment($topicid);	}
+				<!--{template portal/portal_comment}-->
+			<!--{/if}-->
+		</div>
+		-->
+<div class="clear"></div>		
+</div>	
+	
+	<script src="misc.php?mod=diyhelp&action=get&type=topic&diy=yes&topicid=$topicid&r={echo random(4)}" type="text/javascript"></script>
+
+	
+<!--{template common/footer}-->

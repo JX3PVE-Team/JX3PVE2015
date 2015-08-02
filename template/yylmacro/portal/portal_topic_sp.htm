@@ -1,0 +1,21 @@
+<!--{template common/header}-->
+<div id="page" class="sp-page">
+		<div id="sp" class="sp">
+
+<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}topic/t1/style.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+<div id="widgets"></div>
+<div class="sp">
+<!--[diy=diypage]-->
+<!--[/diy]-->
+<!--{if $topic['allowcomment']==1}-->
+	{eval
+		$data = &$topic;
+		$common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+		$form_url = "portal.php?mod=portalcp&ac=comment";
+		$commentlist = portaltopicgetcomment($topicid);	}
+	<!--{template portal/portal_comment}-->
+<!--{/if}-->
+</div>
+<script src="misc.php?mod=diyhelp&action=get&type=topic&diy=yes&topicid=$topicid&r={echo random(4)}" type="text/javascript"></script>
+<!--{template common/footer}-->

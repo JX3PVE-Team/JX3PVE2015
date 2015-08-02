@@ -1,0 +1,26 @@
+<!--{template common/header}-->
+<!--[name]{==副本栏目·子页==}[/name]-->
+
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div id="page" class="sp-page">
+<div id="sp" class="sp">
+
+<div class="sp">
+	<!--[diy=diy1]--><div id="diy1" class="area">
+	
+<div class="wp">
+<!--[diy=diycontentcomment]--><div id="diycontentcomment" class="area"></div><!--[/diy]-->
+<!--{if $article['allowcomment']==1}-->
+			<!--{eval $data = &$article}-->
+			<!--{subtemplate portal/portal_comment}-->
+		<!--{/if}-->
+</div>	
+	
+	</div><!--[/diy]-->
+</div>
+
+
+
+
+<!--{template common/footer}-->

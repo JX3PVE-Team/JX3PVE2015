@@ -1,0 +1,417 @@
+<!--{template common/header}-->
+<div class="zDPS">
+	<div class="zDPSMain">
+
+		<div class="zDPSLogo"></div>
+			
+		<div class="zDPSTab">
+			<div class="zDPSMenu">
+				<ul>
+					<li><a href="http://www.jx3pve.com/portal.php?mod=topic&topicid=59">基础属性兑换</a></li>
+					<li><a href="http://www.jx3pve.com/portal.php?mod=topic&topicid=59">目标内置属性</a></li>
+					<li><a href="http://www.jx3pve.com/portal.php?mod=topic&topicid=59">心法加成</a></li>
+					<li><a href="http://www.jx3pve.com/portal.php?mod=topic&topicid=59">增益加成</a></li>
+					<li><a href="http://www.jx3pve.com/portal.php?mod=topic&topicid=59">技能计算</a></li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+			
+			<div class="zDPSBox">
+				<div class="zDPSTab1">
+				
+					<div class="zDPSRound zdps_cc">
+						<h1>圆桌属性兑换比例</h1>
+						<ul>
+							<li>
+								<span class="zround_1">命中</span>
+								<input type="text" name="hit" />
+								<span class="zround_2">每*点命中等级等于1%命中</span>
+								<div class="clear"></div>
+							</li>
+							<li>
+								<span class="zround_1">会心</span>
+								<input type="text" name="crit" />
+								<span class="zround_2">每*点会心等级等于1%会心</span>
+								<div class="clear"></div>
+							</li>
+							<li>
+								<span class="zround_1">会效</span>
+								<input type="text" name="damage" />
+								<span class="zround_2">每*点会效等级等于1%会效</span>
+								<div class="clear"></div>
+							</li>
+							<li>
+								<span class="zround_1">无双</span>
+								<input type="text" name="penetrate" />
+								<span class="zround_2">每*点无双等级等于1%无双</span>
+								<div class="clear"></div>
+							</li>
+							<li>
+								<span class="zround_1">急速</span>
+								<input type="text" name="speed" />
+								<span class="zround_2">每*点急速等级等于1%急速</span>
+								<div class="clear"></div>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="zDPSPro zdps_cc">
+						<h1>基础属性默认加成<span>默认每1点基础属性加成</span></h1>
+						<table>
+							<tr>
+								<td></td>
+								<td>攻击</td>
+								<td>会心</td>
+								<td>会效</td>
+								<td>命中</td>
+								<td>无双</td>
+								<td>破防</td>
+								<td>急速</td>
+							</tr>
+							<tr>
+								<td>体质</td>
+								<td><input type="text" name="zDPSPro1-1" /></td>
+								<td><input type="text" name="zDPSPro1-2" /></td>
+								<td><input type="text" name="zDPSPro1-3" /></td>
+								<td><input type="text" name="zDPSPro1-4" /></td>
+								<td><input type="text" name="zDPSPro1-5" /></td>
+								<td><input type="text" name="zDPSPro1-6" /></td>
+								<td><input type="text" name="zDPSPro1-7" /></td>
+							</tr>
+							<tr>
+								<td>根骨</td>
+								<td><input type="text" name="zDPSPro2-1" /></td>
+								<td><input type="text" name="zDPSPro2-2" /></td>
+								<td><input type="text" name="zDPSPro2-3" /></td>
+								<td><input type="text" name="zDPSPro2-4" /></td>
+								<td><input type="text" name="zDPSPro2-5" /></td>
+								<td><input type="text" name="zDPSPro2-6" /></td>
+								<td><input type="text" name="zDPSPro2-7" /></td>
+							</tr>
+							<tr>
+								<td>元气</td>
+								<td><input type="text" name="zDPSPro3-1" /></td>
+								<td><input type="text" name="zDPSPro3-2" /></td>
+								<td><input type="text" name="zDPSPro3-3" /></td>
+								<td><input type="text" name="zDPSPro3-4" /></td>
+								<td><input type="text" name="zDPSPro3-5" /></td>
+								<td><input type="text" name="zDPSPro3-6" /></td>
+								<td><input type="text" name="zDPSPro3-7" /></td>
+							</tr>
+							<tr>
+								<td>力道</td>
+								<td><input type="text" name="zDPSPro4-1" /></td>
+								<td><input type="text" name="zDPSPro4-2" /></td>
+								<td><input type="text" name="zDPSPro4-3" /></td>
+								<td><input type="text" name="zDPSPro4-4" /></td>
+								<td><input type="text" name="zDPSPro4-5" /></td>
+								<td><input type="text" name="zDPSPro4-6" /></td>
+								<td><input type="text" name="zDPSPro4-7" /></td>
+							</tr>
+							<tr>
+								<td>身法</td>
+								<td><input type="text" name="zDPSPro5-1" /></td>
+								<td><input type="text" name="zDPSPro5-2" /></td>
+								<td><input type="text" name="zDPSPro5-3" /></td>
+								<td><input type="text" name="zDPSPro5-4" /></td>
+								<td><input type="text" name="zDPSPro5-5" /></td>
+								<td><input type="text" name="zDPSPro5-6" /></td>
+								<td><input type="text" name="zDPSPro5-7" /></td>
+							</tr>
+						</table>
+					</div>
+					
+				</div>
+				
+				<div class="zDPSTab2">
+					
+				</div>
+				
+				<div class="zDPSTab3">
+					<div class="zDPSHeart">
+						<table>
+							<tr>
+								<td></td>
+								<td>受加成属性</td>
+								<td>攻击加成</td>
+								<td>会心加成</td>
+								<td>会效加成</td>
+								<td>破防加成</td>
+								<td>命中加成</td>
+								<td>无双加成</td>
+								<td>急速加成</td>
+							</tr>
+							<tr>
+								<td>100通用</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>101冰心</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>102花间</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>103毒经</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>104傲血</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>105易经</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>106焚影</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>107紫霞</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>108太虚</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>109天罗</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>110惊羽</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>111藏剑</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+							<tr>
+								<td>112丐帮</td>
+								<td>
+									<form>
+										<select name="zDPSHeart">
+											<option value="gengu">根骨</option>
+											<option value="yuanqi">元气</option>
+											<option value="shenfa">身法</option>
+											<option value="lidao">力道</option>
+										</select>
+									</form>
+								</td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+								<td><input type="text" name="zDPSHeart" /></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				
+				<div class="zDPSTab4"></div>
+				
+				<div class="zDPSTab5"></div>
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+<!--{template common/footer}-->

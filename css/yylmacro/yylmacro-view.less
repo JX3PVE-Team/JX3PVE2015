@@ -1,0 +1,159 @@
+/*
+* 超级宏wp单页
+* By iRuxu
+*/
+.yylmacro{
+
+	.main .wp{.clearfix;}
+
+	//内容区
+		.primary{
+			.fl;.col2-ct;
+
+			//标题
+			.yyl-header{
+				//wrap
+				margin-bottom: 24px;position:relative;width:100%;overflow:hidden;
+				a {color:#444;}
+				//logo
+				.yyl-logo{
+					position:absolute;left:10px;top:10px;
+				}
+				//标题
+				.yyl-title {
+					font-size: 50px;padding-left:70px;font-weight: normal;
+					font-family: "Microsoft Yahei","agel","agb","helvetica neue",helvetica,arial,sans-serif;
+					color:#444;overflow:hidden;height:60px;width:100%;
+				}
+				.yyl-meta{
+					position:relative;margin-top:10px;height:28px;line-height:28px;font-size:12px;
+					span{
+						display:inline-block;height:24px;line-height:24px;background-color:#eee;color:#000;padding:0 10px;margin:0 10px;   
+						border-radius:20px;
+						&.meta-cloudid{
+							background-color:#eee;border:1px solid #ccc;height:21px;display:inline-block;line-height:24px;border-radius:20px;padding-left:0;
+							.meta-label{margin-left:0 !important;color:#ff0000;background-color:#777;color:#fff;height:22px;line-height:24px;border-radius:20px;}
+							.cloudid{font-weight:bold;color:#ff0000;height:22px;line-height:24px;margin:0;background-color:transparent;}
+						}
+					}
+					#bdshare{
+						.pa;right:20px;bottom:0px;
+					}
+				}
+			}
+
+			//内容
+			.yyl-content{
+				//wrap
+				line-height:25px;color:#555;
+				//公共
+				.dashblock{
+					color:#666;line-height:24px;background-color:#fff;border:1px dashed #ccc;padding:15px;margin-bottom:20px;border-radius:6px;
+					.yyl_tit{ 
+						overflow:hidden;border-bottom:1px dotted #ccc;
+						height:38px;line-height:38px;font-family:"Microsoft Yahei";margin-bottom:10px;
+						border-left:5px solid #ccc;color:#444;font-size:18px;font-weight:bold;
+						span{padding-left:20px;}
+						.yyl_close_js{ float:right; font-size:16px; font-weight:400;color:#999;}
+					}
+					.yyl_view{
+						font-size: 12px;margin-bottom:20px;
+						table td{border:1px solid #eee;height:25px;line-height:25px;padding:2px}
+						a{color:#006699 !important;}
+						a:hover{color:#ff0000 !important;}
+						img{max-width:790px;}
+					}
+				}
+				.entry-content{
+					font-size:12px;line-height:24px;
+
+					/*表格样式*/
+					table{
+						max-width:98% !important;table-layout:fixed; 
+						word-break:break-all;  word-wrap:break-word;
+						color: #757575;font-size: 12px;line-height: 2;background-color:#fff;
+						td {border: 1px solid #ccc;padding: 6px;}
+					}
+					.yyl-yoursac{
+						border:1px solid #ccc;padding:15px;margin-bottom:20px;background-color:#fff;border-radius:6px;
+						.yyl-editor{margin-bottom:5px;padding:5px;border-bottom:1px dotted #ccc;}
+					}
+					#yyl-content-title{
+						cursor:pointer;font-weight:bold;font-size:24px;
+						background-color:#fff;font-family:"Microsoft Yahei";
+						border:1px dashed #ccc;text-align:center;padding:15px;margin:20px 0;
+						a{display:block;color:#444;text-decoration:none;}
+						a:hover{color:#ff0000;}
+					}
+					#yyl-content-center{
+						/*代码高亮区*/
+						background-color:#edfbfe;border:1px dashed #ccc;padding:15px 0 15px 45px;margin-bottom:20px;
+						-webkit-user-select:none;-ms-user-select:none;-moz-user-select:none;
+						background: #fff ;
+						ol{
+							li{
+								word-wrap: break-word;font-size: 12px;line-height:30px;
+								padding-left: 10px;
+								font-family: Monaco,Consolas,'Lucida Console','Courier New',serif;
+								border-bottom: 1px solid #ddd;
+								//list-style-type: decimal-leading-zero;
+								&:hover {background: #eee;}
+							} 
+						}
+					}
+				}
+				.entry-misc{
+					.misc-meta{
+						border-bottom:1px dotted #ccc;
+					}
+					.misc-otherposts{
+						.acolor(#777,@pink);
+					}
+				}
+			}
+
+			//评论
+			.yyl-comment{
+				width:100%;
+				.content{
+					width:100%;
+					iframe{
+						width: @primary;
+					}
+				}
+			}
+
+		}
+	
+	//侧边栏
+		.sidebar{
+			.col2-sd;.fr;
+			.section{
+				h2{
+					.fz(18px,40px);background-color:@dk-blue;
+					border-radius:8px;.x;
+					&:hover{background-color:fade(@dk-blue,80%);}
+					a{color:#fff;.full;.db;}
+				}
+				h3{
+					border-bottom:1px dashed #ccc;
+					font-weight: bold;
+					margin:10px 0;
+					color: #555;
+					line-height: 24px;
+				}
+				ul{
+					.fz(12px,24px);
+					li{
+						padding: 0 5px;
+						&:hover{
+							background: #ddd;
+							border-radius: 4px;
+							a{color:#444;}
+						}
+					}
+				}
+			}
+		}
+
+}

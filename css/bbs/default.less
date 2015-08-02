@@ -1,0 +1,125 @@
+.bbs-container{
+
+	//background:url('http://ww1.sinaimg.cn/large/bcc700eegw1eicfycbdj6j21hc0u07qf.jpg') #f2f2f2 no-repeat center top;
+	//background: url('http://ww4.sinaimg.cn/large/bcc700eegw1eikbevbsu1j21hc0ip4cf.jpg') no-repeat center top;
+	background: url('http://ww4.sinaimg.cn/large/bcc700eegw1eunybduf0vj21hc0m8dsf.jpg') #f2f2f2 no-repeat center top;
+
+	//头部
+	.pve-header{
+		.none;
+		.tb(255,255,255,0.2);
+		border-bottom:none;
+	}
+
+	//侧边栏
+	.pve-sidebar{
+		.w(160px);
+		background-color:#fff;
+		border-radius:4px;
+		padding:20px;
+		overflow:hidden;
+		.m-ad-sidebar{
+			.w(160px);overflow:hidden;
+		}
+		&.fixSidebar{
+		}
+
+		.m-bbs-search{
+			.search(whites);
+			margin-bottom:10px;
+		}
+
+		.m-bbs-map{
+			@keyframes mapsFailShow{
+			    from{opacity:0;transform:translateX(-50%);}
+			    to{opacity:1;transform:translateX(0);}
+			}
+			.color(#555,#555,#d05);
+			.fails{
+				color:#888;
+				.pr;.pointer;
+				&:after{
+					.db;
+					content:'暂未开放';
+					.pa;.lt(70px,0);
+					.w(50px);
+					padding:2px 4px;
+					.tips(grays);
+					.none;
+				}
+				&:hover{
+					&:after{
+						.db;
+						animation:mapsFailShow 0.2s ease-in-out;
+					}
+				}
+			}
+		}
+	}
+
+	.c-flist-info{.none;}
+	.c-flist-header{
+		.h(28px);.clip;
+	}
+	
+	//列表页内容
+	.c-flist tbody{
+		.h(60px);
+
+		.status,.reply{.db;}
+
+		.status{
+			.statu-icon{.fl;}
+			.clearfix;
+
+			.counts{
+				padding:2px 5px;
+				/*background: #0084ff;
+				color: #fff;*/
+				.tips(grays);
+				.fl;margin-left:5px;
+				margin-top:3px;
+				display: block;
+				height: 20px;
+				line-height: 20px;
+				.replys{
+					color:#09f;
+				}
+				.views{
+
+				}
+			}
+
+			.avatar{
+				margin-left:5px;
+				.fl;
+				img{
+					width: 32px;
+					height: 32px;
+					border-radius: 32px;
+				}
+			}
+		}
+
+		.til{
+			margin-left:5px;
+			min-width: 600px;
+		}
+
+		.author{
+			.w(auto);
+			.clear(left);
+			.fl;.x(left);
+			.verif{
+				.none;
+			}
+		}
+
+		.reply{
+			.fr;
+			.color(#999,#999,#d05);
+		}
+		
+	}
+
+}

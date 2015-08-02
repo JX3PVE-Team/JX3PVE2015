@@ -65,7 +65,7 @@ H.ready(['jquery','dialog','fixSidebar'],function(){
 		H.curpage('.u-tool')
 
 		//侧边栏
-		fixSidebar('.pve-sidebar',96,96,100)
+		H.fixSidebar('.pve-sidebar',96,96,100)
 
 
 
