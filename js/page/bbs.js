@@ -8,7 +8,7 @@ H.ready(['jquery', 'fixSidebar','treeview'], function() {
 		H.curpage('.u-bbs')
 
 		//侧边栏
-		H.fixSidebar('.pve-sidebar', 110, 96, 100)
+		H.fixSidebar('.pve-sidebar', 110, 105, 100)
 
 	})
 })

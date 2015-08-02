@@ -1,4 +1,4 @@
-H.ready(['jquery', 'fixSidebar'], function() {
+H.ready(['jquery', 'fixSidebar','treeview'], function() {
 	jQuery(function($) {
 
 		
@@ -31,7 +31,10 @@ H.ready(['jquery', 'fixSidebar'], function() {
 		H.curpage('.u-fam')
 
 		//侧边栏
-		H.fixSidebar('.pve-sidebar', 96, 96, 100)
+		H.fixSidebar('.pve-sidebar', 96, 105, 100)
+
+		//树形菜单
+		$("#fam-map").treeview();
 
 	})
 })

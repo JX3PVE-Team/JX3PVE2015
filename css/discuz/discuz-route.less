@@ -1,19 +1,18 @@
 //面包屑
+#pt(){
+	.w(@wp);.auto(x);
+	background: none;
+	border: none;
+	padding:5px 0;
+}
 .pg_spacecp,.pg_portalcp,.pg_stat{
 	#pt{
-		.w(@wp);.auto(x);
-		background: none;
-		border: none;
-		//border-bottom: 1px dotted #ddd;
-		padding:5px 0;
+		#pt();
 	}
 }
-.pg_index,.pg_space,.pg_task,.pg_faq{
+.pg_index,.pg_space,.pg_task,.pg_faq,.pg_guide,.pg_follow,.pg_medal,.pg_magic{
 	#pt{
-		.w(@wp);.auto(x);
-		background: none;
-		border: none;
+		#pt();
 		border-bottom: 1px dotted #ddd;
-		padding:5px 0;
 	}
 }

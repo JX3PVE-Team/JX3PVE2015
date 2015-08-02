@@ -10,6 +10,7 @@ H.load([
 	{'tgbanzhu':head_conf.CDNROOT+'mod/tgbanzhu.js'},
 	{'tgpost':head_conf.CDNROOT+'mod/tgpost.js'},
 	{'header':head_conf.ROOT+'mod/header.js'},
+	{'footer':head_conf.ROOT+'mod/footer.js'},
 	{'dialog':head_conf.ROOT+'mod/dialog.js'},
 	{'postdate':head_conf.ROOT+'mod/postdate.js'},
 	{'oldfb':head_conf.ROOT+'mod/oldfb.js'},
@@ -38,6 +39,7 @@ H.ready('jquery',function(){
 			},200)
 		})
 	}
+
 
 
 

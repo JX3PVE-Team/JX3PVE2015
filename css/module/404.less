@@ -1,0 +1,93 @@
+//404跳转页
+.error-html,.error-body,.error-container,.error-main{
+	.full;
+}
+.error-container{
+	.color(#444,#7E620A,#f39);
+	background-image:url("@{url}bbs/bgx.png");
+}
+
+.error-main{
+	.x;
+	background:url("http://ww4.sinaimg.cn/large/bcc700eegw1eikbevbsu1j21hc0ip4cf.jpg") no-repeat 0 0;
+}
+
+.error-content{
+	.size(760px,380px);.ct(o,760px,380px);
+	//text-shadow:-1px -1px 0 #fff;
+	
+	//logo
+	.logo{
+		.size(168px,80px);.auto(x);
+		a{.db;.full;}
+		background:url('@{url}header/jx3pve-logo-white.png') no-repeat 0 0;
+		.indent;
+	}
+
+	//tips
+	.tips{
+		.fz(16px,36px);
+		.x;margin:0 auto;
+	}
+
+	//更多
+	.more{
+		margin:5px auto 20px auto;
+		.fz(13px);
+		a{.bold;text-decoration:underline;}
+	}
+
+	//search
+	.search{
+		.search(whites);
+		.pr;.w(480px);
+		margin:0 auto;
+		.bdcs-search-form-input{
+			width:100%;.lh(32px);
+			border-radius:4px;background-color:#fff;
+			box-shadow: 0 0 2px #c4ffab inset;
+			border: 1px solid #80c728;
+			box-sizing:border-box;
+			&:focus{
+				box-shadow: 0 0 4px #c4ffab inset;
+			}
+		}
+		.bdcs-search-form-submit{
+			.rt(10px,0);
+			padding-left:25px;
+			.w(60px);
+			background-position:0 -115px;
+			color:#777;
+		}
+	}
+
+	//版权
+	.copy{
+		.fz(12px);
+		margin-top:20px;
+		a{color:#444;text-decoration:underline;}
+	}
+
+	.mb-tips{.none;}
+
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:720px){
+    .error-content{
+    	.w(90%);
+    	.ct(o,337px,285px);.size(337px,285px);
+
+    	.tips,.more{.none;}
+    	.mb-tips{
+    		.db;.x(left);
+    		.w(220px);//.auto(x);
+    		line-height:2;
+    		margin:20px auto;
+    		a{.bold;text-decoration:underline;}
+    	}
+
+    	.search{
+			.w(90%);
+    	}
+    }
+}

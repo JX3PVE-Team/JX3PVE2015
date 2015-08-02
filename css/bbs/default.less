@@ -113,13 +113,45 @@
 			.verif{
 				.none;
 			}
+			.post-time{color:#888;}
 		}
 
 		.reply{
 			.fr;
-			.color(#999,#999,#d05);
+			//.color(#999,#999,#d05);
+			.reply-time{
+				color:#999;
+			}
 		}
 		
+	}
+
+	//发帖提示
+	.bbs-post-tips{
+		.tips(warning);
+	}
+
+
+	.pve-article{
+		.pr;
+		//帮助他人提示
+		.m-bbs-help-tips{
+			.tips(grays);
+			.pa;.rt(20px,103px);.z(2);
+			padding:3px;
+			a{
+				color:@bluex;text-decoration:underline;
+				&:hover{color:#444;}
+			}
+			i{
+				background:url('@{url}bbs/love.png') no-repeat 0 center;
+				width: 14px;
+				height: 14px;
+				display: inline-block;
+				vertical-align: -2px;
+				margin-right: 3px;
+			}
+		}
 	}
 
 }

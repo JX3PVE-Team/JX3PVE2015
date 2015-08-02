@@ -17,6 +17,7 @@
 @import url('public/iconfont.less');	//字体图标
 @import url('public/u-list.less');		//列表
 @import url('public/animation.less');	//动画
+@import url('public/function.less');	//补充函数
 
 
 /*global 全局变量
@@ -24,7 +25,6 @@
 @import url('global/var.less');			//变量
 @import url("global/common.less");		//字体
 @import url("global/layout.less");		//基本布局
-
 @import url("global/icon.less");		//图标
 
 /*skin 配色方案
@@ -42,6 +42,7 @@
 @import url("module/footer.less");		//底部
 @import url("module/dialog.less");		//对话框
 @import url("module/float.less");		//浮层
+@import url("module/404.less");			//404错误
 
 
 /*discuz 默认样式重置
@@ -75,6 +76,7 @@
 @import url("common/pve-layout.less");			//布局
 @import url("common/pve-header.less");			//头部
 @import url("common/pve-sidebar.less");			//侧边栏
+@import url("common/pve-content.less");			//内容
 
 
 /*user 用户中心
@@ -99,6 +101,8 @@
 @import url("user/vip/pay.less");				//购买
 @import url("user/vip/buy.less");				//充值
 @import url("user/vip/vip.less");				//会员
+@import url("user/sys/faq.less");				//帮助
+@import url("user/sys/feedback.less");			//反馈
 
 
 /*member 账号系统
@@ -109,6 +113,7 @@
 
 /*macro 宏栏目
 ------------------------------------------*/
+@import url("macro/macro.less");
 @import url("macro/m-macro-nav.less");
 @import url("macro/m-macro-search.less");
 @import url("macro/m-macro-primary.less");
@@ -116,8 +121,21 @@
 @import url("macro/m-macro-post.less");
 @import url("macro/m-macro-sytax.less");
 
+/*yylmacro 超级宏（wordpress）
+------------------------------------------*/
+@import url('yylmacro/yylmacro-list.less');
+@import url('yylmacro/yylmacro-view.less');
+@import url('yylmacro/yylmacro-page.less');
+@import url('yylmacro/yylmacro-admin.less');
+@import url('yylmacro/yylmacro.less');
+@import url('yylmacro/yylmacro-teach.less');
+@import url('yylmacro/yylmacro-pub.less');
+@import url('yylmacro/yylmacro-addon.less');
+
+
 /*tool 工具栏目
 ------------------------------------------*/
+@import url("tool/tool.less");
 @import url("tool/m-tool-nav.less");
 @import url("tool/m-tool-search.less");
 @import url("tool/m-tool-pub.less");
@@ -148,18 +166,6 @@
 @import url("bbs/discuz.less");					//论坛导航
 @import url("bbs/default.less");				//论坛样式
 @import url("bbs/treeview.less");				//树形菜单
-
-
-/*yylmacro 超级宏（wordpress）
-------------------------------------------*/
-@import url('yylmacro/yylmacro-list.less');
-@import url('yylmacro/yylmacro-view.less');
-@import url('yylmacro/yylmacro-page.less');
-@import url('yylmacro/yylmacro-admin.less');
-@import url('yylmacro/yylmacro.less');
-@import url('yylmacro/yylmacro-teach.less');
-@import url('yylmacro/yylmacro-pub.less');
-@import url('yylmacro/yylmacro-addon.less');
 
 .hasiconfont;
 

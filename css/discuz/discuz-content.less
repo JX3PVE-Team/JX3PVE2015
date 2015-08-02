@@ -1,12 +1,9 @@
 //每个楼层
-.c-fli{
+.c-fli,.pve-postbox #postlistreply{
 
 	//块级化
-	table,tbody,tr,td,th{.db;}
-
-	//border-bottom:1px solid #eee;
+	.table(block);
 	margin-bottom:28px;
-	//tbody,tr,td
 
 	//印戳
 	#threadstamp{
@@ -58,6 +55,7 @@
 				.m-hd{
 					.clearfix;.full(x);
 					border-bottom: 1px dashed #CDCDCD;
+					.pi{border-bottom:none;}
 				}
 
 				.m-diy{
@@ -222,7 +220,7 @@
 
 					//1.分类信息
 					.typeoption{
-
+						.table(reset);
 					}
 
 					//2.发帖内容
@@ -231,6 +229,13 @@
 
 						//默认内容
 						.t_f{
+							
+							
+							.t_table{
+								.table(reset);
+								.table(skin-default);
+							}
+
 							color:#555;.fz(13px,2);
 							embed,img{max-width:100%;}
 						
@@ -279,6 +284,7 @@
 						}
 
 						//快速回复
+						#vfastposttb{.table(reset);}
 						#vfastpostform{
 							margin-top:20px;
 							.fullvfastpost{
@@ -297,7 +303,11 @@
 
 					//4.评分
 					.psth{}
-					.rate{}
+					.rate{
+						.ratl{
+							.table(reset);
+						}
+					}
 				}
 			}
 		}

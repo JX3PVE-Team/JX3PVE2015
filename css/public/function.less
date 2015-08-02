@@ -1,0 +1,28 @@
+.table(block){
+	table,tbody,tr,td,th{.db;}
+}
+
+.table(reset){
+	display:table;
+	tbody{display:table-row-group;}
+	tr{display:table-row;}
+	th,td{display:table-cell;}
+}
+
+.table(skin-default){
+	border:none;
+	.fz(12px,2);
+	tbody{}
+	tr{}
+	th,td{
+		padding:0 5px;
+		border:1px solid #C6D6F7;
+	}
+}
+
+.mixbg(@a,@b,@c,@d){
+	background-position:@a @b;
+	&:hover{
+		background-position:@c @d;
+	}
+}
