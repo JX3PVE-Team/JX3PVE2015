@@ -20,12 +20,15 @@ H.ready(['jquery', 'fixSidebar','treeview'], function() {
 		})
 
 		//团队招募未填写处理
-		$link.on('click',function(e){
-			if(!$(this).attr('href')){
-				e.preventDefault()
-				loadDialog('string','作者暂未填写')
-			}
-		})
+		if(!$link.attr('href')){
+			$link.attr('href','http://www.jx3pve.com/raid')
+		} 
+
+		//捷报发布页面处理
+		if(getRequest('action')=='newthread' && getRequest('sortid')=='12' && getRequest('fid')=='369'){
+			$("#e_body").addClass('noedit')
+			$("#c-editor-extend").hide()
+		}
 
 		//导航栏激活
 		H.curpage('.u-fam')

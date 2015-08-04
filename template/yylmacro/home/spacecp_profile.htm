@@ -1,6 +1,4 @@
 <!--{template common/header}-->
-
-
 <!--{subtemplate home/spacecp_header}-->
 	<!--{if $validate}-->
 		<p class="tbmu mbm">{lang validator_comment}</p>
@@ -140,7 +138,15 @@
 			<!--{hook/spacecp_profile_top}-->
 			<!--{subtemplate home/spacecp_profile_nav}-->
 				<!--{if $vid}-->
-				<p class="tbms mtm {if !$showbtn}tbms_r{/if}"><!--{if $showbtn}--><!--{block/448}--><!--{else}-->{lang spacecp_profile_message2}<!--{/if}--></p>
+				<div class="c-verif-warning">
+					<p class="tbms mtm {if !$showbtn}tbms_r{/if}">
+						<!--{if $showbtn}-->
+							<!--{block/448}-->
+						<!--{else}-->
+							{lang spacecp_profile_message2}
+						<!--{/if}-->
+					</p>
+				</div>
 				<!--{/if}-->
 			<iframe id="frame_profile" name="frame_profile" style="display: none"></iframe>
 			<form action="{if $operation != 'plugin'}home.php?mod=spacecp&ac=profile&op=$operation{else}home.php?mod=spacecp&ac=plugin&op=profile&id=$_GET[id]{/if}" method="post" enctype="multipart/form-data" autocomplete="off"{if $operation != 'plugin'} target="frame_profile"{/if} onsubmit="clearErrorInfo();">
