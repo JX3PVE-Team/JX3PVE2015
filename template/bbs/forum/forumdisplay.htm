@@ -50,9 +50,6 @@
 			<!-- jx3pve:route -->
 			<!--{subtemplate jx3pve/w_route_forumdisplay}-->
 
-			<!-- jx3pve:tips -->
-			<div class="m-bbs-help-tips"><!--{block/1267}--></div>
-
 			<!-- dz:commend & diy -->
 			<!--{if $leftside}-->
 				<div id="sd_bdl" class="bdl" onmouseover="showMenu({'ctrlid':this.id, 'pos':'dz'});" style="width:{$_G['setting']['leftsidewidth']}px;margin-left:-{$_G['leftsidewidth_mwidth']}px">
@@ -410,6 +407,9 @@
 							<!--{/loop}-->
 						<!--{/if}-->
 						<!--{hook/forumdisplay_filter_extra}-->
+
+						<!-- jx3pve:tips -->
+						<div class="m-bbs-help-tips"><!--{block/1267}--></div>
 					</ul>
 					<script type="text/javascript">showTypes('thread_types');</script>
 				<!--{/if}-->

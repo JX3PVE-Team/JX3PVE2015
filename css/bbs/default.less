@@ -133,24 +133,35 @@
 
 
 	.pve-article{
-		.pr;
-		//帮助他人提示
-		.m-bbs-help-tips{
-			.tips(grays);
-			.pa;.rt(20px,103px);.z(2);
-			padding:3px;
-			a{
-				color:@bluex;text-decoration:underline;
-				&:hover{color:#444;}
+		.w-category-nav{
+			li{
+				img{.none;}
 			}
-			i{
-				background:url('@{url}bbs/love.png') no-repeat 0 center;
-				width: 14px;
-				height: 14px;
-				display: inline-block;
-				vertical-align: -2px;
-				margin-right: 3px;
+			.m-bbs-help-tips{
+				.tips(grays);
+				.pa;.rt(0,0);.z(2);
+				padding:3px;
+				color:#777;
+				a{
+					color:@bluex;text-decoration:underline;
+					&:hover{color:#444;}
+					border:none;float:none;background: none;
+					padding:0;margin:0;
+				}
+				i{
+					background:url('@{url}bbs/love.png') no-repeat 0 center;
+					width: 14px;
+					height: 14px;
+					display: inline-block;
+					vertical-align: -2px;
+					margin-right: 3px;
+				}
 			}
+		}
+		.c-flist tbody .til .sortinfo{
+			.size(32px,18px);
+			img{.y(-5px);}
+			*{padding:0 !important;margin:0 !important;}
 		}
 	}
 
