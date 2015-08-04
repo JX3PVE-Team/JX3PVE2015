@@ -1,0 +1,170 @@
+/* 群组栏目
+-------------------------------------------------------------- */
+
+	#nv_group.pg_viewthread{
+		.box{
+			padding:254px 0 10px 0;
+			background:url("http://ww2.sinaimg.cn/large/bcc700eegw1eig057upj1j21hc0fgn83.jpg") #f7f7f7 no-repeat top center;
+		}
+		#pt{
+			width:@wp;margin:0 auto 10px auto;border-bottom:1px dotted #ddd;
+		}
+		#ct{
+			background:#fff;box-shadow:0 0 4px #ddd;padding:20px;border:1px solid #ddd;
+		}
+	}
+
+	.zGroup{
+		background:url("http://ww2.sinaimg.cn/large/bcc700eegw1eig057upj1j21hc0fgn83.jpg") #f7f7f7 no-repeat top center;padding-bottom:20px;
+
+		//群组设置
+		.banner-tips{
+			b{color:@bluex;.bold;}
+		}
+		.group-img-tips{
+			color:#cc0000;
+			a{.bold;color:@bluex;}
+		}
+
+
+		//顶部
+		.zGroupTop{width:@wp;margin:0 auto;
+			//logo
+			.zBackGroup{padding-top:60px;
+				 a {display:block;width:330px;height:150px;}
+			}
+
+			.zMyGroup {
+			//快捷按钮
+				padding-top:10px;margin-left:40px;line-height:34px;
+				a {.dbi;background:url("@{url}raid/group/g_my2.png") no-repeat;
+				height:34px;width:130px;color:#ffffff;line-height:34px;text-align:center;letter-spacing:2px;margin-right:20px;}
+				a:hover{background:url("@{url}raid/group/g_my2.png") no-repeat 0 -34px;color:#ffffff;}
+			}
+		}
+
+		//内容
+		.zGroupMain{
+				width:@wp;margin:20px auto 0 auto;padding:10px 0;background-color:#fff;border-radius:8px;border:1px solid #ddd;.clip;
+				box-shadow:0 0 4px #ddd;
+
+			//面包屑
+			#pt{
+				padding-left:20px;border-bottom:1px dotted #ddd;margin-bottom:5px;
+				.acolor(#555,@bluex);
+			}
+
+			//标题头
+			.bm_h.cl{height:26px;background:@bluex;color:#fff;border-radius:18px !important;border:none;line-height:26px !important;}
+			.bml .bm_h,.bm_h.cl{padding-top:0;padding-bottom:0;margin:10px 0;}
+			.bm_h.cl h2{line-height:26px;}
+			.bm{border:none;background:none;}
+
+			//中央
+			#ct {
+				padding:0 10px;width:@wp - 20px;
+
+				//内容
+				.mn{
+					width:@wp - 220px - 20px - 40px;.fr;
+
+					//海报图
+					#gh{
+						border:none;
+						.bm_h{background-color:@bluex;}
+						img{max-width:900px;max-height:220px;_width:900px;_height:220px;}
+					}
+
+					//加入按钮
+					.ptm{
+						button{background:url("@{url}raid/group/g_join.png") no-repeat 0 0;width:144px;height:39px;line-height:39px;border:none;}
+						button:hover{background:url("@{url}raid/group/g_join.png") no-repeat 0 -39px;}
+					}
+
+					
+					//首页
+					#diycommendtop{.none;}//群组焦点
+					#g_commend{.none;}//推荐群组
+
+					//群组一览
+					.bm_c{
+						padding:0;
+						.pbn{
+							color:#666;border-bottom: 1px dotted #ddd;line-height:32px;margin-bottom:10px;
+							.xs2 a{color:@bluex;.bold;font-size:12px;}
+							.xi2 {.acolor(#777,@bluex);}
+						}
+						dd{
+							.clear;
+							a{.dbi;width:22%;height:28px;line-height:28px;.clip;.y(top);}
+							.acolor(#555,@bluex);
+						}
+						.bbda{
+							border-bottom:none;
+						}
+					}
+
+					//无海报群组
+					.xlda{
+						dd.cl{
+							line-height:28px;a{width:auto;}
+							.y{float:none;
+								a{width:auto;}
+							}
+						}
+					}
+
+
+
+					.fl .bm_h{background:none;border:none;}
+					.zgrolistop{.none;}
+					//分类页
+					.fl_row{
+						.fl_g{
+							dd{
+								height:24px;line-height:24px;
+								a{width:auto;line-height:24px;}
+							}
+						}
+					}
+
+
+				
+					.tl .bm_c,#threadlist{
+						font-family:'宋体';font-size:12px;
+						a{font-family:'宋体';font-size:12px;}
+					}
+
+				}
+
+				//侧边栏
+				.sd{
+					.fl;
+					#create_group_btn {
+						display:block;background:url("@{url}raid/group/g_add.png") no-repeat;height:42px;width:210px;
+						.none;
+						img {display:none;}
+						&:hover {background:url("@{url}raid/group/g_add.png") no-repeat 0 -42px;}
+					}
+
+					.tb_h{
+						background-color:@bluex;border-radius:28px;line-height:28px;color:#fff;border:none;
+						li{margin:0;}
+						li a{background:none;border:none;color:#fff;}
+						li:first-child{background-color:#27b6d9;border-radius:28px 0 0 28px;}
+						li.a{a{text-shadow:1px 1px 0px #0f84a1;}}
+					}
+					/*.bm_c{
+						ul{
+							li{
+								line-height:24px;height:24px;
+							}
+						}
+					}*/
+
+					.g_creatmore{.none;}
+				}
+
+			}
+	}
+}
