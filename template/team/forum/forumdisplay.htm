@@ -1,16 +1,19 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: BBS
- * HTML: template/bbs/*
+ * Project: PVE
+ * HTML: template/$pve/*
  * Style: pve/pve-*.less
  * Description: pve
  * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.8.2
+ * Update : iRuxu 2015.7.12
  -->
 
+<!-- jx3pve:code -->
+<script src="http://www.jx3pve.com/js/page/pve-raid.js"></script>
+
 <!-- jx3pve:pve -->
-<div class="pve-container bbs-container bbs-listpage">
+<div class="pve-container raid-container raid-listpage">
 
 	<!-- dz:style & js -->
 	<!--{if $_G['forum']['ismoderator']}-->
@@ -45,7 +48,7 @@
 		<!--{subtemplate forum/primary}-->
 
 		<!-- jx3pve:content -->	
-		<div class="pve-article" id="ct">
+		<div class="pve-article " id="ct">
 
 			<!-- jx3pve:route -->
 			<!--{subtemplate jx3pve/w_route_forumdisplay}-->
@@ -378,6 +381,7 @@
 						<span>发布</span>
 						<img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" />
 					</a><!--{/if}-->
+					<a class="u-btn-ask" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=2&extra=" target="_blank">提问</a>
 					<!--{hook/forumdisplay_postbutton_top}-->
 				</div>
 
@@ -407,9 +411,6 @@
 							<!--{/loop}-->
 						<!--{/if}-->
 						<!--{hook/forumdisplay_filter_extra}-->
-
-						<!-- jx3pve:tips -->
-						<div class="m-bbs-help-tips"><!--{block/1267}--></div>
 					</ul>
 					<script type="text/javascript">showTypes('thread_types');</script>
 				<!--{/if}-->
@@ -510,8 +511,7 @@
 			</div>
 			<!--{/if}-->
 
-			<div class="m-banner-bottom"><!--{ad/custom_3}--></div>
-		</div><!-- article -->
+		</div><!-- content -->
 
 		<!-- dz:发布按钮下拉扩展菜单 -->
 		<!--{if $_G['group']['allowpost'] && ($_G['group']['allowposttrade'] || $_G['group']['allowpostpoll'] || $_G['group']['allowpostreward'] || $_G['group']['allowpostactivity'] || $_G['group']['allowpostdebate'] || $_G['setting']['threadplugins'] || $_G['forum']['threadsorts'])}-->
