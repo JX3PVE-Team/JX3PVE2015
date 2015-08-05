@@ -1,0 +1,122 @@
+<ul class="video-post-type">
+    <li><a href="http://www.jx3pve.com/plugin.php?id=smart_video&mod=p">快速模式</a></li>
+    <li class="current"><a href="http://www.jx3pve.com/plugin.php?id=smart_video&mod=p&type=self">详细模式</a></li>
+</ul>
+
+<form id="newt" method="post" action="" enctype="multipart/form-data" autocomplete='off'>
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="tid" type="hidden" value="{$tid}" />
+<table width="100%">
+<tbody>
+				<tr class="hover hover">
+    				<td  ><span style="color:red;">*</span>{lang smart_video:p1}</td>
+    				<td colspan="4"><input type="text" name="subject" id='subject' class="px" style="width:360px;" value="{$thread[subject]}" >
+                   <!--  <font color="#FF0000" style="margin-left:10px">&#x4E0D;&#x60F3;&#x624B;&#x52A8;&#x6DFB;&#x52A0; <a style="color:#069" href="plugin.php?id=smart_video&mod=p&type=collect" onclick="ajaxget(this.href,'main');return false;">&#x70B9;&#x6B64;&#x53BB;&#x91C7;&#x96C6;&#xFF08;&#x6682;&#x65F6;&#x652F;&#x6301;&#x4F18;&#x9177;&#x3001;56&#x3001;&#x571F;&#x8C46;&#xFF09;</a></font> --></td>
+                </tr>
+				<tr class="hover hover">
+    				<td  ><span style="color:red;">*</span>{lang smart_video:p2}</td>
+    				<td colspan="4">
+                    <!--{if $thread[coverimg]}-->
+                    <p><img src="{$thread['coverimg']}"  width="100px" height="100px;"/></p>
+                    <input name="coverimg" type="hidden" value="{$thread['coverimg']}" />
+                    <!--{/if}-->
+                    <input type="file" name="coverimg" id="coverimg"><span class="video-img-size">建议大小258*135</span></td>
+                </tr> 
+                {if !$tid}          
+             <tr class="hover hover">
+                   <td width="80px"   colspan="1"><span style="color:red;">*</span>{lang smart_video:p11}</td>
+    				<td colspan="4" > 
+                     <p style="margin-bottom:3px;">&#x89C6;&#x9891;&#x6807;&#x9898;:<input  name="videoname[]"  class="px" style=" width:360px" value="{$thread[videoname]}" placeholder="&#x6807;&#x9898;"></p>
+                     <p style="margin-bottom:3px;">&#x89C6;&#x9891;&#x5730;&#x5740;:<input  name="videolink[]" class="px" style=" width:360px" value="{$thread[videolink]}" placeholder="&#x94FE;&#x63A5;"><!-- <span style="margin-left:3px; vertical-align:middle; height:25px;" class="smart_up_window"><a href="javascript:;"  onclick="show_smart_window('smart_upload_main','plugin.php?id=smart_video&mod=u&type=video',this);"><img src="source/plugin/smart_video/static/images/upload.png" style="vertical-align:middle;"></a></span> --></p>
+                      <p>&#x5C01;&#x9762;&#x5730;&#x5740;:<input  name="videoimg[]"  class="px" style=" width:360px" placeholder="&#x5C01;&#x9762;&#x56FE;&#x7247;&#x94FE;&#x63A5;"><span style="margin-left:3px; height:25px;" class="smart_up_window"><a class="video-upload" href="javascript:;"onclick="show_smart_window('smart_upload_main','plugin.php?id=smart_video&mod=u&type=img',this);return false;">上传文件</a></span></p>
+              
+               </td>
+                </tr>
+                {/if}
+                {loop $audio $ak $av}
+                    <tr class="hover hover">
+                   <td  ><span style="color:red;">*</span>{lang smart_video:p11}</td>
+    				<td colspan="4"><div style="float:right;"><a href="javascript:;" class="deleterow" onClick="deleterow(this)">&#x5220;&#x9664;</a></div>  <p style="margin-bottom:3px;">&#x89C6;&#x9891;&#x6807;&#x9898;:<input  name="videoname[]"  class="px" style=" width:360px" value="{$av[name]}"></p><p style="margin-bottom:3px;">&#x89C6;&#x9891;&#x5730;&#x5740;:<input  name="videolink[]" class="px" style=" width:360px" value="{$av[link]}"><!-- <span style="margin-left:3px;" class="smart_up_window"><a href="plugin.php?id=smart_video&mod=u&type=video"  onclick="show_smart_window('smart_upload_main',this.href,this);doane(event);"><img src="source/plugin/smart_video/static/images/upload.png" style="vertical-align:middle;"></a></span> --></p><p>&#x5C01;&#x9762;&#x5730;&#x5740;:<input  name="videoimg[]"  class="px" style=" width:360px" value="{$av[img]}" placeholder="&#x5C01;&#x9762;&#x56FE;&#x7247;&#x94FE;&#x63A5;"><span style="margin-left:3px;" class="smart_up_window"><a  class="video-upload" href="plugin.php?id=smart_video&mod=u&type=img"  onclick="show_smart_window('smart_upload_main',this.href,this);doane(event);">上传文件</a></span></p>
+              
+               </td>
+     
+                </tr>
+                {/loop}
+              <tr class="hover hover">
+               <td  ></td>
+    				<td colspan="4" > 
+                    <div><a href="javascript:;" onclick="addrow(this,0)" class="addtr">&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x4FE1;&#x606F;</a></div>
+               </td>
+                </tr>
+				<tr class="hover hover">
+						<td  ><span style="color:red;">*</span>{lang smart_video:p3}</td>
+    				<td colspan="4">
+						<select name="fcid" id="fcid"  onchange="ajaxget('plugin.php?id=smart_video:ajax&type=2&cup='+document.getElementById('fcid').value,'sscid')">
+							<option value=0>{lang smart_video:p8}</option>
+							<!--{loop $fclass $k $v}-->
+                            <!--{if $thread[fcid]==$v[cid]}-->
+                            <option value="{$v[cid]}" selected="selected">{$v[name]}</option>
+                            <!--{else}-->
+							<option value="{$v[cid]}">{$v[name]}</option>
+                            <!--{/if}-->
+							<!--{/loop}-->
+						</select>
+						&nbsp;&nbsp;&nbsp;
+						<span id="sscid">
+                        <!--{if !empty($sclass)}-->
+                        <select name="scid" id="scid" onchange="ajaxget('plugin.php?id=smart_video:ajax&type=3&cup='+document.getElementById('scid').value,'tscid')">
+                        <option value=0 selected="selected">{lang smart_video:p8}</option>
+                         	<!--{loop $sclass $k $v}-->
+                            <!--{if $thread[scid]==$v[cid]}-->
+                            <option value="{$v[cid]}" selected="selected">{$v[name]}</option>
+                            <!--{else}-->
+							<option value="{$v[cid]}">{$v[name]}</option>
+                            <!--{/if}-->
+							<!--{/loop}-->
+                        </select>
+                        <!--{/if}-->
+                        </span>
+                        &nbsp;&nbsp;&nbsp;
+                    <span id="tscid">
+                        <!--{if !empty($tclass)}-->
+                        <select name="tcid" id="tcid">
+                        <option value=0 selected="selected">{lang smart_video:p8}</option>
+                         	<!--{loop $tclass $k $v}-->
+                            <!--{if $thread[tcid]==$v[cid]}-->
+                            <option value="{$v[cid]}" selected="selected">{$v[name]}</option>
+                            <!--{else}-->
+							<option value="{$v[cid]}">{$v[name]}</option>
+                            <!--{/if}-->
+							<!--{/loop}-->
+                        </select>
+                        <!--{/if}-->
+                        </span>
+					</td>
+				</tr>
+	               <tr class="hover hover">
+    				<td valign="top"><span style="color:red;">*</span>&#x5185;&#x5BB9;</td>
+    				<td colspan="4">  
+                    <textarea name="editorValue" style="width:736px; height:200px; border: #999 solid 1px; margin-top:5px;">{$mes}</textarea>
+                    </td>
+                </tr>
+
+			<tr class="hover hover"><td colspan="5"><br><p class="o pns">
+	<button type="submit" name="submit" value="true" class="video-pub-btn" onclick="check_form()"><strong>{lang smart_video:p10}</strong></button>
+</p>
+              </td> </tr>                 
+            </tbody>
+  
+</table>     
+</form>
+<style>
+#smart_upload_main{
+	position:fixed;
+	display:none;
+	z-index:999;
+	background:#FFF;
+	border:#CCCCCC 1px solid;
+	}
+</style>
+<div id="smart_upload_main">
+<div align="right" style="padding-right:10px; padding-top:3px; background-color:#CCC;"><a href="http://www.smartcome.com" onclick="hide_smart_window('smart_upload_main');doane(event);">X</a></div>
+<iframe id="smart_upload_main_iframe" frameborder="no" border="0"  scrolling="no"  style="border:0; overflow:hidden"  width="360px" height="160px" src="plugin.php?id=smart_video&mod=u&type=video"></iframe></div>

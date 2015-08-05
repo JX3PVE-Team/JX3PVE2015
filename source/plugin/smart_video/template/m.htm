@@ -1,0 +1,129 @@
+{template common/header}
+<script type="text/javascript" src="source/plugin/smart_video/static/js/jquery.min.js"></script>
+
+<div class="wrap pvx">
+    <div class="main video">
+        {template common/video_header}
+        <div class="wp">
+            <div class="content">
+
+
+{if !empty($enew[0])}
+<ul class="video-cat-ul">
+
+	<h2>
+		<a href="{eval echo get_furl($fclass[0][cid])}" target="_blank">
+			<span>剧情</span>
+			<em></em>
+			<b>STORY</b>
+			<hr>
+		</a>
+	</h2>
+
+	{loop $enew[0] $ek $ev}
+	{if $ek<$e_limit}
+
+		<li>
+			<a class="v-short" href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="_blank">
+				<i><img src="{$ev[coverimg]}"></i>
+			</a>
+			<a class="v-title" href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="_blank">{eval echo cutstr($ev[subject],40,'')}</a>
+		</li>
+
+	{/if}
+	{/loop}
+
+</ul>
+{/if}
+
+{if !empty($enew[1])}
+<ul class="video-cat-ul">
+
+	<h2>
+		<a href="{eval echo get_furl($fclass[1][cid])}" target="_blank">
+			<span>音乐</span>
+			<em></em>
+			<b>Music</b>
+			<hr>
+		</a>
+	</h2>
+
+	{loop $enew[1] $ek $ev}
+	{if $ek<$e_limit}
+
+		<li>
+			<a class="v-short" href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="_blank">
+				<i><img src="{$ev[coverimg]}"></i>
+			</a>
+			<a class="v-title" href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="_blank">{eval echo cutstr($ev[subject],40,'')}</a>
+		</li>
+
+	{/if}
+	{/loop}
+
+</ul>
+{/if}
+
+{if !empty($enew[2])}
+<ul class="video-cat-ul">
+
+	<h2>
+		<a href="{eval echo get_furl($fclass[2][cid])}" target="_blank">
+			<span>官方</span>
+			<em></em>
+			<b>Official</b>
+			<hr>
+		</a>
+	</h2>
+
+	{loop $enew[2] $ek $ev}
+	{if $ek<$e_limit}
+
+		<li>
+			<a class="v-short" href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="_blank">
+				<i><img src="{$ev[coverimg]}"></i>
+			</a>
+			<a class="v-title" href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="_blank">{eval echo cutstr($ev[subject],40,'')}</a>
+		</li>
+
+	{/if}
+	{/loop}
+
+</ul>
+{/if}
+
+{if !empty($enew[3])}
+<ul class="video-cat-ul">
+
+	<h2>
+		<a href="{eval echo get_furl($fclass[3][cid])}" target="_blank">
+			<span>其他</span>
+			<em></em>
+			<b>Other</b>
+			<hr>
+		</a>
+	</h2>
+
+	{loop $enew[3] $ek $ev}
+	{if $ek<$e_limit}
+
+		<li>
+			<a class="v-short" href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="_blank">
+				<i><img src="{$ev[coverimg]}"></i>
+			</a>
+			<a class="v-title" href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="_blank">{eval echo cutstr($ev[subject],40,'')}</a>
+		</li>
+
+	{/if}
+	{/loop}
+
+</ul>
+{/if}
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="source/plugin/smart_video/static/js/smart.js?{VERHASH}"></script>
+{template common/footer}

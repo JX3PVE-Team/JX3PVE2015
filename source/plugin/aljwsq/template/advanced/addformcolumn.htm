@@ -1,0 +1,63 @@
+{template common/header_ajax}
+<h3 class="flb">
+    <em>&#28155;&#21152;&#34920;&#21333;&#23383;&#27573;</em>
+    <span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+</h3>
+
+
+<form id="addbc" method="post" enctype="multipart/form-data" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act={$_GET['act']}&fid={$_GET['fid']}&cid={$_GET['cid']}">
+    <input name="formhash" type="hidden" value="{FORMHASH}" />
+    <div class="c">
+        <table cellspacing="0" cellpadding="0" border="0">
+            <tbody> 
+			<tr>
+    <td width="100" height="30"><span style="color:red;">&nbsp;&nbsp;</span>&#25490;&#24207;&#21495;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$column['columnsort']}" name="columnsort"></td>
+</tr>
+
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#26159;&#21542;&#26174;&#31034;</td>
+    <td colspan="4">
+		<select name="displayorder">
+           <option {if 1 == $column['displayorder']}selected{/if} value="1">&#26174;&#31034;</option>
+		   <option {if 0 === $column['displayorder']}selected{/if} value="0">&#19981;&#26174;&#31034;</option>                          
+		</select>
+	</td>
+</tr>
+
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#23383;&#27573;&#21517;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$column['columnname']}" name="columnname">&nbsp;&#35831;&#22635;&#20889;&#33521;&#25991;</td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#23383;&#27573;&#26631;&#39064;</td>
+    <td colspan="4"><input type="text" style="width:350px;" name="columntitle" value="{$column['columntitle']}"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#23383;&#27573;&#31867;&#22411;</td>
+    <td colspan="4">
+        <select name="columntype">
+		{loop $columntypes $k $columntype}
+		<option {if $k == $column['columntype']}selected{/if} value="$k">$columntype</option>
+		{/loop}
+		</select>
+    </td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">&nbsp;</span>&#23383;&#27573;&#21442;&#25968;</td>
+    <td colspan="4">
+		<textarea style="width:350px;height:100px;" name="columnmparam">{$column['columnmparam']}</textarea>
+	</td>
+</tr>
+ <tr>
+    <td width="100" height="30"><span style="color:red;">&nbsp;&nbsp;</span>&#23383;&#27573;&#22791;&#27880;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$column['columncomment']}" name="columncomment"></td>
+</tr>
+            </tbody></table>
+    </div>
+    <p class="o pns">
+        <button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljwsq:add7}</strong></button>
+    </p>
+</form>
+
+{template common/footer_ajax}

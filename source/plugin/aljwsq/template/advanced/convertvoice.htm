@@ -1,0 +1,22 @@
+{template common/header_ajax}
+
+<h3 class="flb">
+    <em>&#23558;&#35813;&#35821;&#38899;&#36716;&#20026;&#20851;&#38190;&#35789;&#21709;&#24212;&#36755;&#20986;</em>
+    <span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+</h3>
+<form id="addbc" method="post" enctype="multipart/form-data" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act={$_GET['act']}&vid={$_GET['vid']}">
+    <input name="formhash" type="hidden" value="{FORMHASH}" />
+    <div class="c">
+        <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#20851;&#38190;&#35789;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="" name="mykeyword"></td>
+</tr>
+            </tbody></table>
+    </div>
+    <p class="o pns">
+        <button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljwsq:add7}</strong></button>
+    </p>
+</form>
+{template common/footer_ajax}

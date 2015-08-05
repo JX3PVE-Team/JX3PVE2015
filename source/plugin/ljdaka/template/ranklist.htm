@@ -1,0 +1,105 @@
+{template common/header}
+
+<style type="text/css">
+
+	.pn {
+  background: url("../../static/image/common/pn.png") repeat-x scroll 0 0 #E5E5E5;
+  border: 1px solid #999999;
+  box-shadow: 0 1px 0 #E5E5E5;
+  cursor: pointer;
+  height: 23px;
+  margin-right: 3px;
+  overflow: hidden;
+  padding: 0;
+  vertical-align: middle;
+}
+.pnc, a.pnc {
+  background-color: #0066CC;
+  background-position: 0 -48px;
+  border-color: #235994;
+  color: #FFFFFF !important;
+}
+</style>
+<div class="wp" id="wp"><div class="bm cl" id="pt">
+<div class="z">
+<a title="$_G[setting][bbname]" class="nvhm" href="./">$_G['setting']['bbname']</a><em>&rsaquo;</em>
+<a href="plugin.php?id=ljdaka:ranklist">{lang ljdaka:daka1}</a>
+</div>
+</div>
+<div class="ct2 wp cl" id="ct">
+<div class="mn cl">
+<div class="bm">
+<div class="tb tb_h cl">
+<ul>
+<li class="a" style="padding-right:5px">
+<a href="plugin.php?id=ljdaka:ranklist">{lang ljdaka:daka11}</a></li>
+<li >
+<a class="pn pnc vm" style="height:28px;line-height: 28px;" href="#" onclick='showWindow("ljdaka","plugin.php?id=ljdaka:daka&action=msg&formhash={FORMHASH}");'>{lang ljdaka:daka18}</a></li>
+</ul>
+</div>
+<div style="margin:10px 0 0 0;" class="datalist">
+<div class="notice" style="border:1px dashed #f60; background-color:#FFC">$tips</div>
+<table width="100%" bordercolor="#cccccc" border="1">
+<tbody>
+
+<tr bgcolor="#F2F2F2" align="center">
+<td width="10%">{lang ljdaka:daka12}</td>
+<td width="20%">{lang ljdaka:daka13}</td>
+<td width="15%">{lang ljdaka:daka19}</td>
+<td width="15%">{lang ljdaka:daka14}</td>
+<td width="15%">{lang ljdaka:daka15}</td>
+<td width="15%">{lang ljdaka:daka20}</td>
+<td width="10%">{lang ljdaka:daka21}</td>
+</tr>
+<!--{eval $sign=(($currpage-1)*$perpage)+1;}-->
+<!--{loop $query $key=>$rank}-->
+<tr align="center">
+<td height="35"> $sign</td>
+<td ><a href="home.php?mod=space&uid={$rank['uid']}">
+$rank['username']</a></em></div></td>
+<td>$rank['day']</td>
+<td>$rank['allday']</td>
+<td>$rank['fen']</td>
+<td>$rank['money']</td>
+<!--{eval $today=date('Y-m-d',$rank['timestamp']);}-->
+<!--{eval $todays=date('Y-m-d',$_G['timestamp']);}-->
+<td><!--{if $today==$todays}--><font color="green">{lang ljdaka:daka22}</font><!--{else}--><a href="#" onclick='showWindow("ljdaka","plugin.php?id=ljdaka:daka&action=msg&formhash={FORMHASH}");'><font color="#CCCCCC">{lang ljdaka:daka23}</font></a><!--{/if}--></td>
+</tr>
+<!--{eval $sign++;}-->
+<!--{/loop}-->
+</tbody></table>
+
+<div style="clear:both">$paging</div>
+<div style="margin-top:30px;"></div>
+                
+</div>
+</div>
+</div>
+<div class="sd">
+<div class="bm">
+<div class="bm_h">
+<h2>{lang ljdaka:daka16}</h2>
+</div>
+<div class="bm_c">
+$gg</div>
+</div>
+<div class="bm">
+<div class="bm_h">
+<h2>{lang ljdaka:daka17}</h2>
+</div>
+<div class="bm_c">
+<div class="avt y">{eval echo avatar($_G['uid'],'small')}</div>
+<p><em>{lang ljdaka:daka24}</em><span class="lt"><b>{$ranklist_br[$uid]['rank_br']}</b></span></p>
+<p><em>{lang ljdaka:daka25}</em><span class="lt"><b>{$ranklist_br[$uid]['day']}</b></span></p>
+<p><em>{lang ljdaka:daka26}</em><span class="lt"><b>{$ranklist_br[$uid]['alldays']}</b></span></p>
+<p><em>{lang ljdaka:daka27}</em><span class="lt"><b>{$ranklist_br[$uid]['money']}</b></span></p>
+<p><em>{lang ljdaka:daka28}</em><span class="lt"><b>{$ranklist_br[$uid]['jljifen2']}</b></span></p>
+<p><em>{lang ljdaka:daka29}</em><span class="lt"><font color="red"><b><!--{if $config[zhouqi]}-->{$config[zhouqi]}{lang ljdaka:daka30}<!--{else}-->{lang ljdaka:daka31}<!--{/if}--></b></font></span></p>
+</div>
+</div>
+        <div class="bm">
+$banquan
+</div>
+</div>
+</div>	</div>
+{template common/footer}

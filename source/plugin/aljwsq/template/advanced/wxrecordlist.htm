@@ -1,0 +1,24 @@
+{template common/header_ajax}
+<script src="static/js/seditor.js" type="text/javascript" reload="1"></script>
+<h3 class="flb">
+	<em>&#20108;&#32500;&#30721;&#25195;&#25551;&#35760;&#24405;</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('wxrecordlist');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="bid" type="hidden" value="{$_GET['bid']}" />
+		<div class="c" style="width:600px;">
+        
+        
+        	<table cellspacing="0" cellpadding="0" class="dt">
+<tbody><tr>
+<th>&#22330;&#26223;&#20540;&#73;&#68;</th><th>OPENID</th><th>&#25195;&#25551;&#26102;&#38388;</th>
+</tr>
+{loop $recordlist $c}
+<tr class="header"><td>{$c['scene_id']}</td><td>{$c['openid']}</td><td>{eval echo dgmdate($c['dateline']);}</td></tr>
+{/loop}
+<tr><td colspan="6">$paging</td></tr>
+</tbody></table>
+	
+</div>
+{template common/footer_ajax}

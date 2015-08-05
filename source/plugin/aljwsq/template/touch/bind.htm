@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta content="text/html; charset=gbk" http-equiv="Content-Type">
+<meta http-equiv="pragma" content="no-cache">  
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta content="on" http-eqiv="cleartype"> 
+<meta content="320" name="MobileOptimized">
+<title>{lang aljwsq:bind1}</title>
+<style>
+a { text-decoration: none;}
+body, html { padding:0px; margin:0px; color:#555; font:14px normal 'Helvetica Neue',Helvetica,sans-serif;}
+ul, li, h3, p { padding: 0; margin: 0; list-style: none;}
+.z { float: left;}
+.main { width: 100%; margin: 0 auto 20px; padding: 0 0 25px; background: #FFF; box-shadow: 0 0 10px 0 #DDD;}
+.main .body { padding: 0 10px;}
+.main .nav { overflow: hidden; background: url(source/plugin/aljwsq/images/header_bg.jpg); height: 32px; line-height: 32px; text-align:center; font-size:19px; padding:8px 10px 8px 0; margin-bottom: 10px;}
+input[type="text"], input[type="password"] { border-radius: 4px 4px 4px 4px; color: #555; display: inline-block; height: 20px; line-height: 20px; margin-bottom: 20px; padding: 4px 6px; vertical-align: middle; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; background-color: #FFFFFF; border: 1px solid; border-color: #DBDBDB #EAEAEA #EAEAEA #DBDBDB; font-size: 16px; height: 30px; margin-bottom: 16px; width: 95%;}
+input[type="text"]:focus, input[type="password"]:focus { border-color: #81A74C; outline: 0; outline: thin dotted \9; /* IE6-9 */-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #92C65F; -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #92C65F; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #92C65F; }
+input[type="submit"], .reg { width: 100%; height: 46px; line-height: 46px; margin: 0 auto; background: url(source/plugin/aljwsq/images/titlebg.png) repeat-x; border: 0; border-radius: 4px; color: #FFF; font-size: 18px; text-align: center;}
+.reg { background-position: 0 -50px; overflow: hidden;}
+.reg a { display: block; color: #FFF;}
+h3 { font-size: 18px; padding: 10px 0 5px;}
+p { font-size: 12px; color: #999; padding: 5px 0;}
+.haveid { padding-top: 30px;}
+</style>
+</head>
+<body>
+<div class="main">
+<div class="nav">
+    	<a class="z" onclick="history.go(-1)" href="javascript:;"><img src="source/plugin/aljwsq/images/icon_back.png"></a>
+{lang aljwsq:bind2}
+</div>
+<div class="body">
+<h3 class="haveid">{lang aljwsq:bind3}</h3>
+<p>{lang aljwsq:bind4}</p>
+<form method="post" action="plugin.php?id=aljwsq:bind&act=bind">
+<ul>
+<li><input type="text" placeholder="{lang aljwsq:bind5}" value="{$_GET['nickname']}" name="username"></li>
+<li><input type="password" placeholder="{lang aljwsq:bind6}" name="password"></li>
+<li><input type="hidden" name="openid" value="{$_GET['openid']}"></li>
+<li><input type="hidden" name="nickname" value="{$_GET['nickname']}"></li>
+<li><input type="hidden" value="{FORMHASH}" name="formhash"></li>
+<li><input type="hidden" id="latitude" name="latitude"></li>
+<li><input type="hidden" id="longitude" name="longitude"></li>
+<li><input type="submit" value="{lang aljwsq:bind7}" name="loginsubmit"></li>
+</ul>
+</form>
+<h3>{lang aljwsq:bind8}</h3>
+<p>{lang aljwsq:bind9}</p>
+<div class="reg"><a href="member.php?mod=register">{lang aljwsq:bind10}</a></div>
+</div>
+</div>
+    <script>
+function getLocation() {
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+x.innerHTML="Geolocation is not supported by this browser.";
+}
+}
+function showPosition(position) {
+document.getElementById('latitude').value = position.coords.latitude;
+document.getElementById('longitude').value = position.coords.longitude;
+}
+getLocation();
+</script>
+</body></html>
+<!--{eval updatesession();}-->
+<!--{if defined('IN_MOBILE')}-->
+	<!--{eval output();}-->
+<!--{else}-->
+	<!--{eval output_preview();}-->
+<!--{/if}-->

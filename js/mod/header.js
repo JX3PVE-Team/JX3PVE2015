@@ -10,11 +10,10 @@ H.ready(['jquery'], function(){
 		})
 		H.fadeshow('#c-header-username','#c-header-os')
 
-		//用户组判断
+		//vip图标
 		var $group = $("#c-header-usergroup"),
-			group = $("#c-header-usergroup").text()
+		group = $("#c-header-usergroup").text()
 		$group.text().indexOf('VIP')!=-1 ?	$group.addClass('vip') : $group.removeClass('vip')
-		if(group.indexOf('管理员')!=1 || group.indexOf('版主')!=1 || group.indexOf('编辑')!=1) $('html').addClass('adminHTML')
 
 		//签到
 		var $qiandao_trigger = $(".user-qiandao")

@@ -1,0 +1,17 @@
+{template aljwsq:adminadvancednav}
+<table class="tb tb2 nobdb">
+    <tbody>
+        <tr>
+            <th class="partition" colspan="15">&#28040;&#24687;&#32479;&#35745;</th></tr>
+        <tr class="header">
+			<th>&#20851;&#38190;&#35789;</th>
+			<th>&#32479;&#35745;&#25968;&#37327;</th>
+        </tr>
+		{loop $recordlist $record}
+            <tr>
+            <td>{$record['keyword']}</td>
+			<td>{$record['num']}</td>
+            </tr>
+        {/loop}         
+        <tr><td colspan="10">{$paging}</td></tr>
+    </tbody></table>

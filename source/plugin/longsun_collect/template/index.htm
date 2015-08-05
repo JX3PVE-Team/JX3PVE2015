@@ -1,0 +1,36 @@
+<!--{block return}-->
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}index.css" />
+<script language="javascript" src="{JS_PATH}jquery.min.js"></script>
+<script language="javascript">
+var lang = {s_url_text:'{lang longsun_collect:s_url_text}',nourl:'{lang longsun_collect:nourl}',collect_sucsses:'{lang longsun_collect:collect_sucsses}'};
+var positionkey = $positionkey;
+</script>
+<script language="javascript" src="{JS_PATH}index.js"></script>
+<!--{if $positionkey == 4}-->
+<script language="javascript">
+	var allowbbcode = allowimgcode = 1;
+	var allowhtml = forumallowhtml = allowsmilies = 0;
+</script>
+<script type="text/javascript" src="{$_G[setting][jspath]}bbcode.js?{VERHASH}"></script>
+<!--{/if}-->
+<div class="pbt cl">
+    <div class="sppoll">
+        <div class="gather_addr"><img style="vertical-align:top; margin-right:4px;" src="{CSS_PATH}/ico.png" /><input type="text" name="s_url" id="s_url" class="px" value="快速转载请在此填写转载的网址" size="80" /></div>
+        <div class="gather_select">
+              <div class="ftid">
+                  <select name="gather_type" id="gather_type" width="40">
+                      <option value="1" selected="selected">{lang longsun_collect:article}</option>
+                      <option value="2">Images Dowload Urls</option>
+                      <option value="3">flv/mpg/mod/rm/mp3</option>
+					  <option value="4">Array Data</option>
+                      <option value="5">JSON Data</option>
+					  <option value="6">XML Data</option>
+                  </select>
+              </div>
+        </div>
+        <button type="button" name="longusn_button" id="longusn_button" class="pn vm" style="vertical-align:top;"><em>{lang longsun_collect:collect}</em></button>
+        <span id="longsun_loading"></span>
+    </div>
+    <div class="mtn"></div>
+</div>
+<!--{/block}-->

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="{CHARSET}">
+	<style type='text/css'>
+		html{background:url(source/plugin/aljwsq/images/bg.png) repeat;}
+		#aljwsq{ background:url(bg.png) repeat; color:#cccccc;font-family: Microsoft YaHei,Helvitica,Verdana,Tohoma,Arial,san-serif;font-size: 15px;line-height: 1.5em;}
+		#aljwsq .container{max-width: 640px;outline: none;font-size: 100%;overflow: hidden;}
+		#aljwsq .body{ width:300px; margin:0 auto; background:none}
+		#aljwsq h1{ text-align:center; font-size:26px;color:#f5f5f5;font-weight:normal;text-shadow:0 1px 3px #111111; margin:35px auto 30px;}
+		#aljwsq .wsqcode img{ width:300px; height:300px; border-radius:10px; display:block; margin:0 auto 30px;box-shadow:0 1px 3px #111111;}
+		#aljwsq .wsq_tips{ border-radius:23px; height:45x; line-height:45px; margin:20px 25px; box-shadow:0 1px 2px #333 inset; text-align:center; background-color:RGBA(0,0,0,.1); font-size:14px;}
+		#aljwsq .desc{ margin:0 10px; padding-bottom:15px; border-bottom:1px dashed #333;}
+		#aljwsq .copyright{ font-size:12px; color:#999999; text-align:center; line-height:50px; border-top:1px dashed #666666; margin:0 10px;}
+	</style>
+	<title>{$config['introtitle']}</title>
+    <meta content="text/html; charset={CHARSET}" http-equiv="Content-Type">
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>	
+<body id="aljwsq">
+	<div class="container body">
+    	<h1>{$config['h1']}</h1>
+        <div class="wsqcode">
+        	<img src="$config['pic']"/>
+        </div>
+        <div class="wsq_tips">{$config['wsq_tips']}</div>
+        <div class="desc">
+        	{$config['gongneng']}        </div>
+        <p class="copyright">{$config['banquan']}</p>
+    </div>
+	
+</body>
+</html>

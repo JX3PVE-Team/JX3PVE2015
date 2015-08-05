@@ -1,0 +1,44 @@
+{template common/header}
+
+<div class="wrap pvx">
+    <div class="main video">
+        {template common/video_header}
+        <div class="wp">
+            <div class="content">
+
+<div id="pt" class="bm cl">
+    <div class="z">
+        <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&rsaquo;&rsaquo;</em><a>PVX专栏</a><em>&rsaquo;&rsaquo;</em><a href="plugin.php?id=smart_video">{$smart['title']}</a>
+    </div>
+    <div class="video-search">
+        {template smart_video:search}
+    </div>
+</div>
+
+<ul class="video-cat-ul">
+
+    {loop $posts $pk $post}
+        <li>
+            <a class="v-short" href="{eval echo get_turl($post[tid])}" target="_blank" title="{$post[subject]}">
+                <i><img src="{$post[coverimg]}" alt="{$post[subject]}"></i>
+            </a>
+            <a class="v-title" href="{eval echo get_turl($post[tid])}" target="_blank" title="{$post[subject]}">
+                {eval echo str_replace($key,'<font color="#FF0000"><strong>'.$key.'</strong></font>',cutstr($post[subject],32,''))}
+            </a>
+            <em class="v-rating">评分:{eval $grade=explode('.',$post[grade])}{$grade[0]}.{$grade[1]}</em>
+            <em class="v-views">观看:{$post[play]}</em>
+        </li>
+    {/loop}  
+
+</ul>
+
+<div class="video-pages">
+    {$multi}
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{template common/footer}

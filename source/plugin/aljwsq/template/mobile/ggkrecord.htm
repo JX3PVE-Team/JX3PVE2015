@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta content="text/html; charset=gbk" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta content="telephone=no" name="format-detection">
+        <meta content="{lang aljwsq:ggk1}" name="description">
+        <title>{lang aljwsq:ggk1}</title>
+        <script src="source/plugin/aljwsq/js/jquery-1.9.1.js" type="text/javascript"></script>
+        <link href="source/plugin/aljwsq/css/aljwsq.css" type="text/css" rel="stylesheet">
+        <link href="source/plugin/aljwsq/css/bt.css" type="text/css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                background: url(source/plugin/aljwsq/images/activity-scratch-card-bg.jpg) #944f20;
+                overflow-x: hidden;
+            }
+            .m_ylzjxx,.m_yljpsm{
+                background-color:#FFF;
+            }
+        </style>
+    </head>
+    <body>
+        <br>
+        <div style="margin-right:30px;text-align:right;">
+            <input type="button" style="color:#000000; background-color:  #FFF ;width: 35%; font-size: larger;line-height: 30px; border:1px #5F88B7 solid; border-radius:4px;" onclick="location.href = 'plugin.php?id=aljwsq:ggk'" value="{lang aljwsq:ggk27}">
+        </div>
+        <br>
+        <div class="m_ylzjxx">
+            <table class="table table-bordered">
+                <tbody>
+                    {if empty($recordlist)}
+                    <tr><td>{lang aljwsq:ggk2}</td></tr>
+                    {else}
+                    <tr><th>{lang aljwsq:ggk3}</th><th>{lang aljwsq:ggk4}</th><th>{lang aljwsq:ggk5}</th><th>{lang aljwsq:ggk6}</th><th>{lang aljwsq:ggk7}</th></tr>
+                    {loop $recordlist $record}
+                    <tr>
+                        <td>{$record['uid']}</td>
+                        <td>{$record['username']}</td>
+                        <td>{eval echo dgmdate($record['dateline'])}</td>
+                        <td>{$record['reward']}</td>
+                        <td>{$record['prizename']}</td>
+                    </tr>
+                    {/loop}
+                    {/if}
+                </tbody>
+            </table>
+        </div>
+
+    </body></html>

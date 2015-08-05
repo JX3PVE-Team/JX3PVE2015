@@ -1,0 +1,90 @@
+<script type="text/javascript" src="source/plugin/smart_video/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="source/plugin/smart_video/static/js/swfupload.js"></script>
+<script type="text/javascript" src="source/plugin/smart_video/static/js/swfupload.speed.js"></script>
+<script type="text/javascript" src="source/plugin/smart_video/static/js/handlers.js"></script>
+<script type="text/javascript">
+		var swfu;var interval;
+		window.onload = function() {
+			var settings = {
+				file_post_name:'file',
+				flash_url : "{$_G['siteurl']}source/plugin/smart_video/static/swf/swfupload.swf",
+				upload_url: "{$upurl}",
+				post_params:{'usubmit':'1','key':'{$object}','token':'{$token}'},
+				file_size_limit :"{if $smart['oss']}1024MB{else}{$max_size}{/if}",
+				file_types : "{if $_GET['type']=='video'}*.mp4;*.flv;*.m3u8;*.webm;*.ogg;*.theora;*.f4v;{else}*.jpg;*.jpeg;*.gif;*.png;{/if}",
+				file_types_description :"{if $_GET['type']!='img'}Media Files{else}Web Image Files{/if}",
+				file_upload_limit :0,
+				file_queue_limit :0,
+
+				debug: false,
+
+				// Button settings
+				button_image_url: "{$_G['siteurl']}source/plugin/smart_video/static/images/button.png",
+				button_width: "102",
+				button_height: "25",
+				button_placeholder_id: "smart_upload_button",
+				
+				moving_average_history_size: 40,
+				
+				// The event handler functions are defined in handlers.js
+				file_queued_handler : fileQueued,
+				file_dialog_complete_handler: fileDialogComplete,
+				file_queue_error_handler:function(file,code, message ){
+					alert("Eorror Code:"+code+":"+message)
+					},
+				upload_start_handler : function(){
+					var tm=0;
+					jQuery("table").show();
+					jQuery("#samrt_ext").html(tm+"s"+"&#27491;&#22312;&#36716;&#23384;&#20013;......");
+					interval=setInterval(function(){tm++;jQuery("#samrt_ext").html(tm+"s"+",&#27491;&#22312;&#36716;&#23384;&#20013;......");
+					},1000)
+					//jQuery("#samrt_ext").hide();
+					},
+				upload_progress_handler : function(file, cb, tb){
+					precent=(100*cb/tb);
+					precent=precent.toFixed(0)+"%";
+					jQuery("#smart_current_percent").text(precent)
+					jQuery("#smart_percent").width(precent)
+					},//uploadProgress,
+				upload_success_handler : function(file,data){
+				window.clearInterval(interval);
+				jQuery("#smart_mark",parent.document.body).val({if $smart['oss']}"{$robject}"{else}data{/if});
+				jQuery("#smart_upload_main",parent.document.body).hide(500);
+					}
+				//upload_complete_handler : uploadComplete
+			};
+
+			swfu = new SWFUpload(settings);
+	     };
+	</script>
+   
+    <div>
+   <div style="height:25px; width:350px;">
+   <div style="width:350px;" align="center"><span id="smart_upload_button"></span></div></div>
+</div>
+   <table style="padding-top:5px; display:none; overflow:hidden;" width="350px;">
+   <tr><td width="300px" height="18px;">
+   <div id="smart_percent_main" style="width:100%;border:1px #000099 solid; height:18px;"><div style="background:#000; width:0%; height:18px;" id="smart_percent" ></div></div></td>
+   <td>   <div  style="width:45px;" id="smart_current_percent"></div></td></tr>
+   <tr><td colspan="2" align="center" height="40px"><div  style="height:40px; width:40px;background: url(source/plugin/smart_video/static/images/load.gif) -81px -82px no-repeat;"></div></td></tr>
+   </table>
+<div align="center" style="padding:5px" id="samrt_ext">
+<div><font color="#0066CC" style="padding-bottom:3px; font-size:13px;">&#19978;&#20256;&#25991;&#20214;&#22823;&#23567;&#38480;&#21046;&#20026;{if $smart['oss']}1024MB{else}{$max_size}{/if}</font></div>
+<font color="#FF0000"  style="font-size:12px;">
+{if $_GET[type]=='video'}
+&#25903;&#25345; mp4 flv m3u8 webm ogg theora,f4v&#31561;&#35270;&#39057;&#26684;&#24335;
+{elseif $_GET[type]=='mp3'}
+&#25903;&#25345;
+Firefox (OSX, Win): WEBMA, OGA
+Safari (OSX, Win): MP3, M4A
+Mobile Safari iOS4 (iPad, iPhone, iPod): MP3, M4A
+Opera (OSX, Win): WEBMA, OGA
+Chrome (OSX, Win): WEBMA, OGA, MP3, M4A
+IE9 (Win): MP3, M4A 
+&#38899;&#39057;&#26684;&#24335;
+{else}
+&#25903;&#25345; png jpg gif jpeg &#31561;&#22270;&#29255;&#26684;&#24335;
+{/if}
+<br>
+</font></div>
+</div>

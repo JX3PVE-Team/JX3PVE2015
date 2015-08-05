@@ -1,0 +1,18 @@
+1{template common/header_ajax}
+<h3 class="flb">
+	<em>{$config['invitetitle']}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+	
+</h3>
+		<div class="c">
+        	<table cellspacing="0" cellpadding="0" border="0">
+  				<tbody>
+				<tr>
+    				<td><img width="300" src="{$config['followimg']}"></td>
+                </tr>
+            </tbody></table>
+</div>
+<p class="o pns">
+	 {$config['invitedesc']} 
+</p>
+{template common/footer_ajax}

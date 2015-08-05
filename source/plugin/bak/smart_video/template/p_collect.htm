@@ -1,0 +1,69 @@
+<form id="newt" method="post" action="plugin.php?id=smart_video&mod=p&type=collect" autocomplete='off'>
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<table width="100%" style="margin-top:20px; margin-bottom:20px;">
+<tbody>
+   <tr class="hover hover" align="center"  style=" height:60px;">
+                <th colspan="5">  <font color="#FF0000">&#25903;&#25345;&#20248;&#37239;&#12289;&#53;&#54;&#12289;&#22303;&#35910;&#30340;&#21333;&#20010;&#35270;&#39057;&#21644;&#19987;&#36753;&#30340;&#37319;&#38598;&#32;&#35831;&#30452;&#25509;&#36755;&#20837;&#35270;&#39057;&#39029;&#25110;&#19987;&#36753;&#39029;&#117;&#114;&#108;</font></th>
+				</tr>
+				<tr class="hover hover">
+    				<td width="80" height="30"><span style="color:red;">*</span>&#x91C7;&#x96C6;&#x5730;&#x5740;</td>
+    				<td colspan="4"><input type="text" name="url" id='url' class="px" style="width:360px"placeholder="{lang smart_video:p14}">
+                   {if $smart['upload']}
+                    <font color="#FF0000" style="margin-left:10px">&#x4E0D;&#x60F3;&#x91C7;&#x96C6;&#xFF1F;<a style="color:#069" href="plugin.php?id=smart_video&mod=p&type=self">&#x70B9;&#x6B64;&#x53BB;&#x624B;&#x52A8;&#x6DFB;&#x52A0;</a></font>
+                    {/if}
+                    </td>
+                </tr>
+                <tr class="hover hover">
+						<td width="80" height="30"><span style="color:red;">*</span>{lang smart_video:p3}</td>
+    				<td colspan="4">
+						<select name="fcid" id="fcid"  onchange="ajaxget('plugin.php?id=smart_video:ajax&type=2&cup='+document.getElementById('fcid').value,'sscid')">
+							<option value=0>{lang smart_video:p8}</option>
+							<!--{loop $fclass $k $v}-->
+                            <!--{if $thread[fcid]==$v[cid]}-->
+                            <option value="{$v[cid]}" selected="selected">{$v[name]}</option>
+                            <!--{else}-->
+							<option value="{$v[cid]}">{$v[name]}</option>
+                            <!--{/if}-->
+							<!--{/loop}-->
+						</select>
+						&nbsp;&nbsp;&nbsp;
+						<span id="sscid">
+                        <!--{if !empty($sclass)}-->
+                        <select name="scid" id="scid" onchange="ajaxget('plugin.php?id=smart_video:ajax&type=3&cup='+document.getElementById('scid').value,'tscid')">
+                        <option value=0 selected="selected">{lang smart_video:p8}</option>
+                         	<!--{loop $sclass $k $v}-->
+                            <!--{if $thread[scid]==$v[cid]}-->
+                            <option value="{$v[cid]}" selected="selected">{$v[name]}</option>
+                            <!--{else}-->
+							<option value="{$v[cid]}">{$v[name]}</option>
+                            <!--{/if}-->
+							<!--{/loop}-->
+                        </select>
+                        <!--{/if}-->
+                        </span>
+                        &nbsp;&nbsp;&nbsp;
+                    <span id="tscid">
+                        <!--{if !empty($tclass)}-->
+                        <select name="tcid" id="tcid">
+                        <option value=0 selected="selected">{lang smart_video:p8}</option>
+                         	<!--{loop $tclass $k $v}-->
+                            <!--{if $thread[tcid]==$v[cid]}-->
+                            <option value="{$v[cid]}" selected="selected">{$v[name]}</option>
+                            <!--{else}-->
+							<option value="{$v[cid]}">{$v[name]}</option>
+                            <!--{/if}-->
+							<!--{/loop}-->
+                        </select>
+                        <!--{/if}-->
+                        </span>
+					</td>
+                    		</tr>
+                <tr class="hover hover">
+                <td colspan="5" style="padding-left:100px; margin-top:20px">&nbsp;</td>
+				</tr>
+                <tr class="hover hover">
+                <td colspan="5" style="padding-left:100px; margin-top:20px"><button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang smart_video:p10}</strong></button></td>
+                </tr>
+ </tbody>
+ </table>               
+</form>

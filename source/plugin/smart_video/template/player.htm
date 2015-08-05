@@ -1,0 +1,32 @@
+<script type="text/javascript" src="source/plugin/smart_video/static/jwplayer/jwplayer.js"></script>
+{if $num==1&& $ext!='swf'}
+<div id="video"></div>
+<script type="text/javascript">
+    jwplayer("video").setup({
+        file: "{$first_url}",
+        image: "{eval echo get_smart_url($video[0][img],0,0,1)}",
+		width:'100%',
+		height:'100%',
+		flashplayer:'source/plugin/smart_video/static/jwplayer/jwplayer.flash.swf'
+    });
+</script>
+{elseif $num==1&& $ext=='swf'}
+<div id="swfplayer" style="z-index:1;">
+  {eval echo get_smart_player($first_url)}
+</div>
+{else}
+<div id="smart_video">
+{if $ext=='swf'}
+{eval echo get_smart_player($first_url)}
+{else}
+<script type="text/javascript">
+    jwplayer("smart_video").setup({
+        file: "{$first_url}",
+        image: "{eval echo get_smart_url($video[0][img],0,0,1)}",
+		width:'100%',
+		height:'100%',
+    });
+</script>
+{/if}
+</div>
+{/if}

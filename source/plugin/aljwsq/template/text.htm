@@ -1,0 +1,242 @@
+{template common/header}
+{if $_GET['gettype']=='text'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text1}</td>
+    <td colspan="4"><textarea name="description" style="width:350px;height:100px;">{$reply['description']}</textarea></td>
+</tr>
+{elseif $_GET['gettype']=='url'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text2}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['description']}" name="description">&nbsp;{lang aljwsq:text3}</td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text4}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['title']}" name="title"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text5}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['url']}" name="url"></td>
+</tr>
+{elseif $_GET['gettype']=='singlenews'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text6}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['title']}" name="title"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text7}</td>
+    <td colspan="4"><textarea name="description" style="width:350px;height:100px;">{$reply['description']}</textarea></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text8}</td>
+    <td colspan="4">
+        <input type="file" style="width:350px;" class="px"  name="picurl">&nbsp;&nbsp;{lang aljwsq:text9}
+        
+    </td>
+</tr>
+{if $reply['picurl']}<tr><td></td><td><img src="{$reply['picurl']}" width="60" /></td></tr>{/if}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text10}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['url']}" name="url"></td>
+</tr>
+{elseif $_GET['gettype']=='multinews'}
+ <tr>
+                    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text11}</td>
+                    <td colspan="4">
+                        <select style="width:120px;" id="upid" name="upid">
+                            <option value="">{lang aljwsq:text12}</option>
+                            {loop $alist $key $a}
+                            <option value="$a['id']" {if $a['id']==$reply['upid']}selected{/if}>$a['mykeyword']</option>
+                            {/loop}
+                        </select>
+                    </td>
+                </tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text13}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['title']}" name="title"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text14}</td>
+    <td colspan="4"><textarea name="description" style="width:350px;height:100px;">{$reply['description']}</textarea></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text15}</td>
+    <td colspan="4">
+        <input type="file" style="width:350px;" class="px"  name="picurl">&nbsp;&nbsp;{lang aljwsq:text16}
+        
+    </td>
+</tr>
+{if $reply['picurl']}<tr><td></td><td><img src="{$reply['picurl']}" width="60" /></td></tr>{/if}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text17}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['url']}" name="url"></td>
+</tr>
+<tr><td colspan="4">&nbsp;&nbsp;{lang aljwsq:text18}<font style="color:red">{lang aljwsq:text19} </font></td></tr>
+{elseif $_GET['gettype']=='post'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text20}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['forumnum']}" name="forumnum"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#23637;&#31034;&#30340;&#29256;&#22359;&#21015;&#34920;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['description']}" name="description">&nbsp;&nbsp;&#35831;&#20351;&#29992;&#36887;&#21495;&#20998;&#38548;&#22635;&#20889;&#29256;&#22359;&#102;&#105;&#100;&#44;&#22635;&#20889;&#21518;&#29256;&#22359;&#23637;&#31034;&#25968;&#37327;&#40;&#33258;&#21160;&#23637;&#31034;&#29256;&#22359;&#21015;&#34920;&#41;&#23558;&#22833;&#25928;</td>
+</tr>
+<tr><td colspan="4">&nbsp;&nbsp;{lang aljwsq:text21}&nbsp;&nbsp;{lang aljwsq:text22}</td></tr>
+{elseif $_GET['gettype']=='thread'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text23}(tid)</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['tid']}" name="tid"></td>
+</tr>
+{elseif $_GET['gettype']=='comb'}
+    <td width="100" height="30"><span style="color:red;">*</span>&#116;&#105;&#100;&#21015;&#34920;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['description']}" name="description">&#20351;&#29992;&#36887;&#21495;&#20998;&#38548;&#65292;&#26368;&#22810;&#22635;&#20889;&#49;&#48;&#20010;</td>
+</tr>
+{elseif $_GET['gettype']=='newthread'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text24}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['threadnum']}" name="threadnum">&nbsp;&nbsp;{lang aljwsq:text25}</td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text30}(fid)</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['fid']}" name="fid"></td>
+</tr>
+{elseif $_GET['gettype']=='newarticle'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#26368;&#26032;&#25991;&#31456;&#25968;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['threadnum']}" name="threadnum">&nbsp;&nbsp;{lang aljwsq:text25}</td>
+</tr>
+{elseif $_GET['gettype']=='hotthread'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text26}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['threadnum']}" name="threadnum">&nbsp;&nbsp;{lang aljwsq:text27}</td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text30}(fid)</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['fid']}" name="fid"></td>
+</tr>
+{elseif $_GET['gettype']=='digesthread'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text28}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['threadnum']}" name="threadnum">&nbsp;&nbsp;{lang aljwsq:text29}</td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text30}(fid)</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['fid']}" name="fid"></td>
+</tr>
+{elseif $_GET['gettype']=='forum'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text30}(fid)</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['fid']}" name="fid"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text31}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['threadnum']}" name="threadnum">&nbsp;&nbsp;{lang aljwsq:text32}</td>
+</tr>
+<tr><td colspan="4">&nbsp;&nbsp;{lang aljwsq:text33}<font style="color:red">{lang aljwsq:text34}</font></td></tr>
+{elseif $_GET['gettype']=='forumlist'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text35}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['forumnum']}" name="forumnum">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#23637;&#31034;&#30340;&#29256;&#22359;&#21015;&#34920;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['description']}" name="description">&nbsp;&nbsp;&#35831;&#20351;&#29992;&#36887;&#21495;&#20998;&#38548;&#22635;&#20889;&#29256;&#22359;&#102;&#105;&#100;&#44;&#22635;&#20889;&#21518;&#29256;&#22359;&#23637;&#31034;&#25968;&#37327;&#40;&#33258;&#21160;&#23637;&#31034;&#29256;&#22359;&#21015;&#34920;&#41;&#23558;&#22833;&#25928;</td>
+</tr>
+<tr>
+    <td colspan="4"><span style="color:red">&nbsp;&nbsp;{lang aljwsq:text36}&nbsp;&nbsp;{lang aljwsq:text37}</span></td>
+</tr>
+{elseif $_GET['gettype']=='subscribe'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text38}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['bindkeyword']}" name="bindkeyword"></td>
+</tr>
+<tr>
+    <td colspan="4">&nbsp;&nbsp;{lang aljwsq:text39}<font style="color:red">{lang aljwsq:text40}</font></td>
+</tr>
+{elseif $_GET['gettype']=='location'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text38}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['bindkeyword']}" name="bindkeyword"></td>
+</tr>
+<tr>
+    <td colspan="4">&nbsp;&nbsp;{lang aljwsq:text39}<font style="color:red">{lang aljwsq:text40}</font></td>
+</tr>
+{elseif $_GET['gettype']=='voice'}
+<input type="hidden" value="{$reply['title']}" name="title">
+{elseif $_GET['gettype']=='third'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#31532;&#19977;&#26041;URL</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['url']}" name="url"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#31532;&#19977;&#26041;TOKEN</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['description']}" name="description"></td>
+</tr>
+<tr>
+    <td colspan="4">&nbsp;&nbsp;{lang aljwsq:text41}<font style="color:red">&#20851;&#38190;&#35789;&#19981;&#22635;&#20889;&#21017;&#19981;&#21305;&#37197;&#30340;&#20851;&#38190;&#35789;&#37117;&#20250;&#36716;&#21457;&#21040;&#31532;&#19977;&#26041;&#25509;&#21475;</font></td>
+</tr>
+{elseif $_GET['gettype']=='no'}
+<tr>
+    <td colspan="4">&nbsp;&nbsp;{lang aljwsq:text41}<font style="color:red">{lang aljwsq:text42}</font></td>
+</tr>
+{elseif $_GET['gettype']=='bind' || $_GET['gettype']=='index' || $_GET['gettype']=='mes' || $_GET['gettype']=='ggk' || $_GET['gettype']=='brandindex' || $_GET['gettype']=='wsq'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text6}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['title']}" name="title"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text7}</td>
+    <td colspan="4"><textarea name="description" style="width:350px;height:100px;">{$reply['description']}</textarea></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text8}</td>
+    <td colspan="4">
+        <input type="file" style="width:350px;" class="px"  name="picurl">&nbsp;&nbsp;{lang aljwsq:text9}
+        
+    </td>
+</tr>
+{if $reply['picurl']}<tr><td></td><td><img src="{$reply['picurl']}" width="60" /></td></tr>{/if}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text10}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{if $_GET['gettype']=='bind'}plugin.php?id=aljwsq:bind&act=bind&mobile=2{elseif $_GET['gettype']=='index'}plugin.php?id=aljwsq:index&mobile=2{elseif $_GET['gettype']=='mes'}plugin.php?id=aljwsq:mes&mobile=2{elseif $_GET['gettype']=='ggk'}plugin.php?id=aljwsq:ggk&mobile=2{elseif $_GET['gettype']=='brandindex'}plugin.php?id=aljbd{elseif $_GET['gettype']=='wsq'}plugin.php?id=wechat:access{/if}" name="url"></td>
+</tr>
+{elseif $_GET['gettype']=='bindkeyword'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text46}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['bindkeyword']}" name="bindkeyword"></td>
+</tr>
+<tr>
+    <td colspan="4">&nbsp;&nbsp;{lang aljwsq:text47}<font style="color:red">{lang aljwsq:text48}</font></td>
+</tr>
+{elseif $_GET['gettype']=='music'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text52}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['title']}" name="title"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text53}</td>
+    <td colspan="4"><textarea name="description" style="width:350px;height:100px;">{$reply['description']}</textarea></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text49}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['bindkeyword']}" name="bindkeyword"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text50}</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['url']}" name="url">&nbsp;&nbsp;{lang aljwsq:text51} </td>
+</tr>
+{elseif $_GET['gettype']=='count'}
+{if $count}$count{else}0{/if}
+{elseif $_GET['gettype']=='aljbd'}
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#21830;&#23478;&#23637;&#31034;&#25968;&#37327;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['forumnum']}" name="forumnum">&nbsp;&nbsp;</td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#23637;&#31034;&#30340;&#21830;&#23478;&#21015;&#34920;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['description']}" name="description">&#35831;&#20351;&#29992;&#36887;&#21495;&#20998;&#38548;&#22635;&#20889;&#21830;&#23478;&#73;&#68;&#21363;&#98;&#105;&#100;&#44;&#22635;&#20889;&#21518;&#21830;&#29233;&#23637;&#31034;&#25968;&#37327;&#40;&#26368;&#26032;&#21830;&#23478;&#41;&#23558;&#22833;&#25928;</td>
+</tr>
+<tr>
+    <td colspan="4"><span style="color:red">&nbsp;&nbsp;{lang aljwsq:text36}&nbsp;&nbsp;{lang aljwsq:text37}</span></td>
+</tr>
+{/if}
+{template common/footer}

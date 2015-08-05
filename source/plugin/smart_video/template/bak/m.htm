@@ -1,0 +1,278 @@
+{template common/header}
+<link href="source/plugin/smart_video/static/css/main.css?{VERHASH}" type="text/css" rel="stylesheet">
+<link href="source/plugin/smart_video/static/css/v_30.css?{VERHASH}" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="source/plugin/smart_video/static/js/jquery.min.js"></script>
+
+<style type='text/css'>
+ #smart_slide{width:600px;left:0px;}   
+{if $is_wide}
+#smart_slide,.focus .control,.focus .btns{width:865px;}
+.fr{ width:1180px;}
+.m_col,.m_col .focus,.focus .pic, .focus .pic img,.m_col .b,.m_col .c,.row, .sc4{ width:865px;}
+.row .pack, .sc4 .pack{padding:0 10px 0 0;}
+{/if}
+</style>
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&rsaquo;&rsaquo;</em><a href="./">&#x9996;&#x9875;</a><em>&rsaquo;&rsaquo;</em><a href="plugin.php?id=smart_video">{$smart['title']}</a><font id="fnav"></font><font id="snav"></font></div>
+{template smart_video:search}
+</div>
+<!--main-->
+<div class="fr">
+			<!-- 宽栏 start-->
+			<div class="m_col">
+<!-- 2.1.1	焦点图轮播模块--><div class="b focus mod_994" id="mod_994" random="" style="z-index:1;">
+<div class="pic">
+<ul id="smart_slide_pic">
+{loop $new $nk $nv}
+{eval $nk=$nk+1;}
+<li style="display:{if $nk==1}list-item{else}none{/if};"><a target="_blank" href="{eval echo get_turl($nv[tid])}"> <img class="lazyload" src="{$nv[coverimg]}"> </a></li>
+{/loop}
+</ul>
+</div>
+<div class="fbg"></div>
+<div class="txt" id="smart_slide_txt">
+{loop $new $nk $nv}
+{eval $nk=$nk+1;}
+<div class="info_list" style="display: {if $nk==1}block{/if};"><a class="tinf" target="_blank" href="{eval echo get_turl($nv[tid])}" title="{$nv[subject]}"><span class="play-a"> </span>{eval echo cutstr($nv[subject],60,'')}
+</a></div>
+{/loop}
+</div>
+<div class="control" style="display: block;">
+<span class="next"> </span>
+<div class="btns">
+<ul id="smart_slide">
+{loop $new $nk $nv}
+{eval $nk=$nk+1;}
+<li class="{if $nk==1}current{/if}"><i></i><a target="_blank" href="{eval echo get_turl($nv[tid])}" rel="{$nk}"><img class="" src="{$nv[coverimg]}"></a></li>
+{/loop}
+</ul></div>
+<span class="prev"> </span>
+</div>
+
+</div>
+{if !empty($enew[0])}
+<div class="b mod_vdlist mod_856" id="mod_856">
+<div class="h"><h2><a href="{eval echo get_furl($fclass[0][cid])}" target="_blank"><strong>{$fclass[0][name]}</strong></a></h2>
+<div class="ap">
+<ul class="tl"><li><a href="{eval echo get_furl($fclass[0][cid])}" title="&#x66F4;&#x591A;" target="_blank">&#x66F4;&#x591A;</a></li></ul></div></div>
+<div class="c">
+<div class="row">
+{loop $enew[0] $ek $ev}
+{if $ek<$e_limit}
+<div class="pack  pack_plist_card  ">
+<div class="pic"><div class="quick"><a href="#" data-ck="quick=3" data="3|3z95t4ibBgE|piJgDe-GtUU||||" title="&#x7A0D;&#x540E;&#x89C2;&#x770B;" class="quick_hook"></a></div>
+<a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="new"></a><div class="inner"><img width="132" height="99" class="pack_listImg quic" src="{$ev[coverimg]}"></div></div>
+<div class="txt"><h6 class="caption">
+<a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="new">{eval echo cutstr($ev[subject],18,'')}</a>
+</h6>
+<ul class="info"><li>&#25773;&#23458;:<a target="_blank" title="{$ev[author]}" href="home.php?uid={$ev[authorid]}">{$ev[author]}</a>
+</li></ul>
+<ul class="info"><li><div class="smart_play"><em>{$ev[play]}</em></div><div class="smart_reply"><em>{$ev[reply]}</em></div></li></ul>
+</div></div>
+{/if}
+{/loop}
+</div>
+</div>
+</div>
+{if $smart[m_ad1]}
+<div class="ad_banner" id="ab_101039" style="display: block;">
+<div class="bannerad" id="s_h_207730">
+<div >{$smart[m_ad1]}</div>
+</div></div>
+{/if}
+{/if}
+{if !empty($enew[2])}
+<div class="b mod_vdlist mod_856" id="mod_856">
+<div class="h"><h2><a href="{eval echo get_furl($fclass[2][cid])}" target="_blank"><strong>{$fclass[2][name]}</strong></a></h2>
+<div class="ap">
+<ul class="tl"><li><a href="{eval echo get_furl($fclass[2][cid])}" title="&#x66F4;&#x591A;" target="_blank">&#x66F4;&#x591A;</a></li></ul></div></div>
+<div class="c">
+<div class="row">
+{loop $enew[2] $ek $ev}
+{if $ek<$e_limit}
+<div class="pack  pack_plist_card  ">
+<div class="pic"><div class="quick"><a href="#" data-ck="quick=3" data="3|3z95t4ibBgE|piJgDe-GtUU||||" title="&#x7A0D;&#x540E;&#x89C2;&#x770B;" class="quick_hook"></a></div>
+<a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="new"></a><div class="inner"><img width="132" height="99" class="pack_listImg quic" src="{$ev[coverimg]}"></div></div>
+<div class="txt"><h6 class="caption">
+<a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="new">{eval echo cutstr($ev[subject],18,'')}</a>
+</h6>
+<ul class="info"><li>&#25773;&#23458;:<a target="_blank" title="{$ev[author]}" href="home.php?uid={$ev[authorid]}">{$ev[author]}</a>
+</li></ul>
+<ul class="info"><li><div class="smart_play"><em>{$ev[play]}</em></div><div class="smart_reply"><em>{$ev[reply]}</em></div></li></ul>
+</div></div>
+{/if}
+{/loop}
+</div>
+</div>
+</div>
+{/if}
+{if !empty($enew[3])}
+<div class="b mod_vdlist mod_856" id="mod_856">
+<div class="h"><h2><a href="{eval echo get_furl($fclass[3][cid])}" target="_blank"><strong>{$fclass[3][name]}</strong></a></h2>
+<div class="ap">
+<ul class="tl"><li><a href="{eval echo get_furl($fclass[3][cid])}" title="&#x66F4;&#x591A;" target="_blank">&#x66F4;&#x591A;</a></li></ul></div></div>
+<div class="c">
+<div class="row">
+{loop $enew[3] $ek $ev}
+{if $ek<$e_limit}
+<div class="pack  pack_plist_card  ">
+<div class="pic"><div class="quick"><a href="#" data-ck="quick=3" data="3|3z95t4ibBgE|piJgDe-GtUU||||" title="&#x7A0D;&#x540E;&#x89C2;&#x770B;" class="quick_hook"></a></div>
+<a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="new"></a><div class="inner"><img width="132" height="99" class="pack_listImg quic" src="{$ev[coverimg]}"></div></div>
+<div class="txt"><h6 class="caption">
+<a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="new">{eval echo cutstr($ev[subject],18,'')}</a>
+</h6>
+<ul class="info"><li>&#25773;&#23458;:<a target="_blank" title="{$ev[author]}" href="home.php?uid={$ev[authorid]}">{$ev[author]}</a>
+</li></ul>
+<ul class="info"><li><div class="smart_play"><em>{$ev[play]}</em></div><div class="smart_reply"><em>{$ev[reply]}</em></div></li></ul>
+</div></div>
+{/if}
+{/loop}
+</div>
+</div>
+</div>
+{/if}
+{loop $enew $k $eenew}
+{if $k>4}
+{if !empty($enew[$k])}
+<div class="b mod_vdlist mod_856" id="mod_856">
+<div class="h"><h2><a href="{eval echo get_furl($fclass[$k][cid])}" target="_blank"><strong>{$fclass[$k][name]}</strong></a></h2>
+<div class="ap">
+<ul class="tl"><li><a href="{eval echo get_furl($fclass[$k][cid])}" title="&#x66F4;&#x591A;" target="_blank">&#x66F4;&#x591A;</a></li></ul></div></div>
+<div class="c">
+<div class="row">
+{loop $enew[$k] $ek $ev}
+{if $ek<$e_limit}
+<div class="pack  pack_plist_card  ">
+<div class="pic"><div class="quick"><a href="#" data-ck="quick=3" data="3|3z95t4ibBgE|piJgDe-GtUU||||" title="&#x7A0D;&#x540E;&#x89C2;&#x770B;" class="quick_hook"></a></div>
+<a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="new"></a><div class="inner"><img width="132" height="99" class="pack_listImg quic" src="{$ev[coverimg]}"></div></div>
+<div class="txt"><h6 class="caption">
+<a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="new">{eval echo cutstr($ev[subject],18,'')}</a>
+</h6>
+</div></div>
+{/if}
+{/loop}
+</div>
+</div>
+</div>
+{/if}
+{/if}
+{/loop}
+
+			</div>
+
+			<!-- 窄栏 start-->
+			<div class="s_col">
+            
+<div class="ad_banner" id="ab_101038" style="display: block;">
+<div class="bannerad" id="s_h_207926">
+<div style="width:306px;">{$smart[m_ad3]}</div>
+</div></div>
+
+<div class="b mod_s_rank mod_s_rank3 mod_857" id="mod_857">
+<div class="h" style="background-color:#ededed;"><h2>&#x89C6;&#x9891;&#x6392;&#x884C;</h2>
+</div><!--
+t_tab_1		不显示；
+t_tab_2     2个标签
+t_tab_3		3个标签
+t_tab_4		4个标签
+-->
+<ul class="t_tab t_tab_1"></ul>
+<div class="c">
+<div class="rank rank_album">
+<ol id="smart_rank">
+{loop $hot $k $hpost}
+{eval $k=$k+1;}
+<li class="rn{if $k==1} current{/if}"><i {if $k<4}class="nt"{/if}>{$k}</i><div class="pack pack_album_brief">
+<div class="pic"><div class="quick" style="display: none;">
+<a href="#" data-ck="quick=0" data="0|fHqZ0-KLpLA|||||" title="&#x7A0D;&#x540E;&#x89C2;&#x770B;" class="quick_hook"></a></div>
+<a href="{eval echo get_turl($hpost[tid])}" title="{$hpost[subject]}" target="new"></a><div class="inner"><img width="132" height="74" class="quic" src="{$hpost[coverimg]}"></div></div>
+<div class="txt"><h6 class="caption"><a href="{eval echo get_turl($hpost[tid])}" title="{$hpost[subject]}" target="new">{$hpost[subject]}</a></h6></div></div></li>
+{/loop}
+
+</ol></div></div></div>
+{if !empty($enew[1])}
+<div class="b mod_s_vlist mod_858" id="mod_858">
+<div class="h" style="background-color:#ededed;"><a href="{eval echo get_furl($fclass[1][cid])}" title="{$fclass[1][name]}"><h2>{$fclass[1][name]}</h2></a>
+</div>
+<div class="c">
+<div class="row">
+<div class="pack pack_video_card">
+<div class="pic">
+<div class="quick"><a href="#" data-ck="quick=3" data="3|POnoF0pIUAo|s2RBUMUEvWw||||" title="&#x7A0D;&#x540E;&#x89C2;&#x770B;" class="quick_hook"></a></div><a href="{eval echo get_turl($enew[1][0][tid])}" title="{$enew[1][0][subject]}" target="new"></a><div class="inner"><img width="132" height="99" class="pack_listImg quic" src="{$enew[1][0][coverimg]}"></div><span class=""></span></div><div class="txt"><h6 class="caption"><a href="{eval echo get_turl($enew[1][0][tid])}" title="{$enew[1][0][subject]}" target="new">{eval echo cutstr($enew[1][0][subject],18,'')}</a></h6></div></div>
+<div class="pack pack_video_card">
+<div class="pic">
+<div class="quick"><a href="#" data-ck="quick=0" data="0|7phFvRImkgs|||||" title="&#x7A0D;&#x540E;&#x89C2;&#x770B;" class="quick_hook"></a></div><a href="{eval echo get_turl($enew[1][1][tid])}" title="{$enew[1][1][subject]}" target="new"></a><div class="inner"><img width="132" height="99" class="pack_listImg quic" src="{$enew[1][1][coverimg]}"></div><span class=" hd720"></span></div><div class="txt"><h6 class="caption"><a href="{eval echo get_turl($enew[1][1][tid])}" title="{$enew[1][1][subject]}" target="new">{eval echo cutstr($enew[1][1][subject],18,'')}</a></h6></div></div></div>
+
+<div class="row"><div class="l">
+<ul>
+{loop $enew[1] $ek $ev}
+{if $ek>1 && $ek<6}
+<li><a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="new">{eval echo cutstr($ev[subject],18,'')} </a></li>
+{/if}
+{/loop}
+</ul>
+
+</div></div></div></div>
+{/if}
+
+{if !empty($enew[4])}
+<div class="b mod_s_theme mod_860" id="mod_860">
+<div class="h" style="background-color:#ededed;">
+<a href="{eval echo get_furl($fclass[4][cid])}" title="{$fclass[4][name]}"><h2>{$fclass[4][name]}</h2></a></div>
+<div class="c">
+
+<div class="row">
+{loop $enew[4] $ek $ev}
+<div class="pack pack_mini"><div class="pic"><a href="{eval echo get_turl($ev[tid])}" target="_blank"></a><img width="83" height="62" class="quic" src="{$ev[coverimg]}"></div><div class="txt"><h6 class="caption"><a href="{eval echo get_turl($ev[tid])}" title="{$ev[subject]}" target="_blank">{eval echo cutstr($ev[subject],18,'')}</a></h6></div></div>
+{/loop}
+</div>
+</div>
+</div>
+{/if}
+
+
+
+<div class="b mod_forecast  mod_859" id="mod_859">
+<div class="h" style="background-color:#ededed;" >
+
+<a href="{eval echo get_furl()}" title="&#20154;&#27668;&#25773;&#23458;"><h2>&#20154;&#27668;&#25773;&#23458;</h2></a>
+
+</div>
+<div>
+<div >
+<style>
+#smart_list{ margin:0; padding:0; width:306px; height:352px; background-color:#F7F7F7; font-size:14px;}
+#smart_list *{ margin:0; padding:0;}
+#smart_list a{ color:#39F;}
+#smart_list li{ float:left; height:90px; width:80px; margin:5px; border:0;}
+#smart_list li img{ width:70px; height:70px;
+-webkit-box-shadow: #666 0px 0px 5px;
+-moz-box-shadow: #666 0px 0px 5px;
+box-shadow: #666 0px 0px 5px
+}
+#smart_list li div{line-height:20px;height:20px; width:80px; overflow:hidden;}
+#boke_play{ background:url(source/plugin/smart_video/static/images/i_v8.png) -117px -330px no-repeat; padding-left:20px; height:20px;}
+</style>
+<ul id="smart_list">
+{loop $boke $bk $bv}
+<li>
+    <a href="home.php?uid={$bv[uid]}" target="_blank"><img src="{eval echo avatar($bv[uid], 'middle',true);}"></a>
+<div align='center'><a href="home.php?uid={$bv[uid]}" target="_blank">{$bv['username']}</a></div>
+</li>
+{/loop}
+</ul>
+</div>
+</div>
+</div>
+ </div>
+
+			
+							<div class="h_col clear">
+
+				<!-- 底部通栏 start-->
+			</div>
+		</div>
+<script type="text/javascript" src="source/plugin/smart_video/static/js/smart.js?{VERHASH}"></script>
+<!--main-->
+{template common/footer}

@@ -1,0 +1,38 @@
+
+<div class="ab_banner ad_banner ab_r1" style="display: block; height:inherit;">{$smart[v_ad1]}</div>
+<div id="relatives" class="relative"><ul>
+{loop $relt_video $rk $rv}
+<li class="pack" index="0" data-stat-role="ck">
+<div class="pic">
+<div class="quick" style="display: none;">
+<a href="#" data-ck="quick=0" data="0|KIxl1NLql_o|||||" title="&#x7A0D;&#x540E;&#x89C2;&#x770B;" class="quick_hook"></a></div>
+<a class="link" title="{$rv[subject]}" href="{eval echo get_turl($rv[tid])}"><img class="pack_clipImg quic" src="{$rv[coverimg]}"><i class="ico">&#x8D85;&#x6E05;</i></a><div class="vtime" style="display: block;"><i class="bg"></i><em>{eval echo date("Y-m-d",$rv[dateline])}</em></div></div>
+<div class="txt">
+<h6><a class="link" title="{$rv[subject]}" href="{eval echo get_turl($rv[tid])}">{$rv[subject]}</a></h6>
+<p class="owner">&#x9891;&#x9053;&#xFF1A;<a href="plugin.php?id=smart_video&mod=v&tid={$rv[fcid]}" target="_blank">{$post[fname]}</a></p>
+<p class="playtimes">{$rv[play]}&#x6B21;&#x64AD;&#x653E;</p>
+</div>
+</li>
+{/loop}
+</ul>
+</div>
+<div class="rel_pl" id="relPlaylist"><div class="hd"><h4>&#x7CBE;&#x5F69;&#x4E13;&#x8F91;</h4></div>
+<ul>
+{loop $relt_album $rk $rv}
+<li class="pack" data-lid="17744120">
+<div class="pic">
+<a target="new" title="{$rv[subject]}" href="{eval echo get_turl($rv[tid])}" wl="0"><img src="{$rv[coverimg]}" class="quic"></a>
+<div class="vtime"><i class="bg"></i><em><i class="num">{$rv[num]}</i><br>&#x4E2A;&#x89C6;&#x9891;</em></div>
+</div>
+<div class="thumb">
+<a href="home.php?mod=space&uid={$rv[authorid]}" class="user" target="_blank"> <img src="{eval echo avatar($rv[authorid], 'middle',true);}"></a>
+<a href="home.php?uid={$rv[authorid]}" class="name" target="_blank" title="{$rv[author]}">{$rv[author]}</a>
+</div>
+<div class="txt">
+<h6 class="caption"><a href="{eval echo get_turl($rv[tid])}" title="{$rv[subject]}" target="new">{$rv[subject]}</a></h6>
+</div>
+</li>
+{/loop}
+
+</ul>
+</div>

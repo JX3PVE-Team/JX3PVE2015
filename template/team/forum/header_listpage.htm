@@ -1,0 +1,39 @@
+<div class="m-raid-nav">
+	<div class="m-raid-pub">
+		<a href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=55&extra=page%3D1&sortid=9" class="u-btn-pub-raid"></a>
+		<a href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=55&extra=page%3D1&sortid=13" class="u-btn-pub-pers"></a>
+	</div>
+	
+	<div class="m-raid-sort">
+		<!-- dz:category nav -->
+		<!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
+			<ul class="w-category-nav ttp bm cl" id="thread_types">
+				<!--{hook/forumdisplay_threadtype_inner}-->
+				<li id="ttp_all" {if !$_GET['typeid'] && !$_GET['sortid']}class="xw1 a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_G['forum']['threadsorts']['defaultshow']}&filter=sortall&sortall=1{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">{lang forum_viewall}</a></li>
+				<!--{if $_G['forum']['threadtypes']}-->
+					<!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
+						<!--{if $_GET['typeid'] == $id}-->
+						<li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a></li>
+						<!--{else}-->
+						<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a></li>
+						<!--{/if}-->
+					<!--{/loop}-->
+				<!--{/if}-->
+
+				<!--{if $_G['forum']['threadsorts']}-->
+					<!--{if $_G['forum']['threadtypes']}--><li><span class="pipe">|</span></li><!--{/if}-->
+					<!--{loop $_G['forum']['threadsorts']['types'] $id $name}-->
+						<!--{if $_GET['sortid'] == $id}-->
+						<li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><span class="xg1 num">$showthreadclasscount[sortid][$id]</span><!--{/if}--></a></li>
+						<!--{else}-->
+						<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$id$forumdisplayadd[sortid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><span class="xg1 num">$showthreadclasscount[sortid][$id]</span><!--{/if}--></a></li>
+						<!--{/if}-->
+					<!--{/loop}-->
+				<!--{/if}-->
+				<!--{hook/forumdisplay_filter_extra}-->
+			</ul>
+			<script type="text/javascript">showTypes('thread_types');</script>
+		<!--{/if}-->
+		<!--{hook/forumdisplay_threadtype_extra}-->
+	</div>
+</div>

@@ -1,0 +1,29 @@
+{template common/header}
+<script type="text/javascript" src="source/plugin/smart_video/static/js/jquery.min.js"></script>
+<script type="text/javascript" charset="gbk" src="source/plugin/smart_video/static/js/p.js?{VERHASH}"></script>
+
+<div class="wrap pvx">
+    <div class="main video">
+        {template common/video_header}
+        <div class="wp">
+            <div class="content">
+
+                <div id="pt" class="bm cl">
+                    <div class="z">
+                        <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&rsaquo;&rsaquo;</em><a>PVX专栏</a><em>&rsaquo;&rsaquo;</em><a href="plugin.php?id=smart_video">{$smart['title']}</a><em>&rsaquo;&rsaquo;</em><a>发布</a>
+                    </div>
+                </div>
+
+                <div class="video-pub-primary">
+                	{if $type=='self'}
+                	   {template smart_video:p_main}
+                	{else}
+                	   {template smart_video:p_collect}
+                	{/if}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{template common/footer}

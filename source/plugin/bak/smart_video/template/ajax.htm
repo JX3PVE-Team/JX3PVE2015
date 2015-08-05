@@ -1,0 +1,17 @@
+<!--{if !empty($class)}-->
+{if $type==2}
+<select name="scid" id="scid" onchange="ajaxget('plugin.php?id=smart_video:ajax&type=3&cup='+document.getElementById('scid').value,'tscid')" >
+<option value=0>{lang smart_video:p8}</option>
+<!--{loop $class $k $v}-->
+<option value="{$v[cid]}">{$v[name]}</option>
+<!--{/loop}-->
+</select>
+{else}
+<select name="tcid"  >
+<option value=0>{lang smart_video:p8}</option>
+<!--{loop $class $k $v}-->
+<option value="{$v[cid]}">{$v[name]}</option>
+<!--{/loop}-->
+</select>
+{/if}
+<!--{/if}-->

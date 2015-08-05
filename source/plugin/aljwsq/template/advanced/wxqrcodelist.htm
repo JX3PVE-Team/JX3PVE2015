@@ -1,0 +1,43 @@
+<script>disallowfloat = 'newthread';</script>
+<table id="tips" class="tb tb2 ">
+<tbody><tr><th class="partition">&#25216;&#24039;&#25552;&#31034;</th></tr>
+<tr><td s="1" class="tipsblock">
+<ul id="tipslis">
+<li>&#20351;&#29992;&#26412;&#21151;&#33021;&#38656;&#35201;&#20844;&#20247;&#21495;&#39640;&#32423;&#26435;&#38480;&#35831;&#21069;&#24448;&#20844;&#20247;&#31649;&#29702;&#21518;&#21488;&#30830;&#35748;&#26159;&#21542;&#25317;&#26377;&#20108;&#32500;&#30721;&#26435;&#38480;</li>
+<li>&#24744;&#21487;&#20197;&#28857;&#20987;&#21015;&#34920;&#20013;&#30340;&#20108;&#32500;&#30721;&#25130;&#22270;&#20250;&#24377;&#20986;&#22823;&#22270;&#28982;&#21518;&#20351;&#29992;&#24494;&#20449;&#25195;&#25551;&#21363;&#21487;</li>
+</ul>
+</td></tr></tbody>
+</table>
+
+<table class="tb tb2 nobdb">
+    <tbody>
+        <tr>
+            <th class="partition" colspan="15"> &#20108;&#32500;&#30721;&#31649;&#29702;&#20013;&#24515;(<a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=wxaddqrcode" onclick="showWindow('edit', this.href)"><b style="color:red">&#28155;&#21152;&#20108;&#32500;&#30721;</a><b>)</th></tr>
+        <tr class="header">
+            <th>&#20108;&#32500;&#30721;</th>
+            <th>&#38142;&#25509;</th>
+            <th>&#20108;&#32500;&#30721;&#25991;&#20214;&#21517;</th>
+			<th>&#35302;&#21457;&#20851;&#38190;&#35789;</th>
+			<th>&#34987;&#25195;&#25551;&#27425;&#25968;</th>
+            <th>&#28155;&#21152;&#26102;&#38388;</th>
+			<th>&#25805;&#20316;</th>
+        </tr>
+		{loop $qrcodelist $qrcode}
+            <tr class="header">
+			<td><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=wxviewqrcode&qid={$qrcode['id']}&formhash={FORMHASH}" onclick="showWindow('viewqrcode',this.href)"><img src="{if $qrcode['type']}source/plugin/aljwsq/images/wxqrcode/{else}source/plugin/aljwsq/images/wxqrcode_tmp/{/if}{$qrcode['qrcode']}" width="40px" height="40px"></a></td>
+            <td>{if $qrcode['type'] == 1}&#27704;&#20037;&#20108;&#32500;&#30721;{else}&#20020;&#26102;&#20108;&#32500;&#30721;{if TIMESTAMP-$qrcode['dateline']>1800}(<b style="color:red">&#24050;&#36807;&#26399;</b>){/if}{/if}</td>
+            <td>{$qrcode['qrcode']}</td>
+			<td>{$qrcode['mykeyword']}</td>
+			 <td><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=wxrecordlist&qid={$qrcode['scene_id']}" onclick="showWindow('wxrecordlist',this.href)">{if $qrcode['num']}$qrcode['num']{else}0{/if}</a></td>
+            <td>{eval echo dgmdate($qrcode['dateline']);}</td>
+            <td>
+                
+				<a target="_blank" href="{if $qrcode['type']}source/plugin/aljwsq/images/wxqrcode/{else}source/plugin/aljwsq/images/wxqrcode_tmp/{/if}{$qrcode['qrcode']}">&#19979;&#36733;</a>&nbsp;
+                <a href="#" onclick="showDialog('&#20320;&#30830;&#23450;&#35201;&#21024;&#38500;&#21527;&#65311;', 'confirm', '', function() {
+            location.href = 'admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=wxdeleteqrcode&qid={$qrcode['id']}&formhash={FORMHASH}'
+        }, 0);
+        return false;">&#21024;&#38500;</a>
+            </td></tr>
+        {/loop}         
+        <tr><td colspan="10"></td></tr>
+    </tbody></table>

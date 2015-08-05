@@ -1,0 +1,92 @@
+{template common/header}
+<script type="text/javascript" src="source/plugin/smart_video/static/js/jquery.min.js"></script>
+<div class="wrap pvx">
+    <div class="main video">
+        {template common/video_header}
+        <div class="wp">
+            <div class="content">
+
+<div id="pt" class="bm cl">
+    <div class="z">
+        <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&rsaquo;&rsaquo;</em><a>PVX专栏</a><em>&rsaquo;&rsaquo;</em><a href="plugin.php?id=smart_video">{$smart['title']}</a><em>&rsaquo;&rsaquo;</em>$navtitle
+    </div>
+    <div class="video-search">
+        {template smart_video:search}
+    </div>
+</div>
+
+<div class="video-primary">
+
+	<div id="player" class="video-player">
+		{template smart_video:player}
+	</div>
+	<div id="DvdList" class="player_list dvd_list"><div class="loading"></div></div>
+		
+	<div class="action_panels fix">
+		<div class="panel panel_addto fix" id="panelAddTo">
+			<div class="loading"></div>
+		</div>
+		<div class="panel panel_download fix" id="panelDownload">
+			<div class="loading"></div>
+		</div>
+		<div class="panel panel_information fix" id="panelInfo" style="display: block;">
+			<div class="inner fix video-info">
+				<p class="v_one none">
+					<span class="v_user">
+						<a class="name" target="_blank" title="{$thread[author]}" href="home.php?mod=space&uid={$thread[authorid]}">{$thread[author]}</a>&#x4E0A;&#x4F20;&#x4E8E;{eval echo date("Y-m-d H:i:s",$thread[dateline])}
+					</span>
+					<span class="v_channel">
+						&#x5206;&#x7C7B;&#xFF1A;<a href="plugin.php?id=smart_video&mod=m&fcid={$thread[fcid]}" title="{$post[fname]}" target="_blank">{$post[fname]}</a>
+					</span>
+				</p>
+
+				<p class="v_tags none">
+					&#x6807;&#x7B7E;&#xFF1A;<span class="tag_wrap"><a target="_blank" href="plugin.php?id=smart_video&mod=m&fcid={$thread[fcid]}">{$post[fname]}</a></span>
+				</p>
+				
+				<div class="video-ping">{template smart_video:ping}</div>
+				<div class="video-share">{$smart[share]}</div>
+				<div class="video-des"><h2>$navtitle</h2>$mes</div>
+				
+
+			</div>
+		</div>
+		<div class="panel panel_cloud fix" id="panelCloud">
+			<div class="loading"></div>
+		</div>
+		<div class="panel panel_report fix" id="panelReport">
+			<div class="loading"></div>
+		</div>
+		<div class="panel panel_share fix" id="panelShare"><div class="loading"></div></div>
+		<div class="panel panel_exponent fix" id="panelExponent">
+			<div class="loading"></div>
+		</div>
+	</div>
+	
+</div>
+
+<div class="video-cmt">
+	<div class="video-cmt-sd">
+		{template smart_video:v_side}
+	</div>
+
+	<div class="video-cmt-ct">
+
+		<div class="banner video-banner">
+			<script type="text/javascript">
+			    /*960*90 创建于 2015-01-12*/
+			    var cpro_id = "u1902467";
+			</script>
+			<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+		</div>
+
+		{template smart_video:v_reply}		 
+	</div>
+</div>
+	
+            </div>
+        </div>
+    </div>
+</div>
+
+{template common/footer}

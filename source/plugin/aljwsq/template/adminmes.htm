@@ -1,0 +1,21 @@
+<table class="tb tb2 " id="tips">
+<tbody><tr><th class="partition">{lang aljwsq:a1}</th></tr>
+<tr><td class="tipsblock" s="1"><ul id="tipslis">
+<li>{lang aljwsq:a7}</li>
+<li>{lang aljwsq:a8}</li>
+{if !file_exists('source/plugin/aljwsq/com/ggk.php')}<li>{lang aljwsq:a9}</li>{/if}
+</ul></td></tr></tbody>
+</table>
+<table class="tb tb2 nobdb">
+<tbody><tr><th class="partition" colspan="15">&#30041;&#35328;&#31649;&#29702;</th></tr>
+<tr class="header"><th></th><th>ID</th><th>&#30041;&#35328;&#20154;</th><th>&#30041;&#35328;&#20869;&#23481;</th><th>&#30041;&#35328;&#26102;&#38388;</th><th>&#25805;&#20316;</th></tr>
+
+{loop $meslist $mes}
+{eval $mm=C::t('#aljwsq#aljwsq_mes')->fetch($mes['upid'])}
+<tr>
+<td></td>
+<td>{$mes['id']}</td><td>{$mes['nickname']}{$mm['nickname']}</td><td>{$mes['info']}</td><td>{eval echo dgmdate($mes['dateline']);}</td><td><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=adminmes&act=delete&mid={$mes['id']}&formhash={FORMHASH}">&#21024;&#38500;</a></td>
+</tr>
+{/loop}
+<tr><td>$paging</td></tr>
+</tbody></table>

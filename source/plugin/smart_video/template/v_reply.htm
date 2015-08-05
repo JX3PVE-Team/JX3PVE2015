@@ -1,0 +1,100 @@
+<style>
+.smart_smiley{float:left;margin:0;padding:0; width:493px;margin-left:2px;}
+.smart_smiley ul{ float:left;width:493px; }
+.smart_smiley ul li{float:left; height:21px; width:21px; overflow:hidden;}
+#reply_list{float:left; width:100%; padding:5px;font:12px/20px arial, helvetica, verdana, tahoma, sans-serif;}
+#reply_list ul li{float:left; border-bottom:1px solid #e5e5e5;}
+#reply_list:after{ clear:both;}
+#reply_list ul li .userimg{width:50px; height:60px; overflow:hidden; float:left; padding-top:5px;}
+#reply_list ul li .userimg img{ width:50px; height:50px; }
+#reply_list ul li .reply_mes{  float:left;text-align:left;margin-left:10px; width:580px;}
+#reply_list ul li .reply_mes p{line-height:21px;margin-bottom:5px; vertical-align:middle; margin-right:5px;}
+#reply_list ul li .reply_mes p a{ color:#3399e0;}
+#reply_list ul li .reply_mes p .reply{ margin-left:10px;}
+#reply_list ul li .reply_mes p img{ display:inline; vertical-align:middle;}
+{if $is_wide}
+#reply_list ul li .reply_mes{width:800px;}
+{/if}
+</style>
+<div class="ab_banner ad_banner ab_cmt" style="display: block; height:inherit;">{$smart[v_ad2]}</div>
+<div class="comments" id="comments">
+<div id="allComment" class="all_comment fix">
+<div id="addCmt" class="add_cmt">
+{if !$_G[uid]}
+<div style="padding:0 0 15px 5px">&#x4F60;&#x9700;&#x8981;'<a href="member.php?mod=logging&action=login">&#x767B;&#x5F55;</a>'&#x624D;&#x80FD;&#x56DE;&#x590D;</div>
+{elseif $forbide_reply}
+<div style="padding:0 0 15px 5px"><font color="red">&#x5BF9;&#x4E0D;&#x8D77;&#x4F60;&#x6682;&#x65F6;&#x6CA1;&#x6709;&#x56DE;&#x590D;&#x7684;&#x6743;&#x9650;&#xFF01;</font></div>
+{/if}
+<form method="post" class="cmt_form" id="reply_form" action="plugin.php?id=smart_video:ajax" onsubmit="ajaxpost(this.id,'reply_ajax_post',null,null,smart_loop());">
+<input type="hidden"name="formhash" value="{FORMHASH}" >
+<input type="hidden"name="rsubmit" value="1" >
+<input type="hidden" name="tid" value="{$thread[tid]}">
+<input type="hidden" name="authorid" value="{$thread[authorid]}">
+<input type="hidden" name="touid" id="touid" value="{$thread[authorid]}">
+<div class="ta"><textarea name="content" id="content" maxlength="140" placeholder="&#x968F;&#x4FBF;&#x5199;&#x4E24;&#x53E5;&#x8BC4;&#x8BBA;&#x5427;:)" onmouseout="fucCheckLength()" onkeydown="fucCheckLength();">
+</textarea></div>
+<div class="tools fix">
+<span style="clear:both;">
+<div class="smart_smiley">
+<span><a href="#" onclick="jQuery('#smart_smiley').toggle();doane(event);"><img src="source/plugin/smart_video/static/images/0/smiley.png"></a></span>
+<ul id="smart_smiley" style="display:none;">
+{loop $smiley $sk $sv}
+<li value="{$sk}"><a href="javascript:;"><img src="{SMART_SMILEY_DIR}{$sv}" width="20px;" height="20px;"></a></li>
+{/loop}
+</ul>
+</div>
+<span style="clear:both;"></span>
+{if !$forbide_reply}
+<button type="submit" title="&#x63D0;&#x4EA4;(&#x6700;&#x591A;&#x53EF;&#x8F93;&#x5165;140&#x4E2A;&#x5B57;)" class="submit_post disabled" name="rsubmit" id="rsubmit" value="true" disabled="true"><i class="blod">&#x63D0;&#x4EA4;</i> (<i class="count_num" id="count_num">140</i>)</button>
+{/if}
+</div>
+
+</form></div>
+<div id="reply_list" name="reply_list">
+<ul id="reply_list_ajax">
+<span id="reply_ajax_post" style="float:left;"></span>
+<span id="reply_reajax" style="float:left;">
+{template smart_video:ajax_reply}
+</span>
+</ul>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+function smart_loop(){
+new_aj=jQuery("#reply_ajax_post").html();
+jQuery("#reply_reajax").html(new_aj+jQuery("#reply_reajax").html())
+	}
+jQuery(function(){
+	jQuery("#smart_smiley>li").click(function(){
+		a_s=jQuery(this).attr('value');
+		jQuery("#content").val(jQuery("#content").val()+a_s);
+		fucCheckLength();
+		})
+	jQuery(document).delegate(".reply",'click',function(){
+		alt=jQuery(this).attr('value');
+		touid=jQuery(this).attr('touid');
+		jQuery("#content").focus();
+		jQuery("#content").val(alt);
+		jQuery("#touid").val(touid);
+		});	
+		jQuery(document).delegate(".delete",'click',function(){
+		pid=jQuery(this).attr('value');
+		jQuery.get('plugin.php?id=smart_video:ajax&type=delete&dsubmit=1&inajax=1&formhash={FORMHASH}&pid='+pid,function(){jQuery('#smart_reply_'+pid).hide(500);setTimeout(jQuery('#smart_reply_'+pid).remove(),600);});	
+		});		
+	})
+function fucCheckLength() 
+{ 
+var i,sum;  sum=0;  
+strTemp=jQuery("#content").val();
+for(i=0;i<strTemp.length;i++)   
+{ if ((strTemp.charCodeAt(i)>=0) && (strTemp.charCodeAt(i)<=255))sum=sum+1;   
+     else  sum=sum+2;
+	 }
+	 jQuery("#rsubmit").attr('disabled','true');jQuery("#rsubmit").addClass("disabled");
+	 if(sum>0){jQuery("#rsubmit").removeAttr('disabled');jQuery("#rsubmit").removeClass("disabled");}
+	if(sum!=0)jQuery("#count_num").html("<font color='white'>"+sum+"</font>")
+
+  }
+</script>
+

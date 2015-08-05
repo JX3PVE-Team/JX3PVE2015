@@ -1,0 +1,57 @@
+{template common/header_ajax}
+
+<h3 class="flb">
+    <em>&#28155;&#21152;&#47;&#32534;&#36753;&#24494;&#24213;&#37096;&#33756;&#21333;</em>
+    <span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+</h3>
+<form id="addbc" method="post" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=indexsetting&wid=menu&act={$_GET['act']}&mid={$menu['id']}">
+    <input name="formhash" type="hidden" value="{FORMHASH}" />
+    <div class="c">
+        <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>&#25490;&#24207;</td>
+                    <td colspan="4">
+                        <input type="text" name="displayorder" value="{$menu['displayorder']}">
+                    </td>
+                </tr>
+                  <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:c1}</td>
+                    <td colspan="4">
+                        <select name="upid">
+							<option value="0">{lang aljwsq:index}</option>
+                            {loop $desks $k $v}
+                            <option value="{$v['id']}" {if $menu['upid'] == $v['id']}selected{/if}>{$v['name']}</option>
+                            {/loop}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:add4}</td>
+                    <td colspan="4">
+                        <input type="text" name="name" value="{$menu['name']}">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:c2}</td>
+                    <td colspan="4">
+                        <select name="type">
+						{loop $pics $pk $pv}
+                            <option value="$pk" {if $menu['type'] == $pk}selected{/if}>$pv</option>
+						{/loop}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:c3}</td>
+                    <td colspan="4">
+                        <input type="text" name="keyurl" value="{$menu['keyurl']}">&nbsp;&nbsp;
+                    </td>
+                </tr>
+            </tbody></table>
+    </div>
+    <p class="o pns">
+        <button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljwsq:add7}</strong></button>
+    </p>
+</form>
+{template common/footer_ajax}

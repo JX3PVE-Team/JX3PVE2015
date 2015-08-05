@@ -1,0 +1,19 @@
+<script type="text/javascript" src="source/plugin/smart_video/static/js/jquery.min.js"></script>
+<form method="post" action="{$purl}" enctype="multipart/form-data" id="bcs_form">
+<input type="hidden" name="Content-Disposition" value="attachment; filename={$object}">
+<input name="file" type="file" id="file">
+<input type="submit" name="submit" value="&#19978;&#20256;" onclick="smart_begin_bcs();return false;">
+</form>
+<script type="text/javascript">
+var tm=0; var interval;
+function smart_begin_bcs(){
+if(!jQuery("#file").val())
+{
+	alert('please choose file!')
+	return false;}
+jQuery(".tips",parent.document.body).hide(100);	
+jQuery("#smart_ext",parent.document.body).text(1);
+jQuery("#object",parent.document.body).val('{$object}');
+document.getElementById("bcs_form").submit()
+}
+</script>

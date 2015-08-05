@@ -1,0 +1,39 @@
+{template common/header_ajax}<div class="f_c" >
+<style type="text/css">
+.pop_title{ height:36px; line-height:36px; overflow:hidden;}
+.ltnc_a{border-radius:4px;-moz-border-radius:4px;}
+</style>
+
+<script type="text/javascript">
+function nextpop(){
+	hideWindow('pop');
+	hidetippop();
+}
+function hidetippop(){
+	var xmlhttp;    
+	if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+	  xmlhttp=new XMLHttpRequest();
+	}
+	else{// code for IE6, IE5
+	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function(){
+	}   
+	xmlhttp.open("POST","plugin.php?id=qqy_ltnc:pop",true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send("hidepop="+1);
+}
+</script>
+		<h3 class="flb">
+			<em>{lang qqy_ltnc:tips}</em>
+			<span><a href="javascript:;" class="flbc" onclick="hideWindow('pop')" title="{lang close}">{lang close}</a></span>
+		</h3>
+		<div class="c">
+			<p class="pop_title mbm">{lang qqy_ltnc:gotoset}</p>
+			<div class="ltnc_a_div cl" style="width:148px; height:36px;margin:0 auto;">
+			<a class="ltnc_a ltnc_a1" style="display:block;float:left;width:66px; text-align:center;color:#fff !important;height:28px;line-height:28px; overflow:hidden;background:#5f8ede;margin-right:16px; display:inline; text-decoration:none;"  href="home.php?mod=spacecp&ac=plugin&id=qqy_ltnc:plugin" >{lang qqy_ltnc:setnickname}</a>
+			<a class="ltnc_a ltnc_a2" style="display:block;float:left;width:66px; text-align:center;color:#fff !important;height:28px;line-height:28px; overflow:hidden;background:#999999; text-decoration:none;" href="javascript:;" onclick="nextpop()" title="{lang close}">{lang qqy_ltnc:nexttime}</a>
+			</div>
+		</div>
+</div>
+{template common/footer_ajax}

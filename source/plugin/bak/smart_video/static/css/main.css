@@ -1,0 +1,91 @@
+/*
+ *SmartCome
+ */
+h1,h2,h3,h4,h5,h6{font-size:1em;font-weight:normal}
+a{color:#14647d;text-decoration:none}
+a:hover{text-decoration:underline}
+.pack{position:relative;line-height:18px}
+.pack{overflow:hidden;zoom:1}
+.pack *{word-wrap:break-word;word-break:break-all}
+.pack .pic{background:#f6f7fb;position:relative}
+.pack .pic a{background:url(about:blank)}
+.pack a.inner{display:block}
+.pack .summary{text-align:justify}
+p.summary{margin-bottom:0;text-justify:inter-ideograph}
+.pack_video .pic{position:relative;float:left;border:1px solid #ccc;padding:4px}
+.pack_video .pic .inner{width:120px;height:75px;overflow:hidden}
+.pack_video .pic img.pack_clipImg{margin:-7px 0 0 0}
+.pack_video .txt{margin:2px 30px 0 150px}
+.pack_video .caption{margin:0;height:18px;overflow:hidden}
+.pack_video .summary{color:#7b7b7b;line-height:21px;margin:0 0 4px 0;height:42px;overflow:hidden}
+.pack_video .info{color:#a5a5a5;height:18px;overflow:hidden}
+.pack_video_brief .pic{position:relative;float:left;border:1px solid #c0c0c0;padding:0}
+.pack_video_brief .inner{width:120px;height:75px;overflow:hidden}
+.pack_video_brief .pic img.pack_clipImg{margin:-7px 0 0 0}
+.pack_video_brief .txt{margin:2px 0 0 129px;*zoom:1}
+.pack_video_brief .caption{margin:0 0 2px 0;max-height:36px;overflow:hidden}
+.pack_video_brief ul.info li{margin:0;overflow:hidden}
+.pack_video_card{width:122px;overflow:hidden}
+.pack_video_card .pic{position:relative;border:1px solid #c0c0c0;padding:0;_zoom:1}
+.pack_video_card .inner{width:120px;height:75px;overflow:hidden}
+.pack_video_card .pic img.pack_clipImg{margin:-7px 0 0 0}
+.pack_video_card .txt{padding:4px 1px}
+.pack_video_card .caption{margin:0 0 2px 0;max-height:36px;overflow:hidden}
+.pack_video_card .caption a.prefix{color:#f60}
+.pack_video_card ul.info li{margin:0;height:18px;overflow:hidden;white-space:nowrap}
+.pack .vpay{width:49px;height:49px;background:url("../images/i_v9_31152.png") -60px -103px no-repeat;position:absolute;bottom:-1px;right:-1px;cursor:pointer}
+.pack .vhd360,.pack .vhd480,.pack .vhd720{width:41px;height:16px;background:url("../images/i_v9_31152.png") -70px -200px no-repeat;position:absolute;top:6px;left:-1px;cursor:pointer}
+.pack .vhd480{background-position:-70px -240px}
+.pack .vhd720{background-position:-70px -280px}
+.pack .d_nums span{font-size:11px;cursor:default}
+.pack .d_nums .d_play{padding:0 7px 0 15px;background:url("../images/i_v9_31152.png") -119px -108px no-repeat}
+.pack .d_nums .d_cmt{padding:0 0 0 19px;background:url("../images/i_v9_31152.png") -118px -128px no-repeat}
+.pack .pic .vpbg{width:132px;height:20px;background:#000;opacity:.6;filter:alpha(opacity = 60);position:absolute;left:0;bottom:0}
+.pack_plist_card .pic .vpbg,.pack_plist_brief .pic .vpbg{width:128px;left:0;bottom:4px}
+.pack_playlist_card .pic .vpbg,.pack_playlist_brief .pic .vpbg{width:128px;left:1px;bottom:5px}
+.pack .pic .vinf{width:127px;height:20px;padding:0 0 0 5px;line-height:21px;overflow:hidden;position:absolute;bottom:0;left:0;margin:0;color:#fff;text-decoration:none}
+.pack_plist_card .pic .vinf,.pack_plist_brief .pic .vinf{width:123px;left:0;bottom:4px}
+.pack_playlist_card .pic .vinf,.pack_playlist_brief .pic .vinf{width:123px;left:1px;bottom:5px}
+* .pack .pic .vpbg,* .pack .pic .vinf{_bottom:-1px}
+* .pack_plist_card .pic .vpbg,* .pack_plist_card .pic .vinf,* .pack_plist_brief .pic .vpbg,* .pack_plist_brief .pic .vinf{_bottom:3px}
+* .pack_playlist_card .pic .vpbg,* .pack_playlist_card .pic .vinf,* .pack_playlist_brief .pic .vpbg,* .pack_playlist_brief .pic .vinf{_bottom:4px}
+.pack.pack_plist_card{width:132px}
+.pack_plist_card .pic,.pack_plist_brief .pic{width:128px;height:95px;padding:0 4px 4px 0;background:url("../images/i_v9_31152.png") 0 -400px no-repeat}
+.pack_plist_card .inner,.pack_plist_brief .inner{width:128px;height:95px;overflow:hidden;position:relative}
+.pack_plist_card .pic img.pack_listImg,.pack_plist_brief .pic img.pack_listImg{margin:-2px 0 0 -2px}
+.pack_plist_brief .txt{margin:2px 0 0 140px}
+.pack_plist_card .txt{padding:5px 0}
+.pack_plist_card ul.info li{height:18px;margin:0;overflow:hidden;white-space:nowrap}
+.pack_plist_card .caption{height:18px;overflow:hidden}
+.pack_playlist .pic{position:relative;float:left;padding:3px 3px 3px 7px}
+.pack_playlist .pic .inner{width:112px;height:71px;overflow:hidden}
+.pack_playlist .pic img.pack_listImg{margin:-9px 0 0 -3px}
+.pack_playlist .txt{margin:0 0 0 129px}
+.pack_playlist .caption{margin:0 0 2px 0;height:18px;overflow:hidden}
+.pack_playlist .author{color:#a5a5a5;margin:0 0 3px 0;height:18px;overflow:hidden}
+.pack_playlist .summary{color:#7b7b7b;padding:0 220px 0 0;margin:0 0 3px 0;height:18px;overflow:hidden}
+.pack_playlist .info{color:#a5a5a5}
+.pack_playlist .extra{position:absolute;top:0;right:0;width:180px}
+.pack_playlist .extra li{margin:0 0 2px 0;height:18px;overflow:hidden;white-space:nowrap}
+.pack_playlist_brief .pic{position:relative;float:left;padding:3px 3px 3px 7px}
+.pack_playlist_brief .inner{width:112px;height:71px;overflow:hidden}
+.pack_playlist_brief .pic img.pack_listImg{margin:-9px 0 0 -3px}
+.pack_playlist_brief .txt{margin:2px 0 0 129px;*zoom:1}
+.pack_playlist_brief .caption{margin:0 0 2px 0;max-height:36px;overflow:hidden}
+.pack_playlist_brief ul.info li{margin:0;overflow:hidden;white-space:nowrap}
+.pack_playlist_brief ul.info li{_white-space:normal}
+.pack.pack_playlist_card{width:122px;overflow:hidden}
+.pack_playlist_card .pic{position:relative;padding:3px 3px 3px 7px}
+.pack_playlist_card .inner{width:112px;height:71px;overflow:hidden}
+.pack_playlist_card .pic img.pack_listImg{margin:-9px 0 0 -3px}
+.pack_playlist_card .txt{padding:4px 1px}
+.pack_playlist_card .caption{margin:0 0 2px 0;max-height:36px;overflow:hidden}
+.pack_playlist_card ul.info li{margin:0;height:18px;overflow:hidden;white-space:nowrap}
+.pack_playlist_card .action a{color:#f60;background:url("../images/g/v_v10_27502.png") no-repeat 0 -520px;padding-left:15px}
+.pack.pack_user_card{width:90px;overflow:hidden}
+.pack_user_card .pic{border:1px solid #ccc;padding:3px}
+.pack_user_card .inner{width:82px;height:82px;overflow:hidden}
+.pack_user_card .pic img{width:82px;height:82px}
+.pack_user_card .txt{padding:5px 3px}
+.pack_user_card .caption{margin:0 0 4px 0;height:18px;overflow:hidden;white-space:nowrap}
+.pack_user_card ul.info li{margin:0 0 3px 0;height:18px;overflow:hidden}

@@ -1,0 +1,122 @@
+{template common/header}
+<script type="text/javascript" src="source/plugin/smart_video/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="source/plugin/smart_video/static/js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="source/plugin/smart_video/static/js/v.js?{VERHASH}"></script>
+<link href="source/plugin/smart_video/static/css/play_25.css?{VERHASH}" type="text/css" rel="stylesheet">
+<style type='text/css'>
+.programs .con_player{width:960px;}
+#player{width:640px; height:506px; background-color:inherit;}
+#LplayWrap,.player_list .list_wrap .player_box{width:319px}
+{if $is_wide}
+.auto,.programs .con_player{width:1180px;}
+#player,.programs .con_main,.ab_cmt{width:860px;}
+.action_panels .panel .inner{width:850px;}
+{/if}
+</style>
+<div class="programs">
+<div class="w1216">
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&rsaquo;&rsaquo;</em><a>&#x9996;&#x9875;</a><em>&rsaquo;&rsaquo;</em><a href="plugin.php?id=smart_video">{$smart['title']}</a><em>&rsaquo;&rsaquo;</em>
+<a href="plugin.php?id=smart_video&mod=s&fcid={$thread[fcid]}&search_submit=1&formhash={FORMHASH}">{$post[fname]}</a><em>&rsaquo;&rsaquo;</em><a style="color:#000">{$thread[subject]}</a>{if $self}<a  style="margin-left:3px;"href="plugin.php?id=smart_video&mod=p&type=self&tid={$thread['tid']}">[&#20462;&#25913;]</a>{/if}</div>
+{template smart_video:search}
+</div>
+
+<div class="page_wrap">
+<div class="auto fix">
+	<div class="con_player con_player_list">
+		<div id="player" class="player">
+{template smart_video:player}		</div>
+<div class="player_list" id="LplayWrap">
+<div class="hd">
+<h4 class="kw">
+<a class="title" title="{$thread['subject']}" href="" target="_blank"><img class="img" src="{$thread['coverimg']}">{$thread['subject']}</a>
+<span class="total_num">({$thread['num']})</span>
+</h4>
+</div>
+<div class="bd">
+<div class="list_wrap list_wrap_pic" id="LplayList">
+<div class="player_box">
+ <script type="text/javascript">
+ var video=new Array();
+ var f_video=new Array();
+ var m_video=new Array();
+ </script>
+<div class="scroll_box fix" style="">
+
+{loop $video $vk $vv}
+{eval $url=get_smart_url($vv['link'],$tid,$vk);}    
+               
+<div class="pack {if $vk==0}hover{/if}">
+<script type="text/javascript">
+          <!--{if smart_get_ext($vv['link'])=='swf'}-->
+             video[{$vk}]='{eval echo get_smart_player($url)}'
+            <!--{else}-->
+			video[{$vk}]=0;
+			f_video[{$vk}]='{$url}';
+			m_video[{$vk}]="{eval echo get_smart_url($vv['img'],$tid,$vk,1)}";
+            //video[{$vk}+'_f']='{$url}';
+			//video[{$vk}+'_m']='{eval echo get_smart_url($vv['img'],$tid,$vk,1)}',;
+            <!--{/if}-->
+			</script>      
+<div class="pic">
+<div class="index"><i class="bg"></i><em>{eval echo ($vk+1)}</em></div>
+<div class="quick"><a href="javascript:;" data-ck="quick=3" class="quick_hook"></a></div><a title="{$vv['name']}" href="javascript:;" class="inner"><img src="{eval echo get_smart_url($vv['img'],$tid,$vk,1)}" class="quic"></a>
+</div>
+<div class="txt">
+<h6><a title="{$vv['name']}" href="javascript:;">{$vv['name']}</a></h6>
+<ul class="info"><li><span>{eval echo date("Y-m-d",$vv[time])}</span></li></ul>
+</div>
+</div>
+{/loop}
+</div>
+</div>                  
+</div>
+</div>
+</div>
+		
+	</div>
+	
+	<div class="con_side" style="position: static; top: 724px;">
+		{template smart_video:v_side}
+	</div>
+
+	<div class="con_main">
+    		<div class="action_panels fix">
+			<div class="panel panel_addto fix" id="panelAddTo">
+				<div class="loading"></div>
+			</div>
+			<div class="panel panel_download fix" id="panelDownload">
+				<div class="loading"></div>
+			</div>
+			<div class="panel panel_information fix" id="panelInfo" style="display: block;">
+<div class="inner fix video">
+<p class="v_one">
+<span class="v_user"><a class="name" target="_blank" title="{$thread[author]}" href="home.php?mod=space&uid={$thread[authorid]}">{$thread[author]}</a> &#x4E0A;&#x4F20;&#x4E8E;{eval echo date("Y-m-d H:i:s",$thread[dateline])}</span>
+<span class="v_channel">&#x5206;&#x7C7B;&#xFF1A;<a href="plugin.php?id=smart_video&mod=m&fcid={$thread[fcid]}" title="{$post[fname]}" target="_blank">{$post[fname]}</a></span>
+</p>
+<p class="v_tags">
+&#x6807;&#x7B7E;&#xFF1A;<span class="tag_wrap"><a target="_blank" href="plugin.php?id=smart_video&mod=m&fcid={$thread[fcid]}">{$post[fname]}</a></span>
+</p>
+{template smart_video:ping}
+{$smart[share]}
+<p class="v_desc">{$mes}</p>
+</div>
+
+</div>
+			<div class="panel panel_cloud fix" id="panelCloud">
+				<div class="loading"></div>
+			</div>
+			<div class="panel panel_report fix" id="panelReport">
+				<div class="loading"></div>
+			</div>
+			<div class="panel panel_share fix" id="panelShare"><div class="loading"></div></div>
+			<div class="panel panel_exponent fix" id="panelExponent">
+				<div class="loading"></div>
+			</div>
+		</div>
+{template smart_video:v_reply}		 
+	</div>
+</div></div>
+</div></div>
+{template common/footer}

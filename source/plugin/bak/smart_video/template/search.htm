@@ -1,0 +1,37 @@
+<style type="text/css">
+#pt {display:block;}
+.smart_form{
+	float:right;
+	border:0px;
+	}
+	.smart_form *{ float:left;margin 0; padding:0; border:0;}
+.smart_form input{
+	outline:none;
+	height:20px;
+	border:0 none;
+	border-bottom:1px solid  #CCC;
+	background:none;
+	}
+.smart_search_ico{float:right;}
+.smart_search_ico:hover{}
+.smart_add_ico{
+	margin-left:1px;
+	margin-right:1px;
+	float:right;
+}
+
+
+</style>
+
+<div class="smart_form">
+<table>
+<tr>
+<td><form action="plugin.php?id=smart_video&mod=s" method="post" id="search_form">
+<input type="hidden" name="formhash" value="{FORMHASH}">
+<input type="hidden" name="search_submit" value="1">
+<input type="text" name="key" placeholder="&#x8BF7;&#x8F93;&#x5165;&#x5173;&#x952E;&#x8BCD;"></form></td>
+<td><a href="javascript:;" title="&#x641C;&#x7D22;" onclick="javascript:document.getElementById('search_form').submit();"><div class="smart_search_ico"></div></a></td>
+<td><a title="&#x53D1;&#x5E03;&#x89C6;&#x9891;" {if $_G['uid']}href="plugin.php?id=smart_video&mod=p"{else}href="member.php?mod=logging&action=login" onclick="showWindow('login',this.href)"{/if}><div class="smart_add_ico"></div></a></td>
+</tr>
+</table>
+</div>

@@ -1,0 +1,37 @@
+<script>disallowfloat = 'newthread';</script>
+<table id="tips" class="tb tb2 ">
+<tbody><tr><th class="partition">&#25216;&#24039;&#25552;&#31034;</th></tr>
+<tr><td s="1" class="tipsblock">
+<ul id="tipslis">
+<li>&#22312;&#36825;&#37324;&#28155;&#21152;&#30340;&#19975;&#33021;&#34920;&#21333;&#21487;&#20197;&#30452;&#25509;&#36890;&#36807;&#20320;&#25152;&#35774;&#32622;&#30340;&#20851;&#38190;&#35789;&#36820;&#22238;</li>
+<li>&#25152;&#37197;&#32622;&#30340;&#20851;&#38190;&#35789;&#25928;&#26524;&#21487;&#36890;&#36807;&#39044;&#35272;&#21151;&#33021;&#36827;&#34892;&#26597;&#30475;</li>
+<li>&#35813;&#21151;&#33021;&#38656;&#35201;&#23433;&#35013;&#32452;&#20214;&#25903;&#25345;</li>
+{if !file_exists('source/plugin/aljwsq/com/ggk.php')}<li>&#24314;&#35758;&#23433;&#35013;<a target="_blank" href="http://addon.discuz.com/?@aljwsq.plugin.34866">&#23436;&#25972;&#21830;&#19994;&#29256;</a>£¬<a target="_blank" href="http://addon.discuz.com/?@aljwsq.plugin.34866">&#23436;&#25972;&#21830;&#19994;&#29256;</a>&#20869;&#32622;&#25152;&#26377;&#21830;&#19994;&#32452;&#20214;&#65292;&#21518;&#32493;&#29256;&#26412;&#26356;&#26032;&#30340;&#32452;&#20214;<a target="_blank" href="http://addon.discuz.com/?@aljwsq.plugin.34866">&#23436;&#25972;&#21830;&#19994;&#29256;</a>&#29992;&#25143;&#20063;&#21487;&#20197;&#20813;&#36153;&#26356;&#26032;</li>{/if}
+</ul>
+</td></tr></tbody>
+</table>
+<table class="tb tb2 nobdb">
+    <tbody>
+        <tr>
+            <th class="partition" colspan="15"><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=addform" onclick="showWindow('addform',this.href)"><b style="color:red">&#28155;&#21152;&#19975;&#33021;&#34920;&#21333;</b></a></th></tr>
+        <tr class="header">
+            <th>&#20851;&#38190;&#35789;</th>
+            <th>&#26631;&#39064;</th>
+            <th>&#21457;&#24067;&#26102;&#38388;</th>
+            <th>&#25805;&#20316;</th>
+        </tr>
+		{loop $formlist $form}
+            <tr class="header">
+            <td>{$form['mykeyword']}</td>
+            <td>{$form['title']}</td>
+            <td>{eval echo dgmdate($form['addline']);}</td>
+            <td>
+                <a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=editform&fid={$form['id']}" onclick="showWindow('edit', this.href)">&#32534;&#36753;</a>&nbsp;
+                <a href="#" onclick="showDialog('&#20320;&#30830;&#23450;&#35201;&#21024;&#38500;&#21527;&#65311;', 'confirm', '', function() {
+            location.href = 'admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=deleteform&fid={$form['id']}&formhash={FORMHASH}'
+        }, 0);
+        return false;">&#21024;&#38500;</a>&nbsp;<a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=formcolumn&fid={$form['id']}&formhash={FORMHASH}">&#23383;&#27573;&#31649;&#29702;</a>&nbsp;<a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=adminformcolumndata&fid={$form['id']}">&#25968;&#25454;&#31649;&#29702;</a>&nbsp;<a target="_blank" href="plugin.php?id=aljwsq:form&fid={$form['id']}">&#39044;&#35272;</a>
+            </td></tr>
+        {/loop}         
+        <tr><td colspan="10"></td></tr>
+    </tbody></table>

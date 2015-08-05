@@ -1,0 +1,29 @@
+{template common/headerxz}
+<div class="b_bg">
+<div class="video-page" style="min-height:1080px;">
+<div class="wp">
+    <script type="text/javascript" src="source/plugin/smart_video/static/js/jquery.min.js"></script>
+   <script type="text/javascript" charset="gbk" src="source/plugin/smart_video/static/js/p.js"></script>
+<div id="main" >
+
+<div class="video-pipe">
+<div class="z">
+<a href="./" class="nvhm" title="{lang homepage}"></a><a href="./">&#x9996;&#x9875;</a><em>&rsaquo;&rsaquo;</em><a href="plugin.php?id=smart_video">{$smart['title']}</a><em>&rsaquo;&rsaquo;</em>发布<font id="fnav"></font><font id="snav"></font>
+</div>
+{template smart_video:search}
+<div class="clear"></div>
+</div>
+
+<div class="page_wrap">
+{if $type=='self'}
+{template smart_video:p_main}
+{else}
+{template smart_video:p_collect}
+{/if}
+</div>
+
+</div>
+</div>
+</div>
+</div>
+{template common/footer}

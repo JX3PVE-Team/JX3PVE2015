@@ -1,0 +1,39 @@
+<script>disallowfloat = 'newthread';</script>
+<table id="tips" class="tb tb2 ">
+<tbody><tr><th class="partition">&#25216;&#24039;&#25552;&#31034;</th></tr>
+<tr><td s="1" class="tipsblock">
+<ul id="tipslis">
+<li>&#28155;&#21152;&#26102;&#27880;&#24847;&#23383;&#27573;&#31867;&#22411;&#20026;&#21333;&#36873;&#12289;&#22810;&#36873;&#12289;&#19979;&#25289;&#36873;&#25321;&#30340;&#21442;&#25968;&#26684;&#24335;&#19968;&#34892;&#19968;&#39033;&#65292;&#27599;&#39033;&#30340;&#20540;&#21644;&#26631;&#39064;&#29992;&#124;&#20998;&#24320;<br>
+	&#48;&#124;&#30007;  <br>
+	&#49;&#124;&#22899;  <br>
+	&#50;&#124;&#20445;&#23494;<br></li>
+</ul>
+</td></tr></tbody>
+</table>
+<table class="tb tb2 nobdb">
+    <tbody>
+        <tr>
+            <th class="partition" colspan="15">&#24403;&#21069;&#34920;&#21333;&#65306;{$form['title']}<a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=addformcolumn&fid={$_GET['fid']}" onclick="showWindow('addform',this.href)">  &nbsp;&nbsp;&#28155;&#21152;&#34920;&#21333;&#23383;&#27573;&nbsp;&nbsp;<a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced"><b style="color:red">&#36820;&#22238;&#34920;&#21333;&#21015;&#34920;</b></a></a></th></tr>
+        <tr class="header">
+            <th>&#23383;&#27573;&#26631;&#39064;</th>
+            <th>&#23383;&#27573;&#21517;</th>
+            <th>&#23383;&#27573;&#31867;&#22411;</th>
+			<th>&#28155;&#21152;&#26102;&#38388;</th>
+            <th>&#25805;&#20316;</th>
+        </tr>
+		{loop $columnlist $column}
+            <tr class="header">
+            <td>{$column['columntitle']}</td>
+            <td>{$column['columnname']}</td>
+			<td>{$columntypes[$column['columntype']]}</td>
+            <td>{eval echo dgmdate($column['dateline']);}</td>
+            <td>
+                <a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=editformcolumn&fid={$column['fid']}&cid={$column['id']}" onclick="showWindow('edit', this.href)">&#32534;&#36753;</a>&nbsp;
+                <a href="#" onclick="showDialog('&#20320;&#30830;&#23450;&#35201;&#21024;&#38500;&#21527;&#65311;', 'confirm', '', function() {
+            location.href = 'admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=deleteformcolumn&cid={$column['id']}&formhash={FORMHASH}'
+        }, 0);
+        return false;">&#21024;&#38500;</a>
+            </td></tr>
+        {/loop}         
+        <tr><td colspan="10"></td></tr>
+    </tbody></table>

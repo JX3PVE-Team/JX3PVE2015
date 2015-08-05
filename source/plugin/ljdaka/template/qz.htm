@@ -1,0 +1,17 @@
+{template common/header_ajax}
+<h3 class="flb">
+	<em>{lang ljdaka:daka2}</em>
+		<span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+</h3>
+<div class="f_c" style="width:350px;height:70px;margin:10px;" id="window">
+<style>
+.qdsmilea{padding:3px;margin:auto;float:left;list-style:none;float:left}
+.qdsmilea li{float: left;padding:5px .4em;border:2px #fff solid;}
+.qdsmilea li img{margin-bottom:5px;}
+.qdsmilea li:hover{cursor:pointer;}
+.alert_info {background-image: url($dizhi);}
+</style>
+<div class="c altw"><div class="alert_info">$qzmes</div></div>	
+</div>
+<p class="o pns"><span class="z xg1"></span><button class="pn pnc" value="true" onclick='showWindow("ljdaka","plugin.php?id=ljdaka:daka&action=msg&formhash={FORMHASH}");'><strong>{lang ljdaka:daka1}</strong></button></p>
+{template common/footer_ajax}

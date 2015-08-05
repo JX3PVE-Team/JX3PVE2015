@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta content="" name="description">
+	<meta content="" name="keywords">
+	<meta content="eric.wu" name="author">
+	<meta content="application/xhtml+xml;charset={CHARSET}" http-equiv="Content-Type">
+	<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+	<meta content="no-cache" http-equiv="pragma">
+	<meta content="0" http-equiv="expires">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css" href="source/plugin/aljwsq/css/message.css" media="all" />
+<script type="text/javascript" src="source/plugin/aljwsq/js/jquery-1.10.1.min.js"></script>
+<title>&#30041;&#35328;&#26495;</title>
+    <!--[if lte IE 9]><script src="source/plugin/aljwsq/js/watermark.js"></script><![endif]-->
+	<!--[if IE 7]><link href="source/plugin/aljwsq/css/font_awesome_ie7.css" rel="stylesheet" /><![endif]-->
+</head>
+<body>
+ 
+	<script type="text/javascript"> 
+		$(document).ready(function () { 
+			$("#showcard1").click(function () { 
+				var btn = $(this);
+				var wxname = $("#wxname1").val();
+				if (wxname  == '') {
+					alert("&#35831;&#36755;&#20837;&#26165;&#31216;");
+					return;
+				}
+				var info = $("#info1").val();
+					if (info == '') {
+					alert("&#35831;&#36755;&#20837;&#20869;&#23481;");
+					return;
+				}
+				var submitData = {
+					nickname: wxname,
+					info: info,
+				
+				};
+				$.post('plugin.php?id=aljwsq:mes&act=post&formhash={FORMHASH}', submitData,
+					function(data) {
+						if (data.success == true) {
+							alert(data.msg);
+							setTimeout('window.location.href=location.href',1000);
+						return;
+					} else {}
+				},
+				"json")
+			}); 
+			//
+			$("#showcard2").click(function () { 
+				var btn = $(this);
+				var wxname = $("#wxname2").val();
+					if (wxname  == '') {
+					alert("&#35831;&#36755;&#20837;&#26165;&#31216;");
+					return;
+				}
+				var info = $("#info2").val();
+					if (info == '') {
+					alert("&#35831;&#36755;&#20837;&#20869;&#23481;");
+					return;
+				}
+				var submitData = {
+					nickname:wxname,
+					info: info,
+					
+				};
+				$.post('plugin.php?id=aljwsq:mes&act=post&formhash={FORMHASH}', submitData,
+					function(data) {
+						if (data.success == true) {
+						alert(data.msg);
+						setTimeout('window.location.href=location.href',1000);
+						return;
+					} else {}
+				},
+				"json")
+			});  
+			//
+			$(".hhsubmit").click(function () { 
+				var upid = $(this).attr("date");
+				var info = $(".hly"+upid).val();
+					if (info == '') {
+					alert("&#35831;&#36755;&#20837;&#20869;&#23481;");
+					return;
+				}
+				var submitData = {
+					nickname:'&#22238;&#22797;',
+					upid:upid,
+					info: info,
+				};
+				$.post('plugin.php?id=aljwsq:mes&act=post&formhash={FORMHASH}', submitData,
+				function(data) {
+					if (data.success == true) {
+						alert(data.msg);
+						setTimeout('window.location.href=location.href',1000);
+						return;
+					} else {}
+				},
+				"json")
+			});  
+			//
+			$(".hfinfo").click(function () { 
+				var objid = $(this).attr("date");
+				$(".hhly"+objid).slideToggle();
+			}); 
+			//
+			$(".hhbt").click(function () { 
+				var objid = $(this).attr("date");
+				$(".hhly"+objid).slideToggle();
+			});
+			//
+			$("#windowclosebutton").click(function () { 
+				$("#windowcenter").slideUp(500);
+			});
+			//
+			$("#alertclose").click(function () { 
+				$("#windowcenter").slideUp(500);
+			});
+		}); 
+		//
+		function alert(title){ 
+			window.scrollTo(0, -1);
+			$("#windowcenter").slideToggle("slow"); 
+			$("#txt").html(title);
+			setTimeout(function(){$("#windowcenter").slideUp(500);},4000);
+		}
+		//
+		$(document).ready(function(){
+			$(".first1").click(function(){
+				$(".ly1").slideToggle();
+			});
+			$(".first2").click(function(){
+				$(".ly2").slideToggle();
+			});
+		});
+	</script> 
+</head>
+ 
+<body id="message" onselectstart="return true;" ondragstart="return false;">
+	<div class="container">
+	  	<div class="qiandaobanner">
+		  	<a href="javascript:history.go(-1);">
+		  		<img src="source/plugin/aljwsq/images/mpic.jpg" style="width:100%;" />
+		  	</a>
+	  	</div>
+
+		<div class="cardexplain">
+			<div class="window" id="windowcenter">
+				<div id="title" class="wtitle">&#25805;&#20316;&#25552;&#31034;<span class="close" id="alertclose"></span></div>
+				<div class="content">
+					<div id="txt"></div>
+				</div>
+			</div>
+ 
+			<div class="history">
+				<div class="history-date">
+					<ul>
+						<a><h2 class="first first1" style="position: relative;">&#35831;&#28857;&#20987;&#30041;&#35328;</h2></a>
+						<li class="green bounceInDown nob ly1" style="display:none">
+							<dl>
+								<dt>
+									<input name="wxname" type="text" class="px" id="wxname1" value="" placeholder="&#35831;&#36755;&#20837;&#24744;&#30340;&#26165;&#31216;">
+								</dt>
+								<dt>
+									<textarea name="info" class="pxtextarea" style=" height:60px;" id="info1" placeholder="&#35831;&#36755;&#20837;&#30041;&#35328;"></textarea>
+								</dt>
+								<dt><a id="showcard1" class="submit" href="javascript:void(0)">&#25552;&#20132;&#30041;&#35328;</a></dt>
+							</dl>
+						</li>			
+												{loop $meslist $mes}
+												<li class="green bounceInDown">
+							<h3>
+								{$mes['nickname']}<span>{eval echo dgmdate($mes['dateline']);}</span>
+								<div class="clr"></div>
+							</h3>
+							<dl>
+								<dt class="hfinfo" date="{$mes['id']}">{$mes['info']}</dt>
+							</dl>
+							<dl class="huifu">
+								<dt>
+									<span>
+																														<a class="hhbt czan" date="{$mes['id']}" href="javascript:void(0)">&#22238;&#22797;</a>
+										<p style="display:none;" class="hhly{$mes['id']}">
+											<textarea name="info" class="pxtextarea hly{$mes['id']}"></textarea> 
+										<a class="hhsubmit submit" date="{$mes['id']}" href="javascript:void(0)">&#30830;&#23450;</a>
+										</p>
+									</span>
+								</dt>
+							</dl>
+							{loop C::t('#aljwsq#aljwsq_mes')->fetch_all_by_upid0($mes['id']) $m}
+							<dl class="huifu">
+								<dt><span>»Ø¸´£º{$m['info']} <br>{eval echo dgmdate($m['dateline']);}
+																										</span></dt>
+							</dl>
+							{/loop}
+													</li>
+													{/loop}
+												<li class="green bounceInDown nob ly2" style="display:none">
+							<dl>
+								<dt>
+									<input name="wxname" type="text" class="px" id="wxname2" value="" placeholder="&#35831;&#36755;&#20837;&#24744;&#30340;&#26165;&#31216;">
+								</dt>
+								<dt>
+									<textarea name="info" class="pxtextarea" style=" height:60px;" id="info2" placeholder="&#35831;&#36755;&#20837;&#30041;&#35328;"></textarea>
+								</dt>
+								<dt>
+									<a id="showcard2" class="submit" href="javascript:void(0)">&#25552;&#20132;&#30041;&#35328;</a>
+								</dt>
+							</dl>
+						</li>
+
+
+						<a><h2 class="first first2" style="position: relative;">&#35831;&#28857;&#20987;&#30041;&#35328;</h2></a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<footer style="text-align:center; color:#ffd800;margin-right:20px">{$config['mescp']}</footer>
+</body>
+</html>

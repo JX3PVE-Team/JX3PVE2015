@@ -1,0 +1,33 @@
+<table class="tb tb2 nobdb">
+    <tbody>
+        <tr>
+            <th class="partition" colspan="15">&#24403;&#21069;&#34920;&#21333;&#65306;{$form['title']}<a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced"><b style="color:red">&nbsp;&nbsp;&#36820;&#22238;&#34920;&#21333;&#21015;&#34920;</b></a></a></th></tr>
+        <tr class="header">
+            <th>OPENID</th>
+			{loop $formcolumns $formcolumn}
+            <th>{$formcolumn['columntitle']}</th>
+            {/loop}
+        </tr>
+		{loop $formdatas $formdata}
+            <tr class="header">
+            <td>{$formdata['openid']}</td>
+			{loop $formcolumns $formcolumn}
+            <td>
+			{if $formcolumn['columntype']=='radio' || $formcolumn['columntype']=='select'}
+			{$formcolumn['columnmparam'][$formdata['value'][$formcolumn['columnname']]]['value']}
+			{elseif $formcolumn['columntype']=='checkbox'}
+			{loop $formdata['value'][$formcolumn['columnname']] $kkk $vvv}
+				{$formcolumn['columnmparam'][$vvv]['value']}&nbsp;
+			{/loop}
+			{else}
+			{$formdata['value'][$formcolumn['columnname']]}{/if}</td>
+			{/loop}
+            <td>
+                <a href="#" onclick="showDialog('&#20320;&#30830;&#23450;&#35201;&#21024;&#38500;&#21527;&#65311;', 'confirm', '', function() {
+            location.href = 'admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act=deleteformcolumndata&fid={$formdata['fid']}&did={$formdata['id']}&formhash={FORMHASH}'
+        }, 0);
+        return false;">&#21024;&#38500;</a>
+            </td></tr>
+        {/loop}         
+        <tr><td colspan="10"></td></tr>
+    </tbody></table>

@@ -1,0 +1,48 @@
+<style type="text/css">
+.div_h100{ height:10px; overflow:hidden;}
+.prompt{  height:36px; font-size:12px; font-weight:400;line-height:36px;}
+.searchuser{ height:36px; line-height:36px; overflow:hidden;}
+.searchuser em{ color:#ff0000;font-weight:700; margin-right:25px;}
+.searchuser .xw1{ font-weight:700;}
+.log_table td{ padding-left:30px;width:270px; height:30px; border:1px solid #ddd;line-height:30px; overflow:hidden;}
+.log_title td{ background:#f2f2f2;}
+</style>
+
+<div class="mtm cl">
+
+<form action="$url" method="post">
+{lang qqy_ltnc:userid}
+<input type="text" name="uid" value="$uid"  />
+{lang qqy_ltnc:username}
+<input type="text" name="username" value="$username" />
+{lang qqy_ltnc:setname}
+<input type="text" name="nickname" value="$nickname" />
+<button type="submit">{lang qqy_ltnc:query}</button>
+</form>
+</div>
+
+<div class="mtm cl">
+<p class="searchuser" >
+<!--{if !empty($info)}-->
+{lang qqy_ltnc:userid}<em><a href="home.php?mod=space&uid=$info['uid']" target="_blank">{$info['uid']}</a></em>{lang qqy_ltnc:username}<em><a href="home.php?mod=space&uid=$info['uid']" target="_blank">{$info['username']}</a></em>{lang qqy_ltnc:setname}<em>{$info['nickname']}</em>
+<!--{elseif $isquery}--> 
+{lang qqy_ltnc:null}
+<!--{/if}-->
+</p>
+
+<table class="log_table">
+<tr class="log_title">
+<td>{lang qqy_ltnc:userid}</td>
+<td>{lang qqy_ltnc:username}</td>
+<td>{lang qqy_ltnc:settime}</td>
+</tr>
+<!--{loop $logs['lists'] $log}-->
+<tr>
+<td>$log['uid'] &nbsp;&nbsp; (<a href="home.php?mod=space&uid=$log['uid']" target="_blank">{lang qqy_ltnc:visit}</a>)</td>
+<td>$log['name']</td>
+<td><!--{eval $logtime = date("Y-m-d H:i:s",$log['logtime']);}-->$logtime</td>
+</tr>
+<!--{/loop}-->
+</table>
+</div>
+

@@ -1,0 +1,169 @@
+<script>disallowfloat = 'newthread';</script>
+<link href="source/plugin/aljwsq/css/smartmenu.css" type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="source/plugin/aljwsq/css/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="source/plugin/aljwsq/css/shThemeDefault.css"/>
+<script type="text/javascript" src="source/plugin/aljwsq/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="source/plugin/aljwsq/js/smartmenu-min.js"></script>
+<script type="text/javascript" src="source/plugin/aljwsq/js/shCore.js"></script>
+<script type="text/javascript" src="source/plugin/aljwsq/js/shBrushJScript.js"></script>
+<script type="text/javascript" src="source/plugin/aljwsq/js/shBrushXml.js"></script>
+<script type="text/javascript">
+            jQuery(window).ready(function(){
+                jQuery("#navigation").Smartmenu({animationDuration: 350});
+            });
+            SyntaxHighlighter.all();
+			var jq = jQuery.noConflict();
+	    </script>
+	    
+	    <table id="tips" class="tb tb2 ">
+<tbody><tr><th class="partition">{lang aljwsq:a1}</th></tr>
+<tr><td s="1" class="tipsblock"><ul id="tipslis">
+<li>{lang aljwsq:a17}</li>
+<li>{lang aljwsq:a18}</li>
+{if !file_exists('source/plugin/aljwsq/com/ggk.php')}<li>{lang aljwsq:a29}</li>{/if}
+</ul></td></tr></tbody>
+</table>
+<table style="border:1px solid #F0F7FD" class="tb tb2 ">
+<tbody>
+</tbody><tbody><tr><th class="partition" colspan="15">{lang aljwsq:a19}</th></tr></tbody></table>
+		<div id="wrap" style="margin-top:10px;">
+		<div id="navigation" class="smartmenu">
+                <ul>
+                    <li class="aljbtn">
+                        <a href="">{lang aljwsq:a20}</a>
+                        <ul>
+						{loop $msgtypes1 $msg $type}
+							<li>
+								 <a  href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=addautoreply&gettype={$msg}">{eval $comfile='source/plugin/aljwsq/com/'.$msg.'.php';}{if file_exists($comfile)}<b>{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{else}<b style="color:green">{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{/if}</a>
+							</li>
+						{/loop}
+                        </ul>
+                    </li>  
+					<li class="aljbtn">
+                        <a href="">&#39640;&#32423;&#25509;&#21475;</a>
+                        <ul>
+						{loop $msgtypes7 $msg $type}
+							<li>
+								 <a  href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=addautoreply&gettype={$msg}">{eval $comfile='source/plugin/aljwsq/com/'.$msg.'.php';}{if file_exists($comfile)}<b>{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{else}<b style="color:green">{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{/if}</a>
+							</li>
+						{/loop}
+                        </ul>
+                    </li>
+
+					<li class="aljbtn">
+                        <a href="">{lang aljwsq:a21}</a>
+                        <ul>
+						{loop $msgtypes2 $msg $type}
+							<li>
+								 <a  href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=addautoreply&gettype={$msg}">{eval $comfile='source/plugin/aljwsq/com/'.$msg.'.php';}{if file_exists($comfile)}<b>{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{else}<b style="color:green">{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{/if}</a>
+							</li>
+						{/loop}
+                        </ul>
+                    </li>
+					<li class="aljbtn">
+                        <a href="">{lang aljwsq:a22}</a>
+                        <ul>
+						{loop $msgtypes3 $msg $type}
+							<li>
+								 <a  href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=addautoreply&gettype={$msg}">{eval $comfile='source/plugin/aljwsq/com/'.$msg.'.php';}{if file_exists($comfile)}<b>{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{else}<b style="color:green">{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{/if}</a>
+							</li>
+						{/loop}
+                        </ul>
+                    </li>
+					<li class="aljbtn">
+                        <a href="">&#25991;&#31456;&#25509;&#21475;</a>
+                        <ul>
+						{loop $msgtypes9 $msg $type}
+							<li>
+								 <a  href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=addautoreply&gettype={$msg}">{eval $comfile='source/plugin/aljwsq/com/'.$msg.'.php';}{if file_exists($comfile)}<b>{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{else}<b style="color:green">{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{/if}</a>
+							</li>
+						{/loop}
+                        </ul>
+                    </li>
+					<li class="aljbtn">
+                        <a href="">&#20142;&#21073;&#25509;&#21475;</a>
+                        <ul>
+						{loop $msgtypes8 $msg $type}
+							<li>
+								 <a  href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=addautoreply&gettype={$msg}">{eval $comfile='source/plugin/aljwsq/com/'.$msg.'.php';}{if file_exists($comfile)}<b>{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{else}<b style="color:green">{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{/if}</a>
+							</li>
+						{/loop}
+                        </ul>
+                    </li>
+					<li class="aljbtn">
+                        <a href="">{lang aljwsq:a23}</a>
+                        <ul>
+						{loop $msgtypes4 $msg $type}
+							<li>
+								 <a  href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=addautoreply&gettype={$msg}">{eval $comfile='source/plugin/aljwsq/com/'.$msg.'.php';}{if file_exists($comfile)}<b>{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{else}<b style="color:green">{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{/if}</a>
+							</li>
+						{/loop}
+                        </ul>
+                    </li>
+					{eval unset($msgtypes6['form']);}
+					{if $msgtypes6}
+					<li class="aljbtn">
+                        <a href="">&#22686;&#24378;&#20114;&#21160;</a>
+                        <ul>
+						{loop $msgtypes6 $msg $type}
+							<li>
+								 <a  href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=addautoreply&gettype={$msg}">{eval $comfile='source/plugin/aljwsq/com/'.$msg.'.php';}{if file_exists($comfile)}<b>{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{else}<b style="color:green">{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{/if}</a>
+							</li>
+						{/loop}
+                        </ul>
+                    </li>
+					<li class="aljbtn">
+                        <a href="">{lang aljwsq:a24}</a>
+                        <ul>
+						{loop $msgtypes5 $msg $type}
+							<li>
+								 <a  href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=addautoreply&gettype={$msg}">{eval $comfile='source/plugin/aljwsq/com/'.$msg.'.php';}{if file_exists($comfile)}<b>{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{else}<b style="color:green">{lang aljwsq:autoreply1}{eval echo str_replace({lang aljwsq:autoreply2},'',$type)}</b>{/if}</a>
+							</li>
+						{/loop}
+                        </ul>
+                    </li>
+				   {/if}
+		</div></div>
+<form id="cpform" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply" autocomplete="off" method="post" name="cpform"><input type="hidden" value="{FORMHASH}" name="formhash"><input type="hidden" value="" name="scrolltop" id="formscrolltop"><input type="hidden" value="" name="anchor">
+<table style="border:1px solid #F0F7FD" class="tb tb2 ">
+<tbody>
+</tbody><tbody><tr><th class="partition" colspan="15">{lang aljwsq:a25}</th></tr>
+<tr><td>{lang aljwsq:a26}
+<select name="msgtype">
+    <option value="">{lang aljwsq:a27}</option>
+	{loop $msgtypes $msg $type}
+	<option value="$msg" {if $_GET['msgtype']==$msg}selected{/if}>$type</option>
+	{/loop}
+</select>
+<input type="submit" name="searchsubmit" class="btn" value="{lang aljwsq:a28}"></td></tr></tbody></table>
+</form>
+<table class="tb tb2 nobdb">
+    <tbody>
+<tr class="header">
+    <th>{lang aljwsq:autoreply4}</th>
+    <th>{lang aljwsq:autoreply5}</th>
+    <th>{lang aljwsq:autoreply6}</th>
+    <th>{lang aljwsq:autoreply7}</th>
+    <th>{lang aljwsq:autoreply8}</th>
+    <th>{lang aljwsq:autoreply9}</th>
+    <th>{lang aljwsq:autoreply10}</th>
+</tr>
+{loop $replys $r}
+<tr class="header">
+    <td>{$r['displayorder']}</td>
+    <td>{$r['id']}</td>
+    <td>{$r['mykeyword']}</td>
+    <td>{$msgtypes[$r['msgtype']]}</td>
+    <td>{if $r['status']}{lang aljwsq:autoreply11}{else}{lang aljwsq:autoreply12}{/if}</td>
+    <td>{eval echo dgmdate($r['updatetime']);}</td>
+    <td>
+        <a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=edit&aid={$r['id']}">{lang aljwsq:autoreply13}</a>&nbsp;
+        <a onclick="showDialog('{lang aljwsq:autoreply14}', 'confirm', '', function() {
+                    location.href = 'admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act=delete&aid={$r['id']}&formhash={FORMHASH}'
+                    }, 0);
+                            return false;" href="#">{lang aljwsq:autoreply15}</a>
+    </td></tr>
+{/loop}
+
+<tr><td colspan="10">$paging</td></tr>
+</tbody></table>

@@ -1,0 +1,42 @@
+<script>disallowfloat = 'newthread';</script>
+<table class="tb tb2 " id="tips">
+<tbody><tr><th class="partition">{lang aljwsq:a1}</th></tr>
+<tr><td class="tipsblock" s="1"><ul id="tipslis">
+<li>{lang aljwsq:a10}</li>
+{if !file_exists('source/plugin/aljwsq/com/ggk.php')}<li>{lang aljwsq:a11}</li>{/if}
+</ul></td></tr></tbody>
+</table>
+<table class="tb tb2 nobdb">
+    <tbody>
+        <tr>
+            <th colspan="15" class="partition"><a onclick="showWindow('add',this.href)" href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=indexsetting&wid=menu&act=add">&#28155;&#21152;&#24494;&#24213;&#37096;&#33756;&#21333;</a></th></tr>
+        <tr class="header">
+            <th>&#25490;&#24207;</th>
+            <th>{lang aljwsq:menu5}</th>
+            <th>{lang aljwsq:menu6}</th>
+            <th>{lang aljwsq:menu7}</th>
+            <th>{lang aljwsq:c2}</th>
+            <th>{lang aljwsq:c3}</th>
+            <th>{lang aljwsq:menu9}</th>
+            <th>{lang aljwsq:menu10}</th>
+        </tr>
+        {loop $menus $menu}
+        <tr class="header">
+            <td>{$menu['displayorder']}</td>
+            <td>{$menu['id']}</td>
+            <td>{$menu['name']}</td>
+            <td>{$menu['upid']}</td>
+            <td>{$pics[$menu['type']]}</td>
+            <td>{$menu['keyurl']}</td>
+            <td>{eval echo dgmdate($menu['dateline']);}</td>
+            <td>
+                <a onclick="showWindow('edit', this.href)" href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=indexsetting&wid=menu&act=edit&mid={$menu['id']}">{lang aljwsq:menu11}</a>&nbsp;
+                <a onclick="showDialog('{lang aljwsq:menu12}', 'confirm', '', function() {
+            location.href = 'admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=indexsetting&wid=menu&act=delete&mid={$menu['id']}&formhash={FORMHASH}'
+        }, 0);
+        return false;" href="#">{lang aljwsq:menu13}</a>
+            </td></tr>
+        {/loop}
+        
+        <tr><td colspan="10"></td></tr>
+    </tbody></table>

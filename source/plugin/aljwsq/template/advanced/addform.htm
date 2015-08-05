@@ -1,0 +1,46 @@
+{template common/header_ajax}
+
+<h3 class="flb">
+    <em>&#28155;&#21152;&#19975;&#33021;&#34920;&#21333;</em>
+    <span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+</h3>
+<form id="addbc" method="post" enctype="multipart/form-data" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&act={$_GET['act']}&fid={$_GET['fid']}">
+    <input name="formhash" type="hidden" value="{FORMHASH}" />
+    <div class="c">
+        <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#34920;&#21333;&#20851;&#38190;&#35789;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['mykeyword']}" name="keyword"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#34920;&#21333;&#26631;&#39064;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['title']}" name="title"></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#34920;&#21333;&#25551;&#36848;</td>
+    <td colspan="4"><textarea name="description" style="width:350px;height:100px;">{$reply['description']}</textarea></td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>{lang aljwsq:text8}</td>
+    <td colspan="4">
+        <input type="file" style="width:350px;" class="px"  name="picurl">&nbsp;&nbsp;
+        
+    </td>
+</tr>
+{if $reply['picurl']}<tr><td></td><td><img src="{$reply['picurl']}" width="60" /></td></tr>{/if}
+<tr>
+    <td width="100" height="30"><span style="color:red;"></span>&nbsp;&nbsp;&#25552;&#31034;&#35821;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['tips']}" name="tips">&nbsp;&#40664;&#35748;&#65306;&#25552;&#20132;&#25104;&#21151;&#65292;&#35874;&#35874;&#21442;&#19982;&#65281;</td>
+</tr>
+<tr>
+    <td width="100" height="30"><span style="color:red;">*</span>&#25552;&#20132;&#36339;&#36716;&#30340;&#22320;&#22336;</td>
+    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['gotourl']}" name="gotourl"></td>
+</tr>
+            </tbody></table>
+    </div>
+    <p class="o pns">
+        <button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljwsq:add7}</strong></button>
+    </p>
+</form>
+{template common/footer_ajax}

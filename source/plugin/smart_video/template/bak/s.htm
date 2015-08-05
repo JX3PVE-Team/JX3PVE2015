@@ -1,0 +1,200 @@
+{template common/header}
+<link href="source/plugin/smart_video/static/css/yk.css?{VERHASH}" type="text/css" rel="stylesheet">
+<link href="source/plugin/smart_video/static/css/filter.css?{VERHASH}" type="text/css" rel="stylesheet">
+<style type='text/css'>
+{if $is_wide}
+.yk-con{width:1180px;}
+{/if}
+</style>
+<div class="s-body">
+            <div class="s-main">
+ <div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&rsaquo;&rsaquo;</em><a>&#x9996;&#x9875;</a><em>&rsaquo;&rsaquo;</em><a href="plugin.php?id=smart_video">{$smart['title']}</a>
+<em>&rsaquo;&rsaquo;</em><a>&#x641C;&#x7D22;&#x9875;</a>
+</div>
+{template smart_video:search}
+</div>           
+            
+                <div class="yk-con">
+                    <!-- 广告 -->
+                    <div class="yk-AD-tong">
+                        <div class="ad-wrap">
+                            <div class="ad-con">
+                                <div class="ad-inner" id="ab_26" style="display: block;"><div align="center" class="mod" id="s_h_206886">
+                                   {$smart[s_ad1]}
+                                </div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end 广告 -->
+
+
+    <!-- 筛选器 -->
+<div class="yk-filter" id="filter">
+    <div class="yk-filter-panel">
+
+        <div class="item item-moreshow">
+        <label>{$smart[fname]}</label>
+        <ul>
+{if $fcid==0}
+<li class="current"><span>&#x5168;&#x90E8;</span></li>
+{else}
+<li><a href="{eval echo get_furl()}">&#x5168;&#x90E8;</a></li>
+{/if}
+{loop $fclass $fk $fv}
+{if $fv[cid]==$fcid}
+<li class="current"><span>{$fv[name]}</span></li>
+{else}
+<li><a href="{eval echo get_furl($fv[cid])}">{$fv[name]}</a></li> 
+{/if}
+{/loop}
+</ul>
+            
+    </div>
+    
+        <div class="item">
+        <label>{$smart[sname]}</label>
+        <ul>
+{if $scid==0}
+<li class="current"><span>&#x5168;&#x90E8;</span></li>
+{else}
+<li><a href="{eval echo get_furl($fcid)}">&#x5168;&#x90E8;</a></li>
+{/if}
+{loop $sclass $sk $sv}
+{if $sv[cid]==$scid}
+<li class="current"><span>{$sv[name]}</span></li>
+{else}
+<li><a href="{eval echo get_furl($fcid,$sv[cid])}">{$sv[name]}</a></li> 
+{/if}
+{/loop}
+</ul>    
+    </div>
+    
+    
+        <div class="item item-moreshow">
+        <label>{$smart[tname]}</label>
+        <ul>
+{if $tcid==0}
+<li class="current"><span>&#x5168;&#x90E8;</span></li>
+{else}
+<li><a href="{eval echo get_furl($fcid,$scid)}">&#x5168;&#x90E8;</a></li>
+{/if}
+{loop $tclass $tk $tv}
+{if $tv[cid]==$tcid}
+<li class="current"><span>{$tv[name]}</span></li>
+{else}
+<li><a href="{eval echo get_furl($fcid,$scid,$tv[cid])}">{$tv[name]}</a></li> 
+{/if}
+{/loop}
+
+        </ul>    
+    </div>    
+  
+     
+    
+    
+    
+    
+
+
+    </div> 
+</div>
+<div class="yk-sort" id="selectID">
+<div class="yk-sort-label">&#x6392;&#x5E8F;</div>
+<div class="yk-sort-item ">
+<div class="selectbox" fire="hover">
+<div class="handle {if $_GET[order]=='play'}current{/if}" ><span ><a href="{SMART_SEARCH_URL}&fcid={$fcid}&scid={$scid}&tcid={$tcid}&urlkey={$urlkey}&order=play">&#x6700;&#x591A;&#x64AD;&#x653E;</a></span></div>
+
+</div>
+</div>
+
+
+<div class="yk-sort-item ">
+<div class="selectbox" fire="hover"><!-- selectbox-open：打开 -->
+<div class="handle {if $_GET[order]!='play'&&$_GET['order']!='grade'}current{/if}"><span><a href="{SMART_SEARCH_URL}&fcid={$fcid}&scid={$scid}&tcid={$tcid}&urlkey={$urlkey}&order=time">&#x6700;&#x65B0;</a></span></div>
+
+</div>
+</div> 
+ 
+<div class="yk-sort-item ">
+<div class="selectbox" fire="hover"><!-- selectbox-open：打开 -->
+<div class="handle {if $_GET[order]=='grade'}current{/if}"><span><a href="{SMART_SEARCH_URL}&fcid={$fcid}&scid={$scid}&tcid={$tcid}&urlkey={$urlkey}&order=grade">&#35780;&#20998;</a></span></div>
+
+</div>
+</div>
+
+<div class="yk-filterresult-stat">
+
+<font style="float:left;">&#x5171;<b><span id="total_videonum">{$maxnum}</span></b>&#x4E2A;&#x7B5B;&#x9009;&#x7ED3;&#x679C;</font>
+
+
+</div>
+</div>
+<!-- 筛选结果 -->
+<div class="yk-filterresult">
+            <div id="listofficial_wrap"><div id="listofficial"><!--vdata_list start-->
+        <div class="yk-row yk-v-80">
+        
+        
+        {loop $posts $pk $post}
+                <div class="yk-col3">
+            <div class="p p-small">
+                <div class="p-thumb">
+                    <img src="{$post[coverimg]}" alt="{$post[subject]}">
+                                        <div class="p-thumb-tagrt">
+                        <i class="ico-SD" title="超清"></i>
+                                            </div>
+                    
+                                        <div class="p-thumb-tagrb"><span class="p-rating"><em>{eval $grade=explode('.',$post[grade])}{$grade[0]}</em>.{$grade[1]}</span></div>
+                    <div class="p-thumb-taglb"><span class="p-status">{$post[num]}&#x4E2A;&#x89C6;&#x9891;</span></div>
+                    <div class="p-thumb-overlay"></div>
+                </div>
+                <div class="p-link">
+                    <a href="{eval echo get_turl($post[tid])}" target="_blank" title="{$post[subject]}"></a>
+                </div>
+                <div class="p-isdrama"></div>
+                <div class="p-meta pa" style="height:85px;">
+                    <div class="p-meta-title"><a href="{eval echo get_turl($post[tid])}" target="_blank" title="{$post[subject]}">{eval echo str_replace($key,'<font color="#FF0000"><strong>'.$key.'</strong></font>',cutstr($post[subject],32,''))}</a></div>
+
+                                                                                                                            <div class="p-meta-entry">
+                        <span class="p-actor"><label>&#x4F5C;&#x8005;:</label>
+                                                <a href="home.php?uid={$post[authorid]}" target="_blank">{$post[author]}</a>
+                                                </span>
+                    </div>
+                                        <div class="p-meta-entry">
+                                                                                <label>&#x64AD;&#x653E;:</label><span class="p-num">{$post[play]}</span>
+                                                                        </div>
+                </div>
+            </div>
+        </div>
+             {/loop}  
+        
+            </div>
+    
+
+<!--vdata_list end-->
+
+
+
+<div class="yk-pager" style="height:30px;">
+{$multi}
+</div>
+
+</div></div>
+<span style="clear:both"></span>    
+</div>
+
+                    <!-- 广告 -->
+                    <div class="yk-AD-tong">
+                        <div class="ad-wrap">
+                            <div class="ad-con">
+                                <div class="ad-inner" id="ab_171" style="display: block;"><div align="center" class="mod" id="s_h_187576">
+                                {$smart[s_ad2]}
+                                </div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end 广告 -->
+                </div>            </div>        </div>
+{template common/footer}

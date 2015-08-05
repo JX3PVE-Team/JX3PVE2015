@@ -1,0 +1,32 @@
+<form id="cpform" autocomplete="off" method="post" name="cpform">
+<input type="hidden" name="formhash" value="{FORMHASH}" />
+
+<table class="tb tb2 ">
+<tbody>
+<tr><th class="partition" colspan="15">{lang longsun_collect:advance_set}</th></tr>
+<tr>
+	<td class="td27" s="1" colspan="2">
+       {lang longsun_collect:word_replace}
+	</td>
+</tr>
+<tr onmouseover="setfaq(this, 'faq51da')" class="noborder">
+    <td class="vtop rowform">
+<textarea rows="6" ondblclick="textareasize(this, 1)" onkeyup="textareasize(this, 0)" name="word_lib" id="word_lib" cols="50" class="tarea">
+<!--{loop $word_lib_str $val}-->
+{$val['left_str']}{$val['mark']}{$val['right_str']}
+
+<!--{/loop}-->
+</textarea>
+    
+    </td>
+    <td s="1" class="vtop tips2">     
+    {lang longsun_collect:word_replace_tip}   
+    </td>
+</tr>
+<tr>
+<td colspan="15"><div class="fixsel"><input type="submit" value="{lang longsun_collect:advsubmit}" name="advsubmit" id="advsubmit" class="btn"></div></td>
+</tr>
+</tbody>
+</table>
+
+</form>

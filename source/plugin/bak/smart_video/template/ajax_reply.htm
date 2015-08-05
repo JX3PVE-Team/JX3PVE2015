@@ -1,0 +1,17 @@
+{loop $replys $reply}
+<li id="smart_reply_{$reply[pid]}">
+<div class="userimg"><a href="home.php?uid={$reply[authorid]}" target="_blank"><img src="{eval echo avatar($reply[authorid], 'middle',true);}"></a></div>
+<div class="reply_mes">
+<p><a href="home.php?uid={$reply[authorid]}" target="_blank">{$reply[author]}</a></p>
+<p>{eval echo deal_smile($reply['message'])}</p>
+<p align="right">{eval echo date("Y-m-d H:i:s",$reply['dateline'])}<a href="javascript:;" value="@{$reply[author]}:" touid="{$reply[authorid]}" class="reply">&#22238;&#22797;</a>
+<!--{if $_G[groupid]==1||($_G[uid]==$reply[authorid]&&$_G[uid])}-->
+<a href="javascript:;" value="{$reply[pid]}" class="delete">&#21024;&#38500;</a>
+{/if}
+</p>
+</div>
+</li>
+{/loop}
+{if $_GET['tid']}
+<div style="margin-top:5px; margin-bottom:5px; float:right;">{$multi}</div>
+{/if}

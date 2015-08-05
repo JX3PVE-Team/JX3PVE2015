@@ -1,0 +1,56 @@
+{template common/header_ajax}
+
+<h3 class="flb">
+    <em>{lang aljwsq:add1}</em>
+    <span><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']');" title="{lang close}">{lang close}</a></span>
+</h3>
+<form id="addbc" method="post" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=indexsetting&act={$_GET['act']}&mid={$menu['id']}">
+    <input name="formhash" type="hidden" value="{FORMHASH}" />
+    <div class="c">
+        <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>&#25490;&#24207;</td>
+                    <td colspan="4">
+                        <input type="text" name="displayorder" value="{$menu['displayorder']}">
+                    </td>
+                </tr>
+                  <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:index1}</td>
+                    <td colspan="4">
+                        <select name="upid">
+                            {loop $desks $k $v}
+                            <option value="{$k}" {if $menu['upid'] == $k}selected{/if}>{$v}</option>
+                            {/loop}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:add4}</td>
+                    <td colspan="4">
+                        <input type="text" name="name" value="{$menu['name']}">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:index2}</td>
+                    <td colspan="4">
+                        <select name="type">
+						{loop $pics $pk $pv}
+                            <option value="$pk" {if $menu['type'] == $pk}selected{/if}>$pv</option>
+						{/loop}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:index3}</td>
+                    <td colspan="4">
+                        <input type="text" name="keyurl" value="{$menu['keyurl']}">&nbsp;&nbsp;
+                    </td>
+                </tr>
+            </tbody></table>
+    </div>
+    <p class="o pns">
+        <button type="submit" name="submit" value="true" class="pn pnc"><strong>{lang aljwsq:add7}</strong></button>
+    </p>
+</form>
+{template common/footer_ajax}

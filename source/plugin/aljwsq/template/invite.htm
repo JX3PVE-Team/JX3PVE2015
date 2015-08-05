@@ -1,0 +1,28 @@
+{block return}
+{if $config['isinvite']}
+<style type='text/css'>
+.g-submit.exchange-now {
+  background-color: {$config['invitecolor']};
+  cursor: pointer;
+}
+	.g-submit {
+  color: {$config['buttoncolor']};
+  display: inline-block;
+  font-size: 15px;
+  height: 25px;
+  line-height: 25px;
+  margin-top: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+</style>
+<div class="rfm">
+<table>
+<tbody><tr>
+<th></th>
+<td><div onclick="showWindow('showqcode','plugin.php?id=aljwsq:bind&act=showqcode')" class="g-submit exchange-now px" id="exchange-submit-btn">{$config['buttondesc']}</div></td>
+</tr>
+</tbody></table>
+</div>
+{/if}
+{/block}

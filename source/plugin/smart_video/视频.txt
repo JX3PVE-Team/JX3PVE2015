@@ -1,0 +1,16 @@
+
+
+
+首页对应  模板文件：
+	  对应地址：http://www.jx3pve.com/plugin.php?id=smart_video
+	  去除除下面4个主要分类各调用的4个，其他全部去掉
+
+列表页	  模板文件：
+	  对应地址：http://www.jx3pve.com/smart_video-smart_video.html?mod=s&fcid=2&scid=0&tcid=0
+	  则不显示其他分类条目 保留当前分类h2
+
+单页	  模板文件：
+
+
+CG时间轴
+    	  

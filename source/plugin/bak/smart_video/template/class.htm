@@ -1,0 +1,40 @@
+<script type="text/JavaScript">
+var rowtypedata = [
+	[[1,'', 'td25'],[1,'<input type="text" class="txt" name="newcatorder[]" value="0" />', 'td25'], [5, '<div><input name="newcat[]" value="" size="20" type="text" class="txt" /><a href="javascript:;" class="deleterow" onClick="deleterow(this)">É¾³ý</a></div>']],
+	[[1,'', 'td25'],[1,'<input type="text" class="txt" name="newsuborder[{1}][]" value="0" />', 'td25'], [5, '<div class="board"><input name="newsubcat[{1}][]" value="" size="20" type="text" class="txt" /><a href="javascript:;" class="deleterow" onClick="deleterow(this)">É¾³ý</a></div>']],
+	[[1, ''], [1,'<input type="text" class="txt" name="newtirorder[{1}][]" value="0" />', 'td25'], [5, '<div class="childboard"><input name="newtircat[{1}][]" value="" size="20" type="text" class="txt" /><a href="javascript:;" class="deleterow" onClick="deleterow(this)">É¾³ý</a>&nbsp;</div>']]
+	];
+    </script> 
+ <!--{loop $fclass $k $v}-->
+   <tr class="hover">
+ <td class="td25" onclick="toggle_group('group_{$v[cid]}', $('a_group_{$v[cid]}'))"><a href="javascript:;" id="a_group_{$v[cid]}">[-]</a></td>
+<td class="td25"><input type="text" class="txt" name="order[{$v[cid]}]" value="{$v[displayorder]}"></td>
+<td><div class="parentboard"><input type="text" name="name[{$v[cid]}]" value="{$v[name]}" class="txt"></div></td>
+<td align="right" class="td23 lightfont"></td>
+<td class="td23" colspan="2"></td>
+<td width="160"><a href="{ADMINSCRIPT}?action=plugins&identifier=smart_video&pmod=class&dele=1&cid={$v[cid]}&type={$v[type]}&formhash={FORMHASH}" title="{lang smart_video:s1}" class="act">{lang smart_video:delete}</a></td>
+</tr>
+<tbody id='group_{$v[cid]}'>
+     <!--{loop $sclass $ks $vs}-->
+     <!--{if $v[cid]==$vs['cup']}-->
+     <tr class="hover">
+     <td colspan="1" class="td25"></td><td colspan="1" class="td25"><input type="text" class="txt" name="order[{$vs[cid]}]" value="{$vs['displayorder']}"></td>
+     <td colspan="4"><div class="board"><input name="name[{$vs[cid]}]" value="{$vs['name']}" size="20" type="text" class="txt"><a href="###" onclick="addrowdirect = 1;addrow(this, 2, {$vs['cid']})" class="addchildboard">{lang smart_video:third}</a></div></td>
+     <td width="160"><a href="{ADMINSCRIPT}?action=plugins&identifier=smart_video&pmod=class&dele=1&cid={$vs[cid]}&type={$vs[type]}&formhash={FORMHASH}" title="{lang smart_video:s1}" class="act">{lang smart_video:delete}</a></td>
+     </tr>
+            <!--{loop $tclass $kt $vt}-->
+            <!--{if $vs[cid]==$vt['cup']}-->
+        <tr class="hover">
+        <td colspan="1"></td><td colspan="1" class="td25"><input type="text" class="txt" name="order[{$vt[cid]}]" value="{$vt[displayorder]}"></td>
+        <td colspan="4"><div class="childboard"><input name="name[{$vt[cid]}]" value="{$vt[name]}" size="20" type="text" class="txt"></div></td>
+        <td width="160"><a href="{ADMINSCRIPT}?action=plugins&identifier=smart_video&pmod=class&dele=1&cid={$vt[cid]}&type={$vt[type]}&formhash={FORMHASH}" title="{lang smart_video:s1}" class="act">{lang smart_video:delete}</a></td>
+        </tr>      
+            <!--{/if}-->
+            <!--{/loop}--> 
+     <!--{/if}-->
+      <!--{/loop}--> 
+   </tbody>     
+     <tr class="hover"><td></td><td colspan="5"><div class="lastboard"><a href="###" onclick="addrow(this,1,{$v[cid]})" class="addtr">{lang smart_video:second}</a></div></td><td>&nbsp;</td></tr>
+ <!--{/loop}--> 
+
+  <tr class="hover"><td></td><td colspan="5"><div><a href="###" onclick="addrow(this, 0)" class="addtr">{lang smart_video:first}</a></div></td><td class="bold"></td></tr>

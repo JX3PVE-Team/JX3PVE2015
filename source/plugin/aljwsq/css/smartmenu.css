@@ -1,0 +1,119 @@
+.smartmenu, .smartmenufloaty {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}
+
+.smartmenuie6 {
+    height: 30px;
+}
+
+.smartmenu a, 
+.smartmenufloaty a {
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFF;
+    padding: 0px 10px;
+}
+
+.smartmenu a.last {
+    border: none;
+}
+
+.smartmenu a:hover {
+    color: #666;
+}
+
+.smartmenu ul, .smartmenufloaty ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.smartmenu ul li, .smartmenufloaty li {
+    padding: 5px 0px 5px 0px;
+    float: left;
+	background: none repeat scroll 0 0 #75bee8;
+}
+
+.smartmenu li ul {
+    display: none;
+}
+
+.smartmenufloaty {
+    background: transparent;
+    position: absolute;
+    border: none;
+    width: auto;
+    height: auto;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+}
+
+.smartmenufloaty .tip {
+    background: url(../images/floatytip.png) no-repeat;
+    font-size: 0px; 
+    height: 20px;
+    width: 50px;
+    margin: 0px;
+    overflow: hidden;
+    display: block;
+}
+
+.smartmenufloaty .tipIE6 { 
+    background: url(../images/floatytip.gif);
+}
+
+.smartmenufloaty .padder {
+    background: url(../images/floatybg.png);
+    padding: 0px 8px; 
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+}
+
+.smartmenufloaty .padderIE6 {
+    background: url(../images/floatybg.gif);
+}
+
+.smartmenufloaty li {
+    float: none ;
+    border-bottom: 1px dotted #FFF;
+    padding: 5px 8px; 
+}
+ 
+.smartmenufloaty li.last {
+    border: none;
+}
+
+.smartmenufloaty a {
+    border: none;
+    padding: 0px;
+}
+
+.smartmenufloaty a:hover {
+    color: #222;
+}
+
+.aljbtn {
+  border-radius: 0.5em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: inline-block;
+  font: 14px/100% Arial,Helvetica,sans-serif;
+  margin: 0 2px 8px;
+  outline: medium none;
+  padding: 0.5em 2em 0.55em;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  vertical-align: baseline;
+}

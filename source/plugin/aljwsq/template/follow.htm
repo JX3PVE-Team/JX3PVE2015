@@ -1,0 +1,39 @@
+{block return}
+{if $config['isfollow']}
+<style type='text/css'>
+	#wsqfollow_menu {
+  line-height: 25px;
+  text-align: center;
+}
+#wsqfollow_menu  h6 {
+  color: #333;
+  font-size: 14px;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+#wsqfollow_menu img {
+  vertical-align: top;
+}
+#wsqfollow_menu {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #fff;
+  border-color: #ebebeb;
+  border-image: none;
+  border-right: 1px solid #ebebeb;
+  border-style: none solid solid;
+  border-width: 0 1px 1px;
+  left: 2px;
+  line-height: 25px;
+  padding-bottom: 4px;
+  position: absolute;
+  text-align: center;
+  top: 22px;
+}
+</style>
+<a id="wsqfollow"  href="javascript:void(0);" onmouseover="showMenu({'ctrlid':this.id,'menuid':'wsqfollow_menu','pos':'34!'});">{$config['h8']}</a>
+<div id="wsqfollow_menu" style="display:none;"><h6>{$config['h6']}</h6><img width="142px" height="142px" src="{$config['followimg']}"><p>{$config['h7']}</p></div>
+{/if}
+{/block}

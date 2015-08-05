@@ -1,0 +1,14 @@
+<div class="itemtitle">
+<h3>
+
+</h3>
+<ul class="tab1">
+<li {if empty($_GET['wid'])}class="current"{/if}><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced"><span>&#19975;&#33021;&#34920;&#21333;</span></a></li>
+<li {if $_GET['act'] == 'voicelist'}class="current"{/if}><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&wid=voicelist&act=voicelist"><span>&#35821;&#38899;&#21015;&#34920;</span></a></li>
+<li {if $_GET['act'] == 'qrcodelist'}class="current"{/if}><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&wid=qrcodelist&act=qrcodelist"><span>&#36890;&#29992;&#20108;&#32500;&#30721;</span></a></li>
+<li {if $_GET['act'] == 'wxqrcodelist'}class="current"{/if}><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&wid=wxqrcodelist&act=wxqrcodelist"><span>&#24494;&#20449;&#20108;&#32500;&#30721;</span></a></li>
+<li {if $_GET['act'] == 'keywordlog'}class="current"{/if}><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&wid=keywordlog&act=keywordlog"><span>&#28040;&#24687;&#35760;&#24405;</span></a></li>
+<li {if $_GET['act'] == 'keywordlogcount'}class="current"{/if}><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=advanced&wid=keywordlogcount&act=keywordlogcount"><span>&#28040;&#24687;&#32479;&#35745;</span></a></li>
+</ul>
+
+</div>

@@ -1,0 +1,58 @@
+
+<tbody>
+<form id="newt" method="post" action="{ADMINSCRIPT}?action=plugins&identifier=smart_video&pmod=manage" enctype="multipart/form-data">
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+				<tr class="hover hover">
+                <td align="center" width="20%"></td>
+    				<td align="center" width="30%"></td>
+                    <td align="center"  width="20%">{lang smart_video:key}<input type="text" name="key" placeholder="{lang smart_video:key1}" style="width:300px;"><button type="submit" name="submit" value="true" class="pn pnc" ><strong>{lang smart_video:search}</strong></button></td>
+    				<td align="center"  width="30%"></td>                 
+                </tr>
+ </form>               
+<form id="newt" method="post" action="{ADMINSCRIPT}?action=plugins&identifier=smart_video&pmod=manage" enctype="multipart/form-data">
+<input name="formhash" type="hidden" value="{FORMHASH}" />
+<input name="msubmit" type="hidden" value="1" /> 
+				<tr bgcolor="#F2F9FD">
+                <td align="center"><strong>&#36873;&#25321;</strong></td>
+    				<td align="center"><strong>{lang smart_video:t1}</strong></td>
+    	
+                    <td align="center"><strong>{lang smart_video:t4}</strong></td>
+                    <td align="center"><strong>{lang smart_video:t5}</strong></td>
+                </tr>
+<!--{loop $posts $post}-->
+				<tr class="hover hover">
+                 <td align="center" width="20%"><input type="checkbox" name="smart_select[]" chkvalue="s2" value="{$post[tid]}"></td>
+    				<td width="30%" align="center"><p><img src="{$post['coverimg']}"  width="100px" height="100px;"/></p>{$post['subject']}</td>
+                    <td width="%20" align="center">
+                    {$class[$post['fcid']][name]}
+                   <!--{if $post[scid]}-->
+                    >{$class[$post['scid']][name]}
+                      <!--{if $post[tcid]}-->
+                    >>{$class[$post['tcid']][name]}
+                    <!--{/if}-->
+                    <!--{/if}-->
+                    </td>
+                    <td width="30%" align="center">
+                    {if !$post[visiable]}
+                    <font color="#FF0000">&#24453;&#23457;&#26680;</font>
+                    {/if}
+                    <span><a href="plugin.php?id=smart_video&mod=p&tid={$post[tid]}&type=self" target="_blank" style="margin-left:5px;">{lang smart_video:c1}</a>
+                    <a href="plugin.php?id=smart_video&mod=v&tid={$post[tid]}" style="margin-left:5px;" target="_blank">{lang smart_video:c3}</a></span></td>
+                </tr>
+<!--{/loop}-->   
+				<tr bgcolor="#F2F9FD">
+                <td align="center"><strong><input type="checkbox"  value="1" name="s1"  onclick="checkAll('value', this.form, 's2','s1',1)">
+              
+                </strong></td>
+                    <td align="left">
+                    <input type="hidden" name="type" id="type">
+                    <span><button type="submit" onclick="javascript:document.getElementById('type').value='t'">&#36890;&#36807;&#23457;&#26680;</button></span>
+                    <span style="margin-left:5px;"><button type="submit" onclick="javascript:document.getElementById('type').value='d'">&#25209;&#37327;&#21024;&#38500;</button></span></td>
+                    <td align="center"></td>
+                     <td align="center"></td>
+                </tr>
+               </form>              
+				<tr class="hover hover">
+    				<td align="right" colspan="4">{$multi}</td>
+                </tr>                         
+            </tbody>   

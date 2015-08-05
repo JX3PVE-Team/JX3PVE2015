@@ -96,17 +96,11 @@
 <!-- jx3pve:main -->
 <div class="pve-main">
 
-	
 	<!-- jx3pve:page header -->
 	<div class="pve-header">
 		<!--{subtemplate forum/header}-->
 	</div>
 	
-	<!-- jx3pve:sidebar -->
-	<div class="pve-sidebar">
-		<!--{subtemplate forum/sidebar}-->
-	</div>
-
 	<div class="pve-content">
 
 		<!-- jx3pve:content -->	
@@ -116,8 +110,8 @@
 			<!--{subtemplate jx3pve/w_route_post}-->
 
 			<!-- jx3pve:pubtips -->
-			<div class="m-tool-pubtips">
-				<!--{block/1243}-->
+			<div class="m-raid-pubtips">
+				<!--{block/1268}-->
 			</div>
 
 			<!--{eval $adveditor = $isfirstpost && $special || $special == 2 && ($_GET['action'] == 'newthread' || $_GET['action'] == 'reply' && !empty($_GET['addtrade']) || $_GET['action'] == 'edit' && $thread['special'] == 2);}-->

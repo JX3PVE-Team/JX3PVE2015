@@ -1,0 +1,21 @@
+{template aljwsq:adminadvancednav}
+<table class="tb tb2 nobdb">
+    <tbody>
+        <tr>
+            <th class="partition" colspan="15">&#28040;&#24687;&#35760;&#24405;</th></tr>
+        <tr class="header">
+            <th>OPENID</th>
+			<th>&#26165;&#31216;</th>
+			<th>&#20851;&#38190;&#35789;</th>
+			<th>&#21457;&#36865;&#26102;&#38388;</th>
+        </tr>
+		{loop $recordlist $record}
+            <tr>
+			<td>{$record['openid']}</td>
+			<td>{if $record['nickname']}{$record['nickname']}{else}--{/if}</td>
+            <td>{$record['keyword']}</td>
+			<td>{eval echo dgmdate($record['dateline']);}</td>
+            </tr>
+        {/loop}         
+        <tr><td colspan="10">{$paging}</td></tr>
+    </tbody></table>

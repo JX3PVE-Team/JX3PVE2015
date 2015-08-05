@@ -1,0 +1,43 @@
+<script>disallowfloat = 'newthread';</script>
+<style type="text/css">
+	.rt tr th,.rt tr td{
+		text-align:center;
+	}
+</style>
+<table class="tb tb2 " id="tips">
+<tbody><tr><th class="partition">{lang aljwsq:a1}</th></tr>
+<tr><td class="tipsblock" s="1"><ul id="tipslis">
+<li>{lang aljwsq:bindrecord2}</li>
+<li>{lang aljwsq:a16}</li>
+{if !file_exists('source/plugin/aljwsq/com/ggk.php')}<li>{lang aljwsq:a29}</li>{/if}
+</ul></td></tr></tbody>
+</table>
+<table class="tb tb2 nobdb rt">
+    <tbody>
+        <tr>
+            <th colspan="15" class="partition" style="text-align:left">{lang aljwsq:bindrecord1}</th></tr>
+        <tr class="header">
+			<th style="width:200px;">OPENID</th>
+			 <th>{lang aljwsq:bindrecord4}</th>
+			<th>{lang aljwsq:bindrecord5}</th>
+            <th>{lang aljwsq:bindrecord6}</th>
+			<th>{lang aljwsq:bindrecord3}</th>
+            <th>{lang aljwsq:bindrecord7}</th>
+            <th>{lang aljwsq:bindrecord8}</th>
+            <th>{lang aljwsq:bindrecord14}</th>
+        </tr>
+        {loop $users $user}
+        <tr class="header">
+			<td>{$user['openid']}</td>
+			 <td>{if $user['username']}<a href="home.php?mod=space&uid={eval $usr=C::t('common_member')->fetch_by_username($user['username']);echo $usr['uid'];}&do=profile" target="_blank">$user['username']</a>{else}<font style="color:red">{lang aljwsq:bindrecord9}</font>{/if}</td>
+			<td>{if $user['subscribe_time']}{eval echo dgmdate($user['subscribe_time']);}{else}--{/if}</td>
+            <td>{if $user['bindtime']}{eval echo dgmdate($user['bindtime']);}{else}<font style="color:red">{lang aljwsq:bindrecord10}</font>{/if}</td>
+			 <td>{if $user['nickname']}<a href="{$user['headimgurl']}" target="_blank">{$user['nickname']}</a>{else}--{/if}</td>
+            <td>{if $user['sex']==1}{lang aljwsq:bindrecord11}{elseif $user['sex']==2}{lang aljwsq:bindrecord12}{else}{lang aljwsq:bindrecord13}{/if}</td>
+            <td>{if $user['country']}{$user['country']}{$user['province']}{$user['city']}{else}--{/if}</td>
+            <td><a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=bindrecord&act=removebind&formhash={FORMHASH}&openid={$user['openid']}">{lang aljwsq:bindrecord15}</a></td>
+        </tr>
+        {/loop}
+        
+        <tr><td colspan="10">$paging</td></tr>
+    </tbody></table>

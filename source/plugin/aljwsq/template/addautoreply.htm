@@ -1,0 +1,50 @@
+<form enctype="multipart/form-data" action="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply&act={$_GET['act']}&aid={$_GET['aid']}" method="post" id="addbc">
+    <input type="hidden" value="{FORMHASH}" name="formhash">
+    <div class="c">
+
+        <table class="tb tb2 ">
+            <tbody>
+                <tr><th colspan="15" class="partition">{lang aljwsq:addautoreply3}(<a href="admin.php?action=plugins&operation=config&do={$_GET['do']}&identifier=aljwsq&pmod=autoreply"><font color="red">{lang aljwsq:addautoreply4}</font></a>)</th></tr>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:addautoreply5}</td>
+                    <td colspan="4">
+                        <input type="radio" name="status" value="1" {if $reply['status']==1}checked="checked"{/if}>{lang aljwsq:addautoreply6}<input type="radio" name="status" value="0" {if $reply['status']==0}checked="checked"{/if}>{lang aljwsq:addautoreply7}
+                    </td>
+                </tr>
+                {if $_GET['gettype']!='subscribe' && $_GET['gettype']!='location'}
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:addautoreply8}</td>
+                    <td colspan="4">
+					{if $_GET['act'] == 'addautoreply'}
+					<textarea name="keyword" style="width:350px;height:100px;">{$reply['mykeyword']}</textarea>
+					&nbsp;&nbsp;&#19968;&#34892;&#19968;&#20010;&#65292;&#21487;&#20197;&#25209;&#37327;&#28155;&#21152;&#65292;&#22914;&#26524;&#26159;&#22810;&#22270;&#25991;&#28040;&#24687;&#23376;&#39033;&#65292;&#20851;&#38190;&#35789;&#19981;&#38656;&#35201;&#22635;&#20889;
+					{else}
+					<input type="text" style="width:350px;" class="px" value="{$reply['mykeyword']}" name="keyword">&nbsp;&nbsp;{lang aljwsq:addautoreply9}
+					{/if}
+					
+					</td>
+                </tr>
+                {/if}
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:addautoreply10}</td>
+                    <td colspan="4">
+                        $msgtypes[$reply['msgtype']]
+                        <input type="hidden" value="$reply['msgtype']" name="msgtype">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="80" height="30"><span style="color:red;">*</span>{lang aljwsq:addautoreply11}</td>
+                    <td colspan="4"><input type="text" style="width:350px;" class="px" value="{$reply['displayorder']}" name="displayorder">&nbsp;&nbsp;{lang aljwsq:addautoreply12}</td>
+                </tr> 
+            <tbody id="subtype">      
+            </tbody>
+            </tbody></table>
+
+    </div>
+    <p class="o pns">
+        <button class="pn pnc" value="true" name="submit" type="submit"><strong>{lang aljwsq:addautoreply13}</strong></button>
+    </p>
+</form>
+<script type="text/javascript">
+    ajaxget('plugin.php?id=aljwsq:type&aid={$_GET['aid']}&gettype={$_GET['gettype']}', 'subtype');
+</script>

@@ -1,0 +1,56 @@
+{if !$svalue}
+<script type="text/javascript">
+jQuery(function(){
+	var is_click=0;
+	jQuery("#smart_ping>li").click(function(){
+		cindex=jQuery(this).index();
+		if(!is_click){
+			is_click=1;
+			smart_ping(cindex);
+			ajaxget('plugin.php?id=smart_video:ajax&tid={$thread[tid]}&inajax=1&type=grade&value='+(cindex+1),'smart_ping_have');  
+		}
+		})
+	jQuery("#smart_ping>li").mouseover(function(){
+		cindex=jQuery(this).index();
+		if(!is_click)smart_ping(cindex);
+		})
+	jQuery("#smart_ping").mouseleave(function (){if(!is_click)smart_ping(-1);});		
+function smart_ping(cindex){
+		jQuery("#smart_ping>li").removeClass('hover');
+		jQuery("#smart_ping>li").removeClass('hover_le');
+		jQuery("#smart_ping>li").each(function(index, element) {
+		if(index<=cindex){
+		if(cindex>2)jQuery(this).addClass('hover');
+		else jQuery(this).addClass('hover_le');
+		}
+			jQuery("#grade_value").text((cindex+1));
+		});
+	}		
+	})
+</script>
+{/if}
+<div class="smart_ping" align="center">
+<div class="smart_des">平均:</div>
+<ul id="smart_ping_have">
+{loop array(1,2,3,4,5) $v}
+{if $v<=$thread[grade]}
+<li class="smart_x hover"></li>
+{else}
+<li class="smart_x"></li>
+{/if}
+{/loop}
+<div class="smart_grade">{$thread[grade]}&#x5206;</div>
+</ul>
+<div class="smart_des">
+{if $svalue}评分{else}评分{/if}:</div>
+<ul id="smart_ping">
+{loop array(1,2,3,4,5) $v}
+{if $v<=$svalue}
+<li class="smart_x hover"></li>
+{else}
+<li class="smart_x"></li>
+{/if}
+{/loop}
+<div class="smart_grade"><font id="grade_value">{$svalue}</font>&#x5206;</div>
+</ul>
+</div>

@@ -1,0 +1,16 @@
+
+<table class="tb tb2 nobdb">
+    <tbody>
+       
+        {if $_GET['pmod']!='com'}<tr><th class="partition" colspan="15"><font color="red">{lang aljwsq:com4}-<b style="color:green">{if $_GET['gettype'] == 'menu'}&#33258;&#23450;&#20041;&#33756;&#21333;{elseif $_GET['gettype'] == 'bindrecord'}&#32465;&#23450;&#29992;&#25143;&#35760;&#24405;{elseif $_GET['gettype'] == 'c'}&#24494;&#39318;&#39029;&#24213;&#37096;&#33756;&#21333;{elseif $_GET['gettype'] == 'qrcode'}&#24494;&#20449;&#20108;&#32500;&#30721;{else}{$msgtypes[$_GET['gettype']]}{/if}</b>,&#26242;&#26102;&#24744;&#36824;&#19981;&#33021;&#20351;&#29992;&#27492;&#21151;&#33021;&#21734;&#65292;&#24403;&#32452;&#20214;&#23433;&#35013;&#25104;&#21151;&#21518;&#23601;&#20250;&#36339;&#36716;&#21040;&#27491;&#30830;&#30340;&#39029;&#38754;&#65281;</font></th></tr>{/if}
+
+        <tr class="header">
+            <th>{lang aljwsq:com7}</th><th style="width:620px;">{lang aljwsq:com8}</th><th>{lang aljwsq:com9}</th></tr>
+        {loop $comarray $com}
+        <tr>
+            <td>$com['name']</td>
+            <td>$com['desc']</td>
+            <td>{if file_exists($com['file'])}<font color="green"><b>{lang aljwsq:com10}</b></font>{else}<font color="red"><b>{lang aljwsq:com11}</b></font> <a target="_blank" href="$com['url']">(<b>{lang aljwsq:com12})</b></a>{/if}</td>
+        </tr>
+        {/loop}
+    </tbody></table>
