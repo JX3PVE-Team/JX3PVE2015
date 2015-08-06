@@ -152,185 +152,197 @@
 	<!--{subtemplate home/spacecp_header}-->
 			<!--{hook/spacecp_usergroup_top}-->
 			<!--{subtemplate home/spacecp_usergroup_header}--></div>
-				<!--{if $do == 'expiry'}-->
-					<div class="notice">{lang usergroup_expired}</div>
-				<!--{/if}-->
+
+				<div class="vip-container">
+					<div class="vip-header">
+						<!--{block/1269}-->
+					</div>
 				
-				<!--{if $expirylist}-->
-
-				<!-- 原始购买窗口 -->
-				<div class="user-vip-fail-tips"><!--{block/1244}--></div>
-				<table cellspacing="0" cellpadding="0" class="dt mtm mbm user-vip-origin">
-						<tbody class="th">
-							<tr>
-								<th>{lang usergroup}</th>
-								<th>{lang memcp_usergroups_dailyprice}</th>
-								<th>{lang memcp_usergroups_credit}</th>
-								<th>{lang group_expiry_time}</th>
-								<th></th>
-							</tr>
-						</tbody>
-						<tbody>
-							<!--{loop $expirylist $groupid $group}-->
-								<tr class="{echo swapclass('alt')} " >
-									<td ><a href="home.php?mod=spacecp&ac=usergroup&gid=$groupid" class="xi2" target="_blank">$group[grouptitle]</a></td>
-									<td>
-										<!--{if $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy' && $group[dailyprice]}-->
-											$group[dailyprice] {$_G[setting][extcredits][$_G[setting][creditstrans]][unit]}{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}
-										<!--{elseif $_G['cache']['usergroups'][$groupid]['pubtype'] == 'free'}-->
-											{lang free}
-										<!--{/if}-->
-									</td>
-									<td><!--{if $group[usermaxdays]}-->$group[usermaxdays] {lang days}<!--{/if}--></td>
-									<td>$group[time]</td>
-									<td>
-										<!--{if in_array($groupid, $extgroupids) || $groupid == $_G['groupid']}-->
-											<!--{if $groupid != $_G['groupid']}-->
-												<!--{if !$group[noswitch]}-->
-													<a class="swith-group" href="home.php?mod=spacecp&ac=usergroup&do=switch&groupid=$groupid&handlekey=switchgrouphk" class="xw1 xi2 buy-vip-font" onclick="showWindow('group', this.href, 'get', 0);">{lang memcp_usergroups_set_main}</a>
-												<!--{/if}-->
-												<!--{if !$group['maingroup']}-->
-													<!--{if $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy'}-->
-														<a href="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid&handlekey=buygrouphk" class="xw1 xi2 buy-vip-font" onclick="showWindow('group', this.href, 'get', 0);">{lang renew}</a>
-													<!--{/if}-->
-													<a href="home.php?mod=spacecp&ac=usergroup&do=exit&groupid=$groupid&handlekey=exitgrouphk" class="xw1 xi2 buy-vip-font" onclick="showWindow('group', this.href, 'get', 0);">{lang memcp_usergroups_exit}</a>
-												<!--{/if}-->
-											<!--{else}-->
-												<!--{if $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy'}-->
-													<a href="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid&handlekey=buygrouphk" class="xw1 xi2 buy-vip-font" onclick="showWindow('group', this.href, 'get', 0);">{lang renew}</a>
-												<!--{/if}-->
-												{lang main_usergroup}
-											<!--{/if}-->
-										<!--{elseif $_G['cache']['usergroups'][$groupid]['pubtype'] == 'free'}-->
-											<a href="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid&handlekey=buygrouphk" class="xw1 xi2 buy-vip-font" onclick="showWindow('group', this.href, 'get', 0);">{lang free_buy}</a>
-										<!--{elseif $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy'}-->
-											<a href="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid&handlekey=buygrouphk" class="xw1 xi2 buy-vip-font" onclick="showWindow('group', this.href, 'get', 0);">{lang memcp_usergroups_buy}</a>
-										<!--{/if}-->
-									</td>
-								</tr>
-							<!--{/loop}-->
-						</tbody>
-				</table>
-				
-				<div class="user-vip-index">
-
-					<div class="block">
-						<!-- 表头 -->
-						<h2 class="getvip">开通会员<span>JOIN VIP &raquo;</span></h2>
-
-						<!-- 产品 -->
-						<!--{loop $expirylist $groupid $group}-->
-							<!--{if $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy' && $group[dailyprice]}-->
-							<form id="buygroupform_{$groupid}" name="buygroupform_{$groupid}" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid"{if !empty($_GET['inajax'])} onsubmit="ajaxpost('buygroupform_{$groupid}', 'return_$_GET['handlekey']', 'return_$_GET['handlekey']', 'onerror');return false;"{/if}>
-								<input type="hidden" name="referer" value="home.php?mod=spacecp&ac=usergroup&do=list" />
-								<input type="hidden" name="buysubmit" value="true" />
-								<input type="hidden" name="gid" value="$_GET[gid]" />
-								<!--{if $_G[inajax]}--><input type="hidden" name="handlekey" value="$_GET[handlekey]" /><!--{/if}-->
-								<input type="hidden" name="formhash" value="{FORMHASH}" />
-							<!-- 产品 -->
-							<div class="user-vip-product">
-								<ul class="product-info">
-									<li class="name">
-										<a href="home.php?mod=spacecp&ac=usergroup&gid=$groupid" target="_blank">$group[grouptitle]</a>  
-										<!--{if $groupid==22}-->
-												<img src="http://static.jx3pve.com/cdn/img/common/vip/vip.gif">
-										<!--{/if}-->
-									</li>
-									<li class="time">
-										<span>购买时间：</span>
-										<select name="days" id="user-vip-days">
-											<!--{if $groupid==22}-->
-											<option value="90" selected="">3个月</option>
-											<option value="180">6个月</option>
-											<option value="360">1年</option>
-											<!--{/if}-->
-										</select>
-									</li>
-									<li class="need">
-										<span>{lang credits_need}{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}：</span>
-										<b id="user-vip-needbuy">  
-										<!--{if $groupid==22}-->
-												2880
-										<!--{/if}-->
-										</b>
-									</li>
-									<li class="mycre">
-										<span class="groupmyc">我的{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}：</span>
-										<b id="user-vip-myhas">$usermoney</b>
-									</li>
-								</ul>
-								<ul class="product-btn">
-									<li>
-										<button type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true" class="user-vip-btnbuy">
-											<strong>开通|续费</strong>
-										</button>
-										<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=credit&op=buy" target="_blank" class="user-vip-btncre"><b>充 值</b></a>
-									</li> 
-								</ul>
-							</div>
-							</form>
+					<!--{if $expirylist}-->
+					<div class="user-vip-index">
+						<!-- 原始购买窗口 -->
+						<div class="user-vip-origin block">
+							<h2 class="getvip">购买记录<span>VIP lIST&raquo;</span></h2>
+							<!-- 已过期提醒 -->
+							<!--{if $do == 'expiry'}-->
+								<div class="user-vip-fail-notice notice">{lang usergroup_expired}</div>
 							<!--{/if}-->
-						<!--{/loop}-->
-
-						<!-- 个人信息 -->
-						<div class="user-vip-header">
-							<div class="user-avt">
-								<a href="home.php?mod=spacecp&ac=jx3" target="_blank"><!--{avatar($_G[uid],small)}--></a>
-							</div>
-							<div class="profile">
-								<ul>
-									<li class="usergroup">
-										<label>用户组：</label>
-										<span>
-											<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup">
-												<img class="icon-groupicon" src=$groupicon />
-												$_G[group][grouptitle]
-											</a>
-										</span>
-									</li>
-									<li class="cre none">
-										<label>米币：</label>
-										<span>
-											<!--{echo getuserprofile('extcredits4');}-->
-										</span>
-									</li>
-									<li class="time">
+	
+							<div class="origin">
+								<table cellspacing="0" cellpadding="0" class="dt mtm mbm">
+									<tbody class="th">
+										<tr>
+											<th>{lang usergroup}</th>
+											<th>{lang memcp_usergroups_dailyprice}</th>
+											<th>{lang memcp_usergroups_credit}</th>
+											<th>{lang group_expiry_time}</th>
+											<th></th>
+										</tr>
+									</tbody>
+									<tbody class="content">
 										<!--{loop $expirylist $groupid $group}-->
-										<label>$group[grouptitle]到期：</label>
-										<span>$group[time]</span>
+											<tr class="{echo swapclass('alt')} " >
+												<td class="name"><a href="home.php?mod=spacecp&ac=usergroup&gid=$groupid" class="xi2" target="_blank">$group[grouptitle]</a></td>
+												<td class="price">
+													<!--{if $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy' && $group[dailyprice]}-->
+														$group[dailyprice] {$_G[setting][extcredits][$_G[setting][creditstrans]][unit]}{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}
+													<!--{elseif $_G['cache']['usergroups'][$groupid]['pubtype'] == 'free'}-->
+														{lang free}
+													<!--{/if}-->
+												</td>
+												<td class="dates"><!--{if $group[usermaxdays]}-->$group[usermaxdays] {lang days}<!--{/if}--></td>
+												<td class="time">$group[time]</td>
+												<td class="btns">
+													<!--{if in_array($groupid, $extgroupids) || $groupid == $_G['groupid']}-->
+														<!--{if $groupid != $_G['groupid']}-->
+															<!--{if !$group[noswitch]}-->
+																<a class="u-btn-originvip u-btn-swith" href="home.php?mod=spacecp&ac=usergroup&do=switch&groupid=$groupid&handlekey=switchgrouphk" class="xw1 xi2 buy-vip-font" onclick="showWindow('group', this.href, 'get', 0);">{lang memcp_usergroups_set_main}</a>
+															<!--{/if}-->
+															<!--{if !$group['maingroup']}-->
+																<!--{if $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy'}-->
+																	<a class="u-btn-originvip u-btn-buynew" href="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid&handlekey=buygrouphk" onclick="showWindow('group', this.href, 'get', 0);">{lang renew}</a>
+																<!--{/if}-->
+																<a class="u-btn-originvip u-btn-exitgroup" href="home.php?mod=spacecp&ac=usergroup&do=exit&groupid=$groupid&handlekey=exitgrouphk" onclick="showWindow('group', this.href, 'get', 0);">{lang memcp_usergroups_exit}</a>
+															<!--{/if}-->
+														<!--{else}-->
+															<!--{if $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy'}-->
+																<a class="u-btn-originvip u-btn-buynew" href="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid&handlekey=buygrouphk"onclick="showWindow('group', this.href, 'get', 0);">{lang renew}</a>
+															<!--{/if}-->
+															{lang main_usergroup}
+														<!--{/if}-->
+													<!--{elseif $_G['cache']['usergroups'][$groupid]['pubtype'] == 'free'}-->
+														<a class="u-btn-originvip u-btn-buynew" href="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid&handlekey=buygrouphk" onclick="showWindow('group', this.href, 'get', 0);">{lang free_buy}</a>
+													<!--{elseif $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy'}-->
+														<a class="u-btn-originvip u-btn-buynew" href="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid&handlekey=buygrouphk"onclick="showWindow('group', this.href, 'get', 0);">{lang memcp_usergroups_buy}</a>
+													<!--{/if}-->
+												</td>
+											</tr>
 										<!--{/loop}-->
-									</li>
-								</ul>
+									</tbody>
+								</table>
 							</div>
-							<div class="vip-tips">
-								（开通后请激活VIP，请点此进行激活：<a class="u-btn-openvip redtips" href="home.php?mod=spacecp&amp;ac=usergroup&amp;do=switch&amp;groupid=22&amp;gid=22&amp;handlekey=switchgrouphk" onclick="showWindow('group', this.href, 'get', 0);">激活VIP</a>）
-							</div>
+
+							<div class="user-vip-fail-tips"><!--{block/1244}--></div>
 						</div>
-
-					</div>
-					
-					<!-- 会员简介 -->
-					<div class="block">
-						<h2 class="getvip">尊贵特权<span>Honorable privilege &raquo;</span></h2>
-						<ul class="user-vip-intro"></ul>
-					</div>
-
-					<!-- 会员详细 -->
-					<div class="block">
-						<h2 class="getvip">全部特权<span>All privileges &raquo;</span></h2>
-						<div class="user-vip-moreinfo">
-							<div class="details">
-								<!--{block/475}-->
-							</div>
-							<div class="vip-mogu"></div>
-						</div>
-					</div>
-
-				</div>
 				
-				<!--{else}-->
-					<p class="emp">{lang memcp_usergroup_unallow}</p>
-				<!--{/if}-->
+						<!-- DIY购买窗口 -->
+						<div class="block">
+							<!-- 表头 -->
+							<h2 class="getvip">开通会员<span>JOIN VIP &raquo;</span></h2>
+							<!-- 产品 -->
+							<!--{loop $expirylist $groupid $group}-->
+								<!--{if $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy' && $group[dailyprice]}-->
+								<form id="buygroupform_{$groupid}" name="buygroupform_{$groupid}" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=usergroup&do=buy&groupid=$groupid"{if !empty($_GET['inajax'])} onsubmit="ajaxpost('buygroupform_{$groupid}', 'return_$_GET['handlekey']', 'return_$_GET['handlekey']', 'onerror');return false;"{/if}>
+									<input type="hidden" name="referer" value="home.php?mod=spacecp&ac=usergroup&do=list" />
+									<input type="hidden" name="buysubmit" value="true" />
+									<input type="hidden" name="gid" value="$_GET[gid]" />
+									<!--{if $_G[inajax]}--><input type="hidden" name="handlekey" value="$_GET[handlekey]" /><!--{/if}-->
+									<input type="hidden" name="formhash" value="{FORMHASH}" />
+								<!-- 产品 -->
+								<div class="user-vip-product">
+									<ul class="product-info">
+										<li class="name">
+											<a href="home.php?mod=spacecp&ac=usergroup&gid=$groupid" target="_blank">$group[grouptitle]</a>  
+											<!--{if $groupid==22}-->
+													<img src="http://static.jx3pve.com/cdn/img/common/vip/vip.gif">
+											<!--{/if}-->
+										</li>
+										<li class="time">
+											<span>购买时间：</span>
+											<select name="days" id="user-vip-days">
+												<!--{if $groupid==22}-->
+												<option value="90" selected="">3个月</option>
+												<option value="180">6个月</option>
+												<option value="360">1年</option>
+												<!--{/if}-->
+											</select>
+										</li>
+										<li class="need">
+											<span>{lang credits_need}{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}：</span>
+											<b id="user-vip-needbuy">  
+											<!--{if $groupid==22}-->
+													2880
+											<!--{/if}-->
+											</b>
+										</li>
+										<li class="mycre">
+											<span class="groupmyc">我的{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}：</span>
+											<b id="user-vip-myhas">$usermoney</b>
+										</li>
+									</ul>
+									<ul class="product-btn">
+										<li>
+											<button type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true" class="user-vip-btnbuy">
+												<strong>开通/续费</strong>
+											</button>
+											<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=credit&op=buy" target="_blank" class="user-vip-btncre"><b>充 值</b></a>
+										</li> 
+									</ul>
+								</div>
+								</form>
+								<!--{/if}-->
+							<!--{/loop}-->
+
+							<!-- 个人信息 -->
+							<div class="user-vip-header">
+								<div class="user-avt">
+									<a href="home.php?mod=spacecp&ac=jx3" target="_blank"><!--{avatar($_G[uid],small)}--></a>
+								</div>
+								<div class="profile">
+									<ul>
+										<li class="usergroup">
+											<label>用户组：</label>
+											<span>
+												<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup">
+													<img class="icon-groupicon" src=$groupicon />
+													$_G[group][grouptitle]
+												</a>
+											</span>
+										</li>
+										<li class="cre none">
+											<label>米币：</label>
+											<span>
+												<!--{echo getuserprofile('extcredits4');}-->
+											</span>
+										</li>
+										<li class="time">
+											<!--{loop $expirylist $groupid $group}-->
+											<label>$group[grouptitle]到期：</label>
+											<span>$group[time]</span>
+											<!--{/loop}-->
+										</li>
+									</ul>
+								</div>
+								<div class="vip-tips">
+									（开通后请激活VIP，请点此进行激活：<a class="u-btn-openvip redtips" href="home.php?mod=spacecp&amp;ac=usergroup&amp;do=switch&amp;groupid=22&amp;gid=22&amp;handlekey=switchgrouphk" onclick="showWindow('group', this.href, 'get', 0);">激活VIP</a>）
+								</div>
+							</div>
+						</div>
+						
+						<!-- 会员简介 -->
+						<div class="block">
+							<h2 class="getvip">尊贵特权<span>Honorable privilege &raquo;</span></h2>
+							<ul class="user-vip-intro"></ul>
+						</div>
+
+						<!-- 会员详细 -->
+						<div class="block">
+							<h2 class="getvip">全部特权<span>All privileges &raquo;</span></h2>
+							<div class="user-vip-moreinfo">
+								<div class="details">
+									<!--{block/475}-->
+								</div>
+								<div class="vip-mogu"></div>
+							</div>
+						</div>
+
+					</div>
+
+					<!--{else}-->
+						<p class="emp">{lang memcp_usergroup_unallow}</p>
+					<!--{/if}-->
+				</div>
+
 				</div>
 			<!--{hook/spacecp_usergroup_bottom}-->
 		<div class="appl">

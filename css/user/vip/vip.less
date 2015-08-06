@@ -1,62 +1,92 @@
-//会员页面
-.tips(yel){
-	border: 1px solid #f0ea8e;
-  	background: #fffddf;
-}
+.vip-container{
 
-.notice{
-	border: 1px solid #f0ea8e;
-	background-color: #fffddf;
-	background-position:8px 8px;
-	padding: 5px 10px 5px 25px;
-	color: #c00;
-	.bold;
-}
-
-.popupcredit{
-	.pc_inner{
-		.tobuy{
-			.color(#0cf,#ff0);
-		}
-	}
-}
-
-.user-vip-fail-tips{
-	.tips(warning);
-}
-
-//原始购买入口
-.user-vip-origin{
-	//.none;
-	border: 1px solid #ddd;
-	.th{
-		.u-btn-gray(c);
-	}
-	th,td{padding-left:10px;}
-
-	.buy-vip-font{
-		.u-btn-blue(b);
-		padding: 3px 10px;
-		border-radius: 3px;
-		margin-right:5px;
+	.vip-header{
+		.h(100px);.x;
 	}
 
-	.swith-group{
-		background-color:#24B206 !important;
-	}
-}
-
-//新会员内容
-.user-vip-index{
 
 	//块头
-	.block{.clear;}
+	.block{
+		.clearfix;
+		margin:20px 10px 0;
+	}
 
 	//标题
 	.getvip{
 		line-height:28px;height:28px;background:#f2f2f2;border-radius:20px;
 		padding-left:20px;color:#999;font-weight:normal;margin-bottom:10px;
 		span{.fr;padding-right:20px;text-transform:uppercase;font-family:Trebuchet MS;letter-spacing:0.5px;}
+	}
+
+}
+
+.user-vip-origin{
+
+	/*table,tbody,th,td{.db;background:none;border:none;padding:0;margin:0;}
+	tr{.clearfix;}
+	th,td{.fl;}*/
+	.origin{
+		margin:10px;
+		border:1px solid #ddd;border-bottom:none;
+		border-radius:4px;
+		table{margin:0 !important;border:none;}
+		th{background-color:#f7f7f7;}
+		th,td{padding:5px 10px;}
+	}
+
+	//已经过期提示
+	.user-vip-fail-notice{
+		border: 1px solid #f0ea8e;
+		background-color: #fffddf;
+		background-position:8px 8px;
+		padding: 5px 10px 5px 25px;
+		color: #c00;
+		.bold;
+	}
+
+	//如果过期提示
+	.user-vip-fail-tips{
+		background-color:#D9F9D3;
+		border:1px solid darken(#D9F9D3,5%);
+		margin:0 10px;
+		padding:0 5px;
+		line-height:2;
+	}
+
+	.u-btn-originvip{
+		.bold;
+		padding: 3px 10px;
+		border-radius: 3px;
+		margin-right:5px;
+		color:#fff;
+	}
+
+	.u-btn-buynew{
+		.u-btn-blue(b);
+	}
+
+	.u-btn-swith{
+		background-color:#24B206;
+		&:hover{
+			background-color:lighten(#24B206,5%);
+		}
+	}
+
+	.u-btn-exitgroup{
+		background-color:#aaa;
+		&:hover{
+			background-color:#999;
+		}
+	}
+}
+
+
+//新会员内容
+.user-vip-index{
+
+	.btn-cre-size2(){
+		color:#fff;width:87px;height:38px;line-height:38px;
+		border:none;display: block;cursor:pointer;text-align: center;
 	}
 
 	//个人信息
@@ -80,11 +110,16 @@
 			padding:5px;margin:10px 0;
 			a{color:#ff0000;.bold;}
 		}
-	}
 
-	.btn-cre-size2(){
-		color:#fff;width:87px;height:38px;line-height:38px;
-		border:none;display: block;cursor:pointer;text-align: center;
+		.u-btn-openvip{
+			.btn-cre-size2();
+			.dbi;
+			color:#fff !important;
+			background:url('@{url}vip/btn-red.png') no-repeat 0 0;
+			&:hover{
+				background-position: 0 -38px;
+			}
+		}
 	}
 
 	//产品信息
@@ -131,16 +166,6 @@
 		}
 	}
 
-	.u-btn-openvip{
-		.btn-cre-size2();
-		.dbi;
-		color:#fff !important;
-		background:url('@{url}vip/btn-red.png') no-repeat 0 0;
-		&:hover{
-			background-position: 0 -38px;
-		}
-	}
-
 	//会员简介
 	.user-vip-intro{
 		background:url("@{url}vip/nav-bg.png") no-repeat center top;
@@ -160,9 +185,13 @@
 			.fr;width:223px;height:304px;
 			background:url("@{url}vip/mogubg.png") no-repeat top left;
 		}
-
 	}
-
-
 }
 
+.popupcredit{
+	.pc_inner{
+		.tobuy{
+			.color(#0cf,#ff0);
+		}
+	}
+}
