@@ -40,6 +40,10 @@
 		border-radius: 3px;
 		margin-right:5px;
 	}
+
+	.swith-group{
+		background-color:#24B206 !important;
+	}
 }
 
 //新会员内容
@@ -73,9 +77,14 @@
 		.vip-tips{
 			.clear;
 			.tips(yel);
-			padding:10px;margin:10px 0;
+			padding:5px;margin:10px 0;
 			a{color:#ff0000;.bold;}
 		}
+	}
+
+	.btn-cre-size2(){
+		color:#fff;width:87px;height:38px;line-height:38px;
+		border:none;display: block;cursor:pointer;text-align: center;
 	}
 
 	//产品信息
@@ -99,11 +108,6 @@
 		}
 		.product-btn{
 			//.pa;right:0;bottom:0;width:220px;height:40px;
-
-			.btn-cre-size2(){
-				color:#fff;width:87px;height:38px;line-height:38px;
-				border:none;display: block;cursor:pointer;text-align: center;
-			}
 			
 			.clearfix;
 			.user-vip-btnbuy,.user-vip-btncre{
@@ -127,6 +131,16 @@
 		}
 	}
 
+	.u-btn-openvip{
+		.btn-cre-size2();
+		.dbi;
+		color:#fff !important;
+		background:url('@{url}vip/btn-red.png') no-repeat 0 0;
+		&:hover{
+			background-position: 0 -38px;
+		}
+	}
+
 	//会员简介
 	.user-vip-intro{
 		background:url("@{url}vip/nav-bg.png") no-repeat center top;
@@ -146,6 +160,7 @@
 			.fr;width:223px;height:304px;
 			background:url("@{url}vip/mogubg.png") no-repeat top left;
 		}
+
 	}
 
 

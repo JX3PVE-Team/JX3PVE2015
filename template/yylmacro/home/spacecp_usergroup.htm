@@ -187,7 +187,7 @@
 										<!--{if in_array($groupid, $extgroupids) || $groupid == $_G['groupid']}-->
 											<!--{if $groupid != $_G['groupid']}-->
 												<!--{if !$group[noswitch]}-->
-													<a href="home.php?mod=spacecp&ac=usergroup&do=switch&groupid=$groupid&handlekey=switchgrouphk" class="xw1 xi2 buy-vip-font" onclick="showWindow('group', this.href, 'get', 0);">{lang memcp_usergroups_set_main}</a>
+													<a class="swith-group" href="home.php?mod=spacecp&ac=usergroup&do=switch&groupid=$groupid&handlekey=switchgrouphk" class="xw1 xi2 buy-vip-font" onclick="showWindow('group', this.href, 'get', 0);">{lang memcp_usergroups_set_main}</a>
 												<!--{/if}-->
 												<!--{if !$group['maingroup']}-->
 													<!--{if $_G['cache']['usergroups'][$groupid]['pubtype'] == 'buy'}-->
@@ -303,7 +303,7 @@
 								</ul>
 							</div>
 							<div class="vip-tips">
-								（开通后请激活VIP，请点此进行激活：<a class="redtips" href="home.php?mod=spacecp&amp;ac=usergroup&amp;do=switch&amp;groupid=22&amp;gid=22&amp;handlekey=switchgrouphk" onclick="showWindow('group', this.href, 'get', 0);">激活VIP</a>）
+								（开通后请激活VIP，请点此进行激活：<a class="u-btn-openvip redtips" href="home.php?mod=spacecp&amp;ac=usergroup&amp;do=switch&amp;groupid=22&amp;gid=22&amp;handlekey=switchgrouphk" onclick="showWindow('group', this.href, 'get', 0);">激活VIP</a>）
 							</div>
 						</div>
 
