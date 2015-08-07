@@ -56,7 +56,7 @@ H.ready('jquery',function(){
 			isSP = false
 		function checkSP(){
 			for (var i=0;i<SPGROUP.length;i++){
-				isSP = isSP || group.indexOf(SPGROUP[i]) !=1
+				isSP = isSP || group.indexOf(SPGROUP[i]) !=-1
 			}
 		}
 		checkSP()

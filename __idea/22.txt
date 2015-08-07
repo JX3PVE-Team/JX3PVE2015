@@ -19,3 +19,6 @@ http://my.xoyo.com/CharacterService/pcm_jx3
 1.新增时间段相关筛选条件，团队类型字段
 2.增加检索为空时的友好提示
 3.
+
+
+职业栏目要点 √图标

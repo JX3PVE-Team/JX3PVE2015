@@ -14,10 +14,11 @@ H.ready(['jquery'],function(){
 			}
 		})
 
-		//
-		var $raidbanner = $("#typeoption_raidbanner")
-		$raidbanner.attr('disabled','disabled')
-		if($("html").hasClass('spHTML')) $raidbanner.removeAttr('disabled')
+		//海报功能
+			//发布
+			var $raidbanner = $("#typeoption_raidbanner")
+			$raidbanner.attr('disabled','disabled')
+			if($("html").hasClass('spHTML')) $raidbanner.removeAttr('disabled')
     	
 	})
 })
