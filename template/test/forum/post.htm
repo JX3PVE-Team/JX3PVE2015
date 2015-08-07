@@ -10,11 +10,10 @@
  -->
 
 <!-- jx3pve:code -->
-<link rel="stylesheet" href="http://www.jx3pve.com/css/pve/pve-macro.css" type="text/css">
-<script src="http://www.jx3pve.com/js/page/pve-macro.js"></script>
+<script src="http://www.jx3pve.com/js/page/pve-raid.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="pve-container macro-container macro-postpage">
+<div class="pve-container raid-container raid-postpage">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">
@@ -97,17 +96,16 @@
 <!-- jx3pve:main -->
 <div class="pve-main">
 
-	
 	<!-- jx3pve:page header -->
 	<div class="pve-header">
 		<!--{subtemplate forum/header}-->
 	</div>
-	
+
 	<!-- jx3pve:sidebar -->
 	<div class="pve-sidebar">
-		<!--{subtemplate forum/post_aside}-->
+		<!--{subtemplate forum/sidebar}-->
 	</div>
-
+	
 	<div class="pve-content">
 
 		<!-- jx3pve:content -->	
@@ -116,9 +114,9 @@
 			<!-- jx3pve:route -->
 			<!--{subtemplate jx3pve/w_route_post}-->
 
-			<!-- jx3pve:tips -->
-			<div class="macro-post-tips">
-				<!--{block/1246}-->
+			<!-- jx3pve:pubtips -->
+			<div class="m-raid-pubtips">
+				<!--{block/1268}-->
 			</div>
 
 			<!--{eval $adveditor = $isfirstpost && $special || $special == 2 && ($_GET['action'] == 'newthread' || $_GET['action'] == 'reply' && !empty($_GET['addtrade']) || $_GET['action'] == 'edit' && $thread['special'] == 2);}-->

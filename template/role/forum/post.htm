@@ -115,6 +115,9 @@
 			<!-- jx3pve:route -->
 			<!--{subtemplate jx3pve/w_route_post}-->
 
+			<!-- jx3pve:tips -->
+			<div class="m-role-pubtips"><!--{block/1271}--></div>
+			
 			<!--{eval $adveditor = $isfirstpost && $special || $special == 2 && ($_GET['action'] == 'newthread' || $_GET['action'] == 'reply' && !empty($_GET['addtrade']) || $_GET['action'] == 'edit' && $thread['special'] == 2);}-->
 			<!--{eval $advmore = !$showthreadsorts && !$special || $_GET['action'] == 'reply' && empty($_GET['addtrade']) || $_GET['action'] == 'edit' && !$isfirstpost && ($thread['special'] == 2 && !$special || $thread['special'] != 2);}-->
 			<form method="post" autocomplete="off" id="postform"
