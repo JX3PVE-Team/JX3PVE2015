@@ -1,70 +1,258 @@
-.raid-container{
-	#postlist .vwthd .ts .m-count{.none;}
-
-}
-
-/*.m-raid-vprimary{
-	.fl;
-	padding:20px 20px 20px 0;
-	border-right:1px dotted #ccc;
-	margin:10px 20px 20px 0;
-
-	.logo{
-		.auto(x);
-		.x;
-		.size(180px,100px);
-		margin-bottom:10px;
-	}
-	.details{
-		.auto(x);
-		padding-left:10px;
-		span{
-			color:#999;
-			margin-right:10px;
-		}
-		li{
-			line-height:2;
-		}
-		margin-bottom:10px;
-	}
-}*/
-
 .raid-viewpage{
-	background: url('http://ww4.sinaimg.cn/large/bcc700eegw1eunybduf0vj21hc0m8dsf.jpg') #f2f2f2 no-repeat center top;
+	background-image: url('http://ww2.sinaimg.cn/large/bcc700eegw1euvg6ii6tjj21hc0m8gyg.jpg');
+	background-repeat:no-repeat;
+	background-color:#f2f2f2;
+	background-position:center top;
+	padding:0;
 	
+	#postlist .vwthd .ts .m-count{.none;}
 	.pve-header,.w-category-nav,.w-sortnav,.w-post-adminbar-top{.none;}
 	.w-pages-bottom,#vfastpostform,.pve-fastpost,.u-msg-posttips{.none;}
 	.pve-postbox>table{.none;}
 	.c-fli .m-header{.none;}
+	.m-extend,.m-panel{.none;}
 
 	.pve-postbox{background:none;}
 	.pve-article{padding:200px 0;.w(940px);.auto(x);}
-	
-	
-	
+
+	.t_fsz{
+		padding:20px !important;
+	}
+
+	.m-title{
+		.fz(13px,1.5);.bold;
+		border-bottom:1px dotted #ddd;
+		margin:0 0 5px 0;
+		padding-bottom:5px;
+	}
+
+	#threadstamp{
+		img{
+			.rt(0,-120px);
+		}
+	}
 
 }
 
-.m-raid-v2primary{
+.m-raid-v2primary,.raid-viewpage .t_fsz{
 	background-color:#fff;
-	border-radius:3px;
+	border-radius:6px;
 	margin-bottom:20px;
+	padding:20px;
+	.fz(12px,2);
+	color:#666;
 }
+//团队基本信息
 .m-raid-primary-1{
-  
+	.clearfix;.pr;
+	.m-avt{
+		.fl;margin-right:20px;
+		.c-raidlogo{
+			border:1px solid #eee;
+		}
+	}
+	.m-details{
+		.w(240px);padding-right:20px;
+		.fl;margin-right:20px;
+		border-right:1px solid #ddd;
+		ul{
+			li{
+				.break;
+				.clearfix;
+				span{
+					color:#888;
+					.w(52px);
+					.x(right);
+					.dbi;.fl;
+				}
+				em{
+					margin-left:62px;
+					.db;
+					span{
+						.color(@bluex,@bluex,#c00);
+						.x(left);
+					}
+				}
+			}
+		}
+	}
+	.m-intro{
+		.fr;.size(416px,192px);.pr;
+		.words{
+			.h(144px);.clip;.break;
+			.x(justify);
+			.indent(24px);
+		}
+	}
+	.m-control{
+		.pa;.lb(0,0);
+		.edit,.magic{
+			//background-color:#f2f2f2;
+			padding:2px 5px;
+			//border:1px solid #ddd;
+			border-radius:3px;
+			i{.dbi;.size(20px);.y(-5px);margin-right:5px;}
+		}
+		.edit{
+			i{background: url(http://static.jx3pve.com/static/image/common//edit.gif) no-repeat 4px 50%;}
+		}
+		.magic{
+			i{background: url('@{url}icon/icon-setting-16.png') no-repeat 3px center;}
+			padding-right:18px;
+		}
+	}
+	.m-fav{
+		.clear;.x;
+		padding:10px 0 10px 0;
+		a{
+			margin-right:20px;
+			i{.dbi;.y;.size(20px);}
+		}
+		.fav{
+			i{background:url('http://static.jx3pve.com/static/image/common/fav.gif') no-repeat 0 0;}
+		}
+		.score{
+			i{background:url('http://static.jx3pve.com/static/image/common/agree.gif') no-repeat 0 0;}
+		}
+		.report{
+			margin-right:0;
+			i{background:url('@{url}icon/icon-report-16.png') no-repeat 0 0;}
+		}
+	}
+	.m-share{
+		.clear;
+		.pa;.rb(0,0);
+		width: 138px;
+		.h(28px);
+		overflow:hidden;
+		margin: 0 auto;
+	}
+	.m-msg{
+		i{
+			.size(16px);.dbi;.y;
+			background:url('http://static.jx3pve.com/static/image/common/pmto.gif') no-repeat 0 0;
+		}
+		width: 100px;
+		height: 30px;
+		border: 1px solid #ddd;
+		display: block;
+		text-align: center;
+		line-height: 30px;
+		background: #f7f7f7;
+		margin: 0 auto;
+		border-radius: 3px;
+		&:hover{
+			background-color:#f9f9f9;
+		}
+	}
 }
+//团队活动
 .m-raid-primary-2{
-  
+  .m-activity{}
 }
+//团队福利
 .m-raid-primary-3{
-  
+  .m-lucky{}
 }
+//团队合影
 .m-raid-primary-4{
-  
+  .m-raidac{.x;}
+  .m-photo{
+  	.size(900px,280px);.x;
+  	img{
+  		max-width:100%;
+  		max-height:100%;
+  	}
+  }
 }
+//更多详情
 .m-raid-primary-5{
-  
+	.modact{.none;}
 }
+//团队成绩
 .m-raid-primary-6{
-  
+	.pr;
+ 	.psth{.none;}
+ 	.pstl{
+ 		padding:3px 0;
+ 	}
+ 	.psta{.none;}
+ 	.psti{
+ 		margin-left:0;padding-left:30px;
+ 		background:url('@{url}raid/medal/raid-medal.png') no-repeat 0 center;
+ 		.xg1{.none;}
+ 		.del{.fr;}
+ 	}
+ 	.m-cmadmin{
+ 		.pa;.rt(20px,15px);
+ 		background: #f2f2f2;
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		padding: 0 5px;
+		.none;
+ 	}
+}
+.adminHTML .m-raid-primary-6 .m-cmadmin{.db;}
+//团队评价
+@keyframes raidCmtAni{
+    from{box-shadow:0 0 3px #ddd;}
+    to{box-shadow:none;}
+}
+.m-raid-primary-7{
+	.u-btn-cmt{
+		i{
+			.dbi;.size(16px);.y(-3px);
+			background:url('http://static.jx3pve.com/static/image/common/agree.gif') no-repeat 0 0;
+			margin-right: 5px;
+		}
+		.db;.auto(x);
+		border:1px solid #ddd;
+		padding:2px 5px;
+		width: 60px;
+		text-align: center;
+		border-radius: 3px;
+		background: #f2f2f2;
+		&.focusthis{
+			i{animation:goUp 0.3s ease-in-out forwards;}
+			animation:raidCmtAni 0.5s ease-in-out forwards;
+		}
+	}
+}
+//团队海报
+.m-raid-banner,.m-raid-usergroup{
+	.none;
+}
+
+.m-raid-avatar{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 80px;
+	height: 80px;
+	margin-bottom: 10px;
+}
+
+//个人
+.m-raid-vprimary{
+
+	.m-avt{
+		.w(102px);
+		.c-raidavt{
+			.x;.size(80px);.auto(x);
+			margin-bottom:10px;
+			border-radius:80px;
+			.verif{.size(80px);border-radius:80px;}
+			img{border-radius:80px;}
+		}
+	}
+
+	.m-intro{
+		.size(485px,122px);
+	}
+}
+
+.raid-person-page{
+	.m-raid-primary-6,.m-raid-primary-7{
+		.none;
+	}
 }

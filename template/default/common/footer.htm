@@ -152,14 +152,14 @@
 	<!--{if $_G['uid'] && $_G['member']['allowadmincp'] == 1 && $_G['setting']['showpatchnotice'] == 1}-->
 		<script type="text/javascript">patchNotice();</script>
 	<!--{/if}-->
-	<!--{if $_G['uid'] && $_G['member']['allowadmincp'] == 1 && empty($_G['cookie']['pluginnotice'])}-->
+	<!-- <!--{if $_G['uid'] && $_G['member']['allowadmincp'] == 1 && empty($_G['cookie']['pluginnotice'])}-->
 		<div class="focus plugin" id="plugin_notice"></div>
 		<script type="text/javascript">pluginNotice();</script>
-	<!--{/if}-->
-	<!--{if !$_G['setting']['bbclosed'] && !$_G['member']['freeze'] && !$_G['member']['groupexpiry'] && $_G['setting']['disableipnotice'] != 1 && $_G['uid'] && !empty($_G['cookie']['lip'])}-->
+	<!--{/if}--> -->
+	<!--<!--{if !$_G['setting']['bbclosed'] && !$_G['member']['freeze'] && !$_G['member']['groupexpiry'] && $_G['setting']['disableipnotice'] != 1 && $_G['uid'] && !empty($_G['cookie']['lip'])}-->
 		<div class="focus plugin" id="ip_notice"></div>
 		<script type="text/javascript">ipNotice();</script>
-	<!--{/if}-->
+	<!--{/if}--> -->
 	<!--{if $_G['member']['newprompt'] && (empty($_G['cookie']['promptstate_'.$_G[uid]]) || $_G['cookie']['promptstate_'.$_G[uid]] != $_G['member']['newprompt']) && $_GET['do'] != 'notice'}-->
 		<script type="text/javascript">noticeTitle();</script>
 	<!--{/if}-->
@@ -184,7 +184,7 @@
 
 	<!--{eval userappprompt();}-->
 	<!--{if $_G['basescript'] != 'userapp'}-->
-	<div id="scrolltop">
+	<div id="scrolltop" class="none">
 		<!--{if $_G[fid] && $_G['mod'] == 'viewthread'}-->
 		<span><a href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&extra=$_GET[extra]&page=$page{if $_GET[from]}&from=$_GET[from]{/if}" onclick="showWindow('reply', this.href)" class="replyfast" title="{lang fastreply}"><b>{lang fastreply}</b></a></span>
 		<!--{/if}-->

@@ -1,82 +1,80 @@
 <div class="m-raid-primary-1 m-raid-v2primary">
 	<!-- logo -->
-	<div class="raidlogo">
-		<img class="logo" src='{raidlogo_value}' width="180px" height="100px">
-		<i class="verif"><span>{vanfon_verify}</span></i>
+	<div class="m-avt">
+		<div class="c-raidlogo">
+			<img class="logo" src='{raidlogo_value}' width="180px" height="100px">
+			<!-- 认证状态 -->
+			<i class="verif"><span>{vanfon_verify}</span></i>
+		</div>
+		<!-- 收藏与举报 -->
+		<div class="m-fav">
+			<a class="fav" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=favorite&type=thread&id={vanfon_tid}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'" title=""><i></i>收藏</a>
+			<a class="score" href="javascript:void(0)" id="m-raid-rate-trigger" target="_self"><i></i>评价</a>
+			<a class="report" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=365" target="_blank"><i></i>举报</a>
+		</div>
 		<!-- 短消息留言 -->
-		<a href=""></a>
+		<a class="m-msg" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{vanfon_uid}&touid={vanfon_uid}&pmid=0&daterange=1&pid={vanfon_pid}&tid={vanfon_tid}" onclick="showWindow('sendpm', this.href);" title="发消息"><i></i>发消息</a>
 	</div>
 	<!-- 字段 -->
 	<div class="m-details">
 		<ul>
-			<li><span>团队名称</span>{raidname_value}</li>
-			<li><span>服务器</span>{fuwuqi_value}</li>
-			<li><span>团队性质</span>{raidnature_value}</li>
-			<li><span>团队类型</span>{raidsex_value}</li>
-			<li><span>开团日</span>{raidtime_value}</li>
-			<li><span>时间段</span>{raidtimefull_value}</li>
-			<li><span>YY频道</span>{raidyy_value}</li>
-			<li><span>联系YY</span>{baotuan4_value}</li>
+			<li><span>团队名称</span><em>{raidname_value}</em></li>
+			<li><span>服务器</span><em>{fuwuqi_value}</em></li>
+			<li><span>团队性质</span><em>{raidnature_value}</em></li>
+			<li><span>团队类型</span><em>{raidsex_value}</em></li>
+			<li><span>开团日</span><em>{raidtime_value}</em></li>
+			<li><span>时间段</span><em>{raidtimefull_value}</em></li>
+			<li><span>YY频道</span><em>{raidyy_value}</em></li>
+			<li><span>联系YY</span><em>{baotuan4_value}</em></li>
 		</ul>
 	</div>
 	<!-- 简要介绍 -->
 	<div class="m-intro">
-		<h2>团队简介</h2>
+		<h2 class="m-title">团队概况</h2>
 		<p class="words">
 			<!-- 团长等，创建时间，主力成员及相关成就作品，GS要求 -->
+			{raiddetails_value}
 		</p>
-		<p class="control">
-			<a class="edit" href=""></a>
-			<a class="magic" href=""></a>
+		<!-- 操作 -->
+		<p class="m-control">
+			<a class="edit" href="forum.php?mod=post&action=edit&fid={vanfon_fid}&tid={vanfon_tid}&pid={vanfon_pid}"><i></i>编辑</a>
+			<a class="magic showmenu" href="javascript:;" id="mgc_post_{vanfon_pid}" onmouseover="showMenu(this.id)" initialized="true"><i></i>道具</a>
 		</p>
+		<!-- 分享 -->
+		<div class="m-share">
+			<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a><a href="#" class="bds_print" data-cmd="print" title="分享到打印"></a></div>
+			<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+		</div>
 	</div>
-	<!-- 收藏与举报 -->
-	<div class="m-fav">
-		<a class="fav" href=""></a>
-		<a class="report" href=""></a>
-	</div>
-	<!-- 分享 -->
-	<div class="m-share">
-		
-	</div>
-	<input id="u-raid-banner" type="hidden" value="{raidbanner_value}">
 </div>
 
 <div class="m-raid-primary-2 m-raid-v2primary">
-	<!-- 团队活动 -->
+	<h2 class="m-title">团队活动</h2>
 	<div class="m-activity">
-		
+		{raidactivity_value}
 	</div>
 </div>
 
 <div class="m-raid-primary-3 m-raid-v2primary">
-	<!-- 团队福利 -->
+	<h2 class="m-title">团队福利</h2>
 	<div class="m-lucky">
-		
+		{raidlucky_value}
 	</div>
 </div>
 
 <div class="m-raid-primary-4 m-raid-v2primary">
+	<h2 class="m-title">团队合影</h2>
 	<!-- 团队宣言 -->
 	<div class="m-raidac">
-		
+		{raidac_value}
 	</div>
 	<!-- 团队合影 -->
 	<div class="m-photo">
-		
+		<img src="{raidphoto_value}" alt="">
 	</div>
 </div>
-
-<div class="m-raid-primary-5 m-raid-v2primary">
-	<!-- 团长成绩 -->
-	<div class="m-raidscore">
-		
-	</div>
-</div>
-
-<div class="m-raid-primary-6 m-raid-v2primary">
-	<!-- 用户评价 -->
-	<div class="m-raidcmt">
-		
-	</div>
+<div class="m-raid-banner" id="raid-banner">
+	<span id="raid-banner-url">{raidbanner_value}</span>
+	<span id="raid-banner-repeat">{raidbannerrpt_value}</span>
+	<span id="raid-banner-color">{raidbannerbg_value}</span>
 </div>

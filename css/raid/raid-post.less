@@ -2,11 +2,36 @@
 	.m-raid-mkp-tips{.none;}
 }
 
+.m-raid-pubtips{
+	.tips(warning);
+	margin-bottom:20px;
+}
+
 input#typeoption_raidbanner[disabled='disabled']{
 	background-color:#eee;
 	cursor:default;
 }
 
-.m-raid-pubtips{
-	.tips(warning);
+#select_raidbanner{
+	button em{
+		padding:0;
+		.db;
+	}
+}
+#select_raidbanner,#select_raidbannerrpt,#select_raidbannerbg{
+	&.disabled{
+		color:#999;
+		input{
+			cursor:default;
+			background-color:#ddd;
+		}
+		.pn{
+			border:1px solid #ccc;
+			background-color:#ddd;
+			&:hover{
+				border:1px solid #ccc;
+				background-color:#ddd;
+			}
+		}
+	}
 }

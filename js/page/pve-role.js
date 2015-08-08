@@ -64,6 +64,19 @@ H.ready(['jquery','fixSidebar'],function(){
     		$libox.hide().eq(curindex).show()
     	})*/
 
+        //涉及要点
+        var role_sort = $("#m-role-primary-sort")
+        if(role_sort.length){
+            var ct = role_sort.html()
+            var arr = ct.split('&nbsp;')
+            for(var i=0;i<arr.length;i++){
+                arr[i] = '<li>' + arr[i] + '</li>'
+            }
+            arr = arr.slice(0,arr.length-1)
+            ct = arr.join('')
+            role_sort.html(ct)
+        }
+
         //导航栏激活
         H.curpage('.u-role')
 
