@@ -61,5 +61,7 @@ H.ready('jquery',function(){
 		}
 		checkSP()
 		if(isSP) $('html').addClass('spHTML')
+
+		//$("#c-header-nav .u-raid a").addClass('new')
 	})
 })
