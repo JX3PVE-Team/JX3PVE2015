@@ -528,9 +528,7 @@
 					<!--{/if}-->
 					<!--{else}-->
 							<!-- dz:无帖子时 -->
-							<div class="team-null">
-								<p class="team-null-tips"><i></i>部分字段为新增加，旧信息该字段为空时无法检索到，请更新补充。</p>
-							</div>
+							<tbody class="bw0_all"><tr><th colspan="{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}6{else}5{/if}"><p class="emp">{lang forum_nothreads}</p></th></tr></tbody>
 						</table><!-- end of table "forum_G[fid]" branch 3/3 -->
 					<!--{/if}-->
 					

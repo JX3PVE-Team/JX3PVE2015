@@ -10,11 +10,11 @@
  -->
 
 <!-- jx3pve:code -->
-<script src="http://js.jx3pve.com/js/page/pve-raid.js"></script>
-<link rel="stylesheet" href="http://css.jx3pve.com/css/test.css" type="text/css" />
+<script src="http://js.jx3pve.com/js/page/pvx-face.js"></script>
+<link rel="stylesheet" href="http://css.jx3pve.com/css/test.css">
 
 <!-- jx3pve:pve -->
-<div class="pve-container raid-container raid-listpage">
+<div class="pve-container face-container face-listpage">
 
 	<!-- dz:style & js -->
 	<!--{if $_G['forum']['ismoderator']}-->
@@ -37,12 +37,12 @@
 	<div class="pve-header">
 		<!--{subtemplate forum/header}-->
 	</div>
-
+	
 	<!-- jx3pve:sidebar -->
 	<div class="pve-sidebar">
 		<!--{subtemplate forum/sidebar}-->
 	</div>
-	
+
 	<div class="pve-content">
 
 		<!-- jx3pve:primary -->
@@ -378,11 +378,10 @@
 					<span id="fd_page_top">$multipage</span>
 					<span class="pgb y" {if $_G[setting][visitedforums]}id="visitedforums" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'34'})"{/if} ><a href="forum.php">{lang return_index}</a></span>
 					<!--{if !$_GET['archiveid']}-->
-					<a class="u-btn-pubraid" href="javascript:;" id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} title="{lang send_posts}">
+					<a class="u-btn-publish" href="javascript:;" id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} title="{lang send_posts}">
 						<span>发布</span>
 						<img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" />
 					</a><!--{/if}-->
-					<a class="u-btn-verif" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=verify" target="_blank">认证</a>
 					<!--{hook/forumdisplay_postbutton_top}-->
 				</div>
 
@@ -425,11 +424,6 @@
 				<!--{/if}-->
 
 			<!--{/if}-->
-
-			<!-- jx3pve:pub-btn -->
-			<div class="m-raid-footer">
-				<!--{template forum/footer}-->
-			</div>
 
 			<!-- jx3pve:fast-post -->
 			<div class="pve-fastpost">
