@@ -10,11 +10,11 @@
  -->
 
 <!-- jx3pve:code -->
-<script src="http://js.jx3pve.com/js/page/pve-raid.js"></script>
-<link rel="stylesheet" href="http://127.0.0.1/css/__output/test.css">
+<script src="http://js.jx3pve.com/js/page/pvx-face.js"></script>
+<link rel="stylesheet" href="http://css.jx3pve.com/css/test.css">
 
 <!-- jx3pve:pve -->
-<div class="pve-container raid-container raid-viewpage tgpost-folder">
+<div class="pve-container face-container face-viewpage tgpost-folder">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">var fid = parseInt('$_G[fid]'), tid = parseInt('$_G[tid]');</script>
@@ -43,6 +43,11 @@
 		<!--{subtemplate forum/header}-->
 	</div>
 	
+	<!-- jx3pve:sidebar -->
+	<div class="pve-sidebar">
+		<!--{subtemplate forum/sidebar}-->
+	</div>
+
 	<div class="pve-content">
 
 		<!-- jx3pve:primary -->
@@ -140,7 +145,7 @@
 				</div>
 			<!--{/if}-->
 			<!--{if $modmenu['thread']}-->
-				<div id="modmenu" class="w-post-adminbar w-post-adminbar-top xi2 pbm">
+				<div id="modmenu" class="w-post-adminbar xi2 pbm">
 					<!--{eval $modopt=0;}-->
 					<!--{if $_G['forum']['ismoderator']}-->
 						<!--{if $_G['group']['allowdelpost']}--><!--{eval $modopt++}--><a href="javascript:;" onclick="modthreads(3, 'delete')">{lang modmenu_deletethread}</a><span class="pipe">|</span><!--{/if}-->
@@ -380,7 +385,7 @@
 	
 			<!-- dz:admin bar -->
 			<!--{if $modmenu['thread']}-->
-				<div class="w-post-adminbar w-post-adminbar-bottom xi2 mbm pbm bbs">
+				<div class="w-post-adminbar xi2 mbm pbm bbs">
 				<script type="text/javascript">
 					$('modmenu').lastChild.style.visibility = 'hidden';
 					document.write($('modmenu').innerHTML);
@@ -471,8 +476,7 @@
 				<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, <!--{if $page > 1}-->1<!--{else}-->0<!--{/if}-->, <!--{if $page < $_G['setting']['threadmaxpages'] && $page < $_G['page_next']}-->1<!--{else}-->0<!--{/if}-->, 'forum.php?mod=viewthread&tid=$_G[tid]<!--{if $_GET[authorid]}-->&authorid=$_GET[authorid]<!--{/if}-->', $page);}</script>
 			<!--{/if}-->
 			</div>
-			
-			<!--{subtemplate forum/footer}-->
+
 		</div><!-- article -->
 
 	</div><!-- content -->

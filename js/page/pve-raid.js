@@ -85,5 +85,32 @@ H.ready(['jquery'],function(){
 					if(banner_repeat) $raidvpg.css('background-repeat',banner_repeat)
 				}
 			}
+
+		//条件筛选·服务器
+		var $fwq_s = $("#raid_fuwuqi_select"),
+			$fwq_l = $("#raid-fuwuqi-list"),
+			$fwq_tips = $("#raid-fuwuqi-tips")
+		$fwq_s.on('change',function(){
+			var fwq = parseInt($(this).val())
+			$fwq_l.children('ul').hide().eq(fwq).show()
+		})
+		$fwq_s.one('change',function(){
+			$fwq_tips.fadeIn()
+		})
+
+		//条件筛选·其他条件
+		var raidnature = getRequest('raidnature'),
+			raidsex = getRequest('raidsex'),
+			raidtime = getRequest('raidtime'),
+			raidtimefull = getRequest('raidtimefull'),
+			raidcondition = [raidnature,raidsex,raidtime,raidtimefull]
+		
+		$.each(raidcondition,function(i,value){
+			value=='all' ? 0 : parseInt(value)
+		})
+		console.log(raidcondition);
+
+
+
 	})
 })

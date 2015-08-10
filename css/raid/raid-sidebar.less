@@ -1,6 +1,142 @@
-.raid-container{
+.raid-listpage{
 
-	.m-raid-nav{
+	.w-sortnav,.m-raid-sortnav{
+		.itembox ul li{
+			margin-right:3px;
+		}
+		.row{
+			margin-bottom:5px;
+		}
+		.m-fwq{
+			margin-bottom:5px;
+			#raid_fuwuqi_select{.w(208px);}
+		}
+		.raid-fuwuqi-list{
+			.raid-fuwuqi-tips{
+				.clear;
+				color:#666;border:1px solid #ddd;border-radius:3px;
+				padding:2px 5px;
+				margin-top:5px;
+				.w(200px);
+				i{
+					.dbi;.size(18px);margin-right:2px;.y(-4px);
+					background:url('@{url}icon/info_small.gif') no-repeat 0 0;
+				}
+				.none;
+			}
+			ul{
+				.clearfix;
+				.none;
+			}
+			li{
+				.pr;.fl;margin-right:10px;
+				.color(#444,#444,@bluex);
+				.fz(13px,2);
+				a{
+					.db;
+					background:url('@{url}icon/ol.gif') no-repeat 0 center;
+					padding-left:15px;
+				}
+				em{
+					.db;.pa;.lb(0,110%);
+					.none;
+					.size(200px,auto);padding:5px;border-radius:3px;
+					.tb(121, 215, 249,0.88);
+					border:1px solid #0cf;
+					.fz(12px,2);
+				}
+				&:hover{
+					em{.db;}
+				}
+			}
+		}
+		.m-sex{
+			.mkp{
+				.pr;
+				.m-raid-mkp-tips{
+					.pa;.lt(-88px,-54px);
+					.none;
+					width: 200px;
+					height: 33px;
+					background: #eee;
+					padding: 5px;
+					border-radius: 3px;
+					color:#d05;
+					.arrow(b,6px,#eee);
+					em{
+						color:#666;
+					}
+				}
+				&:hover{
+					.m-raid-mkp-tips{
+						.db;
+					}
+				}
+			}
+		}
+	}
+	.w-sortnav-form{
+		.clearfix;
+		.row{
+			.w(auto) !important;
+			.px{.w(180px);}
+			margin-bottom:5px;
+		}
+		.u-button-search{
+			.fl;margin-left:5px;
+			//.clear;
+			//margin-top:5px;
+		}
+		.vm{
+			.fl;
+			.w(120px);
+			padding:5px;
+			border: 1px solid #ddd;
+			background: none;
+			border-radius: 4px;
+			box-shadow: 0 0 4px #ddd inset;
+			background-color:#fff;
+			&:focus,&:hover{
+				box-shadow: 0 0 4px #0cf inset,0 0 2px #ddd;
+			}
+		}
+	}
+	.pvx-sidebar{
+		.m-sex,.m-progress,.m-week,.m-times{
+			.none;
+		}
+	}
+	.pvx-article .w-sortnav{.none;}
+	h2{line-height: 29px;margin-top: 2px;padding:0;}
+
+	.m-raid-leader{
+		margin-bottom:20px;
+	}
+
+	.m-raid-msg{
+		.x;
+		a,span{.db;}
+		.boss{}
+		.team{}
+		.time{}
+
+		table{
+			.w(100%);
+			td,th{
+				border:1px solid #ddd;
+				.color(#888,@bluex,#c00);
+				line-height:2;
+				padding:0 3px;
+				.x;
+			}
+		}
+	}
+
+	
+
+	
+
+	/*.m-raid-nav{
 		.x;
 		margin-bottom:10px;
 		a{
@@ -86,5 +222,5 @@
 			.w(auto) !important;
 			margin-right:5px;
 		}
-	}
+	}*/
 }
