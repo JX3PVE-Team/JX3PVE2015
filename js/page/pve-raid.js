@@ -60,7 +60,15 @@ H.ready(['jquery'],function(){
 				BGREPEATCODE = ['no-repeat','repeat','repeat-x','repeat-y']
 
 
-			var banner_url = $("#raid-banner-url").text(),
+			var banner_url_add = function(){
+					var urltext = $("#raid-banner-url").text()
+						if(urltext && urltext.indexOf('nophoto')===-1){
+							return urltext
+						}else{
+							return ''
+						}
+				},
+				banner_url = banner_url_add(),
 				banner_repeat_status = function(){
 					var bgstatus = $("#raid-banner-repeat").text().indexOf(BGREPEAT)
 					if (bgstatus == -1) bgstatus=0
