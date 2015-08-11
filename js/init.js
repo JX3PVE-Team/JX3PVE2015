@@ -40,6 +40,16 @@ H.ready('jquery',function(){
 		})
 	}
 
+	//route助手
+	H.route = function(helpID,joinID){
+		var $routeHelp = jQuery('#w-route-help'),
+			$routeJoin = jQuery('#w-route-join')
+		$routeHelp.attr('href','http://www.jx3pve.com/misc.php?mod=faq&action=faq&id='+helpID)
+		//$routeJoin.attr('href','joinID')
+	}
+
+
+
 	jQuery(function($){
 		//用户组判断
 		var group = $("#c-header-usergroup").text()

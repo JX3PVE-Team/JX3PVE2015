@@ -1,0 +1,366 @@
+//团队单页
+.team-container{
+	background-image: url('http://ww2.sinaimg.cn/large/bcc700eegw1euvg6ii6tjj21hc0m8gyg.jpg');
+}
+//团队公共模块
+.m-raid-team,.m-raid-v2primary,.raid-viewpage .t_fsz{
+	background-color:#fff;
+	border-radius:6px;
+	margin-bottom:20px;
+	padding:20px;
+	.fz(12px,2);
+	color:#666;
+}
+//团队基本信息
+.m-raid-primary-1{
+	.clearfix;.pr;
+	.m-avt{
+		.fl;margin-right:20px;
+		.c-raidlogo{
+			border:1px solid #eee;
+			.size(180px,100px);.x;
+			.logo{
+				max-width:180px;
+				max-height:100px;
+			}
+		}
+	}
+	.m-details{
+		.w(240px);padding-right:20px;
+		.fl;margin-right:20px;
+		border-right:1px solid #ddd;
+		ul{
+			li{
+				.break;
+				.clearfix;
+				span{
+					color:#888;
+					.w(52px);
+					.x(right);
+					.dbi;.fl;
+				}
+				em{
+					margin-left:62px;
+					.h(24px);
+					.db;
+					span{
+						.color(@bluex,@bluex,#c00);
+						.x(left);.nobreak;
+						.w(178px);.db;
+					}
+				}
+			}
+		}
+	}
+	.m-intro{
+		.fr;.size(416px,192px);.pr;
+		.words{
+			.h(144px);.clip;.break;
+			.x(justify);
+			.indent(24px);
+		}
+	}
+	.m-control{
+		.pa;.lb(0,0);
+		.edit,.magic{
+			//background-color:#f2f2f2;
+			padding:2px 5px;
+			//border:1px solid #ddd;
+			border-radius:3px;
+			i{.dbi;.size(20px);.y(-5px);margin-right:5px;}
+		}
+		.edit{
+			i{background: url(http://static.jx3pve.com/static/image/common//edit.gif) no-repeat 4px 50%;}
+		}
+		.magic{
+			i{background: url('@{url}icon/icon-setting-16.png') no-repeat 3px center;}
+			padding-right:18px;
+		}
+	}
+	.m-fav{
+		.clear;.x;
+		padding:10px 0 10px 0;
+		a{
+			margin-right:20px;
+			i{.dbi;.y;.size(20px);}
+		}
+		.fav{
+			i{background:url('http://static.jx3pve.com/static/image/common/fav.gif') no-repeat 0 0;}
+		}
+		.score{
+			i{background:url('http://static.jx3pve.com/static/image/common/agree.gif') no-repeat 0 0;}
+		}
+		.report{
+			margin-right:0;
+			i{background:url('@{url}icon/icon-report-16.png') no-repeat 0 0;}
+		}
+	}
+	.m-share{
+		.clear;
+		.pa;.rb(0,0);
+		width: 138px;
+		.h(28px);
+		overflow:hidden;
+		margin: 0 auto;
+	}
+	.m-msg{
+		i{
+			.size(16px);.dbi;.y;
+			background:url('http://static.jx3pve.com/static/image/common/pmto.gif') no-repeat 0 0;
+		}
+		width: 100px;
+		height: 30px;
+		border: 1px solid #ddd;
+		display: block;
+		text-align: center;
+		line-height: 30px;
+		background: #f7f7f7;
+		margin: 0 auto;
+		border-radius: 3px;
+		&:hover{
+			background-color:#f9f9f9;
+		}
+	}
+}
+//团队活动
+.m-raid-primary-2{
+  .m-activity{}
+}
+//团队福利
+.m-raid-primary-3{
+  .m-lucky{}
+}
+//团队合影
+.m-raid-primary-4{
+  .m-raidac{.x;}
+  .m-photo{
+  	.size(900px,280px);.x;
+  	img{
+  		max-width:100%;
+  		max-height:100%;
+  	}
+  }
+}
+//更多详情
+.m-raid-primary-5{
+	.modact{.none;}
+}
+//团队成绩
+.m-raid-primary-6{
+	.pr;
+ 	.psth{.none;}
+ 	.pstl{
+ 		padding:3px 0;
+ 	}
+ 	.psta{.none;}
+ 	.psti{
+ 		margin-left:0;padding-left:30px;
+ 		background:url('@{url}raid/medal/raid-medal.png') no-repeat 0 center;
+ 		.xg1{.none;}
+ 		.del{.fr;}
+ 	}
+ 	.m-cmadmin{
+ 		.pa;.rt(20px,15px);
+ 		background: #f2f2f2;
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		padding: 0 5px;
+		.none;
+ 	}
+}
+.adminHTML .m-raid-primary-6 .m-cmadmin{.db;}
+//团队评价
+@keyframes raidCmtAni{
+    from{box-shadow:0 0 3px #ddd;}
+    to{box-shadow:none;}
+}
+.m-raid-primary-7{
+	.u-btn-cmt{
+		i{
+			.dbi;.size(16px);.y(-3px);
+			background:url('http://static.jx3pve.com/static/image/common/agree.gif') no-repeat 0 0;
+			margin-right: 5px;
+		}
+		.db;.auto(x);
+		border:1px solid #ddd;
+		padding:2px 5px;
+		width: 60px;
+		text-align: center;
+		border-radius: 3px;
+		background: #f2f2f2;
+		&.focusthis{
+			i{animation:goUp 0.3s ease-in-out forwards;}
+			animation:raidCmtAni 0.5s ease-in-out forwards;
+		}
+	}
+}
+//团队海报
+.m-raid-banner,.m-raid-usergroup{
+	.none;
+}
+
+
+
+//团队招募列表页
+.m-raid-list{
+	//.clear;
+	ul{
+		.clearfix;
+		li{
+			//.size(200px,120px);
+			.fl;
+			margin-right:10px;
+			margin-bottom:10px;
+			.clip;.pr;
+
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			background: #fff;
+			transition:0.15s ease-in-out;
+
+			.tr{
+				.db;
+				line-height:1.8;
+				.nobreak;
+			}
+			.label{
+				color:#888;
+			}
+			.key{
+				color:#666;
+			}
+			.name{
+				.bold;
+				.nobreak;
+			}
+
+			&:hover{
+				background:#FDFDEA;
+				box-shadow:0 0 2px #E7FA8E;
+			}
+
+			.c-raidlogo{.db;
+				.fl;
+				.size(180px,100px);
+				.x;
+				margin:8px;
+				.pr;
+				border:1px solid #917507;
+				border-radius:3px;
+				.clip;
+
+				.logo{
+					max-width:180px;
+					max-height:100px;
+					border-radius:3px;
+					//.tm(0.15);
+					transition:0.15s ease-in-out;
+				}
+				.verif{
+					.pa;.db;
+					.lt(-1px,-1px);
+					.full;
+					span{.none;}
+				}
+			}
+
+			.raidinfo{
+				.h(120px - 40px);
+				.clip;
+				margin:20px 5px 20px 200px;
+				.db;
+				.none;
+			}
+
+			.link{
+				.db;
+				.full;
+				.pa;.lt(0,0);
+				background:url('@{url}common/blank.png') no-repeat 0 0;
+			}
+
+			.control{
+				.pa;.rt(0,0);.z(2);
+			}
+		}
+
+		.m-raid-unit-team{
+			.sex{
+				//.tm(0.3);
+				.pa;.db;
+				.rb(0,0);
+				span{
+					.db;padding:1px 5px;
+					color:#fff;
+					background: #917507;
+				}
+			}
+			.mask{
+				.size(100%,50%);
+				.pa;.db;
+				.tb(255,255,255,0.8);
+				.none;
+				transition:0.25s ease-in-out;
+			}
+			.mask-top{
+				.lt(0,0);
+				transform:translateY(-130%);
+			}
+			.mask-bottom{
+				.lb(0,0);
+				transform:translateY(130%);
+			}
+			.mask-name{
+				line-height:100px;.x;.full(x);
+				.nobreak;
+				.pa;.lt(0,0);
+				.db;
+				color:#917507;
+				.bold;
+				letter-spacing:1px;
+				//.tm(0.5);
+				text-shadow: -1px -1px 0 #fff;
+				.tm(0);
+				transition:0.25s ease-in-out;
+				font-size:14px;
+			}
+			@keyframes maskGoTop{
+			    from{
+			    	transform:translateY(130%);
+			    }
+			    to{
+			    	transform:translateY(0);
+			    }
+			}
+			@keyframes maskGoBottom{
+			    from{
+			    	transform:translateY(-130%);
+			    }
+			    to{
+			    	transform:translateY(0);
+			    }
+			}
+
+			&:hover{
+				.mask-name{
+					.db;
+					.tm(1);
+				}
+				.mask{
+					.db;
+				}
+				.mask-top{
+					transform:translateY(0);
+					//animation:maskGoBottom 0.2s ease-in-out;
+				}
+				.mask-bottom{
+					transform:translateY(0);
+					//animation:maskGoTop 0.2s ease-in-out;
+				}
+				.name{
+					color:#c00 !important;
+				}
+			}
+		}
+	}
+}

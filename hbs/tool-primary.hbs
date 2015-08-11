@@ -8,7 +8,7 @@
 				<li><span>工具类型</span>{toolscat_value}</li>
 				<li><span>更新时间</span><em id="u-post-lastupdate"></em></li>
 				<li><span>作者名称</span>{chajian2311_value}</li>
-				<li><span>联系作者</span>{tool_contact_value}</li>
+				<li class="tool_pwd"><span>网盘密码</span>{tool_pwd_value}</li>
 			</ul>
 		</div>
 
@@ -22,11 +22,6 @@
 			</p>
 		</div>
 
-	</div>
-
-	<div class="panel-list block">
-		<a class="top" href="home.php?mod=magic&amp;mid=stick&amp;idtype=tid&amp;id={vanfon_tid}" id="a_stick" onclick="showWindow(this.id, this.href)">置顶</a> | 
-		<a class="color" href="home.php?mod=magic&amp;mid=highlight&amp;idtype=tid&amp;id={vanfon_tid}" id="a_stick" onclick="showWindow(this.id, this.href)">高亮</a>
 	</div>
 
 	<div class="introduction block">
@@ -67,4 +62,28 @@
 	<div class="role-info-6 tool-info">
 		<h3>更多说明</h3>
 	</div>
+</div>
+
+
+
+
+<div class="tool-info-primary">
+	<ul class="tool-info-primary-list">
+		[loop]
+		<li>
+			<div class="title"><a href="{subject_url}">{subject}</a></div>
+			<ul class="meta">
+				<li class="type">{toolscat_value}</li>
+				<li><span>作者</span>{chajian2311_value}</li>
+				<li><span>更新日期</span>{chajian2511_value}</li>
+				<li><span>查看次数</span>{views}</li>
+				<li><span>回复次数</span>{replies}</li>
+			</ul>
+			<div class="des">
+				{tool_function_value}
+			</div>
+			<div class="more"><a class="gray-btn" href="{subject_url}">{subject}</a></div>
+		</li>
+		[/loop]
+	</ul>
 </div>

@@ -1,4 +1,35 @@
-<div class="m-raid-primary-1 m-raid-v2primary">
+//列表
+<div class="m-raid-list">
+	<ul>
+	[loop]
+		<li class="m-raid-unit m-raid-unit-team">
+			<span class="c-raidlogo">
+				<img class="logo" src="{raidlogo_value}" alt="{raidname_value}"/>
+				<i class="verif"><span>{author_verify}</span></i>
+				<i class="sex"><span>{raidnature_value}</span></i>
+				<i class="e-mask mask mask-top"></i>
+				<i class="e-mask mask mask-bottom"></i>
+				<em class="mask-name">{raidname_value}</em>
+			</span>
+			<span class="raidinfo">
+				<span class="tr"><span class="name">{raidname_value}</span></span>
+				<span class="tr"><span class="key">{fuwuqi_value}</span></span>
+				<span class="tr"><em class="label">团队简介：</em><span class="key">{raidintro_value}</span></span>
+			</span>
+			<a class="link" href="{subject_url}" target="_blank"></a>
+			<span class="control">{modcheck}</span>
+		</li>
+		[/loop]
+	</ul>
+</div>
+
+
+
+
+
+
+//单页
+<div class="m-raid-primary-1 m-raid-v2primary m-raid-team">
 	<!-- logo -->
 	<div class="m-avt">
 		<div class="c-raidlogo">
@@ -48,21 +79,21 @@
 	</div>
 </div>
 
-<div class="m-raid-primary-2 m-raid-v2primary">
+<div class="m-raid-primary-2 m-raid-v2primary m-raid-team">
 	<h2 class="m-title">团队活动</h2>
 	<div class="m-activity">
 		{raidactivity_value}
 	</div>
 </div>
 
-<div class="m-raid-primary-3 m-raid-v2primary">
+<div class="m-raid-primary-3 m-raid-v2primary m-raid-team">
 	<h2 class="m-title">团队福利</h2>
 	<div class="m-lucky">
 		{raidlucky_value}
 	</div>
 </div>
 
-<div class="m-raid-primary-4 m-raid-v2primary">
+<div class="m-raid-primary-4 m-raid-v2primary m-raid-team">
 	<h2 class="m-title">团队合影</h2>
 	<!-- 团队宣言 -->
 	<div class="m-raidac">

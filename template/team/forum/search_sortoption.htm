@@ -99,22 +99,29 @@
 <!--{/loop}-->
 
 <!--{if $formsearch_html || $fontsearch_html}-->
-<div class="w-sortnav m-raid-sortnav">
-	<!--{if $fontsearch_html}-->
-	    <div class="w-sortnav-font ptn pbn mbm">
-		    <div id="fontsearch" class="tsm cl">
-		        $fontsearch_html
-		    </div>
-	    </div>
-	<!--{/if}-->
-	<!--{if $formsearch_html}-->
-		<div class="w-sortnav-form">
-		    <form method="post" autocomplete="off" name="searhsort" id="searhsort" class="bm_c pns mfm cl" action="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_GET[sortid]">
-		        <input type="hidden" name="formhash" value="{FORMHASH}" />
-		        $formsearch_html
-		        <div class="u-btnbox"><button type="submit" class="u-button-search" name="searchsortsubmit">{lang search}</button></div>
-		    </form>
-	    </div>
-	<!--{/if}-->
+
+<div class="m-raid-filter">
+	<div class="filter-tg"><i></i>条件筛选</div>
+
+	<div class="m-raid-filter-ct">
+		<div class="w-sortnav">
+			<!--{if $fontsearch_html}-->
+			    <div class="w-sortnav-font ptn pbn mbm">
+				    <div id="fontsearch" class="tsm cl">
+				        $fontsearch_html
+				    </div>
+			    </div>
+			<!--{/if}-->
+			<!--{if $formsearch_html}-->
+				<div class="w-sortnav-form">
+				    <form method="post" autocomplete="off" name="searhsort" id="searhsort" class="bm_c pns mfm cl" action="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_GET[sortid]">
+				        <input type="hidden" name="formhash" value="{FORMHASH}" />
+				        $formsearch_html
+				        <div class="u-btnbox"><button type="submit" class="u-button-search" name="searchsortsubmit">{lang search}</button></div>
+				    </form>
+			    </div>
+			<!--{/if}-->
+		</div>
+	</div>
 </div>
 <!--{/if}-->

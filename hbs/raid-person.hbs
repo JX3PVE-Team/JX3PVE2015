@@ -1,4 +1,26 @@
-<div class="m-raid-v2primary m-raid-primary-1 m-raid-vprimary">
+//列表
+<div class="m-raid-list">
+	<ul>
+	[loop]
+		<li class="m-raid-unit m-raid-unit-person">
+			<span class="c-raidavt">
+				<img src="http://www.jx3pve.com/uc_server/avatar.php?uid={authorid}&size=middle" width="80px" height="80px"/>
+				<i class="verif"><span>{author_verify}</span></i>
+			</span>
+			<span class="personinfo">
+				<span class="tr"><span class="name">{author}</span></span>
+				<span class="tr"><span class="key">{fuwuqi_value}</span></span>
+				<span class="tr"><em class="label">可选职业：</em><span class="key">{myrole_value}</span></span>
+			</span>
+			<a class="link" href="{subject_url}" target="_blank"></a>
+			<span class="control">{modcheck}</span>
+		</li>
+	[/loop]
+	</ul>
+</div>
+
+//单页
+<div class="m-raid-primary-1 m-raid-team  m-raid-yanyuan">
 	<div class="m-avt">
 		<div class="c-raidavt">
 			<img class="m-raid-avatar" src="http://static.jx3pve.com/uc_server/avatar.php?uid={authorid}&size=middle" width="80px" height="80px" />

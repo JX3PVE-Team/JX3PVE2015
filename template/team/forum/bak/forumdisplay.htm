@@ -1,7 +1,7 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: PVX
+ * Project: PVE
  * HTML: template/$pve/*
  * Style: pve/pve-*.less
  * Description: pve
@@ -11,11 +11,9 @@
 
 <!-- jx3pve:code -->
 <script src="http://js.jx3pve.com/js/page/pve-raid.js"></script>
-<script src="http://js.jx3pve.com/js/page/pve-raid-list.js"></script>
-<link rel="stylesheet" href="http://127.0.0.1/css/__output/test.css">
 
 <!-- jx3pve:pve -->
-<div class="pvx-container raid-container raid-listpage">
+<div class="pve-container raid-container raid-listpage">
 
 	<!-- dz:style & js -->
 	<!--{if $_G['forum']['ismoderator']}-->
@@ -23,31 +21,34 @@
 	<!--{/if}-->
 	<style id="diy_style" type="text/css"></style>
 
+<!-- jx3pve:wrapper -->
+<div class="wp">
+
 	<!-- dz:banner-top -->
 	<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
 	<!--{ad/text/wp a_t}-->
 	<!--[diy=diy1]--><div class="drag"><div id="diy1" class="area"></div></div><!--[/diy]-->
 
-<!-- jx3pve:page header -->
-<div class="pvx-header">
-	<!--{subtemplate forum/header}-->
-</div>
-
 <!-- jx3pve:main -->
-<div class="pvx-main boardnav">
+<div class="pve-main boardnav">
 
-	<!-- jx3pve:sidebar -->
-	<div class="pvx-sidebar">
-		<!--{subtemplate forum/sidebar}-->
+	<!-- jx3pve:page header -->
+	<div class="pve-header">
+		<!--{subtemplate forum/header}-->
 	</div>
 
-	<div class="pvx-content">
+	<!-- jx3pve:sidebar -->
+	<div class="pve-sidebar">
+		<!--{subtemplate forum/sidebar}-->
+	</div>
+	
+	<div class="pve-content">
 
 		<!-- jx3pve:primary -->
 		<!--{subtemplate forum/primary}-->
 
 		<!-- jx3pve:content -->	
-		<div class="pvx-article " id="ct">
+		<div class="pve-article " id="ct">
 
 			<!-- jx3pve:route -->
 			<!--{subtemplate jx3pve/w_route_forumdisplay}-->
@@ -430,7 +431,7 @@
 			</div>
 
 			<!-- jx3pve:fast-post -->
-			<div class="pvx-fastpost">
+			<div class="pve-fastpost">
 				<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
 				<!--{if $fastpost}-->
 					<!--{template forum/forumdisplay_fastpost}-->
@@ -578,6 +579,7 @@
 	<!-- dz:banner-bottom -->
 	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
 	
+</div><!-- wp -->
 </div><!-- container -->
 
 <!--{template common/footer}-->

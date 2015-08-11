@@ -1,17 +1,81 @@
-.raid-listpage{
+.raid-listpage,.raid-postpage{
 
-	.w-sortnav,.m-raid-sortnav{
-		.itembox ul li{
-			margin-right:3px;
+	.pvx-sidebar{
+
+		h2{line-height: 29px;margin-top: 2px;padding:0;}
+
+		//快速发布
+		.m-btn-raidpub{
+			
 		}
-		.row{
-			margin-bottom:5px;
+
+		//团队搜索
+		.m-raid-sortnav{
+			.itembox ul li{
+				margin-right:3px;
+			}
+			.row{
+				margin-bottom:5px;
+			}
+			.m-sex{
+				.mkp{
+					.pr;
+					.m-raid-mkp-tips{
+						.pa;.lt(-88px,-54px);
+						.none;
+						width: 200px;
+						height: 33px;
+						background: #eee;
+						padding: 5px;
+						border-radius: 3px;
+						color:#d05;
+						.arrow(b,6px,#eee);
+						em{
+							color:#666;
+						}
+					}
+					&:hover{
+						.m-raid-mkp-tips{
+							.db;
+						}
+					}
+				}
+			}
+			.w-sortnav-form{
+				.clearfix;
+				.row{
+					.w(auto) !important;
+					.px{.w(180px);}
+					margin-bottom:5px;
+				}
+				.u-button-search{
+					.fl;margin-left:5px;
+					//.clear;
+					//margin-top:5px;
+				}
+				.vm{
+					.fl;
+					.w(120px);
+					padding:5px;
+					border: 1px solid #ddd;
+					background: none;
+					border-radius: 4px;
+					box-shadow: 0 0 4px #ddd inset;
+					background-color:#fff;
+					&:focus,&:hover{
+						box-shadow: 0 0 4px #0cf inset,0 0 2px #ddd;
+					}
+				}
+			}
+			.m-sex,.m-progress,.m-week,.m-times{
+				.none;
+			}
 		}
 		.m-fwq{
 			margin-bottom:5px;
-			#raid_fuwuqi_select{.w(208px);}
-		}
-		.raid-fuwuqi-list{
+			#raid_fuwuqi_select{
+				.w(208px);
+			}
 			.raid-fuwuqi-tips{
 				.clear;
 				color:#666;border:1px solid #ddd;border-radius:3px;
@@ -24,203 +88,71 @@
 				}
 				.none;
 			}
-			ul{
-				.clearfix;
-				.none;
-			}
-			li{
-				.pr;.fl;margin-right:10px;
-				.color(#444,#444,@bluex);
-				.fz(13px,2);
-				a{
-					.db;
-					background:url('@{url}icon/ol.gif') no-repeat 0 center;
-					padding-left:15px;
-				}
-				em{
-					.db;.pa;.lb(0,110%);
+			.raid-fuwuqi-list{
+				ul{
+					.clearfix;
 					.none;
-					.size(200px,auto);padding:5px;border-radius:3px;
-					.tb(121, 215, 249,0.88);
-					border:1px solid #0cf;
-					.fz(12px,2);
 				}
-				&:hover{
-					em{.db;}
-				}
-			}
-		}
-		.m-sex{
-			.mkp{
-				.pr;
-				.m-raid-mkp-tips{
-					.pa;.lt(-88px,-54px);
-					.none;
-					width: 200px;
-					height: 33px;
-					background: #eee;
-					padding: 5px;
-					border-radius: 3px;
-					color:#d05;
-					.arrow(b,6px,#eee);
-					em{
-						color:#666;
-					}
-				}
-				&:hover{
-					.m-raid-mkp-tips{
+				li{
+					.pr;.fl;margin-right:20px;
+					.color(#444,#444,@bluex);
+					.fz(13px,2.5);
+					a{
 						.db;
+						background:url('@{url}icon/ol.gif') no-repeat 0 center;
+						padding-left:15px;
+					}
+					em{
+						.db;.pa;.lb(0,110%);
+						.none;
+						.size(200px,auto);padding:5px;border-radius:3px;
+						.tb(121, 215, 249,0.88);
+						border:1px solid #0cf;
+						.fz(12px,2);
+					}
+					&:hover{
+						em{.db;}
 					}
 				}
 			}
 		}
-	}
-	.w-sortnav-form{
-		.clearfix;
-		.row{
-			.w(auto) !important;
-			.px{.w(180px);}
-			margin-bottom:5px;
+
+		//推荐团长
+		.m-raid-leader{
+			margin-bottom:20px;
 		}
-		.u-button-search{
-			.fl;margin-left:5px;
-			//.clear;
-			//margin-top:5px;
+		.m-raid-leader-tips{
+			background:url('@{url}icon/faq.gif') no-repeat 0 0;
+			.dbi;.size(13px);.y(-2px);margin-left:3px;.indent;
 		}
-		.vm{
-			.fl;
-			.w(120px);
-			padding:5px;
-			border: 1px solid #ddd;
-			background: none;
-			border-radius: 4px;
-			box-shadow: 0 0 4px #ddd inset;
-			background-color:#fff;
-			&:focus,&:hover{
-				box-shadow: 0 0 4px #0cf inset,0 0 2px #ddd;
-			}
-		}
-	}
-	.pvx-sidebar{
-		.m-sex,.m-progress,.m-week,.m-times{
-			.none;
-		}
-	}
-	.pvx-article .w-sortnav{.none;}
-	h2{line-height: 29px;margin-top: 2px;padding:0;}
 
-	.m-raid-leader{
-		margin-bottom:20px;
-	}
+		//最新捷报
+		.m-raid-jiebao{
+			.x;
+			a,span{.db;}
+			.boss{}
+			.team{}
+			.time{}
 
-	.m-raid-msg{
-		.x;
-		a,span{.db;}
-		.boss{}
-		.team{}
-		.time{}
-
-		table{
-			.w(100%);
-			td,th{
-				border:1px solid #ddd;
-				.color(#888,@bluex,#c00);
-				line-height:2;
-				padding:0 3px;
-				.x;
-			}
-		}
-	}
-
-	
-
-	
-
-	/*.m-raid-nav{
-		.x;
-		margin-bottom:10px;
-		a{
-			.dbi;
-			width: 200px;
-			height: 40px;
-			padding: 10px 10px;
-
-			line-height: 20px;
-			text-align: center;
-			.bold;
-			
-			color: #fff;
-			box-shadow: 0 0 3px #ccc;
-			border-radius: 3px;
-			
-			span{
-				.none;
-			}
-			em{
-				.db;.normal;text-transform:uppercase;font-family:'Trebuchet MS';
-			}
-
-			background:#333;
-			border: 1px solid #222;
-			transition:0.06s ease-in;
-			em{
-				color:#ccc;
-			}
-			&:hover{
-				background-color:#f00;
-				border: 1px solid #c00;
-				em{
-					color:#EFB1B1;
+			table{
+				.w(100%);
+				td,th{
+					border:1px solid #ddd;
+					.color(#888,@bluex,#c00);
+					line-height:2;
+					padding:0 3px;
+					.x;
 				}
 			}
 		}
-
-		.u-btn-raid{}
-		.u-btn-per{}
-		.u-btn-pub{}
-	}
-
-	.m-raid-mkp-tips{
-		.x;color:#888;
-	}
-
-	.w-sortnav{
-		li a:hover,li.a a{
-			background-color:#fff !important;
-			color:#555 !important;
-			.normal  !important;
-		}
-	}
-
-	.w-category-nav{
-		li a{
-			border: 1px solid #ccc;
-  			background-color: #f2f2f2;
-		}
-		.xw1 a,.xw1 a:hover,li a:hover{
-			background-color:#fff;
-			border:1px solid #ccc;
-			color:#555;
-			.normal;
-		}
-	}
-
-	.w-sortnav-font{
-		.row{
-			.pr;
-			.itembox{
-				margin-left:60px;
-				li a{
-					border-color:transparent;
-				}
+		.m-raid-jbpub{
+			.fr;.color(#999,@bluex);
+			.normal;font-size:12px;
+			i{
+				background:url('@{url}icon/app_add.gif') no-repeat 0 0;
+				.dbi;.size(12px);.y(-2px);margin-right:3px;
 			}
 		}
-	}
 
-	.w-sortnav-form{
-		.row{
-			.w(auto) !important;
-			margin-right:5px;
-		}
-	}*/
+	}
 }

@@ -1,0 +1,83 @@
+/*.noedit#e_body{.none !important;}
+
+#select_fbname,#select_fuwuqi{
+	li{
+		width:25%;
+		padding:2px 0;
+	}
+}*/
+
+//捷报设置
+.jiebao-container{
+	
+	//独立背景
+
+	.pve-article{
+		.w(720px);
+	}
+
+	.m-raid-primary-6{
+		.none;
+	}
+}
+
+//捷报单页
+.m-jiebao-primary{
+	margin-bottom:40px;
+	h2{font-size:12px;.pa;background-color:@basecolor;.z(2);line-height:22px;
+		margin-left:20px;padding:0 5px;color:#fff;letter-spacing:1px;border-radius:3px;
+	}
+	ul{
+		//border:1px solid #ddd;
+		padding:14px 10px 10px 10px;
+		//padding-top:14px;padding-bottom:10px;
+		position: relative;top: 16px;margin-bottom: 30px;
+		background-color:#fff;
+		border-radius:6px;
+		li{
+			line-height:24px;padding:2px 8px;
+			border-bottom:1px dotted #ddd;
+			span{
+				width:80px;.dbi;color:#777;
+			}
+			&.u-last{border-bottom:none;}
+			a{.color(@bluex,#c00);}
+		}
+	}
+	.fam-wujiaimg{
+		padding:24px 10px 10px 20px;
+		position: relative;top: 16px;
+		background-color:#fff;
+		border-radius:6px;
+		.mijian{
+			.db;
+			img{
+				.db;.auto(x);
+				padding:5px;
+				border:1px solid #ddd;
+				max-width:100%;
+			}
+		}
+	}
+}
+
+//捷报列表
+.m-jiebao-list{
+	li{
+		.pr;
+		.fz(13px,32px);
+		.color(#888,#555,@bluex);
+		border-bottom:1px solid #ddd;.clearfix;
+		*{.db;}
+		&:hover{
+			background-color:#f7f7f7;
+		}
+		span{
+			.w(20%);.fl;
+		}
+	}
+	.control{
+		.pa;.rb(0,30%);
+		.w(10px);
+	}
+}

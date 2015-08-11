@@ -1,0 +1,63 @@
+//列表
+<div class="m-jiebao-list">
+	<ul>
+		<li>
+			<span class="control"></span>
+			<span class="fb-name">副本名称</span>
+			<span class="boss-name">BOSS名称</span>
+			<span class="fwq">服务器</span>
+			<span class="team">拿甲团队</span>
+			<span class="time">出甲时间</span>
+		</li>
+		[loop]
+		<li>
+			<span class="control">{modcheck}</span>
+			<a href="{subject_url}">
+				<span class="fb-name">{fbname_value}</span>
+				<span class="boss-name">{wujiaboss_value}</span>
+				<span class="fwq">{fuwuqi_value}</span>
+				<span class="team">{raidname_value}</span>
+				<span class="time">{toptime_value}</span>
+			</a>
+		</li>
+		[/loop]
+	</ul>
+</div>
+
+
+//单页
+<div class="m-jiebao-primary" id="m-jiebao-primary">
+	<h2>五甲信息</h2>
+	<ul class="fam-fam-info">
+		<li><span>副本名称</span>{fbname_value}</li>
+		<li><span>BOSS名称</span>{wujiaboss_value}</li>
+		<li class="u-last"><span>出甲时间</span>{toptime_value}</li>
+	</ul>
+	<h2>团队信息</h2>
+	<ul class="fam-raid-info">
+		<li><span>服务器</span>{fuwuqi_value}</li>
+		<li><span>团队名称</span>{raidname_value}</li>
+		<li class="u-last"><span>团队招募</span><a href="{fburl_value}" id="e-fam-primary-raid-link" target="_blank">点击查看团队招募页</a></li>
+	</ul>
+	<h2>隐元秘鉴</h2>
+	<div class="fam-wujiaimg">
+		<span class="mijian"><img src="{topimg_value}"></span>
+	</div>
+</div>
+
+
+//DIY调用
+<table>
+<tr>
+	<th>BOSS</th>
+	<th>团队</th>
+	<th>时间</th>
+</tr>
+[loop]
+<tr>
+	<td><a class="boss" href="{subject_url}">{wujiaboss_value}</a></td>
+	<td><a class="team" href="{fburl_value}">{raidname_value}</a></td>
+	<td><span class="time">{toptime_value}</span></td>
+</tr>
+[/loop]
+</table>
