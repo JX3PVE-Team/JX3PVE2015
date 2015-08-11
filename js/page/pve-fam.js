@@ -39,5 +39,8 @@ H.ready(['jquery', 'fixSidebar','treeview'], function() {
 		//树形菜单
 		$("#fam-map").treeview();
 
+		//帮助
+    	H.route(55)
+
 	})
 })

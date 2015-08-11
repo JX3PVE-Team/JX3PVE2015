@@ -409,46 +409,6 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 
 	<tr id="_postposition$post['pid']"></tr>
 
-	<!--{if $_G['setting']['magicstatus']}-->
-		<ul id="mgc_post_$post[pid]_menu" class="p_pop mgcmn" style="display: none;">
-		<!--{if $post['first']}-->
-			<!--{if !empty($_G['setting']['magics']['bump'])}-->
-				<li><a href="home.php?mod=magic&mid=bump&idtype=tid&id=$_G[tid]" id="a_bump" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/bump.small.gif" />$_G['setting']['magics']['bump']</a></li>
-			<!--{/if}-->
-			<!--{if !empty($_G['setting']['magics']['stick'])}-->
-				<li><a href="home.php?mod=magic&mid=stick&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/stick.small.gif" />$_G['setting']['magics']['stick']</a></li>
-			<!--{/if}-->
-			<!--{if !empty($_G['setting']['magics']['close'])}-->
-				<li><a href="home.php?mod=magic&mid=close&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/close.small.gif" />$_G['setting']['magics']['close']</a></li>
-			<!--{/if}-->
-			<!--{if !empty($_G['setting']['magics']['open'])}-->
-				<li><a href="home.php?mod=magic&mid=open&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/open.small.gif" />$_G['setting']['magics']['open']</a></li>
-			<!--{/if}-->
-			<!--{if !empty($_G['setting']['magics']['highlight'])}-->
-				<li><a href="home.php?mod=magic&mid=highlight&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/highlight.small.gif" />$_G['setting']['magics']['highlight']</a></li>
-			<!--{/if}-->
-			<!--{if !empty($_G['setting']['magics']['sofa'])}-->
-				<li><a href="home.php?mod=magic&mid=sofa&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/sofa.small.gif" />$_G['setting']['magics']['sofa']</a></li>
-			<!--{/if}-->
-			<!--{if !empty($_G['setting']['magics']['jack'])}-->
-				<li><a href="home.php?mod=magic&mid=jack&idtype=tid&id=$_G[tid]" id="a_jack" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/jack.small.gif" />$_G['setting']['magics']['jack']</a></li>
-			<!--{/if}-->
-			<!--{hook/viewthread_magic_thread}-->
-		<!--{/if}-->
-		<!--{if !empty($_G['setting']['magics']['repent']) && $post['authorid'] == $_G['uid'] && !$rushreply}-->
-			<li><a href="home.php?mod=magic&mid=repent&idtype=pid&id=$post[pid]:$_G[tid]" id="a_repent_$post[pid]" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/repent.small.gif" />$_G['setting']['magics']['repent']</a></li>
-		<!--{/if}-->
-		<!--{if !empty($_G['setting']['magics']['anonymouspost']) && $post['authorid'] == $_G['uid']}-->
-			<li><a href="home.php?mod=magic&mid=anonymouspost&idtype=pid&id=$post[pid]:$_G[tid]" id="a_anonymouspost_$post[pid]" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/anonymouspost.small.gif" />$_G['setting']['magics']['anonymouspost']</a><li>
-		<!--{/if}-->
-		<!--{if !empty($_G['setting']['magics']['namepost'])}-->
-			<li><a href="home.php?mod=magic&mid=namepost&idtype=pid&id=$post[pid]:$_G[tid]" id="a_namepost_$post[pid]" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/namepost.small.gif" />$_G['setting']['magics']['namepost']</a><li>
-		<!--{/if}-->
-		<!--{hook/viewthread_magic_post $postcount}-->
-		</ul>
-		<script type="text/javascript" reload="1">checkmgcmn('post_$post[pid]')</script>
-	<!--{/if}-->
-
 	<!--{if !$_G['forum_thread']['archiveid']}-->
 	<tr class="m-panel">
 		<td class="plc" colspan='2' style="overflow:visible;{if $close_leftinfo}--> width:100%{/if}">
@@ -535,6 +495,45 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 						<!--{hook/viewthread_postaction $postcount}-->
 					</p>
 
+					<!--{if $_G['setting']['magicstatus']}-->
+						<ul id="mgc_post_$post[pid]_menu" class="p_pop mgcmn" style="display: none;">
+						<!--{if $post['first']}-->
+							<!--{if !empty($_G['setting']['magics']['bump'])}-->
+								<li><a href="home.php?mod=magic&mid=bump&idtype=tid&id=$_G[tid]" id="a_bump" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/bump.small.gif" />$_G['setting']['magics']['bump']</a></li>
+							<!--{/if}-->
+							<!--{if !empty($_G['setting']['magics']['stick'])}-->
+								<li><a href="home.php?mod=magic&mid=stick&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/stick.small.gif" />$_G['setting']['magics']['stick']</a></li>
+							<!--{/if}-->
+							<!--{if !empty($_G['setting']['magics']['close'])}-->
+								<li><a href="home.php?mod=magic&mid=close&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/close.small.gif" />$_G['setting']['magics']['close']</a></li>
+							<!--{/if}-->
+							<!--{if !empty($_G['setting']['magics']['open'])}-->
+								<li><a href="home.php?mod=magic&mid=open&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/open.small.gif" />$_G['setting']['magics']['open']</a></li>
+							<!--{/if}-->
+							<!--{if !empty($_G['setting']['magics']['highlight'])}-->
+								<li><a href="home.php?mod=magic&mid=highlight&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/highlight.small.gif" />$_G['setting']['magics']['highlight']</a></li>
+							<!--{/if}-->
+							<!--{if !empty($_G['setting']['magics']['sofa'])}-->
+								<li><a href="home.php?mod=magic&mid=sofa&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/sofa.small.gif" />$_G['setting']['magics']['sofa']</a></li>
+							<!--{/if}-->
+							<!--{if !empty($_G['setting']['magics']['jack'])}-->
+								<li><a href="home.php?mod=magic&mid=jack&idtype=tid&id=$_G[tid]" id="a_jack" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/jack.small.gif" />$_G['setting']['magics']['jack']</a></li>
+							<!--{/if}-->
+							<!--{hook/viewthread_magic_thread}-->
+						<!--{/if}-->
+						<!--{if !empty($_G['setting']['magics']['repent']) && $post['authorid'] == $_G['uid'] && !$rushreply}-->
+							<li><a href="home.php?mod=magic&mid=repent&idtype=pid&id=$post[pid]:$_G[tid]" id="a_repent_$post[pid]" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/repent.small.gif" />$_G['setting']['magics']['repent']</a></li>
+						<!--{/if}-->
+						<!--{if !empty($_G['setting']['magics']['anonymouspost']) && $post['authorid'] == $_G['uid']}-->
+							<li><a href="home.php?mod=magic&mid=anonymouspost&idtype=pid&id=$post[pid]:$_G[tid]" id="a_anonymouspost_$post[pid]" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/anonymouspost.small.gif" />$_G['setting']['magics']['anonymouspost']</a><li>
+						<!--{/if}-->
+						<!--{if !empty($_G['setting']['magics']['namepost'])}-->
+							<li><a href="home.php?mod=magic&mid=namepost&idtype=pid&id=$post[pid]:$_G[tid]" id="a_namepost_$post[pid]" onclick="showWindow(this.id, this.href)"><img src="{STATICURL}image/magic/namepost.small.gif" />$_G['setting']['magics']['namepost']</a><li>
+						<!--{/if}-->
+						<!--{hook/viewthread_magic_post $postcount}-->
+						</ul>
+						<script type="text/javascript" reload="1">checkmgcmn('post_$post[pid]')</script>
+					<!--{/if}-->
 				</div>
 			</div>
 		</td>

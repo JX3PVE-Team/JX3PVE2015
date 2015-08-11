@@ -67,6 +67,9 @@ H.ready(['jquery','dialog','fixSidebar'],function(){
 		//侧边栏
 		H.fixSidebar('.pve-sidebar',96,105,100)
 
+		//帮助
+    	H.route(54)
+
 
 
 	})
