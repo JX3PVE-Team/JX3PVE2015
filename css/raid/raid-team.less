@@ -210,15 +210,21 @@
 		li{
 			//.size(200px,120px);
 			.fl;
-			.w(390px);
 			margin-right:10px;
 			margin-bottom:10px;
 			.clip;.pr;
 
-			border: 1px solid #ddd;
+			
 			border-radius: 3px;
-			background: #fff;
 			transition:0.15s ease-in-out;
+	
+			border: 1px solid #ddd;
+			background: #fff;
+			&:hover{
+				//background:#FDFDEA;
+				background:#E1F3FA;
+				box-shadow:0 0 2px #D4F6FA;
+			}
 
 			.tr{
 				.db;
@@ -236,18 +242,30 @@
 				.nobreak;
 			}
 
-			&:hover{
-				background:#FDFDEA;
-				box-shadow:0 0 2px #E7FA8E;
+			.link{
+				.db;
+				.full;
+				.pa;.lt(0,0);
+				background:url('@{url}common/blank.png') no-repeat 0 0;
 			}
 
+			.control{
+				.pa;.rt(0,0);.z(2);
+			}
+		}
+
+		.m-raid-unit-team{
+			.w(380px);
+			margin-right:38px;
+			//margin-left:20px;
+			border:none;
 			.c-raidlogo{.db;
 				.fl;
 				.size(180px,100px);
 				.x;
 				margin:8px;
 				.pr;
-				border:1px solid #917507;
+				border:1px solid #ddd;
 				border-radius:3px;
 				.clip;
 
@@ -269,26 +287,10 @@
 			.raidinfo{
 				.h(120px - 40px);
 				.clip;
-				margin:20px 5px 20px 200px;
+				margin:20px 10px 20px 200px;
 				.db;
 				//.none;
 			}
-
-			.link{
-				.db;
-				.full;
-				.pa;.lt(0,0);
-				background:url('@{url}common/blank.png') no-repeat 0 0;
-			}
-
-			.control{
-				.pa;.rt(0,0);.z(2);
-			}
-		}
-
-		.m-raid-unit-team{
-			margin-right:0;
-			margin-left:20px;
 			.sex{
 				//.tm(0.3);
 				.pa;.db;
@@ -296,7 +298,7 @@
 				span{
 					.db;padding:1px 5px;
 					color:#fff;
-					background: #917507;
+					background: #39AFD2;
 				}
 			}
 			.mask{
@@ -319,7 +321,8 @@
 				.nobreak;
 				.pa;.lt(0,0);
 				.db;
-				color:#917507;
+				//color:#917507;
+				color:#444;
 				.bold;
 				letter-spacing:1px;
 				//.tm(0.5);
