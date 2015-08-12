@@ -367,7 +367,7 @@
 					<!--{if $rushreply && $_GET['checkrush'] && $post['rewardfloor'] != 1}-->
 						<!--{eval continue;}-->
 					<!--{/if}-->
-					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+					<div class="c-fli {if $post[first]==1}c-fli-first{/if}" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 						<!--{subtemplate forum/viewthread_node}-->
 					</div>
 					<!--{eval $postcount++;}-->

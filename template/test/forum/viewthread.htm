@@ -11,10 +11,10 @@
 
 <!-- jx3pve:code -->
 <script src="http://js.jx3pve.com/js/page/pvx-face.js"></script>
-<link rel="stylesheet" href="http://css.jx3pve.com/css/test.css">
+<link rel="stylesheet" href="http://127.0.0.1/css/__output/test.css">
 
 <!-- jx3pve:pve -->
-<div class="pve-container face-container face-viewpage tgpost-folder">
+<div class="pvx-container face-container face-viewpage tgpost-folder">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">var fid = parseInt('$_G[fid]'), tid = parseInt('$_G[tid]');</script>
@@ -25,9 +25,6 @@
 	<script type="text/javascript">zoomstatus = parseInt($_G['setting']['zoomstatus']);var imagemaxwidth = '{$_G['setting']['imagemaxwidth']}';var aimgcount = new Array();</script>
 	<style id="diy_style" type="text/css"></style>
 
-<!-- jx3pve:wrapper -->
-<div class="wp">
-
 	<!-- dz:banner-top -->
 	<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
 	<!--{hook/viewthread_top}-->
@@ -35,26 +32,27 @@
 	<style id="diy_style" type="text/css"></style>
 	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
 
-<!-- jx3pve:main -->
-<div class="pve-main">
+<!-- jx3pve:page header -->
+<div class="pvx-header">
+	<!--{subtemplate forum/header}-->
+</div>
 
-	<!-- jx3pve:page header -->
-	<div class="pve-header">
-		<!--{subtemplate forum/header}-->
-	</div>
-	
+<!-- jx3pve:main -->
+<div class="pvx-main">
+
 	<!-- jx3pve:sidebar -->
-	<div class="pve-sidebar">
+	<div class="pvx-sidebar">
 		<!--{subtemplate forum/sidebar}-->
 	</div>
 
-	<div class="pve-content">
+	<!-- jx3pve:content -->	
+	<div class="pvx-content">
 
 		<!-- jx3pve:primary -->
 		<!--{subtemplate forum/primary}-->
 
-		<!-- jx3pve:content -->	
-		<div class="pve-article " id="ct">
+		<!-- jx3pve:article -->	
+		<div class="pvx-article " id="ct">
 
 			<!-- jx3pve:route -->
 			<!--{subtemplate jx3pve/w_route_viewthread}-->
@@ -145,7 +143,7 @@
 				</div>
 			<!--{/if}-->
 			<!--{if $modmenu['thread']}-->
-				<div id="modmenu" class="w-post-adminbar xi2 pbm">
+				<div id="modmenu" class="w-post-adminbar w-post-adminbar-top xi2 pbm">
 					<!--{eval $modopt=0;}-->
 					<!--{if $_G['forum']['ismoderator']}-->
 						<!--{if $_G['group']['allowdelpost']}--><!--{eval $modopt++}--><a href="javascript:;" onclick="modthreads(3, 'delete')">{lang modmenu_deletethread}</a><span class="pipe">|</span><!--{/if}-->
@@ -184,8 +182,42 @@
 
 			<!-- dz:postlist -->
 			<!--{hook/viewthread_beginline}-->
-			<div class="pve-postbox pl bm" id="postlist">
-				<table cellspacing="0" cellpadding="0">
+			<div class="pvx-postbox pl bm" id="postlist">
+
+				<!-- jx3pve:pvx-title -->
+				<div class="pvx-title">
+					<div class="m-title">
+						$_G[forum_thread][subject]
+					</div>
+					<div class="m-info">
+						<span class="sort"><em>分类：</em>
+							<!--{if $_G['forum_thread']['typeid'] && $_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}-->
+							<!--{if !IS_ROBOT && ($_G['forum']['threadtypes']['listable'] || $_G['forum']['status'] == 3)}-->
+									<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$_G[forum_thread][typeid]">{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}
+									</a>
+								<!--{else}-->
+									{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}
+								<!--{/if}-->
+							<!--{/if}-->
+							<!--{if $threadsorts && $_G['forum_thread']['sortid']}-->
+								<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_G[forum_thread][sortid]">{$_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}
+								</a>
+							<!--{/if}-->
+						</span>
+						<span class="author">
+							<em>作者：</em>
+							<img class="avt" src="http://www.jx3pve.com/uc_server/avatar.php?uid=$thread[authorid]&size=small" />
+							<a class="name" href="home.php?mod=space&uid=$thread[authorid]" c="1"{if $groupcolor[$thread[authorid]]} style="color: $groupcolor[$thread[authorid]];"{/if}>
+								$_G[forum_thread][author]
+							</a>
+						</span>
+						<span class="time"><em>发布时间：</em><b class="e-time">$thread[dateline]</b></span>
+						<span class="lastedit"><em>最后更新：</em><b class="e-time">$thread[lastedit]</b></span>
+						<span class="views"><em>查看数：</em>$_G[forum_thread][views]</span>
+					</div>
+				</div>
+
+				<table class="none" cellspacing="0" cellpadding="0">
 					<tr>
 						<!--{if !$close_leftinfo}-->
 						<td class="pls ptn pbn">
@@ -204,6 +236,7 @@
 								<!--{/if}-->
 							</div>
 							<!--{else}-->
+
 							<div class="hm ptn">
 								<span class="xg1">{lang show}:</span> <span class="xi1">$_G[forum_thread][views]</span><span class="pipe">|</span><span class="xg1">{lang reply}:</span> <span class="xi1">$_G[forum_thread][allreplies]</span>
 							</div>
@@ -232,17 +265,7 @@
 								<span class="m-count">
 									$_G[forum_thread][allreplies] / $_G[forum_thread][views]
 								</span>
-								<!--{if $_G['forum_thread']['typeid'] && $_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}-->
-									<!--{if !IS_ROBOT && ($_G['forum']['threadtypes']['listable'] || $_G['forum']['status'] == 3)}-->
-										<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$_G[forum_thread][typeid]">[{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}]</a>
-									<!--{else}-->
-										[{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}]
-									<!--{/if}-->
-								<!--{/if}-->
-								<!--{if $threadsorts && $_G['forum_thread']['sortid']}-->
-									<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_G[forum_thread][sortid]">[{$_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}]</a>
-								<!--{/if}-->
-								<span id="thread_subject">$_G[forum_thread][subject]</span>
+								
 							</h1>
 							<span class="xg1">
 								<!--{if $_G['forum_thread'][displayorder] == -2}-->({lang moderating})
@@ -271,8 +294,10 @@
 						</td>
 					</tr>
 				</table>
+
+				<!-- dz:paytips -->
 				<!--{if $_G['forum_thread']['replycredit'] > 0 || $rushreply}-->
-				<div id="pl_top">
+				<div class="pvx-paytips" id="pl_top">
 					<table cellspacing="0" cellpadding="0">
 						<tr class="ad">
 							<td class="pls"></td>
@@ -353,7 +378,7 @@
 
 				<!--{hook/viewthread_title_row}-->
 
-				<table cellspacing="0" cellpadding="0" class="ad">
+				<table class="ad" cellspacing="0" cellpadding="0">
 					<tr>
 						<td class="pls">
 						<!--{if !$close_leftinfo}-->
@@ -368,12 +393,16 @@
 					<!--{if $rushreply && $_GET['checkrush'] && $post['rewardfloor'] != 1}-->
 						<!--{eval continue;}-->
 					<!--{/if}-->
-					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+					<div class="c-fli {if $post[first]==1}c-fli-first{/if}" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 						<!--{subtemplate forum/viewthread_node}-->
 					</div>
 					<!--{eval $postcount++;}-->
 				<!--{/loop}-->
-				<div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
+
+				<div id="postlistreply" class="pl">
+					<div id="post_new" class="viewthread_table c-fli" style="display: none"></div>
+				</div>
+
 				<!--{if $_G['blockedpids']}-->
 					<div id='hiddenpoststip'><a href='javascript:display_blocked_post();'>{lang other_reply_hide}</a></div>
 					<div id="hiddenposts"></div>
@@ -385,7 +414,7 @@
 	
 			<!-- dz:admin bar -->
 			<!--{if $modmenu['thread']}-->
-				<div class="w-post-adminbar xi2 mbm pbm bbs">
+				<div class="w-post-adminbar w-post-adminbar-bottom xi2 mbm pbm bbs">
 				<script type="text/javascript">
 					$('modmenu').lastChild.style.visibility = 'hidden';
 					document.write($('modmenu').innerHTML);
@@ -429,7 +458,7 @@
 			<!--{hook/viewthread_middle}-->
 
 			<!-- jx3pve:fast-post -->
-			<div class="pve-fastpost">
+			<div class="pvx-fastpost">
 				<!-- jx3pve:tips & folder list -->
 				<!--{subtemplate jx3pve/u_msg_replytips}-->
 				
@@ -476,7 +505,8 @@
 				<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, <!--{if $page > 1}-->1<!--{else}-->0<!--{/if}-->, <!--{if $page < $_G['setting']['threadmaxpages'] && $page < $_G['page_next']}-->1<!--{else}-->0<!--{/if}-->, 'forum.php?mod=viewthread&tid=$_G[tid]<!--{if $_GET[authorid]}-->&authorid=$_GET[authorid]<!--{/if}-->', $page);}</script>
 			<!--{/if}-->
 			</div>
-
+			
+			<!--{subtemplate forum/footer}-->
 		</div><!-- article -->
 
 	</div><!-- content -->
@@ -562,9 +592,6 @@
 			<!--{/if}-->
 		</script>
 
-</div><!-- wp -->
 </div><!-- container -->
-
-</div>
 
 <!--{template common/footer}-->

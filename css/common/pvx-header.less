@@ -36,8 +36,42 @@
 							animation:pvxHeaderOn 0.3s ease-in-out;
 						}
 					}
+					&.pub{
+						background:url('@{url}common/pubicon.png') no-repeat right 18%;
+						//transition:background 0.3s ease-in-out;
+						//padding-right:27px;
+						&:hover,&.on{
+							background: none;
+						}
+					}
 				}
 			}
 		}
+	}
+}
+
+.pvx-title{
+	.m-title{
+		.x;
+		.fz(16px,2);
+	}
+	.m-info{
+		.x;
+		span{
+			margin-right:10px;
+			em{
+				color:#666;
+			}
+		}
+		.sort{
+			
+		}
+		.author{
+			.avt{.size(24px);border-radius:24px;.dbi;.y;}
+			.name{}
+		}
+		.time{}
+		.lastedit{}
+		.views{}
 	}
 }

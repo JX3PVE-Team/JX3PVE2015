@@ -1,132 +1,80 @@
-.face-container{
+.m-face-list{
+	@face-w:112px;
+	@face-h:152px;
 
-	.w-category-nav,.w-sortnav{.none;}
-
-	.m-face-list{
-		padding:20px 0;
-		.u-list(a,450px,20px,2);
-		ul{
-			.clearfix;
-			li{
-				.w(410px);
-				.fl;.pr;
-				padding:20px;
-				background-color:#fff;
-				margin-right:20px;
-				margin-bottom:40px;
-				.short{
-					.clip;
-					.pr;.fl;
-					.db;.size(160px,210px);
-					border:1px solid #917507;
-					border-radius:4px;
-					box-shadow: 0 0 4px #ccc;
-					margin-right:20px;
-
-					.img{
-						.db;.full;.pr;
-						img{
-							//max-width:100%;
-							//max-height:100%;
-							.full;
-							//.tm(0.8);
-							//-webkit-filter:blur(1px);
-						}
-						&:after{
-							border-radius:4px;
-							.pa;.lt(0,0);
-							content:'';
-							.db;
-							.full;
-							background:url('@{url}face/layout-1.png') no-repeat 0 0;
-							transition:0.2s ease-in-out;
-							.tm(0);
-						}
-					}
-					//.shark;
-					.shark{.none;}
-					.u-face-mark{
-						.pa;.lt(0,0);
-						.db;
-						.full;
-						background:url('@{url}face/mark-1.png') no-repeat 0 0;
-						.none;
-					}
-					.counts{
-						.pa;.rb(40px,20px);
-						background-color:#917507;
-						color:#eee;
-						padding: 0 5px;
-						//border-radius: 4px 0 3px 0;
-						.italic;
-						transform:translateY(300%);
-						transition:0.25s ease-in-out;
-					}
-					.author{
-						.pa;.rb(10px,45px);
-						.x;
-						//.tb(255,255,255,0.5);
-						background:url('@{url}face/author-bg.png') no-repeat 0 0;
-						.size(123px,23px);line-height:23px;
-						color:#917507;
-						transform:translateX(200%);
-						transition:0.3s ease-in-out;
-					}
-					&:hover{
-						.img:after{.tm(1);}
-						.img img{
-							//.tm(1);-webkit-filter:none;
-						}
-						.counts{
-							transform:translateY(0);
-						}
-						.author{
-							transform:translateX(0);
-						}
-					}
-				}
-				.info{
-					.fl;
-					.db;//margin-top:5px;
-					//padding:0 5px;
-					.w(410px - 20px - 162px);
-					.item{
-						.db;.fz(12px,2);
-						em{color:#888;}
-						span{color:#555;}
-						.nobreak;
-					}
-					.minipic{
-						.db;
-						.clearfix;
-						.img{
-							.db;.size(38px);.fl;
-						  	border: 1px solid #eee;
-							margin-right: 10px;
-							img{.full;}
-						}
-					}
-					.u-btn-facedown{
-						.w(120px);
-						margin-top:5px;
-						.db;.lh(28px);
-						.x;
-						background-color:#f2f2f2;
-						border:1px solid #ddd;
-						border-radius:3px;
-						color:#666;
-						&:hover{
-							background-color:#fafafa;
-							color:@bluex;
-						}
-					}
-				}
-				.control{
-					.pa;.rb(0,0);
-				}
-			}
+	margin-top:20px;
+	.u-list(a,250px,45px,3);
+	ul{
+		.clearfix;
+		li{
+			.fl;
+			margin-bottom:20px;
 		}
 	}
+	.short{
+		.db;.fl;.pr;
+		border:1px solid #eee;
+		background-color:#f7f7f7;
+		border-radius:3px;
+		.shark();
+		.img{
+			.db;
+			.size(@face-w,@face-h);
+			padding:5px;
+			img{
+				.size(100%,auto);
+			}
+		}
+		.mark{
+			.db;.full;
+			.pa;.lt(0,0);.z(2);
+			&.mark-1{background:url('@{url}face/u-face-mark-1.png') no-repeat 0 0;}
+			&.mark-2{background:url('@{url}face/u-face-mark-2.png') no-repeat 0 0;}
+			&.mark-3{background:url('@{url}face/u-face-mark-3.png') no-repeat 0 0;}
+		}
+	}
+	.info{
+		.fl;.db;
+		padding:10px 10px 10px 15px;
+		.fz(12px,2);
+		span{
+			.db;color:#555;
+			em{color:#666;}
+			.nobreak(clip);
+		}
+		.author{}
+		.time{.w(100px);}
+		.downloads{}
+		.round{
+			.isround{
+				.dbi;.y;margin-right:3px;
+			}
+			.isround.true{
+				.size(14px,10px);
+				background:url('@{url}icon/true.gif') no-repeat 0 0;
+			}
+			.isround.false{
+				.size(12px,11px);
+				background:url('@{url}icon/false.gif') no-repeat 0 0;
+			}
+			.u-face-round{.none;}
+		}
+		.down{
+			.dbi;.size(16px,21px);.y;
+			background:url('@{url}icon/down1.png') no-repeat 0 0;
+		}
+		.details{
+			.db;line-height:24px;.indent(28px);
+			.size(100px,24px);
+			margin-top:15px;
+			i{
+				.none;
+				font-family:Arial;
+				font-size:8px;
+				margin-left:3px;
+			}
+			background:url('@{url}common/details.png') no-repeat 0 0;
+		}
 
-
+	}
 }
