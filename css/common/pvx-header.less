@@ -14,6 +14,11 @@
 					.db;padding-left:30px;.pr;
 					.fz(14px);.color(#fff,#fff);
 					.w(80px);.clip;
+					i{
+						.db;.full;.pa;.lt(0,0);
+						background:url('@{url}common/nav-on.png') no-repeat 0 60%;
+						.none;
+					}
 					@keyframes pvxHeaderOn{
 					    from{
 					    	transform:translateY(50%);
@@ -23,11 +28,6 @@
 					    	transform:translateY(0);
 					    	opacity:1;
 					    }
-					}
-					i{
-						.db;.full;.pa;.lt(0,0);
-						background:url('@{url}common/nav-on.png') no-repeat 0 60%;
-						.none;
 					}
 					&.on,&:hover{
 						text-shadow: 0 0 8px #f4d1e7;

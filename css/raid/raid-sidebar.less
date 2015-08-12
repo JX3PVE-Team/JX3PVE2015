@@ -119,7 +119,14 @@
 
 		//推荐团长
 		.m-raid-leader{
-			margin-bottom:20px;
+			margin-bottom:10px;
+			ul{
+				padding:5px 0;
+				li{
+					p{.w(80%);.auto(x);}
+					a{color:#666;}
+				}
+			}
 		}
 		.m-raid-leader-tips{
 			background:url('@{url}icon/faq.gif') no-repeat 0 0;
@@ -130,16 +137,16 @@
 		.m-raid-jiebao{
 			.x;
 			a,span{.db;}
-			.boss{}
-			.team{}
-			.time{}
+			.boss{.color(#565656,#c00);}
+			.team{.color(@bluex,#c00);}
+			.time{color:#888;}
 
 			table{
 				.w(100%);
+				th{background-color:#f8f8f8;}
 				td,th{
 					border:1px solid #ddd;
-					.color(#888,@bluex,#c00);
-					line-height:2;
+					line-height:2.2;
 					padding:0 3px;
 					.x;
 				}
