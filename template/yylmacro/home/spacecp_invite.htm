@@ -49,8 +49,8 @@
 <!--{elseif $_GET['op'] == 'showinvite'}-->
 	<!--{loop $list $key $url}-->
 	<tr>
-		<td class="bbda"><a href="$url" onclick="setCopy('$url', '{lang copy_invite_link}');return false;">$url</a> &nbsp;<a href="$url" onclick="setCopy('$url', '{lang copy_invite_link}');return false;" class="xi2">[{lang copy}]</a></td>
-		<td class="bbda"><a href="javascript:;" onclick="setCopy('$key', '{lang copy_invite_code}');return false;">$key</a> &nbsp;<a href="javascript:;" onclick="setCopy('$key', '{lang copy_invite_code}');return false;" class="xi2">[{lang copy}]</a></td>
+		<td class="bbda"><a href="$url" target="_blank">$url</a> &nbsp;<!-- <a href="$url" onclick="setCopy('$url', '{lang copy_invite_link}');return false;" class="xi2">[{lang copy}]</a> --></td>
+		<td class="bbda"><span>$key</span> &nbsp;<!-- <a href="javascript:;" onclick="setCopy('$key', '{lang copy_invite_code}');return false;" class="xi2">[{lang copy}]</a> --></td>
 	</tr>
 	<!--{/loop}-->
 <!--{else}-->
@@ -138,17 +138,19 @@
 								<!--{if $creditnum && $list}--><p>{lang click_link_copy}</p><!--{/if}-->
 						</caption>
 
-						<tr class="m-title">
-							<td class="bbda"><strong>{lang invite_link}</strong></td>
-							<td class="bbda"><strong>{lang invite_code}</strong></td>
-						</tr>
-
+						<tbody>
+							<tr class="m-title">
+								<td class="bbda"><strong>{lang invite_link}</strong></td>
+								<td class="bbda"><strong>{lang invite_code}</strong></td>
+							</tr>
+						</tbody>
+						
 						<tbody id="invitelist">
 							<!--{if $list}-->
 								<!--{loop $list $key $url}-->
 								<tr>
-									<td class="bbda"><a href="$url" onclick="setCopy('$url', '{lang copy_invite_link}');return false;">$url</a> &nbsp;<a href="$url" onclick="setCopy('$url', '{lang copy_invite_link}');return false;" class="xi2">[{lang copy}]</a></td>
-									<td class="bbda"><a href="javascript:;" onclick="setCopy('$key', '{lang copy_invite_code}');return false;">$key</a> &nbsp;<a href="javascript:;" onclick="setCopy('$key', '{lang copy_invite_code}');return false;" class="xi2">[{lang copy}]</a></td>
+									<td class="bbda"><a href="$url" target="_blank">$url</a> &nbsp;<!-- <a href="$url" onclick="setCopy('$url', '{lang copy_invite_link}');return false;" class="xi2">[{lang copy}]</a> --></td>
+									<td class="bbda"><span>$key</span> &nbsp;<!-- <a href="javascript:;" onclick="setCopy('$key', '{lang copy_invite_code}');return false;" class="xi2">[{lang copy}]</a> --></td>
 								</tr>
 								<!--{/loop}-->
 							<!--{else}-->
@@ -158,37 +160,41 @@
 							<!--{/if}-->
 						</tbody>
 
-						<tr>
-							<td colspan="2">
-								<p class="mtm m-go">{lang invitation_code_spend}{$extcredits[title]} <strong class="xi1">$creditnum</strong> $extcredits[unit] ( {lang you_have}$extcredits[title] <strong id="haveallcredit">{$space[$creditkey]}</strong> $extcredits[unit] )<!--{if $space[$creditkey] < $creditnum}--><span><a href="home.php?mod=spacecp&ac=credit" target="_blank" class="xi2">{lang credit_recharge}</a></span><!--{/if}--></p>
-								<!--{if $_G['group']['maxinviteday']}-->
-								<p class="d">{lang max_invite_day_message}</p>
-								<!--{/if}-->
-								<input type="text" name="invitenum" value="1" size="10" class="px vm" style="width: auto;" />
-								<button type="submit" name="invitesubmit_btn" value="true" class="pn vm"><em>{lang get_invitation_code}</em></button>
-								<span id="return_newinvite" style="display:none;"></span>
-								<script type="text/javascript">
-									function succeedhandle_newinvite(url, message, values) {
-										if(values['deduction']) {
-											var allCreditObj = $('haveallcredit');
-											allCreditObj.innerHTML = parseInt(allCreditObj.innerHTML) - parseInt(values['deduction']);
-											var x = new Ajax();
-											x.get('home.php?mod=spacecp&ac=invite&op=showinvite&inajax=1', function(s){
-												ajaxinnerhtml($('invitelist'), s);
-					   						});
-											showCreditPrompt();
+						<tbody>
+							<tr>
+								<td colspan="2">
+									<p class="mtm m-go">{lang invitation_code_spend}{$extcredits[title]} <strong class="xi1">$creditnum</strong> $extcredits[unit] ( {lang you_have}$extcredits[title] <strong id="haveallcredit">{$space[$creditkey]}</strong> $extcredits[unit] )<!--{if $space[$creditkey] < $creditnum}--><span><a href="home.php?mod=spacecp&ac=credit" target="_blank" class="xi2">{lang credit_recharge}</a></span><!--{/if}--></p>
+									<!--{if $_G['group']['maxinviteday']}-->
+									<p class="d">{lang max_invite_day_message}</p>
+									<!--{/if}-->
+									<input type="text" name="invitenum" value="1" size="10" class="px vm" style="width: auto;" />
+									<button type="submit" name="invitesubmit_btn" value="true" class="pn vm">{lang get_invitation_code}</button>
+									<span id="return_newinvite" style="display:none;"></span>
+									<script type="text/javascript">
+										function succeedhandle_newinvite(url, message, values) {
+											if(values['deduction']) {
+												var allCreditObj = $('haveallcredit');
+												allCreditObj.innerHTML = parseInt(allCreditObj.innerHTML) - parseInt(values['deduction']);
+												var x = new Ajax();
+												x.get('home.php?mod=spacecp&ac=invite&op=showinvite&inajax=1', function(s){
+													ajaxinnerhtml($('invitelist'), s);
+						   						});
+												showCreditPrompt();
+											}
 										}
-									}
-								</script>
-							</td>
-						</tr>
+									</script>
+								</td>
+							</tr>
+						</tbody>
 
 						<!--{if !$creditnum}-->
-						<tr class="m-admin">
-							<td>
-								{lang copy_invite_manage}: <a onclick="setCopy('$inviteurl', '{lang copy_invite_link}');return false;" href="$inviteurl" class="xw1">$inviteurl</a> &nbsp;<a onclick="setCopy('$inviteurl', '{lang copy_invite_link}');return false;" href="$inviteurl" class="xw1 xi2">[{lang copy}]</a>
-							</td>
-						</tr>
+						<tbody>
+							<tr class="m-admin">
+								<td>
+									{lang copy_invite_manage}: <a onclick="setCopy('$inviteurl', '{lang copy_invite_link}');return false;" href="$inviteurl" class="xw1">$inviteurl</a> &nbsp;<a onclick="setCopy('$inviteurl', '{lang copy_invite_link}');return false;" href="$inviteurl" class="xw1 xi2">[{lang copy}]</a>
+								</td>
+							</tr>
+						</tbody>
 						<!--{/if}-->
 					</table>
 				</div>

@@ -2,8 +2,14 @@
 	<!--{subtemplate forum/search_sortoption}-->
 <!--{/if}-->
 
+<!-- jx3pve:primary -->
+<!--{subtemplate forum/primary}-->
+
+<!-- jx3pve:index-list -->
+<div class="w-index-list" id="w-index-list">
+
 <!-- jx3pve:ctbox -->
-<div id="threadlist" class="pve-flist c-flist tl bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
+<div id="threadlist" class="pve-flist c-flist tl bm bmw test"{if $_G['uid']} style="position: relative;"{/if}>
 	
 	<!-- jx3pve:ctbox-header -->
 	<div class="c-flist-header th">
@@ -203,7 +209,7 @@
 								<!-- <a class="avatar" href="home.php?mod=space&uid=$thread[authorid]" c="1"{if $groupcolor[$thread[authorid]]} style="color: $groupcolor[$thread[authorid]];"{/if}><img src="http://static.jx3pve.com/uc_server/avatar.php?uid=$thread[authorid]&size=small" /></a> -->
 
 								<!-- 最后更新时间 -->
-								<span class="e-lastedit">
+								<span class="e-time e-lastedit">
 									$thread[lastedit]
 								</span>
 
@@ -595,7 +601,7 @@
 <!-- dz:w-pages-next -->
 <!--{if $multipage && $filter != 'hot'}-->
 	<!--{if !($_G[forum][picstyle] && !$_G[cookie][forumdefstyle])}-->
-		<a class="u-pages-next" id="autopbn" href="javascript:;" rel="$multipage_more" curpage="$page" totalpage="$maxpage" picstyle="$_G[forum][picstyle]" forumdefstyle="$_G[cookie][forumdefstyle]">{lang next_page_extra}</a>
+		<a class="u-pages-next " id="autopbn" href="javascript:;" rel="$multipage_more" curpage="$page" totalpage="$maxpage" picstyle="$_G[forum][picstyle]" forumdefstyle="$_G[cookie][forumdefstyle]">{lang next_page_extra}</a>
 		<script type="text/javascript" src="{$_G[setting][jspath]}autoloadpage.js?{VERHASH}"></script>
 	<!--{else}-->
 		<div id="pgbtn"><a class="u-pages-next" href="forum.php?mod=forumdisplay&fid={$_G[fid]}&filter={$filter}&orderby={$_GET[orderby]}{$forumdisplayadd[page]}&{$multipage_archive}&page=$nextpage" hidefocus="true">{lang next_page_extra}</a></div>
@@ -611,4 +617,6 @@
 		<img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" />
 	</a><!--{/if}-->
 	<!--{hook/forumdisplay_postbutton_bottom}-->
+</div>
+
 </div>

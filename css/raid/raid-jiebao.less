@@ -1,10 +1,11 @@
-//捷报设置
-.jiebao-container{
+//jiebao·page
+//-----------------------------------------------
+.sort-12-container{
 	
 	background-image: url('http://ww2.sinaimg.cn/large/bcc700eegw1euz2798kt8j21hc0m87h5.jpg');
 
-	.pve-article{
-		.w(720px);
+	.pvx-article{
+		.w(720px);.auto(x);
 	}
 
 	.m-raid-primary-6{
@@ -12,8 +13,36 @@
 	}
 }
 
-//捷报单页
-.m-jiebao-primary{
+//jiebao·list
+//-----------------------------------------------
+.m-jiebao-list{
+	li{
+		.pr;
+		.fz(13px,32px);
+		.color(#888,#555,@bluex);
+		border-bottom:1px solid #ddd;.clearfix;
+		padding:0 10px;
+		*{.db;}
+		&:hover{
+			background-color:#f7f7f7;
+		}
+		span{
+			.w(20%);.fl;
+		}
+		&.th{
+			.color(#fff);
+			background-color:#0084ff;
+		}
+	}
+	.control{
+		.pa;.rb(0,30%);
+		.w(10px);
+	}
+}
+
+//jiebao·single
+//-----------------------------------------------
+.m-raid-jiebao{
 	margin-bottom:40px;
 	h2{font-size:12px;.pa;background-color:@basecolor;.z(2);line-height:22px;
 		margin-left:20px;padding:0 5px;color:#fff;letter-spacing:1px;border-radius:3px;
@@ -49,26 +78,5 @@
 				max-width:100%;
 			}
 		}
-	}
-}
-
-//捷报列表
-.m-jiebao-list{
-	li{
-		.pr;
-		.fz(13px,32px);
-		.color(#888,#555,@bluex);
-		border-bottom:1px solid #ddd;.clearfix;
-		*{.db;}
-		&:hover{
-			background-color:#f7f7f7;
-		}
-		span{
-			.w(20%);.fl;
-		}
-	}
-	.control{
-		.pa;.rb(0,30%);
-		.w(10px);
 	}
 }

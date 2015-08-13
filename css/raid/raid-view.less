@@ -6,19 +6,37 @@
 	padding:0;
 	transition:background 0.2s ease-in-out;
 	
-	.w-route{.none;}
-	.pve-content{float:none;.w(auto);}
-	.pve-article{background:none;border:none;box-shadow:none;}
-	#postlist .vwthd .ts .m-count{.none;}
-	.pve-header,.w-category-nav,.w-sortnav,.w-post-adminbar-top{.none;}
-	.w-pages-bottom,#vfastpostform,.pve-fastpost,.u-msg-posttips{.none;}
-	.pve-postbox>table{.none;}
-	.c-fli .m-header{.none;}
-	.m-extend,.m-panel,.m-misc{.none;}
-	.u-pages-next{.none;}
+	//以下元素均隐藏
+	.pvx-header,.w-route,#postlist .vwthd .ts .m-count,		//查看与回复数
+	.w-category-nav,.w-pages,.w-sortnav,.w-post-adminbar-top,	//分类导航
+	#vfastpostform,.pvx-fastpost,.u-msg-posttips,.u-pages-next,	//下方翻页与回复等
+	.c-fli .m-header,	//默认作者信息
+	.m-extend,.m-panel,.m-misc,		//签名，操作栏等
+	{.none;}
+}
 
-	.pve-postbox{background:none;}
-	.pve-article{padding:200px 0;.w(940px);.auto(x);}
+
+.raid-viewpage{
+	.pvx-content{float:none;.w(auto);}
+	.pvx-article{background:none;border:none;box-shadow:none;}
+	.pvx-postbox{background:none;}
+	.pvx-main{
+		padding:200px 0;.w(940px);.auto(x);
+		background: none;
+		margin-top:0;
+	}
+	.pvx-article{
+		.plc{padding:0;}
+		.m-raid-ctbox{.pr;}
+		.m-raid-edit{
+			.pa;.rt(0,-28px);
+			a{
+				padding: 5px 5px 5px 25px;
+				background-color: #fff;
+				border-radius: 4px;
+			}
+		}
+	}
 
 	.t_fsz{
 		padding:20px !important;
@@ -33,9 +51,7 @@
 
 	#threadstamp{
 		img{
-			.rt(0,-120px);
+			.rt(60px,-120px);
 		}
 	}
-
 }
-

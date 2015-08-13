@@ -1,14 +1,24 @@
 .pvx-sidebar{
 
+	//基本颜色
+	.color(#787878,#555,@bluex);
+
+	//清除DIY自带样式
+	.module{
+		li{
+			.h(auto);margin:0;padding:0;
+		}
+	}
+
+	//标题
 	h2{
-		font-weight: bold;
+		.bold;.fz(13px,1.5);color:#555;
 		padding: 5px 0;
 		border-bottom: 1px dotted #ddd;
 		margin-bottom: 5px;
-		font-size:13px;
-		color:#555;
-		.pr;
+		.pr;.clearfix;
 
+		//更多
 		.more{
 			.ct(y,12px);right:0;
 			background:url('@{url}icon/more.png') no-repeat 0 0;
@@ -18,14 +28,155 @@
 				background-position:0 -12px;
 			}
 		}
-	}
 
-	.module{
-		li{
-			.h(auto);margin:0;padding:0;
+		//faq提示
+		.u-tips-faq{
+			background:url('@{url}icon/faq.gif') no-repeat 0 0;
+			.dbi;.size(13px);.y(-2px);margin-left:3px;.indent;
+		}
+
+		//快速发布
+		.u-btn-pub{
+			.fr;.fz(12px,20px);
+			background:url('@{url}icon/addbuddy.gif') no-repeat 0 center;
+			padding:0 5px 0 20px;
+		}
+
+		//小发布
+		.u-btn-pub2{
+			.fr;.color(#999,@bluex);
+			.normal;font-size:12px;
+			i{
+				background:url('@{url}icon/app_add.gif') no-repeat 0 0;
+				.dbi;.size(12px);.y(-2px);margin-right:3px;
+			}
 		}
 	}
 
+	//搜索
+	.m-pvx-search{
+		.vm{
+			padding:5px;
+			width: 200px;
+			border: 1px solid #ddd;
+			background: none;
+			border-radius: 4px;
+			box-shadow: 0 0 4px #ddd inset;
+			background-color:#fff;
+			&:focus,&:hover{
+				box-shadow: 0 0 4px #0cf inset,0 0 2px #ddd;
+			}
+		}
+		.u-button-search{
+			.u-btn-gray(a);
+			padding: 4px 14px 3px;
+			.pr;
+			top:2px;
+			border-radius:3px;
+		}
+		.hot{
+			.clearfix;
+			padding:3px 0;
+			.fz(12px,2);
+
+			h3{.bold;.fl;}
+			.module{
+				.fl;
+				ul{.clearfix;}
+				li{.fl;margin:0;margin-right:8px;.h(auto);}
+				a{text-decoration:underline;.color(#777,@bluex);}
+			}
+		}
+	}
+
+	//帮助手册
+	.m-pvx-help{
+		ul li{
+			.fz(12px,28px);
+			background:url('@{url}icon/faq.gif') no-repeat 4px center;
+			a{.db;padding-left:26px;}
+		}
+	}
+
+	//横版推荐
+	.m-pvx-imglist-1{
+		@left-w:128px;
+		@left-h:80px;
+		ul{padding:5px;}
+		li{
+			margin-bottom:10px;
+			&:hover{
+				background-color:#eee;
+			}
+		}
+		a{
+			.db;.w(100%);
+			.clearfix;
+			*{.db;}
+			&:hover{
+				.short{
+					.til{.lh(@left-h);}
+				}
+				.info{
+					.time{color:#777;}
+					.recmd{color:#888;}
+				}
+			} 
+		}
+		.short{
+			.fl;
+			padding:5px;border:1px solid #eee;//background-color:#eee;
+			.img{
+				.pr;.size(@left-w,@left-h);
+				img{
+					.size(100%,100%);
+					//.pa;
+				}
+			}
+			.til{
+				.tb(0,0,0,0.5);.x;color:#fff;
+				.pa;.lb(0,0);.w(100%);.lh(24px);
+				transition:0.3s ease-in-out;
+			}
+		}
+		.info{
+			//.fl;
+			padding: 10px;
+			line-height: 1.8;
+			margin-left:@left-w + 10px;
+			span{.nobreak;}
+			em{.di;}
+			.author{}
+			.time{color:#888;}
+			.recmd{color:#999;}
+		}
+	}
+
+	//任务奖励
+	.m-pvx-tasklist{
+		ul{padding:5px;}
+		li{.fz(12px,28px);padding-left:24px;}
+	}
+
+	//表格
+	.m-pvx-table{
+		.x;
+		a,span{.db;}
+		.color(#888,@bluex,#c00);
+
+		table{
+			.w(100%);
+			th{background-color:#f8f8f8;}
+			td,th{
+				border:1px solid #ddd;
+				line-height:2.2;
+				padding:0 3px;
+				.x;
+			}
+		}
+	}
+
+	//大蓝色发布按钮
 	.u-btn-pvxpub{
 		.db;.lh(40px);.indent(45px);
 		.u-btn-blue(b);
@@ -43,30 +194,5 @@
 		margin-bottom:20px;
 	}
 
-	.w-sortnav{
-		.w-sortnav-font{
-			select{
-				background: none;
-				border: 1px solid #ddd;
-				border-radius: 3px;
-				box-shadow: 0 0 3px #ddd inset;
-				padding: 4px;
-			}
-		}
-		.row{
-			.clearfix;
-		}
-		.itembox{
-			ul{
-				.clearfix;
-				li{
-					.fl;
-					a{
-						border:none;
-					}
-				}
-			}
-		}
-	}
 
 }

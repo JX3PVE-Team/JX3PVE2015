@@ -2,43 +2,65 @@
 
 	.pvx-sidebar{
 
-		h2{line-height: 29px;margin-top: 2px;padding:0;}
-
-		//快速发布
-		.m-btn-raidpub{
-			
+		//分类导航
+		.m-raid-sort{
+			margin-bottom:15px;
+			li{
+				.lh(40px);
+				//margin-bottom:10px;
+				border-bottom:1px solid #eee;
+				a{
+					.db;.full;transition:0.2s ease-in-out;
+					.fz(13px,40px);
+					.bold;
+					color:#049abf;
+					&:hover{background-color:#f2f2f2;}
+				}
+				i{
+					.dbi;.size(28px);.y;margin-right:10px;
+					background-color:#eee;
+					border:1px solid #eee;
+					background:url('@{url}raid/logo/navicon.png') no-repeat 0 0;
+				}
+				em{
+					.normal;
+					margin-left:10px;
+					text-transform:uppercase;
+					color:#888;
+					font-family:'Trebuchet MS',Tahoma,"\5FAE\8F6F\96C5\9ED1";
+				}
+				.team i{background-position:-87px 0;}
+				.person i{background-position:-29px 0;}
+				.jiebao i{background-position:-58px 0;}
+				.biz i{background-position:0 0;}
+			}
 		}
 
 		//团队搜索
-		.m-raid-sortnav{
-			.itembox ul li{
-				margin-right:3px;
-			}
-			.row{
-				margin-bottom:5px;
-			}
-			.m-sex{
-				.mkp{
-					.pr;
-					.m-raid-mkp-tips{
-						.pa;.lt(-88px,-54px);
-						.none;
-						width: 200px;
-						height: 33px;
-						background: #eee;
-						padding: 5px;
-						border-radius: 3px;
-						color:#d05;
-						.arrow(b,6px,#eee);
-						em{
-							color:#666;
+		.m-raid-search{
+			margin-bottom:15px;
+			.w-sortnav-font{
+				.row{
+					margin-bottom:5px;
+					.clearfix;
+				}
+				.itembox{
+					ul{
+						.clearfix;
+						li{
+							.fl;margin-right:3px;
+							a{
+								border:none;
+							}
 						}
 					}
-					&:hover{
-						.m-raid-mkp-tips{
-							.db;
-						}
-					}
+				}
+				select{
+					background: none;
+					border: 1px solid #ddd;
+					border-radius: 3px;
+					box-shadow: 0 0 3px #ddd inset;
+					padding: 4px;
 				}
 			}
 			.w-sortnav-form{
@@ -67,10 +89,9 @@
 					}
 				}
 			}
-			.m-sex,.m-progress,.m-week,.m-times{
-				.none;
-			}
 		}
+
+		//服务器
 		.m-fwq{
 			margin-bottom:5px;
 			#raid_fuwuqi_select{
@@ -119,7 +140,7 @@
 
 		//推荐团长
 		.m-raid-leader{
-			margin-bottom:10px;
+			margin-bottom:15px;
 			ul{
 				padding:5px 0;
 				li{
@@ -128,38 +149,32 @@
 				}
 			}
 		}
-		.m-raid-leader-tips{
-			background:url('@{url}icon/faq.gif') no-repeat 0 0;
-			.dbi;.size(13px);.y(-2px);margin-left:3px;.indent;
-		}
 
 		//最新捷报
 		.m-raid-jiebao{
-			.x;
-			a,span{.db;}
+			margin-bottom:15px;
 			.boss{.color(#565656,#c00);}
 			.team{.color(@bluex,#c00);}
 			.time{color:#888;}
+		}
 
-			table{
-				.w(100%);
-				th{background-color:#f8f8f8;}
-				td,th{
-					border:1px solid #ddd;
-					line-height:2.2;
-					padding:0 3px;
-					.x;
-				}
+		//任务奖励
+		.m-raid-tasklist{
+			margin-bottom:15px;
+			.u-list-10590{
+				background:url('@{url}medal/raid_1.gif') no-repeat 0 center;
+			}
+			.u-list-5311{
+				background:url('@{url}medal/raid_2.gif') no-repeat 0 center;
 			}
 		}
-		.m-raid-jbpub{
-			.fr;.color(#999,@bluex);
-			.normal;font-size:12px;
-			i{
-				background:url('@{url}icon/app_add.gif') no-repeat 0 0;
-				.dbi;.size(12px);.y(-2px);margin-right:3px;
-			}
+
+		//广告
+		.banner{
+			.full(x);overflow:hidden;
 		}
 
 	}
 }
+
+

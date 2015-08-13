@@ -45,7 +45,6 @@ H.ready('jquery',function(){
 		var $routeHelp = jQuery('#w-route-help'),
 			$routeJoin = jQuery('#w-route-join')
 		$routeHelp.attr('href','http://www.jx3pve.com/misc.php?mod=faq&action=faq&id='+helpID)
-		//$routeJoin.attr('href','joinID')
 	}
 
 	//unix时间戳转换

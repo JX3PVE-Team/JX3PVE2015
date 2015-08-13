@@ -1,10 +1,11 @@
-H.ready(['jquery'],function(){
+H.ready(['jquery','getRequest'],function(){
 	jQuery(function($){
 
 		var $raidlogo = $(".c-raidlogo"),
 			$nav = $(".m-raid-nav li a"),
 			mod = getRequest('mod'),
-			sortid = getRequest('sortid')
+			sortid = getRequest('sortid'),
+			aindex = getRequest('sortall')
 
     	//导航栏激活
 		H.curpage('.u-raid')
@@ -23,11 +24,12 @@ H.ready(['jquery'],function(){
 		})
 
 		//菜单栏（栏目局部）
-		if(!mod) $nav.eq(0).addClass('on')
+		if(!mod || aindex=='1') $nav.eq(0).addClass('on')
 		if(mod=='forumdisplay'&&sortid=='9') $nav.eq(1).addClass('on')
 		if(mod=='forumdisplay'&&sortid=='13') $nav.eq(2).addClass('on')
 		if(mod=='forumdisplay'&&sortid=='12') $nav.eq(3).addClass('on')
-		if(mod=='post') $nav.eq(4).addClass('on')
+		if(mod=='forumdisplay'&&sortid=='23') $nav.eq(4).addClass('on')
+		if(mod=='post') $nav.eq(5).addClass('on')
 
 	})
 })

@@ -1,4 +1,4 @@
-H.ready(['jquery'],function(){
+H.ready(['jquery','getRequest'],function(){
 	jQuery(function($){
 
 		//条件筛选·服务器
@@ -33,13 +33,24 @@ H.ready(['jquery'],function(){
 			}
 		})
 
-		//菜单活动
-		var $filter = $(".m-raid-filter .filter-tg"),
-			$filter_ct = $(".m-raid-filter .m-raid-filter-ct")
+		//条件筛选
+		var $filter_t = $("#w-filter-tg"),
+			$filter = $("#w-filter")
 
-			$filter.on('click',function(){
-				$filter_ct.fadeToggle()
+			$filter_t.on('click',function(){
+				if(!$filter.length) alert('请切换到具体分类下才能进行筛选:)')
+				$filter.toggleClass('open');
+				$filter_t.toggleClass('on');
+			})
+
+		//打开原帖
+		var $index_tg = $("#w-index-tg"),
+			$index_more = $("#w-index-list")
+
+			$index_tg.on('click',function(){
+				$index_more.toggle()
 			})
 
 	})
 })
+

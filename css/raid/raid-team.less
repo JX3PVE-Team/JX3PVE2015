@@ -1,8 +1,187 @@
-//团队单页
-.team-container{
+//team·page
+//-----------------------------------------------
+.sort-9-container{
 	background-image: url('http://ww2.sinaimg.cn/large/bcc700eegw1euz27f7t77j21hc0m8dso.jpg');
 }
 
+
+//team·list
+//-----------------------------------------------
+.m-raid-list{
+	//.clear;
+	ul{
+		.clearfix;
+		li{
+			//.size(200px,120px);
+			.fl;
+			margin-right:10px;
+			margin-bottom:10px;
+			.clip;.pr;
+
+			
+			border-radius: 3px;
+			transition:0.15s ease-in-out;
+	
+			border: 1px solid #ddd;
+			background: #fff;
+			&:hover{
+				//background:#FDFDEA;
+				background:#EFF9FD;
+				//box-shadow:0 0 2px #D4F6FA;
+				.c-raidlogo .logo{
+					-webkit-filter:blur(1px);
+				}
+			}
+
+			.tr{
+				.db;
+				line-height:1.8;
+				.nobreak;
+			}
+			.label{
+				color:#888;
+			}
+			.key{
+				color:#666;
+			}
+			.name{
+				.bold;
+				.nobreak;
+			}
+
+			.link{
+				.db;
+				.full;
+				.pa;.lt(0,0);
+				background:url('@{url}common/blank.png') no-repeat 0 0;
+			}
+
+			.control{
+				.pa;.rt(0,0);.z(2);
+			}
+		}
+
+		.m-raid-unit-team{
+			.w(380px);
+			margin-right:38px;
+			//margin-left:20px;
+			border:none;
+			.c-raidlogo{.db;
+				.fl;
+				.size(180px,100px);
+				.x;
+				margin:8px;
+				.pr;
+				border:1px solid #ddd;
+				border-radius:3px;
+				.clip;
+
+				.logo{
+					max-width:180px;
+					max-height:100px;
+					border-radius:3px;
+					//.tm(0.15);
+					transition:0.15s ease-in-out;
+				}
+				.verif{
+					.pa;.db;
+					.lt(-1px,-1px);
+					.full;
+					span{.none;}
+				}
+			}
+
+			.raidinfo{
+				.h(120px - 40px);
+				.clip;
+				margin:20px 10px 20px 200px;
+				.db;
+				//.none;
+			}
+			.sex{
+				//.tm(0.3);
+				.pa;.db;
+				.rb(0,0);
+				span{
+					.db;padding:1px 5px;
+					color:#fff;
+					background: #39AFD2;
+				}
+			}
+			.mask{
+				.size(100%,50%);
+				.pa;.db;
+				.tb(255,255,255,0.8);
+				.none;
+				transition:0.25s ease-in-out;
+			}
+			.mask-top{
+				.lt(0,0);
+				transform:translateY(-130%);
+			}
+			.mask-bottom{
+				.lb(0,0);
+				transform:translateY(130%);
+			}
+			.mask-name{
+				line-height:100px;.x;.full(x);
+				.nobreak;
+				.pa;.lt(0,0);
+				.db;
+				//color:#917507;
+				color:#444;
+				.bold;
+				letter-spacing:1px;
+				//.tm(0.5);
+				text-shadow: -1px -1px 0 #fff;
+				.tm(0);
+				transition:0.25s ease-in-out;
+				font-size:14px;
+			}
+			@keyframes maskGoTop{
+			    from{
+			    	transform:translateY(130%);
+			    }
+			    to{
+			    	transform:translateY(0);
+			    }
+			}
+			@keyframes maskGoBottom{
+			    from{
+			    	transform:translateY(-130%);
+			    }
+			    to{
+			    	transform:translateY(0);
+			    }
+			}
+
+			&:hover{
+				.mask-name{
+					.db;
+					.tm(1);
+				}
+				.mask{
+					.db;
+				}
+				.mask-top{
+					transform:translateY(0);
+					//animation:maskGoBottom 0.2s ease-in-out;
+				}
+				.mask-bottom{
+					transform:translateY(0);
+					//animation:maskGoTop 0.2s ease-in-out;
+				}
+				.name{
+					color:#c00 !important;
+				}
+			}
+		}
+	}
+}
+
+
+//team-single
+//-----------------------------------------------
 //团队公共模块
 .m-raid-team,.m-raid-v2primary,.raid-viewpage .t_fsz{
 	background-color:#fff;
@@ -197,179 +376,4 @@
 //团队海报
 .m-raid-banner,.m-raid-usergroup{
 	.none;
-}
-
-
-
-//团队招募列表页
-.m-raid-list{
-	//.clear;
-	ul{
-		.clearfix;
-		li{
-			//.size(200px,120px);
-			.fl;
-			margin-right:10px;
-			margin-bottom:10px;
-			.clip;.pr;
-
-			
-			border-radius: 3px;
-			transition:0.15s ease-in-out;
-	
-			border: 1px solid #ddd;
-			background: #fff;
-			&:hover{
-				//background:#FDFDEA;
-				background:#EFF9FD;
-				//box-shadow:0 0 2px #D4F6FA;
-				.c-raidlogo .logo{
-					-webkit-filter:blur(1px);
-				}
-			}
-
-			.tr{
-				.db;
-				line-height:1.8;
-				.nobreak;
-			}
-			.label{
-				color:#888;
-			}
-			.key{
-				color:#666;
-			}
-			.name{
-				.bold;
-				.nobreak;
-			}
-
-			.link{
-				.db;
-				.full;
-				.pa;.lt(0,0);
-				background:url('@{url}common/blank.png') no-repeat 0 0;
-			}
-
-			.control{
-				.pa;.rt(0,0);.z(2);
-			}
-		}
-
-		.m-raid-unit-team{
-			.w(380px);
-			margin-right:38px;
-			//margin-left:20px;
-			border:none;
-			.c-raidlogo{.db;
-				.fl;
-				.size(180px,100px);
-				.x;
-				margin:8px;
-				.pr;
-				border:1px solid #ddd;
-				border-radius:3px;
-				.clip;
-
-				.logo{
-					max-width:180px;
-					max-height:100px;
-					border-radius:3px;
-					//.tm(0.15);
-					transition:0.15s ease-in-out;
-				}
-				.verif{
-					.pa;.db;
-					.lt(-1px,-1px);
-					.full;
-					span{.none;}
-				}
-			}
-
-			.raidinfo{
-				.h(120px - 40px);
-				.clip;
-				margin:20px 10px 20px 200px;
-				.db;
-				//.none;
-			}
-			.sex{
-				//.tm(0.3);
-				.pa;.db;
-				.rb(0,0);
-				span{
-					.db;padding:1px 5px;
-					color:#fff;
-					background: #39AFD2;
-				}
-			}
-			.mask{
-				.size(100%,50%);
-				.pa;.db;
-				.tb(255,255,255,0.8);
-				.none;
-				transition:0.25s ease-in-out;
-			}
-			.mask-top{
-				.lt(0,0);
-				transform:translateY(-130%);
-			}
-			.mask-bottom{
-				.lb(0,0);
-				transform:translateY(130%);
-			}
-			.mask-name{
-				line-height:100px;.x;.full(x);
-				.nobreak;
-				.pa;.lt(0,0);
-				.db;
-				//color:#917507;
-				color:#444;
-				.bold;
-				letter-spacing:1px;
-				//.tm(0.5);
-				text-shadow: -1px -1px 0 #fff;
-				.tm(0);
-				transition:0.25s ease-in-out;
-				font-size:14px;
-			}
-			@keyframes maskGoTop{
-			    from{
-			    	transform:translateY(130%);
-			    }
-			    to{
-			    	transform:translateY(0);
-			    }
-			}
-			@keyframes maskGoBottom{
-			    from{
-			    	transform:translateY(-130%);
-			    }
-			    to{
-			    	transform:translateY(0);
-			    }
-			}
-
-			&:hover{
-				.mask-name{
-					.db;
-					.tm(1);
-				}
-				.mask{
-					.db;
-				}
-				.mask-top{
-					transform:translateY(0);
-					//animation:maskGoBottom 0.2s ease-in-out;
-				}
-				.mask-bottom{
-					transform:translateY(0);
-					//animation:maskGoTop 0.2s ease-in-out;
-				}
-				.name{
-					color:#c00 !important;
-				}
-			}
-		}
-	}
 }

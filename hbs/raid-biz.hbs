@@ -1,0 +1,39 @@
+<div class="m-raid-biz">
+	<h2>信息地标</h2>
+	<ul>
+		<li><span>类型</span>{raidbiz_value}</li>
+		<li><span>服务器</span>{fuwuqi_value}</li>
+		<li class="u-last"><span>副本名称</span>{fbname_value}</li>
+	</ul>
+	<h2>联系备注</h2>
+	<ul class="fam-raid-info">
+		<li><span>联系YY</span>{baotuan4_value}</li>
+		<li class="u-last"><span>重要说明</span>{raidmsg_value}</li>
+	</ul>
+</div>
+
+
+
+
+<div class="m-raid-bizlist">
+	<ul>
+		<li class="th">
+			<span class="type">类型</span>
+			<span class="fwq">服务器</span>
+			<span class="fam">副本</span>
+			<span class="msg">说明</span>
+			<span class="contact">联系方式</span>
+		</li>
+	[loop]
+		<li>
+			<a href="{subject_url}" target="_blank">
+				<span class="type">{raidbiz_value}</span>
+				<span class="fwq">{fuwuqi_value}</span>
+				<span class="fam">{fbname_value}</span>
+				<span class="msg">{raidmsg_value}</span>
+				<span class="contact">{baotuan4_value}</span>
+			</a>
+		</li>
+	[/loop]
+	</ul>
+</div>

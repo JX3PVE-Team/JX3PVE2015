@@ -283,7 +283,18 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 	<tr class="m-content">
 		<td class="plc c-fli-content"<!--{if $close_leftinfo}--> style="width:100%"<!--{/if}--> colspan='2'>
 			<!--{ad ad_a_pr/thread/a_pr/3/$postcount}-->
-			<div class="pct">
+			<div class="pct m-raid-ctbox">
+
+				<div class="m-raid-edit">
+					<!--{if $post['invisible'] == 0}-->
+						<!--{if (($_G['forum']['ismoderator'] && $_G['group']['alloweditpost'] && (!in_array($post['adminid'], array(1, 2, 3)) || $_G['adminid'] <= $post['adminid'])) || ($_G['forum']['alloweditpost'] && $_G['uid'] && ($post['authorid'] == $_G['uid'] && $_G['forum_thread']['closed'] == 0) && !(!$alloweditpost_status && $edittimelimit && TIMESTAMP - $post['dbdateline'] > $edittimelimit)))}-->
+							<a class="editp" href="forum.php?mod=post&action=edit&fid=$_G[fid]&tid=$_G[tid]&pid=$post[pid]{if !empty($_GET[modthreadkey])}&modthreadkey=$_GET[modthreadkey]{/if}&page=$page"><!--{if $_G['forum_thread']['special'] == 2 && !$post['message']}-->{lang post_add_aboutcounter}<!--{else}--> <i></i>{lang edit}</a><!--{/if}-->
+						<!--{elseif $_G['uid'] && $post['authorid'] == $_G['uid'] && $_G['setting']['postappend']}-->
+							<a class="appendp" href="forum.php?mod=misc&action=postappend&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page" onClick="showWindow('postappend', this.href, 'get', 0)"><i></i>{lang postappend}</a>
+						<!--{/if}-->
+					<!--{/if}-->
+				</div>
+
 				<!--{ad/thread/a_pt/2/$postcount}-->
 				<!--{if empty($ad_a_pr_css)}-->
 					<style type="text/css">.pcb{margin-right:0}</style>

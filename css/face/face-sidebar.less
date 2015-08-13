@@ -8,7 +8,7 @@
 		a{
 			.db;.full;transition:0.2s ease-in-out;
 			.fz(13px,32px);
-			&:hover{.bold;}
+			.bold;
 		}
 		i{
 			.dbi;.size(32px);.y;margin-right:10px;
@@ -16,10 +16,12 @@
 			border:1px solid #eee;
 		}
 		em{
+			.normal;
 			color:#888;
 			text-transform:uppercase;
 			.fz(11px);
 			margin-left:5px;
+			font-family:'Trebuchet MS',Tahoma,"\5FAE\8F6F\96C5\9ED1";
 		}
 		.woman{
 			//background:url('@{url}face/woman.png') no-repeat 0 0;
@@ -38,106 +40,17 @@
 
 .m-face-search{
 	margin-bottom:10px;
-	.vm{
-		padding:5px;
-		width: 200px;
-		border: 1px solid #ddd;
-		background: none;
-		border-radius: 4px;
-		box-shadow: 0 0 4px #ddd inset;
-		background-color:#fff;
-		&:focus,&:hover{
-			box-shadow: 0 0 4px #0cf inset,0 0 2px #ddd;
-		}
-	}
-	.u-button-search{
-		.u-btn-gray(a);
-		padding: 4px 14px 3px;
-		.pr;
-		top:2px;
-		border-radius:3px;
-	}
-	.hot{
-		.clearfix;
-		padding:3px 0;
-		.fz(12px,2);
-
-		h3{.bold;.fl;}
-		.module{
-			.fl;
-			ul{.clearfix;}
-			li{.fl;margin:0;margin-right:5px;.h(auto);}
-			a{text-decoration:underline;}
-		}
-	}
 }
 
 .m-face-help{
 	margin-bottom:15px;
-	ul li{
-		.fz(12px,28px);
-		background:url('@{url}icon/faq.gif') no-repeat 4px center;
-		a{.db;padding-left:26px;}
-	}
 }
 
 .m-face-recommond{
-	@left-w:128px;
-	@left-h:80px;
-	ul{padding:5px;}
-	li{
-		margin-bottom:10px;
-		&:hover{
-			background-color:#eee;
-		}
-	}
-	a{
-		.db;.w(100%);
-		.clearfix;
-		*{.db;}
-		&:hover{
-			.short{
-				.til{.lh(@left-h);}
-			}
-			.info{
-				.time{color:#555;}
-				.recmd{color:#888;}
-			}
-		} 
-	}
-	.short{
-		.fl;
-		padding:5px;border:1px solid #eee;//background-color:#eee;
-		.img{
-			.pr;.size(@left-w,@left-h);
-			img{
-				.size(100%,100%);
-				//.pa;
-			}
-		}
-		.til{
-			.tb(0,0,0,0.5);.x;color:#fff;
-			.pa;.lb(0,0);.w(100%);.lh(24px);
-			transition:0.3s ease-in-out;
-		}
-	}
-	.info{
-		//.fl;
-		padding: 10px;
-		line-height: 1.8;
-		margin-left:@left-w + 10px;
-		span{.nobreak;}
-		em{.di;}
-		.author{}
-		.time{color:#666;}
-		.recmd{color:#999;}
-	}
+	
 }
 
 .m-face-tasklist{
-	ul{padding:5px;}
-	li{.fz(12px,28px);padding-left:24px;}
-
 	.u-list-5297{background:url('@{url}medal/face_1.gif') no-repeat 0 center;}
 	.u-list-4308{background:url('@{url}medal/face_2.gif') no-repeat 0 center;}
 	.u-list-4672{background:url('@{url}medal/face_3.gif') no-repeat 0 center;}

@@ -1,41 +1,41 @@
-<!-- 快速发布 -->
-<a class="m-btn-facepub u-btn-pvxpub" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=92">快速发布<span>Post your facedata</span>
-</a>
-
-<!-- jx3pve:分类导航 -->
-<ul class="m-face-sort">
-    <li><a class="woman" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=92&filter=typeid&typeid=212"><i></i>御姐<em>woman</em></a></li>
-    <li><a class="girl" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=92&filter=typeid&typeid=213"><i></i>萝莉<em>girl</em></a></li>
-    <li><a class="man" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=92&filter=typeid&typeid=211"><i></i>成男<em>man</em></a></li>
-    <li><a class="boy" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=92&filter=typeid&typeid=214"><i></i>正太<em>boy</em></a></li>
+<h2>分类导航<a class="u-btn-pub" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=67" target="_blank">快速发布</a></h2>
+<ul class="m-raid-sort">
+    <li><a class="team" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=67&filter=sortid&sortid=9"><i></i>团队招募<em>Join a team</em></a></li>
+    <li><a class="person" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=67&filter=sortid&sortid=13"><i></i>演员应聘<em>Recruit a member</em></a></li>
+    <li><a class="jiebao" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=67&filter=sortid&sortid=12"><i></i>五甲捷报<em>FD of raid</em></a></li>
+    <li><a class="biz" href="#"><i></i>包团服务<em>business service</em></a></li>
 </ul>
 
-<h2>作者作品搜索</h2>
-<div class="m-face-search">
-    <form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&amp;fid=92&amp;filter=sortid&amp;sortid=15">
-        <input type="text" name="searchoption[101][value]" size="15" class="px vm" value="">
-        <button type="submit" class="u-button-search" name="searchsortsubmit">搜索</button>
-    </form>
-    <div class="hot">
-        <h3>热搜：</h3>
-        <!--{block/1272}-->
+<h2>团队搜索</h2>
+<div class="m-raid-search w-sortnav">
+    <div class="w-sortnav-font">
+        <div id="fontsearch">
+           <!--{subtemplate forum/fwq}-->
+        </div>
+    </div>
+    <div class="w-sortnav-form">
+        <form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&fid=67&filter=sortid&sortid=9">
+            <span class="label">团队名称:</span>
+            <input class="px vm" type="text" name="searchoption[76][value]" size="15" value="">
+            <button class="u-button-search" type="submit" name="searchsortsubmit">搜索</button>
+        </form>
     </div>
 </div>
 
-<!-- jx3pve:帮助文档 -->
-<h2>帮助文档</h2>
-<div class="m-face-help">
-    <!--{block/1273}-->
+<h2>最新捷报<a class="u-btn-pub2" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&sortid=12&fid=67" target="_blank"><i></i>发布</a></h2>
+<div class="m-raid-jiebao m-pvx-table" id="m-raid-jiebao">
+    <!--{block/1013}-->
 </div>
 
-<!-- jx3pve:帮助文档 -->
-<h2>主编推荐<a class="more" href="http://www.jx3pve.com/&filter=digest&digest=1" target="_blank">更多</a></h2>
-<div class="m-face-recommond">
-    <!--{block/1274}-->
+<h2>推荐团长<a class="u-tips-faq" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=56&messageid=106" target="_blank" title="如何获得推荐团长？"></a></h2>
+<div class="m-pvx-table m-raid-leader">
+    <!--{block/890}-->
 </div>
 
-<!-- jx3pve:任务中心 -->
 <h2>任务奖励<a class="more" href="http://www.jx3pve.com/home.php?mod=task" target="_blank">更多</a></h2>
-<div class="m-face-tasklist">
-    <!--{block/1275}-->
+<div class="m-raid-tasklist m-pvx-tasklist">
+    <!--{block/1277}-->
 </div>
+
+<h2>广而告之<a class="u-tips-faq" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=1&messageid=116" target="_blank" title="这是什么？"></a></h2>
+<!--{subtemplate jx3pve/c_banner_c}-->

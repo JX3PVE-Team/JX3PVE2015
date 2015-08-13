@@ -7,25 +7,7 @@ H.ready(['jquery'],function(){
 			$score_btn = $("#ak_rate"),
 			$raidvpg = $(".raid-viewpage"),
 			groupid = $("#raid-usergroup").text(),
-			isTeamPage = Boolean($(".m-raid-team").length),
-			isPersonPage = Boolean($(".m-raid-yanyuan").length),
-			isJiebaoPage = Boolean($(".m-jiebao-primary").length)
-
-		//如果是团队页面
-		if(isTeamPage){
-			$raidvpg.addClass('team-container')
-		}
-
-		//如果是个人页面
-		if(isPersonPage){
-			$raidvpg.addClass('yanyuan-container')
-		}
-
-		//如果是捷报页面
-		if(isJiebaoPage){
-			$raidvpg.addClass('jiebao-container')
-		}
-
+			isTeamPage = Boolean($(".sort-9-container").length)
 
 		//滚动至评分
 			$score_t.on('click',function(e){
