@@ -38,9 +38,12 @@ H.ready(['jquery','getRequest'],function(){
 			$filter = $("#w-filter")
 
 			$filter_t.on('click',function(){
-				if(!$filter.length) alert('请切换到具体分类下才能进行筛选:)')
-				$filter.toggleClass('open');
-				$filter_t.toggleClass('on');
+				if(!$filter.length){
+					alert('请切换到具体分类下才能进行筛选或该类型下没有可筛选条件:)')
+				}else{
+					$filter.toggleClass('open');
+					$filter_t.toggleClass('on');
+				}
 			})
 
 		//打开原帖

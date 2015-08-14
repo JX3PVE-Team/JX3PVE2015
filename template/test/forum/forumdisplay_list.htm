@@ -2,6 +2,12 @@
 	<!--{subtemplate forum/search_sortoption}-->
 <!--{/if}-->
 
+<!-- jx3pve:primary -->
+<!--{subtemplate forum/primary}-->
+
+<!-- jx3pve:index-list -->
+<div class="w-index-list" id="w-index-list">
+
 <!-- jx3pve:ctbox -->
 <div id="threadlist" class="pve-flist c-flist tl bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
 	
@@ -611,4 +617,6 @@
 		<img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" />
 	</a><!--{/if}-->
 	<!--{hook/forumdisplay_postbutton_bottom}-->
+</div>
+
 </div>

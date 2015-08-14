@@ -5,16 +5,16 @@
  * HTML: template/$pve/*
  * Style: pve/pve-*.less
  * Description: pve
- * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.7.12
+ * Creat: iRuxu 2015.8.12
+ * Update : iRuxu 2015.8.12
  -->
 
 <!-- jx3pve:code -->
-<script src="http://js.jx3pve.com/js/page/pve-raid.js"></script>
-<script src="http://js.jx3pve.com/js/page/pve-raid-list.js"></script>
+<script src="http://js.jx3pve.com/js/page/pvx-face.js"></script>
+<link rel="stylesheet" href="http://css.jx3pve.com/css/test.css">
 
 <!-- jx3pve:pve -->
-<div class="pvx-container raid-container raid-listpage">
+<div class="pvx-container face-container face-listpage">
 
 	<!-- dz:style & js -->
 	<!--{if $_G['forum']['ismoderator']}-->
@@ -385,6 +385,7 @@
 							<!--{/loop}-->
 						<!--{/if}-->
 
+						<!-- sort type
 						<!--{if $_G['forum']['threadsorts']}-->
 							<!--{if $_G['forum']['threadtypes']}--><li><span class="pipe">|</span></li><!--{/if}-->
 							<!--{loop $_G['forum']['threadsorts']['types'] $id $name}-->
@@ -395,19 +396,21 @@
 								<!--{/if}-->
 							<!--{/loop}-->
 						<!--{/if}-->
+						-->
 						<!--{hook/forumdisplay_filter_extra}-->
 					</ul>
 					<script type="text/javascript">showTypes('thread_types');</script>
 				<!--{/if}-->
-				<!--{hook/forumdisplay_threadtype_extra}-->
 
 				<!-- dz:pages-top -->
 				<div id="pgt" class="w-pages w-pages-top bm bw0 pgs cl">
 					<span id="fd_page_top">$multipage</span>
 					<span class="pgb y" {if $_G[setting][visitedforums]}id="visitedforums" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'34'})"{/if} ><a href="forum.php">{lang return_index}</a></span>
-					<a href="javascript:void(0)" class="w-filter-tg" id="w-filter-tg">点击展开条件筛选</a>
+					<!--{subtemplate forum/filter}-->
 					<!--{hook/forumdisplay_postbutton_top}-->
 				</div>
+
+				<!--{hook/forumdisplay_threadtype_extra}-->
 
 				<!-- dz:sort nav -->
 				<!--{if empty($_G['forum']['sortmode'])}-->
@@ -418,8 +421,8 @@
 
 			<!--{/if}-->
 
-			<!-- jx3pve:pub-btn -->
-			<div class="m-raid-footer">
+			<!-- jx3pve:list-footer -->
+			<div class="m-face-footer">
 				<!--{template forum/footer}-->
 			</div>
 
