@@ -3,67 +3,83 @@
 
 	.pvx-title{
 		padding: 0 0 5px 0;
-  		border-bottom: 1px dashed #ddd;
+  		//border-bottom: 1px dashed #ddd;
 		.m-info{
-			.color(#666,@bluex,#d05);
+			//.color(#666,@bluex,#d05);
+			padding:5px 0;
+			background-color:#f7f7f7;
+			border-radius:24px;
+			.avt{.size(18px);}
 		}
+	}
+
+	.c-fli-pvx{
+		.clearfix;
 	}
 
 	.c-fli-pvx-first{
-		.m-author{.fr;}
-		.m-content{
 
+		.m-author{
+			.fr;
+			border:1px solid #eee;
+			.r(6px);
+			padding:20px 0;
+			background-color:#f7f7f7;
+			.poster{
+				.bold;
+				.x;.color(#888);
+				//border-bottom:1px solid #ddd;
+				text-transform:uppercase;
+				.upen;
+			  	margin-bottom: 10px;
+				padding-bottom: 10px;
+			}
+			.only{.none;}
+			.medal{background-color:#fff;}
+		}
+		.m-content{
+			.fl;
+			.w(840px - 180px - 40px);
+			.pcb{
+				margin:0;padding:0;
+			}
 		}
 	}
-
-	
-
-
 }
 
 
-
 .m-face-view{
-	padding:20px 0;
-	.clearfix;
+	.m-default{
+		.clearfix;
+	}
 	.m-short{
-		.db;.size(320px,420px);
+		.db;.size(300px,400px);
 		.clip;.pr;.fl;
-		border:1px solid #917507;
+		border:1px solid #ddd;
 		border-radius:4px;
-		box-shadow: 0 0 4px #ccc;
-		margin-right:20px;
+		margin:10px 40px 0 10px;
+		padding:10px;
 		.img{
-			.db;.x;
+			.db;.x;.full;
+			background:url('@{url}header/jx3pve-logo-white.png') no-repeat center center;
 			img{
 				max-width:100%;
 				max-height:100%;
 			}
 		}
 	}
-	.m-ct{
-		margin-left:340px;
+	.m-info{
+		.fz(13px,2);.fl;
+		padding:20px 0;
 	}
 	.m-details{
-		.clearfix;.clip;
-		.h(138px);margin-bottom:10px;
-	}
-	.m-info{
-		.w(576px - 210px - 20px);
-		.fz(13px,2);.fl;
-		padding:10px 0;
+		border-bottom:1px solid #ddd;
+		padding-bottom:5px;
+		margin-bottom:5px;
 		.item{
-			.db;
-			em{color:#888;}
-			span{color:#555;}
-			.weibo{.none;}
-		}
-		.intro{
-			.h(78px);.clip;
-			span{font-size:12px;}
+			#u-face-weibo{.none;}
 		}
 	}
-
 	.m-down{
 		.fl;.w(210px);
 		.u-btn-facedown{
@@ -81,22 +97,46 @@
 	}
 
 	.m-extend{
+		margin-top:10px;
+		padding:0 10px;
 		.m-more{
-			border-bottom:1px dashed #ddd;
-			border-top: 1px dashed #ddd;
+			border-bottom:1px dotted #ddd;
+			border-top: 1px dotted #ddd;
 			color: #999;
-			font-weight: bold;
-			padding:5px 0;
+			span{.upen;}
+			background-color:#f7f7f7;
+			padding:5px 10px;
 		}
 		.minipic{
 			.clearfix;
 			li{
-				.fl;margin-right:20px;
+				.fl;margin-left:20px;
 				span{.db;.x;line-height:2;margin:5px 0;color:#777;}
 				img{.db;.size(160px,210px);border:1px solid #eee;}
+				background:url('@{url}common/blankbg.png') #f9f9f9 no-repeat center center;
 			}
 		}
 	}
 
 }
 
+.face-viewpage{
+	.m-til{
+		margin:20px 0 10px 0;
+		&:before{
+			.w(86%) !important;
+		}
+	}
+	.m-article{
+		padding:10px;
+	}
+	.m-star{
+		.h(120px);
+	}
+	.c-fli-pvx-first{
+		.pr;
+		.c-star{
+			.pa;.lt(380px,60px);
+		}
+	}
+}

@@ -11,7 +11,6 @@
 
 <!-- jx3pve:code -->
 <script src="http://js.jx3pve.com/js/page/pvx-face.js"></script>
-<link rel="stylesheet" href="http://css.jx3pve.com/css/test.css">
 
 <!-- jx3pve:pve -->
 <div class="pvx-container face-container face-viewpage">
@@ -393,9 +392,17 @@
 					<!--{if $rushreply && $_GET['checkrush'] && $post['rewardfloor'] != 1}-->
 						<!--{eval continue;}-->
 					<!--{/if}-->
-					<div class="c-fli {if $post[first]==1}c-fli-first{/if}" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+
+					<!--{if $post[first]==1}-->
+					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+						<!--{subtemplate forum/viewthread_node_first}-->
+					</div>
+					<!--{else}-->
+					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 						<!--{subtemplate forum/viewthread_node}-->
 					</div>
+					<!--{/if}-->
+
 					<!--{eval $postcount++;}-->
 				<!--{/loop}-->
 
@@ -460,7 +467,7 @@
 			<!-- jx3pve:fast-post -->
 			<div class="pvx-fastpost">
 				<!-- jx3pve:tips & folder list -->
-				<!--{subtemplate jx3pve/u_msg_replytips}-->
+				<!--{subtemplate jx3pve/u_msg_replytip}-->
 				
 				<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
 				<!--{if $fastpost}-->

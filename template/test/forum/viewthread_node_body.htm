@@ -55,7 +55,7 @@
 	<!--{if $_G['forum_discuzcode']['passwordauthor'][$post[pid]]}-->
 		<div class="locked">{lang message_password_exists}</div>
 	<!--{/if}-->
-	<div class="m-primary {if !$_G[forum_thread][special]}t_fsz{else}pcbs{/if}">
+	<div class="m-article {if !$_G[forum_thread][special]}t_fsz{else}pcbs{/if}">
 		<!-- <h2 class="m-title">正文内容</h2> -->
 		$_G['forum_posthtml']['header'][$post[pid]]
 		<!--{if $post['first']}-->

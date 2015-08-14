@@ -21,35 +21,20 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 
 <!--{if empty($post['deleted'])}-->
 	<!-- dz:如果未被删除 -->
-	
-	<!--{if $post['first']}-->
-		<!-- jx3pve:如果是主楼 -->
-		<div class="c-fli-pvx c-fli-pvx-first" id="pid$post[pid]" summary="pid$post[pid]" data-pubtime="$post[dateline]">
-			<!-- 作者信息 -->
-			<div class="m-author">
-				<!--{subtemplate jx3pve/c_author_pvx}-->
-			</div>
 
-			<!-- 内容区域 -->
-			<div class="m-content">
-
-				<!-- 正文 -->
-				<div class="m-article">
-					<!--{subtemplate forum/viewthread_node_body}-->
-				</div>
-
-				<div id="_postposition$post['pid']"></div>
-				
-			</div>
+	<!-- jx3pve:如果是回复 -->
+	<div class="c-fli-pvx c-fli-pvx-normal" id="pid$post[pid]" summary="pid$post[pid]" data-pubtime="$post[dateline]">
+		<!-- 作者信息 -->
+		<div class="m-author">
+			<!--{subtemplate jx3pve/c_replyer_pvx}-->
 		</div>
 
-	<!--{else}-->
-		<!-- jx3pve:如果是回复 -->
-		<div class="c-fli-pvx c-fli-pvx-li" id="pid$post[pid]" summary="pid$post[pid]" data-pubtime="$post[dateline]">
+		<!-- 内容区域 -->
+		<div class="m-content">
 			<!--{subtemplate forum/viewthread_node_body}-->
 			<div id="_postposition$post['pid']"></div>
 		</div>
-	<!--{/if}-->
+	</div>
 	
 	<!-- dz:如为图片模式 -->
 	<!--{if !empty($aimgs[$post[pid]])}-->
