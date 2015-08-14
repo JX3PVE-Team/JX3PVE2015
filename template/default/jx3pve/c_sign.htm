@@ -1,0 +1,10 @@
+<!-- 签名 -->
+<div class="m-sign">
+	<!--{if $post['signature'] && ($_G['setting']['bannedmessages'] & 4 && ($post['memberstatus'] == '-1' || ($post['authorid'] && !$post['username']) || ($post['groupid'] == 4 || $post['groupid'] == 5) || ($post['status'] & 1)))}-->
+		<div class="sign">{lang member_signature_banned}</div>
+	<!--{elseif $post['signature'] && !$post['anonymous'] && $showsignatures}-->
+		<div class="sign" style="max-height:{$_G['setting']['maxsigrows']}px;maxHeightIE:{$_G['setting']['maxsigrows']}px;">$post[signature]</div>
+	<!--{elseif !$post['anonymous'] && $showsignatures && $_G['setting']['globalsightml']}-->
+		<div class="sign">$_G['setting']['globalsightml']</div>
+	<!--{/if}-->
+</div>

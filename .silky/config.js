@@ -13,7 +13,9 @@ module.exports = {
         }
     },
     //如果不需要启用livereload，请注释掉livereload，默认监控扩展名为：'less', 'coffee', 'hbs', 'html', 'css'
-    livereload: {},
+     livereload: {
+        exts: ['less', 'coffee', 'hbs', 'html', 'css', 'js', 'png', 'jpg', 'gif']
+    },
     //路由
     routers: [
         //如果希望访问目录直接访问index.html，则可以启用下面的路由
@@ -24,6 +26,7 @@ module.exports = {
     ],
     //插件的配置
     plugins: {
+        "autoprefix":{},
         /*
         //为插件指定目录，可以指定特殊目录的插件
         "specific_plugin": {

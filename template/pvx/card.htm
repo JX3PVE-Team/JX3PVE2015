@@ -1,0 +1,90 @@
+<!-- 作者信息 -->
+<div class="m-author">
+
+	<!-- 发布时间 -->
+	<span class="time">$post[dateline]</span>
+
+	<!-- 头像 -->
+	<a class="avatar" href="home.php?mod=space&uid=$post[authorid]" target="_blank" {if $post[groupcolor]} style="color: $post[groupcolor]"{/if}>$post[avatar]</a>
+
+	<!-- 用户名 -->
+	<a class="name" href="home.php?mod=space&uid=$post[authorid]" target="_blank" class="xi2"{if $post[groupcolor]} style="color: $post[groupcolor]"{/if}>$post[author]</a>
+
+	<!-- 认证 -->
+	<span class="verif">$authorverifys</span>
+
+	<!-- 用户组 -->
+	<span class="usergroup user-group-$post[groupid] u-group-$post[groupid]" id="u-usergroup-id">$post[groupid]</span>
+
+	<!-- 用户组、勋章 -->
+	<div class="medals">{eval viewthread_profile_node('top', $post);}</div>
+
+	<!-- 用户DIY扩展信息 -->
+	<div class="diyinfo">{eval viewthread_profile_node('left', $post);}</div>
+
+	<!-- 在线状态 -->
+	<span class="isonline">
+		<!--{if $_G['setting']['vtonlinestatus'] && $post['authorid']}-->
+			<!--{if ($_G['setting']['vtonlinestatus'] == 2 && $_G[forum_onlineauthors][$post[authorid]]) || ($_G['setting']['vtonlinestatus'] == 1 && (TIMESTAMP - $post['lastactivity'] <= 10800) && !$post['authorinvisible'])}-->
+				<em>{lang online}</em>
+			<!--{else}-->
+				<em>{lang offline}</em>
+			<!--{/if}-->
+		<!--{/if}-->
+	</span>
+
+	<div class="contact">
+		<!--{if $post[authorid] != $_G[uid]}-->
+			<!-- 关注收听 -->
+			<!--{if helper_access::check_module('follow')}-->
+			<a class="u-follow" title="第一时间知晓作者更新动态" href="home.php?mod=spacecp&ac=follow&op=add&hash={FORMHASH}&fuid=$post[authorid]" id="followmod_$post[authorid]" onclick="showWindow('followmod', this.href, 'get', 0);"><i></i><span>关注收听</span></a>
+			<!--{/if}-->
+
+			<!-- 短消息 -->
+			<a class="u-pm" href="home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_$post[authorid]&touid=$post[authorid]&pmid=0&daterange=2&pid=$post[pid]&tid=$post[tid]" onclick="showWindow('sendpm', this.href);" title="{lang viewthread_left_sendpm}"><i></i>{lang viewthread_left_sendpm}</a>
+		<!--{/if}-->
+	</div>
+
+	<!-- 只看作者 -->
+	<div class="only">
+		<!--{if $post['invisible'] == 0}-->
+			<!--{if !IS_ROBOT && !$_GET['authorid'] && !$_G['forum_thread']['archiveid']}-->
+				<a href="forum.php?mod=viewthread&tid=$post[tid]&page=$page&authorid=$post[authorid]" rel="nofollow">{lang thread_show_author}</a>
+			<!--{elseif !$_G['forum_thread']['archiveid']}-->
+				<a href="forum.php?mod=viewthread&tid=$post[tid]&page=$page" rel="nofollow">{lang thread_show_all}</a>
+			<!--{/if}-->
+		<!--{/if}-->
+	</div>
+
+	<!-- 电梯直达 -->
+	<!--{if !$postcount && !$_G['forum_thread']['archiveid'] && $post['first'] }-->
+	<div id="fj" class="m-fj y">
+		<label class="z">跳转楼层</label>
+		<input type="text" class="px p_fre z" size="2" onkeyup="$('fj_btn').href='forum.php?mod=redirect&ptid=$_G[tid]&authorid=$_GET[authorid]&postno='+this.value" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" title="{lang thread_redirect_postno_tips}" />
+		<a href="javascript:;" id="fj_btn" class="z" title="{lang thread_redirect_postno_tips}"><img src="{IMGDIR}/fj_btn.png" alt="{lang thread_redirect_postno_tips}" class="vm" /></a>
+	</div>
+	<!--{/if}-->
+
+	<!-- 用户操作 -->
+	<!--{if ($_G['group']['allowedituser'] || $_G['group']['allowbanuser'] || ($_G['forum']['ismoderator'] && $_G['group']['allowviewip'])) && !getstatus($post['status'], 5)}-->
+		<p class="m-admin">
+			<!--{if $_G['forum']['ismoderator'] && $_G['group']['allowviewip']}-->
+				<a href="forum.php?mod=topicadmin&action=getip&fid=$_G[fid]&tid=$_G[tid]&pid=$post[pid]{if $_G['forum_auditstatuson']}&modthreadkey=$_GET[modthreadkey]{/if}" onclick="ajaxmenu(this, 0, 0, 2);doane(event)">IP</a>
+			<!--{/if}-->
+			<!--{if $_G['group']['allowedituser']}-->
+				<a href="{if $_G['adminid'] == 1}admin.php?frames=yes&action=members&operation=search&uid=$post[authorid]&submit=yes{else}forum.php?mod=modcp&action=member&op=edit&uid=$post[authorid]{/if}" target="_blank">{lang edit}</a>
+			<!--{/if}-->
+			<!--{if $_G['group']['allowbanuser']}-->
+				<!--{if $_G['adminid'] == 1}-->
+					<a href="admin.php?action=members&operation=ban&username=$post[usernameenc]&frames=yes" target="_blank">{lang ban_member}</a>
+				<!--{else}-->
+					<a href="forum.php?mod=modcp&action=member&op=ban&uid=$post[authorid]" target="_blank">{lang ban_member}</a>
+				<!--{/if}-->
+			<!--{/if}-->
+			<a href="forum.php?mod=modcp&action=thread&op=post&do=search&searchsubmit=1&users=$post[usernameenc]" target="_blank">{lang posts}</a>
+			<!--{if $_G['adminid'] == 1}-->
+				<a href="forum.php?mod=ajax&action=quickclear&uid=$post[authorid]" onclick="showWindow('qclear_$post[authorid]', this.href, 'get', 0)">{lang clear}</a>
+			<!--{/if}-->
+		</p>
+	<!--{/if}-->
+</div>

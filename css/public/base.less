@@ -1,10 +1,10 @@
 /*
- * Name: base.less
+ * Name: base.less v3.1
  * Description: function,ie hack
  * Creator: iRuxu,Dora
  * Modify: iRuxu
- * Update: 2015-6-27
- * API: http://iruxu.com/LessLab/
+ * Update: 2015-8-13
+ * API: http://help.lab.hunantv.com/page/function/base.html
  */
 
 //FONT 字体
@@ -151,6 +151,7 @@
     .fr(){float:right;*display:inline;}
     .fr(7){*float:right;*display:inline;} //只在IE6-7应用
     .fr(6){_float:right;_display:inline;} //只在IE6应用
+
     //清除浮动塌陷
     .clearfix(){
         *zoom:1;
@@ -200,6 +201,11 @@
     .rt(@r,@t:@r){right:@r;top:@t;}
     .lb(@l,@b:@l){left:@l;bottom:@b;}
     .rb(@r,@b:@r){right:@r;bottom:@b;}
+
+    //IE8无背景bug fix
+    .bgfix(){
+        background:url('@{__pub_img}common/blank.png') no-repeat 0 0;
+    }
 
     //在含有fix顶等元素时，在页面less文件的开头添加如下以防止闪动
     .hasfixed(){
@@ -303,14 +309,13 @@
         margin-left:-@xmargin;margin-top:-@ymargin;
     }
 
-
 //Color
 //--------------------------------------------------------------
     //元素透明度
-    .tm(@tm){
-        @alpha:@tm*100;
+    .tm(@tm,@ietm:@tm*100){
+        //@alpha:@tm*100;
         opacity:@tm; //ie9 webkit etc.
-        filter:alpha(opacity=@alpha); //ie5-ie7
+        filter:alpha(opacity=@ietm); //ie5-ie7
     }
     //背景色半透明
     .tb(@r,@g,@b,@tm){
@@ -337,7 +342,6 @@
         _filter:~"progid:DXImageTransform.Microsoft.AlphaImageLoader(src=@{__img})";
     }
 
-
 //Interface
 //--------------------------------------------------------------
     
@@ -346,15 +350,28 @@
 
     //Form
     .btn-reset(){background:none;border:none;}
-    
 
+    //radius
+    .r(@radius){border-radius:@radius;}
 
 //Image
 //--------------------------------------------------------------
+    //IE6透明图
     .tmpng(@url){ 
         //只能用于背景图，需要使用相对html文档的相对路径或绝对路径，不支持fix状态
         _background:none;
         _filter:~"progid:DXImageTransform.Microsoft.AlphaImageLoader(src=@{__img})";
+    }
+
+    //雪碧图背景位置
+    .bgp(@default){
+        background-position:@default;
+    }
+    .bgp(@default,@hover){
+        background-position:@default;
+        &:hover{
+            background-position:@hover;
+        }
     }
 
     //雪碧图·横向阵列，传入个数，单元宽度
@@ -377,6 +394,7 @@
         }
         .sprite-generate(0);
     }
+
 
 //Effect
 //--------------------------------------------------------------

@@ -1,0 +1,81 @@
+<!-- 评分记录 -->
+<div class="m-ratelist" id="m-ratelist">
+	<h2 class="m-title">评分记录</h2>
+	<!--{if $_GET['from'] != 'preview' && !empty($post['ratelog'])}-->
+		<h3 class="psth xs1 none"><span class="icon_ring vm"></span>{lang rate}</h3>
+		<dl id="ratelog_$post[pid]" class="rate{if !empty($_G['cookie']['ratecollapse'])} rate_collapse{/if}">
+			<!--{if $_G['setting']['ratelogon']}-->
+				<dd style="margin:0">
+			<!--{else}-->
+				<dt>
+					<!--{if !empty($postlist[$post[pid]]['totalrate'])}-->
+						<strong><a href="forum.php?mod=misc&action=viewratings&tid=$_G[tid]&pid=$post[pid]" onclick="showWindow('viewratings', this.href)" title="{lang have}{echo count($postlist[$post[pid]][totalrate]);}{lang people_score}, {lang rate_view}"><!--{echo count($postlist[$post[pid]][totalrate]);}--></a></strong>
+						<p><a href="forum.php?mod=misc&action=viewratings&tid=$_G[tid]&pid=$post[pid]" onclick="showWindow('viewratings', this.href)">{lang rate_view}</a></p>
+					<!--{/if}-->
+				</dt>
+				<dd>
+			<!--{/if}-->
+				<div id="post_rate_$post[pid]"></div>
+				<!--{if $_G['setting']['ratelogon']}-->
+					<table class="ratl">
+						<tr>
+							<th class="xw1" width="120"><a href="forum.php?mod=misc&action=viewratings&tid=$_G[tid]&pid=$post[pid]" onclick="showWindow('viewratings', this.href)" title="{lang rate_view}"> {lang number_of_participants} <span class="xi1"><!--{echo count($postlist[$post[pid]][totalrate]);}--></span></a></th>
+							<!--{loop $post['ratelogextcredits'] $id $score}-->
+								<!--{if $score > 0}-->
+									<th class="xw1" width="80">{$_G['setting']['extcredits'][$id][title]} <i><span class="xi1">+$score</span></i></th>
+								<!--{else}-->
+									<th class="xw1" width="80">{$_G['setting']['extcredits'][$id][title]} <i><span class="xi1">$score</span></i></th>
+								<!--{/if}-->
+							<!--{/loop}-->
+							<th>
+								<a href="javascript:;" onclick="toggleRatelogCollapse('ratelog_$post[pid]', this);" class="y xi2 op"><!--{if !empty($_G['cookie']['ratecollapse'])}-->{lang open}<!--{else}-->{lang pack}<!--{/if}--></a>
+								<i class="txt_h">{lang reason}</i>
+							</th>
+						</tr>
+						<tbody class="ratl_l">
+							<!--{loop $post['ratelog'] $uid $ratelog}-->
+							<tr id="rate_{$post[pid]}_{$uid}">
+								<td>
+									<a href="home.php?mod=space&uid=$uid" target="_blank"><!--{echo avatar($uid, 'small');}--></a> <a href="home.php?mod=space&uid=$uid" target="_blank">$ratelog[username]</a>
+								</td>
+								<!--{loop $post['ratelogextcredits'] $id $score}-->
+									<!--{if $ratelog['score'][$id] > 0}-->
+										<td class="xi1"> + $ratelog[score][$id]</td>
+									<!--{else}-->
+										<td class="xg1">$ratelog[score][$id]</td>
+									<!--{/if}-->
+								<!--{/loop}-->
+								<td class="xg1">$ratelog[reason]</td>
+							</tr>
+							<!--{/loop}-->
+						</tbody>
+					</table>
+					<p class="ratc">
+						<a href="forum.php?mod=misc&action=viewratings&tid=$_G[tid]&pid=$post[pid]" onclick="showWindow('viewratings', this.href)" title="{lang rate_view}" class="xi2">{lang rate_view}</a>
+					</p>
+				<!--{else}-->
+					<ul class="cl">
+						<!--{loop $post['ratelog'] $uid $ratelog}-->
+							<li>
+								<p id="rate_{$post[pid]}_{$uid}" onmouseover="showTip(this)" tip="<strong>$ratelog[reason]</strong>&nbsp;
+										<!--{loop $ratelog['score'] $id $score}-->
+											<!--{if $score > 0}-->
+												<em class='xi1'>{$_G['setting']['extcredits'][$id][title]} + $score $_G['setting']['extcredits'][$id][unit]</em>
+											<!--{else}-->
+												<span>{$_G['setting']['extcredits'][$id][title]} $score $_G['setting']['extcredits'][$id][unit]</span>
+											<!--{/if}-->
+										<!--{/loop}-->" class="mtn mbn"><a href="home.php?mod=space&uid=$uid" target="_blank" class="avt"><!--{echo avatar($uid, 'small');}--></a></p>
+								<p><a href="home.php?mod=space&uid=$uid" target="_blank">$ratelog[username]</a></p>
+							</li>
+						<!--{/loop}-->
+					</ul>
+				<!--{/if}-->
+			</dd>
+		</dl>
+
+	<!--{else}-->
+		<div id="post_rate_div_$post[pid]"></div>
+	<!--{/if}-->
+
+	<a class="u-btn-cmt" href="javascript:;" id="ak_rate" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=$_G[tid]&pid=$post[pid]', 'get', -1);return false;" title="我来评分"><i></i>评分</a>
+</div>

@@ -1,0 +1,11 @@
+<!-- 相关帖子 -->
+<!--{if $post['relateitem']}-->
+	<div class="m-relative">
+		<h3 class="til">{lang related_thread}</h3>
+		<ul class="list">
+			<!--{loop $post['relateitem'] $var}-->
+			<li><a href="forum.php?mod=viewthread&tid=$var[tid]" title="$var[subject]" target="_blank">$var[subject]</a></li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+<!--{/if}-->

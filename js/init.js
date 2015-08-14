@@ -65,9 +65,11 @@ H.ready('jquery',function(){
 			$(this).text(time)
 		})
 	}
-	H.time('.e-time');
 
 	jQuery(function($){
+		//时间转化
+		H.time('.e-time');
+
 		//用户组判断
 		var group = $("#c-header-usergroup").text()
 		//管理员（操作工具条）
