@@ -1,0 +1,30 @@
+<div class="m-face-list">
+	<ul>
+		[loop]
+		<li class="m-face-list-item">
+			<a class="short" href="{subject_url}" target="_blank">
+				<span class="img">
+					<img src="{faceshot_value}" alt="">
+					<i class="shark"></i>
+				</span>
+				<i class="mark">
+					<em class="digest">{digest}</em>
+					<em class="downs">{facedown_downloads}</em>
+					<em class="cmds">{recommends}</em>
+				</i>
+			</a>
+			<span class="info">
+				<span class="author"><em>作者：</em><a href="{author_url}">{author}</a></span>
+				<span class="time"><em>发布：</em>{dateline}</span>
+				<span class="downloads"><em>下载次数：</em><b class="u-face-downloads">{facedown_downloads}</b></span>
+				<span class="round">
+					<em>多角度：</em>
+					<i class="isround"><em class="u-face-round">{face_shot2_value}</em></i>
+					<a class="down" title="直接下载" href="{facedown_value}"></a>
+				</span>
+				<a class="details" href="{subject_url}" target="_blank">查看详情<i>>></i></a>
+			</span>
+		</li>
+		[/loop]
+	</ul>
+</div>

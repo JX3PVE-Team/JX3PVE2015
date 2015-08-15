@@ -107,19 +107,6 @@
 		<!--{/if}-->
 		$_G['forum_posthtml']['footer'][$post[pid]]
 
-		<!--{if $post['first'] && ($post[tags] || $relatedkeywords) && $_GET['from'] != 'preview'}-->
-			<div class="ptg mbm mtn">
-				<!--{if $post[tags]}-->
-					<!--{eval $tagi = 0;}-->
-					<!--{loop $post[tags] $var}-->
-						<!--{if $tagi}-->, <!--{/if}--><a title="$var[1]" href="misc.php?mod=tag&id=$var[0]" target="_blank">$var[1]</a>
-						<!--{eval $tagi++;}-->
-					<!--{/loop}-->
-				<!--{/if}-->
-				<!--{if $relatedkeywords}--><span>$relatedkeywords</span><!--{/if}-->
-			</div>
-		<!--{/if}-->
-
 		<!--{if !IS_ROBOT && $post['first'] && !$_G['forum_thread']['archiveid']}-->
 			<!--{if !empty($lastmod['modaction'])}--><div class="modact"><a href="forum.php?mod=misc&action=viewthreadmod&tid=$_G[tid]" title="{lang thread_mod}" onclick="showWindow('viewthreadmod', this.href)"><!--{if $lastmod['modactiontype'] == 'REB'}-->{lang thread_mod_recommend_by}<!--{else}-->{lang thread_mod_by}<!--{/if}--></a></div><!--{/if}-->
 			<!--{hook/viewthread_modaction}-->

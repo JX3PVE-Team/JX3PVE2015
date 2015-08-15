@@ -192,14 +192,14 @@
 						<span class="sort"><em>分类：</em>
 							<!--{if $_G['forum_thread']['typeid'] && $_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}-->
 							<!--{if !IS_ROBOT && ($_G['forum']['threadtypes']['listable'] || $_G['forum']['status'] == 3)}-->
-									<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$_G[forum_thread][typeid]">{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}
+									<a class="u-type" href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$_G[forum_thread][typeid]">{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}
 									</a>
 								<!--{else}-->
 									{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}
 								<!--{/if}-->
 							<!--{/if}-->
 							<!--{if $threadsorts && $_G['forum_thread']['sortid']}-->
-								<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_G[forum_thread][sortid]">{$_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}
+								<a  class="u-sort" href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_G[forum_thread][sortid]">{$_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}
 								</a>
 							<!--{/if}-->
 						</span>
