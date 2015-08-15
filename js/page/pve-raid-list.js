@@ -54,6 +54,19 @@ H.ready(['jquery','getRequest'],function(){
 				$index_more.toggle()
 			})
 
+		//隐藏已过期的数据
+		var $list = $(".m-raid-list li").add('.m-raid-bizlist li')
+		$list.each(function(){
+			var failtime = $(this).find('.failtime').text()
+			if(failtime){
+				var d = (new Date(failtime.replace(/-/g, "/"))).getTime(),
+					n = (new Date()).getTime()
+				if(d < n){
+					$(this).hide()
+				}
+			}
+		})
+
 	})
 })
 

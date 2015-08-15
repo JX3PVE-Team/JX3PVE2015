@@ -1,5 +1,5 @@
 <!-- PVX版楼主信息卡 -->
-<div class="c-author-pvx">
+<div class="c-author">
 
 	<!-- 头像 -->
 	<a class="avatar" href="home.php?mod=space&uid=$post[authorid]" target="_blank">$post[avatar]</a>
@@ -10,9 +10,9 @@
 		<span class="isonline">
 			<!--{if $_G['setting']['vtonlinestatus'] && $post['authorid']}-->
 				<!--{if ($_G['setting']['vtonlinestatus'] == 2 && $_G[forum_onlineauthors][$post[authorid]]) || ($_G['setting']['vtonlinestatus'] == 1 && (TIMESTAMP - $post['lastactivity'] <= 10800) && !$post['authorinvisible'])}-->
-					<i class="u-isonline-$_G[setting][vtonlinestatus]"></i><em>{lang online}</em>
+					<i class="u-isonline-$_G[setting][vtonlinestatus]" title="{lang online}"></i><em>{lang online}</em>
 				<!--{else}-->
-					<i class="u-isonline-$_G[setting][vtonlinestatus]"></i><em>{lang offline}</em>
+					<i class="u-isonline-$_G[setting][vtonlinestatus]" title="{lang offline}"></i><em>{lang offline}</em>
 				<!--{/if}-->
 			<!--{/if}-->
 		</span>

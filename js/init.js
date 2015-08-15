@@ -7,6 +7,7 @@ H.load([
 	{'fixSidebar':head_conf.CDNROOT+'plugin/fixSidebar.js'},
 	{'treeview':head_conf.CDNROOT+'plugin/jquery.treeview.js'},
 	{'cookie':head_conf.CDNROOT+'plugin/jquery.cookie.js'},
+	{'cookie':head_conf.ROOT+'mod/custom_mod.js'},
 	{'tgbanzhu':head_conf.CDNROOT+'mod/tgbanzhu.js'},
 	{'tgpost':head_conf.CDNROOT+'mod/tgpost.js'},
 	{'header':head_conf.CDNROOT+'mod/header.js'},

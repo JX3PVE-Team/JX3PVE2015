@@ -3,6 +3,7 @@
 	<ul>
 	[loop]
 		<li class="m-raid-unit m-raid-unit-person">
+			<em class="none failtime">{failtime_value}</em>
 			<span class="c-raidavt">
 				<img src="http://www.jx3pve.com/uc_server/avatar.php?uid={authorid}&size=middle" width="80px" height="80px"/>
 				<i class="verif"><span>{author_verify}</span></i>
@@ -23,7 +24,7 @@
 <div class="m-raid-primary-1 m-raid-team  m-raid-yanyuan">
 	<div class="m-avt">
 		<div class="c-raidavt">
-			<img class="m-raid-avatar" src="http://static.jx3pve.com/uc_server/avatar.php?uid={authorid}&size=middle" width="80px" height="80px" />
+			<img class="m-raid-avatar" src="http://static.jx3pve.com/uc_server/avatar.php?uid={vanfon_uid}&size=middle" width="80px" height="80px" />
 			<!-- 认证状态 -->
 			<i class="verif"><span>{vanfon_verify}</span></i>
 		</div>
@@ -48,7 +49,7 @@
 		</p>
 		<!-- 操作 -->
 		<p class="m-control">
-			<a class="edit" href="forum.php?mod=post&action=edit&fid={vanfon_fid}&tid={vanfon_tid}&pid={vanfon_pid}"><i></i>编辑</a>
+			<a class="edit none" href="forum.php?mod=post&action=edit&fid={vanfon_fid}&tid={vanfon_tid}&pid={vanfon_pid}"><i></i>编辑</a>
 			<a class="magic showmenu" href="javascript:;" id="mgc_post_{vanfon_pid}" onmouseover="showMenu(this.id)" initialized="true"><i></i>道具</a>
 		</p>
 		<!-- 分享 -->

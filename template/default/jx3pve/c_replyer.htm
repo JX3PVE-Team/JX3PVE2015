@@ -1,0 +1,43 @@
+<!-- PVX版回复信息卡 -->
+<div class="c-replyer">
+
+	<!-- 头像 -->
+	<a class="avatar" href="home.php?mod=space&uid=$post[authorid]" target="_blank">$post[avatar]</a>
+
+	<!-- 用户名 -->
+	<a class="name" href="home.php?mod=space&uid=$post[authorid]" target="_blank" class="xi2"{if $post[groupcolor]} style="color: $post[groupcolor]"{/if}>$post[author]</a>
+
+	<!-- 认证 -->
+	<span class="verif">$authorverifys</span>
+
+	<!-- 用户组 -->
+	<a class="usergroup u-group u-group-$post[groupid]" href="home.php?mod=spacecp&ac=usergroup&gid=$post[groupid]"><em id="u-usergroup-id">$post[groupid]</em></a>
+
+	<!-- 发布时间 -->
+	<span class="time"><em>POST ON</em>$post[dateline]</span>
+
+	<!-- 编辑操作 -->
+	<!--{if $post['invisible'] == 0}-->
+		<!--{if (($_G['forum']['ismoderator'] && $_G['group']['alloweditpost'] && (!in_array($post['adminid'], array(1, 2, 3)) || $_G['adminid'] <= $post['adminid'])) || ($_G['forum']['alloweditpost'] && $_G['uid'] && ($post['authorid'] == $_G['uid'] && $_G['forum_thread']['closed'] == 0) && !(!$alloweditpost_status && $edittimelimit && TIMESTAMP - $post['dbdateline'] > $edittimelimit)))}-->
+			<a class="edit" href="forum.php?mod=post&action=edit&fid=$_G[fid]&tid=$_G[tid]&pid=$post[pid]{if !empty($_GET[modthreadkey])}&modthreadkey=$_GET[modthreadkey]{/if}&page=$page"><!--{if $_G['forum_thread']['special'] == 2 && !$post['message']}-->{lang post_add_aboutcounter}<!--{else}--> <i></i>{lang edit}</a><!--{/if}-->
+		<!--{elseif $_G['uid'] && $post['authorid'] == $_G['uid'] && $_G['setting']['postappend']}-->
+			<a class="append" href="forum.php?mod=misc&action=postappend&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page" onClick="showWindow('postappend', this.href, 'get', 0)"><i></i>{lang postappend}</a>
+		<!--{/if}-->
+		<!-- 草稿 -->
+		<!--{if $post['first'] && $post['invisible'] == -3}-->
+			<!--<a class="psave" href="forum.php?mod=misc&action=pubsave&tid=$_G[tid]">{lang published}</a>-->
+		<!--{/if}-->
+	<!--{/if}-->
+
+	<!-- 管理 -->
+	<div class="manage">
+	<!--{if !$post['first'] && $modmenu['post']}-->
+		<label for="manage$post[pid]">
+			<input type="checkbox" id="manage$post[pid]" class="pc" {if !empty($modclick)}checked="checked" {/if}onclick="pidchecked(this);modclick(this, $post[pid])" value="$post[pid]" autocomplete="off" />
+			{lang manage}
+		</label>
+	<!--{/if}-->
+	</div>
+
+	<!--{hook/viewthread_postaction $postcount}-->
+</div>

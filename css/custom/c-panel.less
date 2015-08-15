@@ -1,0 +1,92 @@
+.c-panel{
+	.clearfix;
+	.pr;
+	//.u-btn-gray(c);
+	border:1px solid #ddd;
+	.lh(24px);
+	border-radius: 6px;
+	padding: 2px 10px;
+	margin-bottom:5px;
+	.color(#777,#777,#333);
+	background-color:#fcf9fa;
+
+	.control{
+		.clearfix;
+		a{
+			.db;.fl;
+			padding:0 10px 0 3px !important;
+			&:hover{
+				background-color: #f2f2f2;
+				border-radius: 4px;
+				box-shadow: 0 0 2px #ddd inset;
+			}
+			margin-right:3px;
+		}
+		i{
+			.dbi;.y(top);.h(24px);margin-right:3px;
+		}
+		//编辑
+		.edit,.append{
+			i{
+				.w(17px);
+				background:url('@{url}custom/edit.gif') no-repeat 0 center;
+			}
+		}
+		//评论
+		.cmt{
+			i{
+				.w(17px);
+				background:url('@{url}custom/cmt.gif') no-repeat 0 center;
+			}
+		}
+		//道具
+		.w-magic-tg{
+			.fl;.pr;
+			.w-magic{
+				.pa;.lt(0,26px);
+				li{
+					.db;
+					a{
+						float:none;
+						.lh(24px) !important;
+						padding:0 !important;
+						img{
+							.ps;.y;margin:0 3px 0 0;
+						}
+					}
+				}
+			}
+		}
+		.magic{
+			padding-right:16px !important;
+			background:url('@{urls}common/arrwd.gif') no-repeat right center !important;
+			i{
+				.w(18px);
+				background:url('@{url}custom/magic.png') no-repeat 0 center;
+			}
+		}
+		//举报
+		.report{
+			i{
+				.w(18px);
+				background:url('@{url}custom/report.png') no-repeat 0 center;
+			}
+		}
+		//--
+		.psave{}
+
+	}
+	.admin-control{
+		.pa;.rt(0,2px);
+		padding:0 5px;
+		.lh(24px);
+
+		//推送
+		.push{
+			padding-left: 25px;
+		}
+
+		//支持反对
+		.replyadd,.replysubtract{padding-left: 20px;}
+	}
+}

@@ -360,9 +360,11 @@
 					<!--{if $rushreply && $_GET['checkrush'] && $post['rewardfloor'] != 1}-->
 						<!--{eval continue;}-->
 					<!--{/if}-->
+					<!--{if $post[first]==1}-->
 					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 						<!--{subtemplate forum/viewthread_node}-->
 					</div>
+					<!--{/if}-->
 					<!--{eval $postcount++;}-->
 				<!--{/loop}-->
 				<div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>

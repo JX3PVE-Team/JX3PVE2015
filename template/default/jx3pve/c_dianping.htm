@@ -1,4 +1,9 @@
 <!-- 点评 -->
+<!--{if $allowpostreply && $post['allowcomment'] && (!$thread['closed'] || $_G['forum']['ismoderator'])}-->
+<a class="cmmnt" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i>{lang comments}</a>
+<!--{/if}-->
+
+<!-- 点评 -->
 <div class="m-dianping" id="comment_$post[pid]">
 	<h2 class="m-title">点评</h2>
 	<!--{if (getstatus($_G['member']['allowadmincp'], 1))}-->

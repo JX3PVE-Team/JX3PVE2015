@@ -2,17 +2,22 @@
 	margin-bottom:10px;
 	.clearfix;
 	li{
-		.size(50%,30px);
+		.size(50%,32px);
 		margin-bottom:10px;
 		.fl;
+		&:hover{
+			background-color:#f7f7f7;
+		}
 		a{
 			.db;.full;transition:0.2s ease-in-out;
 			.fz(13px,32px);
 			.bold;
+			color:@bluex;
 		}
 		i{
-			.dbi;.size(32px);.y;margin-right:10px;
+			.dbi;.size(30px);.fl;margin-right:10px;
 			background-color:#eee;
+			background:url('@{url}face/facenav.png') #eee no-repeat 0 0;
 			border:1px solid #eee;
 		}
 		em{
@@ -23,17 +28,17 @@
 			margin-left:5px;
 			font-family:'Trebuchet MS',Tahoma,"\5FAE\8F6F\96C5\9ED1";
 		}
-		.woman{
-			//background:url('@{url}face/woman.png') no-repeat 0 0;
+		.woman i{
+			background-position:-105px 0;
 		}
-		.girl{
-			//background:url('@{url}face/girl.png') no-repeat 0 0;
+		.girl i{
+			background-position:-70px 0;
 		}
-		.man{
-			//background:url('@{url}face/man.png') no-repeat 0 0;
+		.man i{
+			background-position:-35px 0;
 		}
-		.boy{
-			//background:url('@{url}face/boy.png') no-repeat 0 0;
+		.boy i{
+			background-position: 0 0;
 		}
 	}
 }
