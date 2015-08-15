@@ -1,16 +1,16 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: FACE
+ * Project: Tool
  * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.8.15
+ * Update : iRuxu 2015.8.16
  -->
 
 <!-- jx3pve:code -->
-<script src="http://js.jx3pve.com/js/page/pvx-face.js"></script>
+<script src="http://js.jx3pve.com/js/page/pve-tool.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="postpage-container pvx-container face-container face-postpage">
+<div class="postpage-container pve-container tool-container pve-postpage tool-postpage">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">
@@ -87,30 +87,34 @@
 		<!--{/if}-->
 	<!--{/block}-->
 
-<!-- jx3pve:page header -->
-<div class="pvx-header">
-	<!--{subtemplate forum/header}-->
-</div>
+<!-- jx3pve:wrapper -->
+<div class="wp">
 
 <!-- jx3pve:main -->
-<div class="pvx-main">
+<div class="pve-main">
 
-	<!-- jx3pve:sidebar -->
-	<div class="pvx-sidebar">
-		<!--{subtemplate forum/sidebar}-->
+	
+	<!-- jx3pve:page header -->
+	<div class="pve-header">
+		<!--{subtemplate forum/header}-->
 	</div>
 	
-	<div class="pvx-content">
+	<!-- jx3pve:sidebar -->
+	<div class="pve-sidebar">
+		<!--{subtemplate forum/sidebar}-->
+	</div>
 
-		<!-- jx3pve:content -->	
-		<div class="pvx-article " id="ct">
+	<div class="pve-content">
+
+		<!-- jx3pve:article -->	
+		<div class="pve-article " id="ct">
 
 			<!-- jx3pve:route -->
 			<!--{subtemplate jx3pve/w_route_post}-->
 
 			<!-- jx3pve:pubtips -->
-			<div class="m-face-pubtips">
-				<!--{block/1276}-->
+			<div class="m-tool-pubtips">
+				<!--{block/1243}-->
 			</div>
 
 			<!--{eval $adveditor = $isfirstpost && $special || $special == 2 && ($_GET['action'] == 'newthread' || $_GET['action'] == 'reply' && !empty($_GET['addtrade']) || $_GET['action'] == 'edit' && $thread['special'] == 2);}-->
@@ -460,12 +464,12 @@
 			<script type="text/javascript" src="{$_G['setting']['jspath']}at.js?{VERHASH}"></script>
 			<!--{/if}-->
 			
-		</div>
+		</div><!-- article -->
 	</div><!-- content -->
 
 </div><!-- main -->
 
-
+</div><!-- wp -->
 </div><!-- container -->
 
 <!--{template common/footer}-->

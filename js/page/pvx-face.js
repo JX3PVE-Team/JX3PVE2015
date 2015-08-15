@@ -1,10 +1,10 @@
 H.ready(['jquery','getRequest'],function(){
 	jQuery(function($){
 
-		var $nav = $(".m-face-nav li a"),
+		/*var $nav = $(".m-face-nav li a"),
 			isCMD = getRequest('filter')=='digest',
 			isHOT = getRequest('filter')=='heat',
-			isPOST = getRequest('mod')=='post'
+			isPOST = getRequest('mod')=='post'*/
 
     	//导航栏激活
 		H.curpage('.u-face')
@@ -13,10 +13,10 @@ H.ready(['jquery','getRequest'],function(){
 		H.route(50)
 
 		//菜单栏（栏目局部）
-		if(isCMD || isHOT || isPOST)  $nav.eq(0).removeClass('on')
+		/*if(isCMD || isHOT || isPOST)  $nav.eq(0).removeClass('on')
 		if(isCMD) $nav.eq(1).addClass('on')
 		if(isHOT) $nav.eq(2).addClass('on')
-		if(isPOST) $nav.eq(4).addClass('on')
+		if(isPOST) $nav.eq(4).addClass('on')*/
 
 		//列表页遍历
 		$(".m-face-list-item").each(function(){

@@ -1,8 +1,15 @@
 //全局布局
+@pve-sidebar-w:200px;
+
 .pve-container{
 	background-color: #f2f2f2;
 	padding:20px 0;
 	margin-top:1px;
+
+	.w-route{
+		border-bottom:1px dotted #ddd !important;
+		margin-bottom:10px !important;
+	}
 }
 
 .pve-main{
@@ -11,13 +18,13 @@
 
 .pve-sidebar{
 	transition:position 0.2s ease-in-out;
-	.w(200px);
+	.w(@pve-sidebar-w);
 	.fl;
 }
 
 .pve-content{
 	.fr;
-	.w(@ct);
+	.w(@wp - @pve-sidebar-w - 20px);
 	.clearfix;
 }
 
@@ -35,7 +42,7 @@
 
 	.m-compass{
 		.fl;
-		.w(@ct - 20px*2 - 240px - 20px);
+		.w(@wp - @pve-sidebar-w - 20px - 20px*2 - 240px - 20px);
 	}
 
 	.m-sidebar{

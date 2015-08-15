@@ -1,16 +1,16 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: FACE
- * Creat: iRuxu 2015.8.12
- * Update : iRuxu 2015.8.12
+ * Project: TOOL
+ * Creat: iRuxu 2015.7.9
+ * Update : iRuxu 2015.8.16
  -->
 
 <!-- jx3pve:code -->
-<script src="http://js.jx3pve.com/js/page/pvx-face.js"></script>
+<script src="http://js.jx3pve.com/js/page/pve-tool.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="listpage-container pvx-container face-container face-listpage">
+<div class="listpage-container pve-container tool-container pve-listpage tool-listpage">
 
 	<!-- dz:style & js -->
 	<!--{if $_G['forum']['ismoderator']}-->
@@ -18,28 +18,38 @@
 	<!--{/if}-->
 	<style id="diy_style" type="text/css"></style>
 
+<!-- jx3pve:wrapper -->
+<div class="wp">
+
 	<!-- dz:banner-top -->
 	<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
 	<!--{ad/text/wp a_t}-->
 	<!--[diy=diy1]--><div class="drag"><div id="diy1" class="area"></div></div><!--[/diy]-->
 
-<!-- jx3pve:page header -->
-<div class="pvx-header">
-	<!--{subtemplate forum/header}-->
-</div>
-
 <!-- jx3pve:main -->
-<div class="pvx-main boardnav">
+<div class="pve-main boardnav">
 
+	<!-- jx3pve:page header -->
+	<div class="pve-header">
+		<!--{subtemplate forum/header}-->
+	</div>
+	
 	<!-- jx3pve:sidebar -->
-	<div class="pvx-sidebar">
+	<div class="pve-sidebar">
 		<!--{subtemplate forum/sidebar}-->
 	</div>
 
 	<!-- jx3pve:content -->	
-	<div class="pvx-content">
+	<div class="pve-content">
 
-		<div class="pvx-article" id="ct">
+		<!-- jx3pve:primary -->
+		<!--{subtemplate forum/primary}-->
+
+		<!-- jx3pve:article -->	
+		<div class="pve-article" id="ct">
+
+			<!-- jx3pve:route -->
+			<!--{subtemplate jx3pve/w_route}-->
 
 			<!-- dz:commend & diy -->
 			<!--{if $leftside}-->
@@ -360,17 +370,14 @@
 					</script>
 				<!--{/if}-->
 
-				<!-- jx3pve:w-pages-top -->
+				<!-- dz:pages-top -->
 				<!--{subtemplate jx3pve/w_pages_top}-->
 
 				<!-- jx3pve:w-category-nav -->
+				
 				<!--{subtemplate jx3pve/w_category_nav}-->
-
 				<!-- jx3pve:w-order -->
 				<!--{subtemplate jx3pve/w_order}-->
-
-				<!-- jx3pve:w-filter -->
-				<!--{subtemplate jx3pve/w_filter}-->
 
 				<!-- dz:list loop -->
 				<!--{if empty($_G['forum']['sortmode'])}-->
@@ -381,13 +388,8 @@
 
 			<!--{/if}-->
 
-			<!-- jx3pve:list-footer -->
-			<div class="pvx-footer">
-				<!--{template forum/footer}-->
-			</div>
-
 			<!-- jx3pve:fast-post -->
-			<div class="pvx-fastpost">
+			<div class="pve-fastpost">
 				<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
 				<!--{if $fastpost}-->
 					<!--{template forum/forumdisplay_fastpost}-->
@@ -535,6 +537,7 @@
 	<!-- dz:banner-bottom -->
 	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
 	
+</div><!-- wp -->
 </div><!-- container -->
 
 <!--{template common/footer}-->

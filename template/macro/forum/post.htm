@@ -1,19 +1,16 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: PVE
- * HTML: template/$pve/*
- * Style: pve/pve-*.less
- * Description: pve
+ * Project: MACRO
  * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.7.12
+ * Update : iRuxu 2015.8.16
  -->
 
 <!-- jx3pve:code -->
-<script src="http://www.jx3pve.com/js/page/pve-macro.js"></script>
+<script src="http://js.jx3pve.com/js/page/pve-macro.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="pve-container macro-container macro-postpage">
+<div class="postpage-container pve-container macro-container pve-postpage macro-postpage">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">
@@ -109,11 +106,11 @@
 
 	<div class="pve-content">
 
-		<!-- jx3pve:content -->	
-		<div class="pve-article " id="ct">
+		<!-- jx3pve:article -->	
+		<div class="pve-article" id="ct">
 
 			<!-- jx3pve:route -->
-			<!--{subtemplate jx3pve/w_route_post}-->
+			<!--{subtemplate jx3pve/w_route}-->
 
 			<!-- jx3pve:tips -->
 			<div class="macro-post-tips">
@@ -468,7 +465,8 @@
 			<script type="text/javascript" src="{$_G['setting']['jspath']}at.js?{VERHASH}"></script>
 			<!--{/if}-->
 			
-		</div>
+		</div><!-- article -->
+
 	</div><!-- content -->
 
 </div><!-- main -->

@@ -1,13 +1,10 @@
-<!-- jx3pve:index -->
-<!--{subtemplate forum/index}-->
 
-<!-- jx3pve:index-list -->
-<div class="w-index-list" id="w-index-list">
 
-<!-- jx3pve:listbox -->
+<!-- jx3pve:ctbox -->
 <div id="threadlist" class="pve-flist c-flist tl bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
 	
-	<!-- jx3pve:ctbox-th -->
+	<!-- jx3pve:list-info -->
+	
 	<!--{subtemplate jx3pve/w_lastedit_th}-->
 
 	<!-- jx3pve:pve-ctbox-content -->
@@ -469,10 +466,8 @@
 						</script>
 					<!--{/if}-->
 					<!--{else}-->
-					
-							<!-- jx3pve:无相关内容时 -->
-							<!--{template jx3pve/w_listnull_tips}-->
-
+							<!-- dz:无帖子时 -->
+							<tbody class="bw0_all"><tr><th colspan="{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}6{else}5{/if}"><p class="emp">{lang forum_nothreads}</p></th></tr></tbody>
 						</table><!-- end of table "forum_G[fid]" branch 3/3 -->
 					<!--{/if}-->
 					
@@ -553,6 +548,4 @@
 		<img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" />
 	</a><!--{/if}-->
 	<!--{hook/forumdisplay_postbutton_bottom}-->
-</div>
-
 </div>

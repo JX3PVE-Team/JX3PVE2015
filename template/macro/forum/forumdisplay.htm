@@ -1,19 +1,16 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: PVE
- * HTML: template/$pve/*
- * Style: pve/pve-*.less
- * Description: pve
+ * Project: MACRO
  * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.7.12
+ * Update : iRuxu 2015.8.16
  -->
 
 <!-- jx3pve:code -->
-<script src="http://www.jx3pve.com/js/page/pve-macro.js"></script>
+<script src="http://js.jx3pve.com/js/page/pve-macro.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="pve-container macro-container macro-listpage">
+<div class="listpage-container pve-container macro-container pve-listpage macro-listpage">
 
 	<!-- dz:style & js -->
 	<!--{if $_G['forum']['ismoderator']}-->
@@ -42,16 +39,17 @@
 		<!--{subtemplate forum/sidebar}-->
 	</div>
 
+	<!-- jx3pve:content -->	
 	<div class="pve-content">
 
 		<!-- jx3pve:primary -->
 		<!--{subtemplate forum/primary}-->
 
-		<!-- jx3pve:content -->	
-		<div class="pve-article " id="ct">
+		<!-- jx3pve:article -->	
+		<div class="pve-article" id="ct">
 
 			<!-- jx3pve:route -->
-			<!--{subtemplate jx3pve/w_route_forumdisplay}-->
+			<!--{subtemplate jx3pve/w_route}-->
 
 			<!-- dz:commend & diy -->
 			<!--{if $leftside}-->
@@ -373,50 +371,15 @@
 				<!--{/if}-->
 
 				<!-- dz:pages-top -->
-				<div id="pgt" class="w-pages w-pages-top bm bw0 pgs cl">
-					<span id="fd_page_top">$multipage</span>
-					<span class="pgb y" {if $_G[setting][visitedforums]}id="visitedforums" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'34'})"{/if} ><a href="forum.php">{lang return_index}</a></span>
-					<!--{if !$_GET['archiveid']}-->
-					<a class="u-btn-publish" href="javascript:;" id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} title="{lang send_posts}">
-						<span>发布</span>
-						<img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" />
-					</a><!--{/if}-->
-					<a class="u-btn-ask" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=2&extra=" target="_blank">提问</a>
-					<!--{hook/forumdisplay_postbutton_top}-->
-				</div>
+				<!--{subtemplate jx3pve/w_pages_top}-->
 
-				<!-- dz:category nav -->
-				<!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
-					<ul class="w-category-nav ttp bm cl" id="thread_types">
-						<!--{hook/forumdisplay_threadtype_inner}-->
-						<li id="ttp_all" {if !$_GET['typeid'] && !$_GET['sortid']}class="xw1 a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_G['forum']['threadsorts']['defaultshow']}&filter=sortall&sortall=1{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">{lang forum_viewall}</a></li>
-						<!--{if $_G['forum']['threadtypes']}-->
-							<!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
-								<!--{if $_GET['typeid'] == $id}-->
-								<li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a></li>
-								<!--{else}-->
-								<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a></li>
-								<!--{/if}-->
-							<!--{/loop}-->
-						<!--{/if}-->
+				<!-- jx3pve:w-category-nav -->
+				<!--{subtemplate jx3pve/w_category_nav}-->
 
-						<!--{if $_G['forum']['threadsorts']}-->
-							<!--{if $_G['forum']['threadtypes']}--><li><span class="pipe">|</span></li><!--{/if}-->
-							<!--{loop $_G['forum']['threadsorts']['types'] $id $name}-->
-								<!--{if $_GET['sortid'] == $id}-->
-								<li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><span class="xg1 num">$showthreadclasscount[sortid][$id]</span><!--{/if}--></a></li>
-								<!--{else}-->
-								<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$id$forumdisplayadd[sortid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><span class="xg1 num">$showthreadclasscount[sortid][$id]</span><!--{/if}--></a></li>
-								<!--{/if}-->
-							<!--{/loop}-->
-						<!--{/if}-->
-						<!--{hook/forumdisplay_filter_extra}-->
-					</ul>
-					<script type="text/javascript">showTypes('thread_types');</script>
-				<!--{/if}-->
-				<!--{hook/forumdisplay_threadtype_extra}-->
+				<!-- jx3pve:w-order -->
+				<!--{subtemplate jx3pve/w_order}-->
 
-				<!-- dz:sort nav -->
+				<!-- dz:list loop -->
 				<!--{if empty($_G['forum']['sortmode'])}-->
 					<!--{subtemplate forum/forumdisplay_list}-->
 				<!--{else}-->
@@ -511,7 +474,7 @@
 			</div>
 			<!--{/if}-->
 
-		</div><!-- content -->
+		</div><!-- article -->
 
 		<!-- dz:发布按钮下拉扩展菜单 -->
 		<!--{if $_G['group']['allowpost'] && ($_G['group']['allowposttrade'] || $_G['group']['allowpostpoll'] || $_G['group']['allowpostreward'] || $_G['group']['allowpostactivity'] || $_G['group']['allowpostdebate'] || $_G['setting']['threadplugins'] || $_G['forum']['threadsorts'])}-->

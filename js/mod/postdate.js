@@ -92,18 +92,5 @@ H.ready(['jquery'], function(){
 			t = setTimeout(postdate,500)
 		})
 
-
-		//单页
-		var $v_lastedit = $(".viewpage-lastedit").eq(0),
-			v_lastedit = parseInt($.trim($v_lastedit.text())) * 1000,
-			v_d = new Date(v_lastedit),
-			v_string = v_d.getFullYear() + '-' + (v_d.getMonth()+1) + '-' +  v_d.getDate() + ' ' + v_d.getHours() + ':' + v_d.getMinutes()
-			$v_lastedit.text(v_string)
-
-		if($(".c-fli").length){
-			$(".c-fli").not(':first').find('.m-time p:nth-child(2)').hide()
-			$("#postlistreply").find('.m-time p:nth-child(2)').hide()
-		}
-
     })
 })

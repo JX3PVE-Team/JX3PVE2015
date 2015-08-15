@@ -93,14 +93,16 @@
 @import url("common/pve-layout.less");			//布局
 @import url("common/pve-header.less");			//头部
 @import url("common/pve-sidebar.less");			//侧边栏
+@import url("common/pve-list.less");			//侧边栏
+@import url("common/pve-view.less");			//单页
 @import url("common/pve-content.less");			//内容
 
 @import url("common/pvx-layout.less");			//布局
 @import url("common/pvx-header.less");			//头部
 @import url("common/pvx-sidebar.less");			//侧边栏
-@import url("common/pvx-content.less");			//内容
 @import url("common/pvx-list.less");			//列表页
-
+@import url("common/pvx-view.less");			//单页
+@import url("common/pvx-content.less");			//内容
 
 /*user 用户中心
 ------------------------------------------*/
@@ -136,13 +138,11 @@
 
 /*macro 宏栏目
 ------------------------------------------*/
-@import url("macro/macro.less");
-@import url("macro/m-macro-nav.less");
-@import url("macro/m-macro-search.less");
-@import url("macro/m-macro-primary.less");
-@import url("macro/m-macro-page.less");
-@import url("macro/m-macro-post.less");
+@import url("macro/m-macro-sidebar.less");
+@import url("macro/m-macro-view.less");
 @import url("macro/m-macro-sytax.less");
+@import url("macro/m-macro-post.less");
+@import url("macro/macro.less");
 
 /*yylmacro 超级宏（wordpress）
 ------------------------------------------*/
@@ -158,13 +158,13 @@
 
 /*tool 工具栏目
 ------------------------------------------*/
-@import url("tool/tool.less");
-@import url("tool/m-tool-nav.less");
-@import url("tool/m-tool-search.less");
-@import url("tool/m-tool-pub.less");
-@import url("tool/m-tool-page.less");
+@import url("tool/m-tool-sidebar.less");
+@import url("tool/m-tool-list.less");
+@import url("tool/m-tool-view.less");
+@import url("tool/m-tool-post.less");
 @import url("tool/m-tool-primary.less");
 @import url("tool/m-snow-primary.less");
+@import url("tool/tool.less");
 
 /*role 职业栏目
 ------------------------------------------*/
@@ -197,15 +197,16 @@
 @import url("raid/group-view.less");			//群组帖内
 @import url("raid/verif.less");					//个人中心认证
 @import url("raid/raid-header.less");			//团队头部页
-@import url("raid/raid-sidebar.less");			//导航
-@import url("raid/raid-filter.less");			//过滤菜单
+@import url("raid/raid-sidebar.less");			//侧边栏
+@import url("raid/raid-post.less");				//发布页
 @import url("raid/raid-view.less");				//单页公共
+@import url("raid/raid.less");					//首页
+
 @import url("raid/raid-team.less");				//团队
 @import url("raid/raid-yanyuan.less");			//团员
 @import url("raid/raid-jiebao.less");			//五甲捷报
 @import url("raid/raid-biz.less");				//包团服务
-@import url("raid/raid-post.less");				//发布页
-@import url("raid/raid.less");					//团队
+
 
 
 /*face 捏脸

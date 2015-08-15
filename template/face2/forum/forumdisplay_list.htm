@@ -1,78 +1,14 @@
-<!--{if $quicksearchlist && !$_GET['archiveid']}-->
-	<!--{subtemplate forum/search_sortoption}-->
-<!--{/if}-->
-
-<!-- jx3pve:primary -->
-<!--{subtemplate forum/primary}-->
+<!-- jx3pve:index -->
+<!--{subtemplate forum/index}-->
 
 <!-- jx3pve:index-list -->
 <div class="w-index-list" id="w-index-list">
 
-<!-- jx3pve:ctbox -->
+<!-- jx3pve:listbox -->
 <div id="threadlist" class="pve-flist c-flist tl bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
 	
-	<!-- jx3pve:ctbox-header -->
-	<div class="c-flist-header th">
-		<table cellspacing="0" cellpadding="0">
-			<tr>
-
-				<th colspan="{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}3{else}2{/if}">
-				<!--{if CURMODULE != 'guide'}-->
-					<div class="tf">
-						<span id="atarget" {if $_G['cookie']['atarget'] > 0}onclick="setatarget(-1)" class="y atarget_1"{else}onclick="setatarget(1)" class="y"{/if} title="{lang new_window_thread}">{lang new_window}</span>
-						<!--{if $_GET['specialtype'] == 'reward'}-->
-							<a id="filter_reward" href="javascript:;" class="showmenu xi2{if $_GET['rewardtype']} xw1{/if}" onclick="showMenu(this.id)"><!--{if $_GET['rewardtype'] == ''}-->{lang all_reward}<!--{elseif $_GET['rewardtype'] == '1'}-->{lang rewarding}<!--{elseif $_GET['rewardtype'] == '2'}-->{lang reward_solved}<!--{/if}--></a>&nbsp;
-						<!--{/if}-->
-						<a id="filter_special" href="javascript:;" class="showmenu xi2{if $_GET['specialtype']} xw1{/if}" onclick="showMenu(this.id)"><!--{if $_GET['specialtype'] == 'poll'}-->{lang thread_poll}<!--{elseif $_GET['specialtype'] == 'trade'}-->{lang thread_trade}<!--{elseif $_GET['specialtype'] == 'reward'}-->{lang thread_reward}<!--{elseif $_GET['specialtype'] == 'activity'}-->{lang thread_activity}<!--{elseif $_GET['specialtype'] == 'debate'}-->{lang thread_debate}<!--{else}-->{lang threads_all}<!--{/if}--></a>&nbsp;						
-						<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=lastpost&orderby=lastpost$forumdisplayadd[lastpost]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['filter'] == 'lastpost'} xw1{/if}">{lang latest}</a>&nbsp;
-						<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=heat&orderby=heats$forumdisplayadd[heat]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['filter'] == 'heat'} xw1{/if}">{lang order_heats}</a>&nbsp;
-						<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=hot" class="xi2{if $_GET['filter'] == 'hot'} xw1{/if}">{lang hot_thread}</a>&nbsp;
-						<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=digest&digest=1$forumdisplayadd[digest]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['filter'] == 'digest'} xw1{/if}">{lang digest_posts}</a>&nbsp;
-						<a id="filter_dateline" href="javascript:;" class="showmenu xi2{if $_GET['dateline']} xw1{/if}" onclick="showMenu(this.id)">{lang more}</a>&nbsp;
-						<!--{if empty($_G['forum']['picstyle']) && $_GET['orderby'] == 'lastpost' && (!$_G['setting']['forumseparator'] || !$separatepos) && !$_GET['filter']}-->
-							<a href="javascript:;" onclick="checkForumnew_btn('{$_G['fid']}')" title="{lang showupgrade}" class="forumrefresh"></a>
-						<!--{/if}-->
-						<!--{if $_GET['filter'] == 'hot'}-->
-							<script type="text/javascript" src="{$_G[setting][jspath]}calendar.js?{VERHASH}"></script>
-							<span>$ctime</span>
-							<img src="{IMGDIR}/date_magnify.png" class="cur1" alt="" id="hottime" value="$ctime" fid="$_G[fid]" onclick="showcalendar(event, this, false, false, false, false, function(){viewhot(this);});" align="absmiddle" />
-						<!--{/if}-->
-						<span id="clearstickthread">
-							<span class="pipe">|</span>
-							<a href="javascript:;" onclick="clearStickThread()" class="xi2" title="{lang showdisplayorder}">{lang showdisplayorder}</a>
-						</span>
-						<!--{hook/forumdisplay_filter_extra}-->
-					</div>
-				<!--{else}-->
-					{lang title}
-				<!--{/if}-->
-				</th>
-				<!--{if empty($_G['forum']['picstyle'])}-->
-
-				<!--{if CURMODULE == 'guide'}-->
-				<td class="pos">{lang forum_group}</td>
-				<!--{/if}-->
-				<td class="author">{lang author}</td>
-				<td class="num">{lang replies}</td>
-				<td class="reply">{lang lastpost}</td>
-				
-				<!--{else}-->
-					<td class="by" colspan="3">
-						<a{if empty($_G['cookie']['forumdefstyle'])} href="forum.php?mod=forumdisplay&fid=$_G[fid]&forumdefstyle=yes" class="chked"{else} href="forum.php?mod=forumdisplay&fid=$_G[fid]&forumdefstyle=no" class="unchk"{/if} title="{lang view_thread_imagemode}{lang view_thread}">{lang view_thread_imagemode}</a>
-					</td>
-				<!--{/if}-->
-			</tr>
-		</table>
-	</div>
-
 	<!-- jx3pve:ctbox-th -->
-	<div class="c-flist-info">
-		<ul>
-			<li class="update">最后更新<a class="color-tips" title="这里的颜色代表什么？点击查看" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=53&messageid=84" target="_blank"></a></li>
-			<li class="til">标题</li>
-			<li class="author">作者</li>
-		</ul>
-	</div>
+	<!--{subtemplate jx3pve/w_lastedit_th}-->
 
 	<!-- jx3pve:pve-ctbox-content -->
 	<div class="c-flist-content bm_c">
@@ -533,10 +469,10 @@
 						</script>
 					<!--{/if}-->
 					<!--{else}-->
-							<!-- dz:无帖子时 -->
-							<div class="team-null">
-								<p class="team-null-tips"><i></i>部分字段为新增加，旧信息该字段为空时无法检索到，请更新补充。</p>
-							</div>
+					
+							<!-- jx3pve:无相关内容时 -->
+							<!--{template jx3pve/w_listnull_tips}-->
+
 						</table><!-- end of table "forum_G[fid]" branch 3/3 -->
 					<!--{/if}-->
 					

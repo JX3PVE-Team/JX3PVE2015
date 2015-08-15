@@ -2,9 +2,44 @@
 .pve-sidebar{
 
 	h2{
+		.pr;
 		.fzlh(13px,28px);
 	  	margin: 10px 0;
 		border-bottom: 1px dotted #ccc;
+
+		//更多
+		.more{
+			.ct(y,12px);right:0;
+			background:url('@{url}icon/more.png') no-repeat 0 0;
+			.size(40px,12px);
+			.indent;
+			&:hover{
+				background-position:0 -12px;
+			}
+		}
+
+		//faq提示
+		.u-tips-faq{
+			background:url('@{url}icon/faq.gif') no-repeat 0 0;
+			.dbi;.size(13px);.y(-2px);margin-left:3px;.indent;
+		}
+
+		//快速发布
+		.u-btn-pub{
+			.fr;.fz(12px,20px);
+			background:url('@{url}icon/addbuddy.gif') no-repeat 0 center;
+			padding:0 5px 0 20px;
+		}
+
+		//小发布
+		.u-btn-pub2{
+			.fr;.color(#999,@bluex);
+			.normal;font-size:12px;
+			i{
+				background:url('@{url}icon/app_add.gif') no-repeat 0 0;
+				.dbi;.size(12px);.y(-2px);margin-right:3px;
+			}
+		}
 	}
 
 	li{
@@ -69,47 +104,9 @@
 		}*/
 	}
 
-	.c-raids-new{
-		li{
-			width:100%;overflow:hidden;.h(24px);
-			padding:3px 0;
-			*{.db;}
-			a{
-				padding:2px;.lh(24px);
-				&:hover{
-					color:#CAA42B;
-					em{
-						color:#666;
-					}
-				}
-			}
-			i{
-				.fl;
-				background: #CAA42B;
-				color: #fff;
-				border-radius: 2px;
-				padding: 0 3px;
-				.pr;top:3px;
-				.fz(10px);.x;
-				margin-right:5px;
-				.lh(18px,18px);.w(30px);
-
-			}
-			span{
-				.fl;.nobreak(clip);
-				max-width: 200px - 84px - 56px;
-			}
-			em{
-				max-width:84px;
-				.fr;
-				background: #fff;
-				color:#888;
-				padding: 0 3px;
-				border-radius: 3px;
-				border: 1px solid #ddd;
-				box-shadow: 0 0 1px #ddd inset;
-			}
-		}
+	.m-tasklist{
+		ul{padding:5px;}
+		li{.fz(12px,28px);padding-left:24px;}
 	}
 
 	

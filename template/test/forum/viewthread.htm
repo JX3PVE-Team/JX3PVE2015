@@ -1,16 +1,16 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: FACE
+ * Project: Tool
  * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.8.15
+ * Update : iRuxu 2015.8.16
  -->
 
 <!-- jx3pve:code -->
-<script src="http://js.jx3pve.com/js/page/pvx-face.js"></script>
+<script src="http://js.jx3pve.com/js/page/pve-tool.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="viewpage-container pvx-container face-container face-viewpage">
+<div class="viewpage-container pve-container tool-container pve-viewpage tool-viewpage tgpost-folder">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">var fid = parseInt('$_G[fid]'), tid = parseInt('$_G[tid]');</script>
@@ -21,6 +21,9 @@
 	<script type="text/javascript">zoomstatus = parseInt($_G['setting']['zoomstatus']);var imagemaxwidth = '{$_G['setting']['imagemaxwidth']}';var aimgcount = new Array();</script>
 	<style id="diy_style" type="text/css"></style>
 
+<!-- jx3pve:wrapper -->
+<div class="wp">
+
 	<!-- dz:banner-top -->
 	<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
 	<!--{hook/viewthread_top}-->
@@ -28,30 +31,30 @@
 	<style id="diy_style" type="text/css"></style>
 	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
 
-<!-- jx3pve:page header -->
-<div class="pvx-header">
-	<!--{subtemplate forum/header}-->
-</div>
-
 <!-- jx3pve:main -->
-<div class="pvx-main">
+<div class="pve-main">
 
+	<!-- jx3pve:page header -->
+	<div class="pve-header">
+		<!--{subtemplate forum/header}-->
+	</div>
+	
 	<!-- jx3pve:sidebar -->
-	<div class="pvx-sidebar">
+	<div class="pve-sidebar">
 		<!--{subtemplate forum/sidebar}-->
 	</div>
 
 	<!-- jx3pve:content -->	
-	<div class="pvx-content">
+	<div class="pve-content">
 
 		<!-- jx3pve:primary -->
 		<!--{subtemplate forum/primary}-->
 
 		<!-- jx3pve:article -->	
-		<div class="pvx-article " id="ct">
+		<div class="pve-article " id="ct">
 
 			<!-- jx3pve:route -->
-			<!--{subtemplate jx3pve/w_route_viewthread}-->
+			<!--{subtemplate jx3pve/w_route}-->
 
 			<!-- dz:w-pages -->
 			<div id="pgt" class="w-pages w-pages-top pgs mbm cl {if $modmenu['thread']}pbm bbs{/if}">
@@ -178,42 +181,8 @@
 
 			<!-- dz:postlist -->
 			<!--{hook/viewthread_beginline}-->
-			<div class="pvx-postbox pl bm" id="postlist">
-
-				<!-- jx3pve:pvx-title -->
-				<div class="pvx-title">
-					<div class="m-title">
-						<a href="forum.php?mod=viewthread&tid=$_G[tid]$fromuid">$_G[forum_thread][subject]</a>
-					</div>
-					<div class="m-info">
-						<span class="sort"><em>分类：</em>
-							<!--{if $_G['forum_thread']['typeid'] && $_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}-->
-							<!--{if !IS_ROBOT && ($_G['forum']['threadtypes']['listable'] || $_G['forum']['status'] == 3)}-->
-									<a class="u-type" href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$_G[forum_thread][typeid]">{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}
-									</a>
-								<!--{else}-->
-									{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}
-								<!--{/if}-->
-							<!--{/if}-->
-							<!--{if $threadsorts && $_G['forum_thread']['sortid']}-->
-								<a  class="u-sort" href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_G[forum_thread][sortid]">{$_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}
-								</a>
-							<!--{/if}-->
-						</span>
-						<span class="author">
-							<em>作者：</em>
-							<img class="avt" src="http://www.jx3pve.com/uc_server/avatar.php?uid=$thread[authorid]&size=small" />
-							<a class="name" href="home.php?mod=space&uid=$thread[authorid]" c="1"{if $groupcolor[$thread[authorid]]} style="color: $groupcolor[$thread[authorid]];"{/if}>
-								$_G[forum_thread][author]
-							</a>
-						</span>
-						<span class="time"><em>发布时间：</em><b class="e-time">$thread[dateline]</b></span>
-						<span class="lastedit"><em>最后更新：</em><b class="e-time">$thread[lastedit]</b></span>
-						<span class="views"><em>查看数：</em>$_G[forum_thread][views]</span>
-					</div>
-				</div>
-
-				<table class="none" cellspacing="0" cellpadding="0">
+			<div class="pve-postbox pl bm" id="postlist">
+				<table cellspacing="0" cellpadding="0">
 					<tr>
 						<!--{if !$close_leftinfo}-->
 						<td class="pls ptn pbn">
@@ -232,7 +201,6 @@
 								<!--{/if}-->
 							</div>
 							<!--{else}-->
-
 							<div class="hm ptn">
 								<span class="xg1">{lang show}:</span> <span class="xi1">$_G[forum_thread][views]</span><span class="pipe">|</span><span class="xg1">{lang reply}:</span> <span class="xi1">$_G[forum_thread][allreplies]</span>
 							</div>
@@ -261,7 +229,17 @@
 								<span class="m-count">
 									$_G[forum_thread][allreplies] / $_G[forum_thread][views]
 								</span>
-								
+								<!--{if $_G['forum_thread']['typeid'] && $_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}-->
+									<!--{if !IS_ROBOT && ($_G['forum']['threadtypes']['listable'] || $_G['forum']['status'] == 3)}-->
+										<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$_G[forum_thread][typeid]">[{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}]</a>
+									<!--{else}-->
+										[{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}]
+									<!--{/if}-->
+								<!--{/if}-->
+								<!--{if $threadsorts && $_G['forum_thread']['sortid']}-->
+									<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_G[forum_thread][sortid]">[{$_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}]</a>
+								<!--{/if}-->
+								<a href="forum.php?mod=viewthread&tid=$_G[tid]" id="thread_subject" target="_blank">$_G[forum_thread][subject]</a>
 							</h1>
 							<span class="xg1">
 								<!--{if $_G['forum_thread'][displayorder] == -2}-->({lang moderating})
@@ -290,122 +268,109 @@
 						</td>
 					</tr>
 				</table>
-
-				<!-- dz:paytips -->
 				<!--{if $_G['forum_thread']['replycredit'] > 0 || $rushreply}-->
-				<div class="pvx-paytips" id="pl_top">
+				<div id="pl_top">
 					<table cellspacing="0" cellpadding="0">
 						<tr class="ad">
 							<td class="pls"></td>
 							<td class="plc"></td>
 						</tr>
-
 						<!--{if $_G['forum_thread']['replycredit'] > 0 }-->
-						<tr>
-							<!--{if !$close_leftinfo}-->
-							<td class="pls vm ptm">
-							<!--{else}-->
-							<td class="pls ptm pbm xi1" colspan="2">
-							<!--{/if}-->
-								<img src="{IMGDIR}/thread_prize_s.png" class="hm" alt="{lang replycredit}" />
-									<strong>{$_G['forum_thread']['replycredit']} {$_G['setting']['extcredits'][$_G[forum_thread][replycredit_rule][extcreditstype]][unit]}{$_G['setting']['extcredits'][$_G[forum_thread][replycredit_rule][extcreditstype]][title]}</strong>
-							<!--{if !$close_leftinfo}-->
-							</td>
-							<td class="plc ptm pbm xi1">
-							<!--{else}-->
-							&nbsp;&nbsp;&nbsp;&nbsp;
-							<!--{/if}-->
-								{lang thread_replycredit_tips1} {lang thread_replycredit_tips2}<!--{if $_G['forum_thread']['replycredit_rule'][random] > 0}--><span class="xg1">{lang thread_replycredit_tips3}</span><!--{/if}-->
-							</td>
-						</tr>
-						<!--{if $rushreply}-->
-
-						<tr class="ad">
-							<td class="pls"></td>
-							<td class="plc"></td>
-						</tr>
-						<!--{/if}-->
-						<!--{/if}-->
-
-						<!--{if $rushreply}-->
 							<tr>
 								<!--{if !$close_leftinfo}-->
 								<td class="pls vm ptm">
-									<img src="{IMGDIR}/rushreply_s.png" class="vm" alt="{lang rushreply}" />
-									<strong>{lang rushreply}</strong>
+								<!--{else}-->
+								<td class="pls ptm pbm xi1" colspan="2">
+								<!--{/if}-->
+									<img src="{IMGDIR}/thread_prize_s.png" class="hm" alt="{lang replycredit}" />
+										<strong>{$_G['forum_thread']['replycredit']} {$_G['setting']['extcredits'][$_G[forum_thread][replycredit_rule][extcreditstype]][unit]}{$_G['setting']['extcredits'][$_G[forum_thread][replycredit_rule][extcreditstype]][title]}</strong>
+								<!--{if !$close_leftinfo}-->
 								</td>
 								<td class="plc ptm pbm xi1">
 								<!--{else}-->
-								<td class="plc ptm pbm xi1" colspan="2">
-									<img src="{IMGDIR}/rushreply_s.png" class="vm" alt="{lang rushreply}" />
-									<!--{/if}-->
-
-									<!--{if $rushresult[rewardfloor]}-->
-										<span class="y">
-										<!--{if $_G['uid'] == $_G['thread']['authorid'] || $_G['forum']['ismoderator']}--><a href="javascript:;" onclick="showWindow('membernum', 'forum.php?mod=ajax&action=get_rushreply_membernum&tid=$_G[tid]')" class="y pn xi2"><span>{lang thread_rushreply_statnum}</span></a><!--{/if}-->
-										<!--{if !$_GET['checkrush']}-->
-												<a href="forum.php?mod=viewthread&tid=$post[tid]&checkrush=1" rel="nofollow" class="y pn xi2"><span>{lang rushreply_view}</span></a>
-										<!--{/if}-->
-										</span>
-									<!--{/if}-->
-
-									<!--{if $rushresult[creditlimit] == ''}-->
-										{lang thread_rushreply}&nbsp;
-									<!--{else}-->
-										{lang thread_rushreply_limit} &nbsp;
-									<!--{/if}-->
-
-									<!--{if $rushresult['timer']}-->
-									<span id="rushtimer_$thread[tid]"> {lang havemore_special} <span id="rushtimer_body_$thread[tid]"></span> <script language="javascript">settimer($rushresult['timer'], 'rushtimer_body_$thread[tid]');</script>{if $rushresult['timertype'] == 'start'} {lang header_start} {else} {lang over} {/if} {lang right_special}</span>
-									<!--{/if}-->
-									<!--{if $rushresult[stopfloor]}-->
-										{lang thread_rushreply_end}$rushresult[stopfloor]&nbsp;
-									<!--{/if}-->
-									<!--{if $rushresult[rewardfloor]}-->
-										{lang thread_rushreply_floor}: $rushresult[rewardfloor]&nbsp;
-									<!--{/if}-->
-									<!--{if $rushresult[rewardfloor] && $_GET['checkrush']}-->
-										<p class="ptn">
-											<!--{if $countrushpost}-->[<strong>$countrushpost</strong>]{lang thread_rushreply_rewardnum}<!--{else}--> {lang thread_rushreply_noreward} <!--{/if}-->&nbsp;&nbsp;
-											<a href="forum.php?mod=viewthread&tid=$_G[tid]" class="xi2">{lang thread_rushreply_check_back}</a>
-										</p>
-									<!--{/if}-->
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<!--{/if}-->
+									{lang thread_replycredit_tips1} {lang thread_replycredit_tips2}<!--{if $_G['forum_thread']['replycredit_rule'][random] > 0}--><span class="xg1">{lang thread_replycredit_tips3}</span><!--{/if}-->
 								</td>
 							</tr>
-						<!--{/if}-->
+							<!--{if $rushreply}-->
+							<tr class="ad">
+								<td class="pls"></td>
+								<td class="plc"></td>
+							</tr>
+							<!--{/if}-->
+					<!--{/if}-->
+
+					<!--{if $rushreply}-->
+						<tr>
+							<!--{if !$close_leftinfo}-->
+							<td class="pls vm ptm">
+								<img src="{IMGDIR}/rushreply_s.png" class="vm" alt="{lang rushreply}" />
+								<strong>{lang rushreply}</strong>
+							</td>
+							<td class="plc ptm pbm xi1">
+							<!--{else}-->
+							<td class="plc ptm pbm xi1" colspan="2">
+								<img src="{IMGDIR}/rushreply_s.png" class="vm" alt="{lang rushreply}" />
+							<!--{/if}-->
+								<!--{if $rushresult[rewardfloor]}-->
+									<span class="y">
+									<!--{if $_G['uid'] == $_G['thread']['authorid'] || $_G['forum']['ismoderator']}--><a href="javascript:;" onclick="showWindow('membernum', 'forum.php?mod=ajax&action=get_rushreply_membernum&tid=$_G[tid]')" class="y pn xi2"><span>{lang thread_rushreply_statnum}</span></a><!--{/if}-->
+									<!--{if !$_GET['checkrush']}-->
+											<a href="forum.php?mod=viewthread&tid=$post[tid]&checkrush=1" rel="nofollow" class="y pn xi2"><span>{lang rushreply_view}</span></a>
+									<!--{/if}-->
+									</span>
+								<!--{/if}-->
+								<!--{if $rushresult[creditlimit] == ''}-->
+									{lang thread_rushreply}&nbsp;
+								<!--{else}-->
+									{lang thread_rushreply_limit} &nbsp;
+								<!--{/if}-->
+								<!--{if $rushresult['timer']}-->
+								<span id="rushtimer_$thread[tid]"> {lang havemore_special} <span id="rushtimer_body_$thread[tid]"></span> <script language="javascript">settimer($rushresult['timer'], 'rushtimer_body_$thread[tid]');</script>{if $rushresult['timertype'] == 'start'} {lang header_start} {else} {lang over} {/if} {lang right_special}</span>
+								<!--{/if}-->
+								<!--{if $rushresult[stopfloor]}-->
+									{lang thread_rushreply_end}$rushresult[stopfloor]&nbsp;
+								<!--{/if}-->
+								<!--{if $rushresult[rewardfloor]}-->
+									{lang thread_rushreply_floor}: $rushresult[rewardfloor]&nbsp;
+								<!--{/if}-->
+								<!--{if $rushresult[rewardfloor] && $_GET['checkrush']}-->
+									<p class="ptn">
+										<!--{if $countrushpost}-->[<strong>$countrushpost</strong>]{lang thread_rushreply_rewardnum}<!--{else}--> {lang thread_rushreply_noreward} <!--{/if}-->&nbsp;&nbsp;
+										<a href="forum.php?mod=viewthread&tid=$_G[tid]" class="xi2">{lang thread_rushreply_check_back}</a>
+									</p>
+								<!--{/if}-->
+							</td>
+						</tr>
+					<!--{/if}-->
 					</table>
 				</div>
 				<!--{/if}-->
 
 				<!--{hook/viewthread_title_row}-->
 
+				<table cellspacing="0" cellpadding="0" class="ad">
+					<tr>
+						<td class="pls">
+						<!--{if !$close_leftinfo}-->
+						</td>
+						<td class="plc">
+						<!--{/if}-->
+						</td>
+					</tr>
+				</table>
 				<!--{eval $postcount = 0;}-->
 				<!--{loop $postlist $post}-->
 					<!--{if $rushreply && $_GET['checkrush'] && $post['rewardfloor'] != 1}-->
 						<!--{eval continue;}-->
 					<!--{/if}-->
-
-					<!--{if $post[first]==1}-->
-					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
-						<!--{subtemplate forum/viewthread_node_first}-->
-						<!-- ad -->
-						<!--{subtemplate jx3pve/c_banner_a}-->
-						<!-- cmt title -->
-						<div class="m-cmt-title">评论<span>COMMENT</span></div>
-					</div>
-					<!--{else}-->
-					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+					<div class="c-fli {if $post[first]==1}c-fli-first{/if}" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 						<!--{subtemplate forum/viewthread_node}-->
 					</div>
-					<!--{/if}-->
-
 					<!--{eval $postcount++;}-->
 				<!--{/loop}-->
-
-				<div id="postlistreply" class="pl">
-					<div id="post_new" class="viewthread_table c-fli" style="display: none"></div>
-				</div>
-
+				<div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
 				<!--{if $_G['blockedpids']}-->
 					<div id='hiddenpoststip'><a href='javascript:display_blocked_post();'>{lang other_reply_hide}</a></div>
 					<div id="hiddenposts"></div>
@@ -461,9 +426,9 @@
 			<!--{hook/viewthread_middle}-->
 
 			<!-- jx3pve:fast-post -->
-			<div class="pvx-fastpost">
+			<div class="pve-fastpost">
 				<!-- jx3pve:tips & folder list -->
-				<!--{subtemplate jx3pve/u_msg_replytip}-->
+				<!--{subtemplate jx3pve/u_msg_replytips}-->
 				
 				<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
 				<!--{if $fastpost}-->
@@ -508,8 +473,7 @@
 				<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, <!--{if $page > 1}-->1<!--{else}-->0<!--{/if}-->, <!--{if $page < $_G['setting']['threadmaxpages'] && $page < $_G['page_next']}-->1<!--{else}-->0<!--{/if}-->, 'forum.php?mod=viewthread&tid=$_G[tid]<!--{if $_GET[authorid]}-->&authorid=$_GET[authorid]<!--{/if}-->', $page);}</script>
 			<!--{/if}-->
 			</div>
-			
-			<!--{subtemplate forum/footer}-->
+
 		</div><!-- article -->
 
 	</div><!-- content -->
@@ -595,6 +559,9 @@
 			<!--{/if}-->
 		</script>
 
+</div><!-- wp -->
 </div><!-- container -->
+
+</div>
 
 <!--{template common/footer}-->
