@@ -6,7 +6,10 @@
 
 	<!--{hook/global_usernav_extra3}-->
 
-	<a class="avt mod" href="home.php?mod=space&uid=$_G[uid]" title="{lang visit_my_space}"><!--{avatar($_G[uid],small)}--><i id="c-header-usergroup">$_G[group][grouptitle]</i></a>
+	<a class="avt mod" href="home.php?mod=space&uid=$_G[uid]" title="{lang visit_my_space}">
+		<!--{avatar($_G[uid],small)}-->
+		<i id="c-header-usergroup" class="{if $_G[groupid]==22}vip{/if}">$_G[group][grouptitle]</i>
+	</a>
 	
 	<a class="username mod" id="c-header-username" href="home.php" target="_blank">{$_G[member][username]}<i></i></a>
 

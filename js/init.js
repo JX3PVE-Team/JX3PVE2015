@@ -37,7 +37,7 @@ H.ready('jquery',function(){
 		},function(){
 			t = setTimeout(function(){
 				$(ele).fadeOut()
-			},200)
+			},500)
 		})
 	}
 
