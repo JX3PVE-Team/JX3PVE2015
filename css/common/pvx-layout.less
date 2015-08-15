@@ -1,3 +1,6 @@
+@pvx-sidebar-w:280px;
+
+//整区包裹
 .pvx-container{
 	background-image: url('http://ww4.sinaimg.cn/large/bcc700eegw1eunybduf0vj21hc0m8dsf.jpg');
 	background-repeat: no-repeat;
@@ -7,46 +10,41 @@
 	padding-bottom:40px;
 }
 
+//默认内容区 （.boardnav）
 .pvx-main{
 	.w(@wp - 20px*2);padding:20px;
 	.auto(x);
-	margin-top:20px;
 	background-color:#fff;
 	border-radius:6px;
 	.clearfix;
 }
 
+//内容侧边栏
 .pvx-sidebar{
 	.fl;
-	.w(280px);margin-right:20px;
+	.w(@pvx-sidebar-w);margin-right:20px;
 }
 
+//内容正区
 .pvx-content{
 	.fl;
-	.w(@wp - 20px*2 - 280px - 20px);
+	.w(@wp - 20px*2 - @pvx-sidebar-w - 20px);
 }
 
+//内容实体区（#ct）
 .pvx-article{
 	border:none;background:none;box-shadow:none;
 }
 
-.pvx-postbox{
-
-}
-
-
 .pvx-container{
 
-	//默认总是隐藏的元素
-	.w-post-adminbar-top,	//上方管理操作条
-	#vfastpostform
+	//A.默认总是隐藏的元素
+	//列表页
+	.pvx-fastpost			//快速发布
 	{.none;}
-	
 
-	.w-category-nav .xw1 a, .w-category-nav .xw1 a:hover{
-		background-color:#f2f2f2;
-		color:#555;
-		.normal;
-		border-color:#ddd;
-	}
+	//单页
+	.w-post-adminbar-top	//上方管理操作条
+	{.none;}
 }
+

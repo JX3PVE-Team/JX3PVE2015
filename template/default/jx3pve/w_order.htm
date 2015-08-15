@@ -1,0 +1,60 @@
+<div class="w-order">
+	<!--{if CURMODULE != 'guide'}-->
+		<div class="til">排序<span>ORDER</span></div>
+		<div class="tf">
+			<span id="atarget" {if $_G['cookie']['atarget'] > 0}onclick="setatarget(-1)" class="y atarget_1"{else}onclick="setatarget(1)" class="y"{/if} title="{lang new_window_thread}">{lang new_window}</span>
+			<!--{if $_GET['specialtype'] == 'reward'}-->
+				<a id="filter_reward" href="javascript:;" class="showmenu xi2{if $_GET['rewardtype']} xw1{/if}" onclick="showMenu(this.id)"><!--{if $_GET['rewardtype'] == ''}-->{lang all_reward}<!--{elseif $_GET['rewardtype'] == '1'}-->{lang rewarding}<!--{elseif $_GET['rewardtype'] == '2'}-->{lang reward_solved}<!--{/if}--></a>&nbsp;
+			<!--{/if}-->
+			<a id="filter_special" href="javascript:;" class="showmenu xi2{if $_GET['specialtype']} xw1{/if}" onclick="showMenu(this.id)"><!--{if $_GET['specialtype'] == 'poll'}-->{lang thread_poll}<!--{elseif $_GET['specialtype'] == 'trade'}-->{lang thread_trade}<!--{elseif $_GET['specialtype'] == 'reward'}-->{lang thread_reward}<!--{elseif $_GET['specialtype'] == 'activity'}-->{lang thread_activity}<!--{elseif $_GET['specialtype'] == 'debate'}-->{lang thread_debate}<!--{else}-->{lang threads_all}<!--{/if}--></a>&nbsp;
+
+			<!-- 最后更新 -->						
+			<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=author&orderby=lastedit{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&tpyeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['orderby'] == 'lastedit'} xw1 on{/if}" title="最后更新">最后更新</a>&nbsp;
+
+			<!-- 最新发布 -->						
+			<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=author&orderby=dateline{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&tpyeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['orderby'] == 'dateline'} xw1 on{/if}" title="最新发布">最新发布</a>&nbsp;
+
+			<!-- 热门（回复，收藏，评分，点赞等） -->
+			<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=heat&orderby=heats$forumdisplayadd[heat]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&tpyeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['orderby'] == 'heats'} xw1 on{/if}" title="综合热度最高（回复数+各评分项）">{lang order_heats}</a>&nbsp;
+
+			<!-- 好评 -->
+			<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=heat&orderby=recommends{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&tpyeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['orderby'] == 'recommends'} xw1 on{/if}" title="点赞最多">好评</a>&nbsp;
+
+
+			<!-- 收藏 -->
+			<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=author&orderby=favtimes{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&tpyeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['orderby'] == 'favtimes'} xw1 on{/if}" title="被收藏最多">收藏</a>&nbsp;
+
+			<!-- 推荐（精华） -->
+			<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=digest&digest=1&orderby=replies$forumdisplayadd[digest]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&tpyeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['digest'] == 1} xw1 on{/if}" title="主编推荐加入精华">推荐</a>&nbsp;
+
+			<!-- 热帖 
+			<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=hot" class="xi2{if $_GET['filter'] == 'hot'} xw1{/if}">{lang hot_thread}</a>&nbsp;
+			<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=digest&digest=1$forumdisplayadd[digest]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="xi2{if $_GET['filter'] == 'digest'} xw1{/if}">{lang digest_posts}</a>&nbsp;
+			-->
+
+			<a id="filter_dateline" href="javascript:;" class="showmenu xi2{if $_GET['dateline']} xw1{/if}" onclick="showMenu(this.id)">{lang more}</a>&nbsp;
+			<!--{if empty($_G['forum']['picstyle']) && $_GET['orderby'] == 'lastpost' && (!$_G['setting']['forumseparator'] || !$separatepos) && !$_GET['filter']}-->
+				<a href="javascript:;" onclick="checkForumnew_btn('{$_G['fid']}')" title="{lang showupgrade}" class="forumrefresh"></a>
+			<!--{/if}-->
+			<!--{if $_GET['filter'] == 'hot'}-->
+				<script type="text/javascript" src="{$_G[setting][jspath]}calendar.js?{VERHASH}"></script>
+				<span>$ctime</span>
+				<img src="{IMGDIR}/date_magnify.png" class="cur1" alt="" id="hottime" value="$ctime" fid="$_G[fid]" onclick="showcalendar(event, this, false, false, false, false, function(){viewhot(this);});" align="absmiddle" />
+			<!--{/if}-->
+			<span id="clearstickthread">
+				<span class="pipe">|</span>
+				<a href="javascript:;" onclick="clearStickThread()" class="xi2" title="{lang showdisplayorder}">{lang showdisplayorder}</a>
+			</span>
+			<!--{hook/forumdisplay_filter_extra}-->
+		</div>
+	<!--{else}-->
+		{lang title}
+	<!--{/if}-->
+
+	<!--{if empty($_G['forum']['picstyle'])}-->
+		<!--{if CURMODULE == 'guide'}-->
+		<!--{/if}-->
+	<!--{else}-->
+		<a{if empty($_G['cookie']['forumdefstyle'])} href="forum.php?mod=forumdisplay&fid=$_G[fid]&forumdefstyle=yes" class="chked"{else} href="forum.php?mod=forumdisplay&fid=$_G[fid]&forumdefstyle=no" class="unchk"{/if} title="{lang view_thread_imagemode}{lang view_thread}">{lang view_thread_imagemode}</a>
+	<!--{/if}-->
+</div>

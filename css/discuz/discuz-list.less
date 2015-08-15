@@ -1,7 +1,6 @@
 //帖子列表
 .c-flist{
 
-	//帖子排序等
 	.c-flist-header{
 		background-color:#f2f2f2;
 		border-radius:24px;
@@ -9,7 +8,13 @@
 		border:none;
 		.pr;
 		
-		a{color:#555;}
+		a{
+			color:#555;
+			&:visited{color:#555;}
+			&.on{
+				color:#c00;
+			}
+		}
 		tbody{
 			padding:0;
 			border-bottom:none;
@@ -18,7 +23,7 @@
 		tr:hover td,tr:hover th{background:none;}
 		th{.full(x);}
 		th,th .tf{padding:0;height:auto;}
-	
+
 		#atarget{
 			margin-top:2px;
 			padding: 3px 10px;
@@ -32,10 +37,8 @@
 		#atarget.atarget_1, .chked {
 			background-position: 9px -34px;
 		}
-		
 	}
 
-	//帖子信息
 	.c-flist-info{
 		.lh(28px);
 		border-bottom: 1px dotted #ccc;
@@ -60,6 +63,7 @@
 			}
 		}
 	}
+
 
 	//帖子列表
 	.c-flist-content{

@@ -1,7 +1,45 @@
 .pvx-header{
-	.pvx-header-logo{
-		.db;.w(600px);.h(200px);.auto(x);.indent;
+
+	@header-w:@wp;
+	@header-h:120px;
+	@logo-w:240px;
+
+	.w(@wp);.h(@header-h - 20px);padding:10px 0;.auto(x);
+	.clearfix;
+
+	//logo
+	.m-logo{
+		.db;.w(@logo-w);.h(100%);
+		.fl;
+		.indent;
 	}
+
+	//box
+	.m-box{
+		.fr;
+		.w(@wp - @logo-w - 20px);
+	}
+
+	//banner
+	.m-banner{
+		.size(@wp - @logo-w - 20px,60px);
+		.clip;
+		margin-bottom:10px;
+	}
+
+	//route
+	.m-route{
+		.r(24px);
+		padding:0 10px;
+		.tb(255,255,255,0.6);
+		//text-shadow:-1px -1px 0 #fff;
+		.extend ul li a{
+			&:hover,&.on{background: none;color:@bluex;}
+		} 
+	}
+
+
+	//old nav
 	.pvx-header-nav{
 		background:url('@{url}common/nav-bg-auto.png') no-repeat center top;
 		.lh(51px);
@@ -48,6 +86,10 @@
 			}
 		}
 	}
+}
+
+.pvx-footer{
+	
 }
 
 .pvx-title{

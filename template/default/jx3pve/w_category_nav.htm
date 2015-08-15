@@ -1,12 +1,9 @@
-<a href="javascript:void(0)" class="w-filter-tg" id="w-filter-tg">点击展开条件筛选</a>
-
-<!-- jx3pve:category nav -->
 <!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
 	<ul class="w-category-nav ttp bm cl" id="thread_types">
 		<!--{hook/forumdisplay_threadtype_inner}-->
 
 		<!-- 标题 -->
-			<li class="cat">分类<span>CATEGORY</span></li>
+			<div class="cat">分类<span>TYPE</span></div>
 
 		<!-- 全部 -->
 			<li class="u-all" id="ttp_all" {if !$_GET['typeid'] && !$_GET['sortid']}class="xw1 a"{/if}>
@@ -42,9 +39,4 @@
 	</ul>
 	<script type="text/javascript">showTypes('thread_types');</script>
 <!--{/if}-->
-
-<!-- jx3pve:order -->
-<!--{subtemplate forum/order}-->
-
-<!-- jx3pve:sort filter -->
 <!--{hook/forumdisplay_threadtype_extra}-->

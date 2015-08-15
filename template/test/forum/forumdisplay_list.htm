@@ -1,27 +1,14 @@
-<!--{if $quicksearchlist && !$_GET['archiveid']}-->
-	<!--{subtemplate forum/search_sortoption}-->
-<!--{/if}-->
-
-<!-- jx3pve:primary -->
-<!--{subtemplate forum/primary}-->
+<!-- jx3pve:index -->
+<!--{subtemplate forum/index}-->
 
 <!-- jx3pve:index-list -->
-<div id="w-index-list"> <!-- class="w-index-list"  -->
+<div class="w-index-list" id="w-index-list">
 
-<!-- jx3pve:ctbox -->
+<!-- jx3pve:listbox -->
 <div id="threadlist" class="pve-flist c-flist tl bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
 	
-	<!-- jx3pve:ctbox-header -->
-	<!--{subtemplate forum/order}-->
-
 	<!-- jx3pve:ctbox-th -->
-	<div class="c-flist-info">
-		<ul>
-			<li class="update">最后更新<a class="color-tips" title="这里的颜色代表什么？点击查看" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=53&messageid=84" target="_blank"></a></li>
-			<li class="til">标题</li>
-			<li class="author">作者</li>
-		</ul>
-	</div>
+	<!--{subtemplate jx3pve/w_lastedit_th}-->
 
 	<!-- jx3pve:pve-ctbox-content -->
 	<div class="c-flist-content bm_c">
@@ -482,10 +469,10 @@
 						</script>
 					<!--{/if}-->
 					<!--{else}-->
-							<!-- dz:无帖子时 -->
-							<div class="team-null">
-								<p class="team-null-tips"><i></i>部分字段为新增加，旧信息该字段为空时无法检索到，请更新补充。</p>
-							</div>
+					
+							<!-- jx3pve:无相关内容时 -->
+							<!--{template jx3pve/w_listnull_tips}-->
+
 						</table><!-- end of table "forum_G[fid]" branch 3/3 -->
 					<!--{/if}-->
 					

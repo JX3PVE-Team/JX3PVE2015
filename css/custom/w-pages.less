@@ -1,6 +1,11 @@
+//翻页公共
+.w-pages{
+	
+}
+
+
 //顶部翻页隐藏
 .w-pages-top{
-	//.none;
 	padding-bottom:0  !important;
 	border-bottom:none !important;
 }
@@ -20,14 +25,22 @@
 
 //翻页旁发布按钮
 .w-pages{
-	.u-btn-publish,#newspecial{
+	.u-btn-publish,.u-btn-ask{
+		.fzlh(13px,32px);
 		.db;.size(120px,32px);.x;
 		border-radius: 2px;
+		.fl;
+	}
+	.u-btn-publish{
 		.u-btn-blue(b);
-		span{
-			.fz(14px,32px);
-		}
 		img{.none;}
+	}
+	.u-btn-ask{
+		background-color:#40AB15;
+		color:#fff;
+		&:hover{
+			background-color:lighten(#40AB15,3%);
+		}
 	}
 	.pg,.pgb{
 		margin:2px 0 !important;

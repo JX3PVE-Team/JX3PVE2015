@@ -46,14 +46,6 @@ H.ready(['jquery','getRequest'],function(){
 				}
 			})
 
-		//打开原帖
-		var $index_tg = $("#w-index-tg"),
-			$index_more = $("#w-index-list")
-
-			$index_tg.on('click',function(){
-				$index_more.toggle()
-			})
-
 		//隐藏已过期的数据
 		var $list = $(".m-raid-list li").add('.m-raid-bizlist li')
 		$list.each(function(){
