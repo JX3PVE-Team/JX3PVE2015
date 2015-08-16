@@ -3,32 +3,22 @@
 <ul class="m-tool-nav">
 	<li><a class="key" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=315&orderby=lastedit">按键辅助</a></li>
 	<li><a class="tool" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=316&orderby=lastedit">实用工具</a></li>
-	<li><a class="role" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=317&orderby=lastedit">配装辅助</a></li>
-	<li><a class="plugin" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=318&orderby=lastedit">游戏插件</a></li>
-	<li><a class="pbook" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=319&orderby=lastedit">插件教程</a></li>
-	<li><a class="book" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=320&orderby=lastedit">其他教程</a></li>
+	<li><a class="role" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=317&orderby=lastedit">配装计算</a></li>
+	<li><a class="plugin" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=318&orderby=lastedit">读条皮肤</a></li>
+	<li><a class="pbook" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=319&orderby=lastedit">相关教程</a></li>
 </ul>
 
 <!-- jx3pve:工具名称搜索 -->
 <h2>工具搜索</h2>
-<div class="m-tool-search">
+<div class="m-tool-search m-pve-search">
 	<form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&amp;fid=321&amp;filter=sortid&amp;sortid=5">
 	    <input type="text" name="searchoption[41][value]" size="15" class="px vm" value="">
-	    <button type="submit" class="u-btn-toolsearch" name="searchsortsubmit"><em>搜索</em></button>
+	    <button type="submit" class="u-button-search" name="searchsortsubmit"><em>搜索</em></button>
 	</form>
-</div>
-
-<!-- jx3pve:常用工具 -->
-<h2>常用工具</h2>
-<div class="m-tool-common m-downlist">
-	<ul>
-		<li><a href="http://www.jx3pve.com/thread-6342-1-1.html" target="_blank">在线配装</a></li>
-		<li><a href="http://www.jx3pve.com/thread-6601-1-1.html" target="_blank">抓宠助手</a></li>
-		<li><a href="http://www.jx3pve.com/thread-9510-1-1.html" target="_blank">抓马助手</a></li>
-		<li><a href="http://www.jx3pve.com/thread-7472-1-1.html" target="_blank">自动钓鱼</a></li>
-		<li><a href="http://www.jx3pve.com/thread-6334-1-1.html" target="_blank">剑三蘑菇</a></li>
-		<li><a href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=318" target="_blank">小雪读条皮肤</a></li>
-	</ul>
+	<div class="hot">
+        <h3>热搜：</h3>
+        <!--{block/1290}-->
+    </div>
 </div>
 
 <!-- jx3pve:帮助文档 -->
@@ -37,9 +27,14 @@
 	<!--{block/1242}-->
 </div>
 
-<!-- jx3pve:发布按钮 -->
-<!-- <a class="m-tool-pub" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&sortid=5&fid=321&cedit=yes&extra=" target="_blank">发布作品</a> -->
+<!-- jx3pve:任务 -->
+<h2>任务奖励<a class="more" href="http://www.jx3pve.com/home.php?mod=task" target="_blank"></a></h2>
+<div class="m-tool-task m-tasklist">
+	<!--{block/1286}-->
+</div>
 
-<div class="m-ad-sidebar">
-	<!--{subtemplate jx3pve/c_banner_b}-->
+<!-- jx3pve:广告 -->
+<h2>广而告之<a class="u-tips-faq" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=1&messageid=116" target="_blank" title="这是什么？"></a></h2>
+<div class="m-pve-sdad">
+	<!--{subtemplate jx3pve/b_banner_b}-->
 </div>

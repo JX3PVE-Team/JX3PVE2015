@@ -22,26 +22,28 @@
 }
 
 //回复灌水提醒
-.u-msg-replytips{
-	img{.db;}
-	background: #f2f2f2;
-	padding: 5px 10px;
-	line-height: 2;
-	letter-spacing: 0.2px;
-	border-radius:3px;
-	b{
-		.bold;
-		color:#f00;
+.u-msg-replytips,.u-msg-replytip{
+	.banner{
+		.db;
+		margin-bottom:5px;
 	}
-	.u-vip{
-		color: #F7A309;
-  		font-weight: bold;
+	.attips{
+		.fz(13px,2);
+		padding:0 5px;
+		border:#f7f7f7;
+		border-radius:3px;
+		border:1px solid #eee;
+		b{color:#f39;.bold;}
+		em{color:#777;font-size:12px;margin-left:5px;}
 	}
 }
 
-.u-msg-replytip{
+.u-msg-replytips .banner{
+	.size(920px,60px);
+}
+
+.u-msg-replytip .banner{
+	.size(840px,60px);
 	border:1px solid #eee;
 	border-radius:3px;
-	.size(100%,60px);
-	img{.db;}
 }

@@ -64,175 +64,165 @@
 		}
 	}
 
-
-	//帖子列表
 	.c-flist-content{
 		padding:5px 10px 10px 10px;
 
 		//ajax
 		#forumnewshow{.none;}
-
-		//帖子表格
-		.c-flist-list{
-
-			table-layout: fixed;
-
-			//触发颜色
-			/*tr:hover td{
-				background-color:#EAF8FC;
-			}*/
-			tr:hover th, tr:hover td {
-			  background:none;
-			}
-
-			//公告
-			.m-ctlist-ac{
-				.none;
-			}
-
-			//分割线
-			.m-ctlist-separatorline{
-				//.db !important;
-				background-color:#F4F9FA;
-				padding:0;
-				.til{.full(x);.x;}
-				.none;
-			}
-		}
-
 	}
 
-	//单个帖子
-	tbody{
+	//帖子表格
+	.c-flist-list{
 
-		//块级化处理
-		.db;.fl;.w(100%);overflow:hidden;
-		border-bottom: 1px solid #C2D5E3;
-		padding:5px 0;
-		&:hover{
-			background-color:#EAF8FC;
+		table-layout: fixed;
+
+		tr:hover th, tr:hover td {
+		  background:none;
 		}
-		tr{
-			.db;.fl;.w(100%);
-		}
-		td,th{
+
+		//公告
+		.m-ctlist-ac{.none;}
+
+		//分割线
+		.m-ctlist-separatorline{.none;
+			background-color:#F4F9FA;
 			padding:0;
-			.db;.fl;
-			border-bottom:none;
+			.til{.full(x);.x;}
 		}
 
-		//字体与图片
-		.fz(12px,28px);.h(28px);
-		img{.y;}
+		//单个帖子
+		tbody{
 
-		//帖子状态，是否有回复等
-		.status,.icn{
-			.none;
-		}
-		//帖子操作
-		.control,.o{
-			/*box-shadow: 0 0 2px #ddd;
-			border: 1px solid #ccc;
-			border-radius: 3px;
-			background: #fff;*/
-		}
-		//帖子标题与头像
-		.til,.fn{
-			.nobreak;.clip;
-			//字体
-			.normal;
+			//块级化处理
+			.db;.fl;.w(100%);overflow:hidden;
+			border-bottom: 1px solid #C2D5E3;
+			//字体与图片
+			.fzlh(12px,36px);
+			img{.y;}
 
-			//头像
-			.avatar{
-				img{.size(24px);border-radius:4px;}
+			&:hover{
+				background-color:#EAF8FC;
 			}
-			//最后更新时间
-			.e-lastedit{
-				margin:0 3px;
-				color: #fff;
-				padding: 0 5px;
-				border-radius: 2px;
-				background-color:@bluex;
-				&.fail{background-color:#ABA7A5;}
-				&.old{background-color:#F2BF3A;}
-				&.new{background-color:#28B3C5;}
-				&.fresh{background-color:#6DC528;}//#DBAFF9
-				&.ok{background-color:#f00;}
+			tr{
+				.db;.fl;.w(100%);
+				.h(36px);
 			}
-			//分类信息
-			.sortinfo{
-				.color(#369,#369,#369);.fz(12px);.normal;
+			td,th{
+				padding:0;
+				.db;.fl;
+				.h(36px);
+				border-bottom:none;
 			}
-			//标题
-			.article{
-				.fz(12px);.normal;
-			}
-			//追加
-			.addef{
-				.new{
-					  background: #f00;
-					  color: #fff;
-					  border-radius: 2px;
-					  padding: 0 3px;
-				}
-			}
-			//回贴奖励
-			.replycredit{
 
-			}
-			//分页
-			.tps{
+			//帖子状态，是否有回复等
+			.status,.icn{
 				.none;
 			}
+			//帖子操作
+			.control,.o{
+				/*box-shadow: 0 0 2px #ddd;
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				background: #fff;*/
+			}
+			//帖子标题与头像
+			.til,.fn{
+				.nobreak;.clip;
+				//字体
+				.normal;
+
+				//头像
+				.avatar{
+					img{.size(24px);border-radius:4px;}
+				}
+				//最后更新时间
+				.e-lastedit{
+					margin:0 3px;
+					color: #fff;
+					padding: 0 5px;
+					border-radius: 2px;
+					background-color:@bluex;
+					&.fail{background-color:#ABA7A5;}
+					&.old{background-color:#F2BF3A;}
+					&.new{background-color:#28B3C5;}
+					&.fresh{background-color:#6DC528;}//#DBAFF9
+					&.ok{background-color:#f00;}
+				}
+				//分类信息
+				.sortinfo{
+					.color(#369,#369,#369);.fz(12px);.normal;
+				}
+				//标题
+				.article{
+					.fz(12px);.normal;
+				}
+				//追加
+				.addef{
+					.new{
+						  background: #f00;
+						  color: #fff;
+						  border-radius: 2px;
+						  padding: 0 3px;
+					}
+				}
+				//回贴奖励
+				.replycredit{
+
+				}
+				//分页
+				.tps{
+					.none;
+				}
+				//查看次数
+				.e-views{
+					.pr;
+					//background: #BFA5FF;
+					background:#9AD1F9;
+					color: #fff;
+					padding: 0 5px;
+					border-radius: 2px;
+					.arrow(l,5px,#9AD1F9);
+					margin-left:5px;
+					box-shadow: 1px 1px 0 #eee;
+				}
+			}
+			//所属板块·导读
+			.pos{
+
+			}
+			//作者
+			.author{
+				.fr;
+				width:180px;
+				.x(right);
+				//名字
+				.name{
+				
+				}
+				//认证
+				.verif{
+					a{margin-left:2px;}
+				}
+				//发布时间
+				.post-time{
+
+				}
+			}
 			//查看次数
-			.e-views{
-				.pr;
-				//background: #BFA5FF;
-				background:#9AD1F9;
-				color: #fff;
-				padding: 0 5px;
-				border-radius: 2px;
-				.arrow(l,5px,#9AD1F9);
-				margin-left:5px;
-				box-shadow: 1px 1px 0 #eee;
+			.num{.none;
+				.views{}
+				.replys{}
 			}
-		}
-		//所属板块·导读
-		.pos{
+			//回复人
+			.reply{.none;
+				//名字
+				.name{
 
-		}
-		//作者
-		.author{
-			.fr;
-			width:180px;
-			.x(right);
-			//名字
-			.name{
-			
-			}
-			//认证
-			.verif{
-				a{margin-left:2px;}
-			}
-			//发布时间
-			.post-time{
+				}
+				//回复时间
+				.reply-time{
 
-			}
-		}
-		//查看次数
-		.num{.none;
-			.views{}
-			.replys{}
-		}
-		//回复人
-		.reply{.none;
-			//名字
-			.name{
-
-			}
-			//回复时间
-			.reply-time{
-
+				}
 			}
 		}
 	}

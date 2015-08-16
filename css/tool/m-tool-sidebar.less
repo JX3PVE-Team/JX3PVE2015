@@ -1,12 +1,19 @@
 .m-tool-nav{
+	margin-bottom:20px;
 	li{
-		.u-btn-gray(b);
 		margin-bottom:5px;
-		a{.db;.full;
-			&:hover{color:#049abf;
-				&:before{animation:goUp 0.3s ease-in;}
+		background-color:#fff;
+		border:1px solid #ddd;
+		border-radius:3px;
+		padding:0 10px;
+		a{
+			.db;.full;
+			&:hover{
+				color:#049abf;
+				transition:0.15s ease-in-out;
+				//&:before{animation:goUp 0.3s ease-in;}
 			}
-			&:before{.iconfont;font-size:18px;margin-right:10px;}
+			&:before{.iconfont;.y(-1px);font-size:18px;margin-right:10px;}
 			&.key{&:before{content:'\e626';}}
 			&.tool{&:before{content:'\e637';}}
 			&.role{&:before{content:'\e604';}}
@@ -18,24 +25,6 @@
 }
 
 .m-tool-search{
-	.vm{
-		padding:5px;
-		width: 60%;
-		border: 1px solid #ddd;
-		background: none;
-		border-radius: 4px;
-		box-shadow: 0 0 4px #ddd inset;
-		background-color:#fff;
-		&:focus,&:hover{
-			box-shadow: 0 0 4px #0cf inset,0 0 2px #ddd;
-		}
-	}
-	.u-btn-toolsearch{
-		.u-btn-gray(a);
-		padding: 4px 14px 3px;
-		.pr;
-		top:2px;
-	}
 }
 
 .m-tool-task{

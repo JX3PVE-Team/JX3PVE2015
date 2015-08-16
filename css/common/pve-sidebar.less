@@ -47,6 +47,42 @@
 		height:auto;
 	}
 
+	.m-pve-search{
+		.vm{
+			padding:5px;
+			width: 60%;
+			border: 1px solid #ddd;
+			background: none;
+			border-radius: 4px;
+			box-shadow: 0 0 4px #ddd inset;
+			background-color:#fff;
+			&:focus,&:hover{
+				box-shadow: 0 0 4px #0cf inset,0 0 2px #ddd;
+			}
+		}
+		.u-button-search{
+			.u-btn-gray(a);
+			padding: 4px 14px 3px;
+			.pr;
+			top:2px;
+			border-radius:3px;
+		}
+		.hot{
+			.clearfix;
+			padding:3px 5px;
+			.fz(12px,2);
+
+			h3{.bold;.di;}
+			.module{
+				.di;.break;
+				ul{.clearfix;.di;}
+				li{.di;margin:0;margin-right:10px;.h(auto);}
+				a{.color(#444,@bluex);}
+				a:hover{text-decoration:underline;}
+			}
+		}
+	}
+
 	.m-define{
 		.clearfix;
 		li{
@@ -90,18 +126,10 @@
 		}
 	}
 
-	.m-ad-sidebar{
+	.m-pve-sdad{
 		.pr;
 		.h(200px);
 		margin-top:10px;
-		/*.adplaceholder-sd{
-			.size(200px);
-			.pa;.lt(0,0);
-			background:url('http://ww1.sinaimg.cn/large/bcc700eegw1euiypuhq87j205k05kgm3.jpg') no-repeat center center;
-		}*/
-		/*.ad-sd{
-			.pa;.lt(0,0);.z(1);
-		}*/
 	}
 
 	.m-tasklist{
@@ -109,7 +137,6 @@
 		li{.fz(12px,28px);padding-left:24px;}
 	}
 
-	
 }
 
 //避免内容区过短fix插件Bug
