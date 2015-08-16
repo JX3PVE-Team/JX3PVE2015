@@ -1,9 +1,49 @@
+//帖子正文内容
 .t_f{
+	.clearfix;
 	.fz(13px,2);
 	.color(#555,@bluex,#c00);
 	a{text-decoration:underline;}
 	embed,img{
 		max-width:100%;
+	}
+	
+	.t_table{
+		.table(reset);
+		.table(skin-default);
+	}
+
+	//最后编辑
+	.pstatus{}
+
+	//隐藏可见
+	.showhide,.locked{
+		border:1px dashed @bluex;
+		background-color:#fafdff;
+		font-size:12px;line-height:2;letter-spacing:0.5px;
+	}
+	.locked{
+		color:@bluex;
+		a{color:@bluex;}
+	}
+	.showhide{
+		h4{
+			color:@bluex;border-bottom:1px solid #cceafe;
+			line-height:26px;height:26px;
+		}
+	}
+
+	//引用文字
+	.quote{
+		background: none;
+		padding:10px;
+		border:1px dashed #ddd;
+		background-color:#FCF9FA;
+		blockquote{
+			background:none;
+			.fz(12px,2);
+			a{.fz(12px,2);}
+		}
 	}
 }
 
@@ -237,51 +277,6 @@
 					//2.发帖内容
 					.t_fsz{
 						padding:10px 20px;
-
-						//默认内容
-						.t_f{
-							.clearfix;
-							
-							.t_table{
-								.table(reset);
-								.table(skin-default);
-							}
-
-							color:#555;.fz(13px,2);
-						
-							//最后编辑
-							.pstatus{}
-
-							//隐藏可见
-							.showhide,.locked{
-								border:1px dashed @bluex;
-								background-color:#fafdff;
-								font-size:12px;line-height:2;letter-spacing:0.5px;
-							}
-							.locked{
-								color:@bluex;
-								a{color:@bluex;}
-							}
-							.showhide{
-								h4{
-									color:@bluex;border-bottom:1px solid #cceafe;
-									line-height:26px;height:26px;
-								}
-							}
-
-							//引用文字
-							.quote{
-								background: none;
-								blockquote{background: none;}
-								padding:10px;
-								border:1px dashed #ddd;
-								background-color:#FCF9FA;
-								.fz(12px,2);
-								a{.fz(12px,2);}
-							}
-
-
-						}
 
 						//标签
 						.ptg{

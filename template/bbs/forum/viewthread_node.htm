@@ -170,14 +170,17 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 			<!-- 发布者信息 -->
 			<div class="m-pubinfo pi"<!--{if $close_leftinfo && !$post['anonymous'] && $postshowavatars && $showavatars}--> style="height:48px"<!--{/if}-->>
 				<!--{if !IS_ROBOT}-->
+				
 				<!-- 发布时间 -->
 				<div class="m-time">
-					<p><span class="time"><em>发布时间：</em><b class="e-time">$thread[dateline]</b></span></p>
 					<!--{if $post['first']}-->
+					<p><span class="time"><em>发布时间：</em><b class="e-time">$thread[dateline]</b></span></p>
 					<p><span class="lastedit"><em>最后更新：</em><b class="e-time">$thread[lastedit]</b></span></p>
-					<!--{/if}-->				
+					<!--{else}-->
+					<p><span class="time"><em>回复于</em>$post[dateline]</span></p>
+					<!--{/if}-->
 				</div>
-
+				
 				<!--{if $post['warned']}-->
 					<a href="forum.php?mod=misc&action=viewwarning&tid=$_G[tid]&uid=$post[authorid]" title="{lang warn_get}" class="y" onclick="showWindow('viewwarning', this.href)"><img src="{IMGDIR}/warning.gif" alt="{lang warn_get}" /></a>
 				<!--{/if}-->

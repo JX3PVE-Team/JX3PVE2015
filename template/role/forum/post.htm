@@ -1,19 +1,16 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: PVE
- * HTML: template/$pve/*
- * Style: pve/pve-*.less
- * Description: pve
+ * Project: ROLE
  * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.7.12
+ * Update : iRuxu 2015.8.16
  -->
 
 <!-- jx3pve:code -->
-<script src="http://www.jx3pve.com/js/page/pve-role.js"></script>
+<script src="http://js.jx3pve.com/js/page/pve-role.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="pve-container role-container role-postpage">
+<div class="postpage-container pve-container role-container pve-postpage role-postpage">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">
@@ -109,14 +106,16 @@
 
 	<div class="pve-content">
 
-		<!-- jx3pve:content -->	
+		<!-- jx3pve:article -->	
 		<div class="pve-article " id="ct">
 
 			<!-- jx3pve:route -->
-			<!--{subtemplate jx3pve/w_route_post}-->
+			<!--{subtemplate jx3pve/w_route}-->
 
 			<!-- jx3pve:tips -->
-			<div class="m-role-pubtips"><!--{block/1271}--></div>
+			<div class="m-role-pubtips">
+				<!--{block/1271}-->
+			</div>
 			
 			<!--{eval $adveditor = $isfirstpost && $special || $special == 2 && ($_GET['action'] == 'newthread' || $_GET['action'] == 'reply' && !empty($_GET['addtrade']) || $_GET['action'] == 'edit' && $thread['special'] == 2);}-->
 			<!--{eval $advmore = !$showthreadsorts && !$special || $_GET['action'] == 'reply' && empty($_GET['addtrade']) || $_GET['action'] == 'edit' && !$isfirstpost && ($thread['special'] == 2 && !$special || $thread['special'] != 2);}-->
@@ -465,7 +464,7 @@
 			<script type="text/javascript" src="{$_G['setting']['jspath']}at.js?{VERHASH}"></script>
 			<!--{/if}-->
 			
-		</div>
+		</div><!-- article -->
 	</div><!-- content -->
 
 </div><!-- main -->

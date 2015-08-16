@@ -22,7 +22,7 @@ H.ready(['jquery','fixSidebar'],function(){
 
     	//关键词关联
     	//取出当前主题分类职业id，起始335
-    	var role = Number(getRequest('typeid')),
+    	/*var role = Number(getRequest('typeid')),
     		$sdbox = $(".authorbox"),
     		$ctbox = $(".listbox"),
     		$libox = null,
@@ -45,13 +45,13 @@ H.ready(['jquery','fixSidebar'],function(){
     			346:12
     		},
             //排序
-            order = arr[role]
+            order = arr[role]*/
 
 
     	//1.显示对应职业的侧边栏box
-    	$sdbox.hide().eq(order).show()
+    	//$sdbox.hide().eq(order).show()
     	//2.显示对应职业的帖子box
-    	$ctbox.hide().eq(order).show()
+    	//$ctbox.hide().eq(order).show()
     	//3.设定libox为当前职业的box
     	//$libox = $ctbox.eq(order).children('.list')
         //4.当为第一个和最后一个特殊时，添加禁用样式

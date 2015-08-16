@@ -23,13 +23,16 @@
 				<div class="boxwp">
 
 				<!-- 当未选定职业时显示默认最新，并给关键词加上其余不可点颜色 Help -->
+				<!--{if !$_GET['typeid']}-->
 				<div class="listbox index" style="display:block">
 					<div class="list">
 						<!--{block/1236}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 七秀 -->
+				<!--{if $_GET['typeid']==335}-->
 				<div class="listbox qx">
 					<div class="list rolebox bx">
 						<h3><span>冰心诀</span></h3>
@@ -40,8 +43,10 @@
 						<!--{block/973}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 万花 -->
+				<!--{if $_GET['typeid']==336}-->
 				<div class="listbox wh">
 					<div class="list rolebox hj">
 						<h3><span>花间游</span></h3>
@@ -52,8 +57,10 @@
 						<!--{block/972}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 五毒 -->
+				<!--{if $_GET['typeid']==337}-->
 				<div class="listbox wd">
 					<div class="list rolebox dj">
 						<h3><span>毒经</span></h3>
@@ -64,8 +71,10 @@
 						<!--{block/971}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 天策 -->
+				<!--{if $_GET['typeid']==338}-->
 				<div class="listbox tc">
 					<div class="list rolebox ax">
 						<h3><span>傲血战意</span></h3>
@@ -76,8 +85,10 @@
 						<!--{block/958}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 明教 -->
+				<!--{if $_GET['typeid']==339}-->
 				<div class="listbox mj">
 					<div class="list rolebox fy">
 						<h3><span>焚影圣决</span></h3>
@@ -88,8 +99,10 @@
 						<!--{block/959}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 少林 -->
+				<!--{if $_GET['typeid']==340}-->
 				<div class="listbox sl">
 					<div class="list rolebox yj">
 						<h3><span>易筋经</span></h3>
@@ -100,8 +113,10 @@
 						<!--{block/968}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 苍云 -->
+				<!--{if $_GET['typeid']==341}-->
 				<div class="listbox cyun">
 					<div class="list rolebox fs">
 						<h3><span>分山劲</span></h3>
@@ -112,8 +127,10 @@
 						<!--{block/974}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 纯阳 -->
+				<!--{if $_GET['typeid']==342}-->
 				<div class="listbox cy">
 					<div class="list rolebox qc">
 						<h3><span>紫霞功</span></h3>
@@ -124,8 +141,10 @@
 						<!--{block/961}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 唐门 -->
+				<!--{if $_GET['typeid']==343}-->
 				<div class="listbox tm">
 					<div class="list rolebox tm">
 						<h3><span>天罗诡道</span></h3>
@@ -136,30 +155,37 @@
 						<!--{block/962}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 藏剑 -->
+				<!--{if $_GET['typeid']==344}-->
 				<div class="listbox cj">
 					<div class="list cj">
 						<h3><span>藏剑</span></h3>
 						<!--{block/963}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 丐帮 -->
+				<!--{if $_GET['typeid']==345}-->
 				<div class="listbox gb">
 					<div class="list gb">
 						<h3><span>丐帮</span></h3>
 						<!--{block/964}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				<!-- 通用 -->
+				<!--{if $_GET['typeid']==346}-->
 				<div class="listbox ty">
 					<div class="list ty">
 						<h3><span>通用</span></h3>
 						<!--{block/1235}-->
 					</div>
 				</div>
+				<!--{/if}-->
 
 				</div>				
 			</div>
@@ -169,6 +195,7 @@
 		<!-- 侧边栏 -->
 		<div class="m-sidebar">
 			
+			<!--{if !$_GET['typeid']}-->
 			<div class="authorbox default" style="display:block">
 				<div class="author">
 					<i class="logo"><!--{block/1260}--></i>
@@ -190,7 +217,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==335}-->
 			<div class="authorbox qx">
 				<div class="author">
 					<i class="logo"><!--{block/1248}--></i>
@@ -212,7 +241,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==336}-->
 			<div class="authorbox wh">
 				<div class="author">
 					<i class="logo"><!--{block/1249}--></i>
@@ -234,7 +265,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==337}-->
 			<div class="authorbox wd">
 				<div class="author">
 					<i class="logo"><!--{block/1250}--></i>
@@ -256,7 +289,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==338}-->
 			<div class="authorbox tc">
 				<div class="author">
 					<i class="logo"><!--{block/1251}--></i>
@@ -278,7 +313,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==339}-->
 			<div class="authorbox mj">
 				<div class="author">
 					<i class="logo"><!--{block/1252}--></i>
@@ -300,7 +337,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==340}-->
 			<div class="authorbox sl">
 				<div class="author">
 					<i class="logo"><!--{block/1253}--></i>
@@ -322,7 +361,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==341}-->
 			<div class="authorbox cyun">
 				<div class="author">
 					<i class="logo"><!--{block/1254}--></i>
@@ -344,7 +385,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==342}-->
 			<div class="authorbox cy">
 				<div class="author">
 					<i class="logo"><!--{block/1255}--></i>
@@ -366,7 +409,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==343}-->
 			<div class="authorbox tm">
 				<div class="author">
 					<i class="logo"><!--{block/1256}--></i>
@@ -388,7 +433,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==344}-->
 			<div class="authorbox cj">
 				<div class="author">
 					<i class="logo"><!--{block/1257}--></i>
@@ -410,7 +457,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==345}-->
 			<div class="authorbox gb">
 				<div class="author">
 					<i class="logo"><!--{block/1258}--></i>
@@ -432,7 +481,9 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
+			<!--{if $_GET['typeid']==346}-->
 			<div class="authorbox ty">
 				<div class="author">
 					<i class="logo"><!--{block/1259}--></i>
@@ -454,6 +505,7 @@
 					</span>
 				</div>
 			</div>
+			<!--{/if}-->
 
 			<div class="btn">
 				<a href="http://www.jx3pve.com/portal.php?mod=portalcp&ac=article&catid=1&op=simple" class="pus" target="_blank" title="推荐的作品只需要提交作品名称、地址和作者即可，站内站外地址均可">推荐作品</a>
