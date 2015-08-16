@@ -11,6 +11,7 @@ H.ready(['jquery'], function(){
             $index_tg = $("#w-index-tg"),
             $index = $("#w-index-list"),
             $filter = $("#w-filter .w-filter-font .item .label")
+            
 
     	//w_weibo:新浪微博
     	//当未填写微博UID时，隐藏关注按钮

@@ -172,8 +172,10 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 				<!--{if !IS_ROBOT}-->
 				<!-- 发布时间 -->
 				<div class="m-time">
-					<p><span>发布时间</span><em id="authorposton$post[pid]">$post[dateline]</em></p>
-					<p><span>最后更新</span><em class="viewpage-lastedit">$thread[lastedit]</em></p>
+					<p><span class="time"><em>发布时间：</em><b class="e-time">$thread[dateline]</b></span></p>
+					<!--{if $post['first']}-->
+					<p><span class="lastedit"><em>最后更新：</em><b class="e-time">$thread[lastedit]</b></span></p>
+					<!--{/if}-->				
 				</div>
 
 				<!--{if $post['warned']}-->

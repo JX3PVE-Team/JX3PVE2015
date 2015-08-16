@@ -2,7 +2,9 @@ H.ready(['jquery'], function(){
     jQuery(function($){
 
 		//微信浮层开关
-		H.fadeshow('#c-header-wxtg','#c-header-wx')
+		$("#c-header-wxtg").on('click',function(){
+			$("#c-header-wx").slideToggle()
+		})
 
 		//os面板开关
 		$("#c-header-username").on('mouseenter',function(){

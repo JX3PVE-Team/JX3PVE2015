@@ -7,14 +7,13 @@ H.load([
 	{'fixSidebar':head_conf.CDNROOT+'plugin/fixSidebar.js'},
 	{'treeview':head_conf.CDNROOT+'plugin/jquery.treeview.js'},
 	{'cookie':head_conf.CDNROOT+'plugin/jquery.cookie.js'},
-	{'cookie':head_conf.ROOT+'mod/widget.js'},
-	{'tgpost':head_conf.CDNROOT+'mod/tgpost.js'},
-	{'header':head_conf.CDNROOT+'mod/header.js'},
 	{'footer':head_conf.CDNROOT+'mod/footer.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.js'},
 	{'postdate':head_conf.CDNROOT+'mod/postdate.js'},
 	{'oldfb':head_conf.CDNROOT+'mod/oldfb.js'},
-	{'bbs':head_conf.CDNROOT+'mod/bbs.js'}
+	{'header':head_conf.ROOT+'mod/header.js'},
+	{'bbs':head_conf.ROOT+'mod/bbs.js'},
+	{'widget':head_conf.ROOT+'mod/widget.js'}
 ])
 
 //全局设置

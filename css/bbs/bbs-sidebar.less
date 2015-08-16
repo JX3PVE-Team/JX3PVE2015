@@ -1,0 +1,47 @@
+//侧边栏
+.bbs-container{
+	.pve-sidebar{
+		.w(160px);
+		background-color:#fff;
+		border-radius:4px;
+		padding:20px;
+		overflow:hidden;
+		.m-ad-sidebar{
+			.w(160px);overflow:hidden;
+		}
+		&.fixSidebar{
+		}
+
+		.m-bbs-search{
+			.search(whites);
+			margin-bottom:10px;
+		}
+
+		.m-bbs-map{
+			@keyframes mapsFailShow{
+			    from{opacity:0;transform:translateX(-50%);}
+			    to{opacity:1;transform:translateX(0);}
+			}
+			.color(#555,#555,#d05);
+			.fails{
+				color:#888;
+				.pr;.pointer;
+				&:after{
+					.db;
+					content:'暂未开放';
+					.pa;.lt(70px,0);
+					.w(50px);
+					padding:2px 4px;
+					.tips(grays);
+					.none;
+				}
+				&:hover{
+					&:after{
+						.db;
+						animation:mapsFailShow 0.2s ease-in-out;
+					}
+				}
+			}
+		}
+	}
+}

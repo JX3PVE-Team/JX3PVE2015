@@ -472,7 +472,7 @@
 			<!--{if !IS_ROBOT && $_G['setting']['threadmaxpages'] > 1}-->
 				<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, <!--{if $page > 1}-->1<!--{else}-->0<!--{/if}-->, <!--{if $page < $_G['setting']['threadmaxpages'] && $page < $_G['page_next']}-->1<!--{else}-->0<!--{/if}-->, 'forum.php?mod=viewthread&tid=$_G[tid]<!--{if $_GET[authorid]}-->&authorid=$_GET[authorid]<!--{/if}-->', $page);}</script>
 			<!--{/if}-->
-			</div>
+
 
 		</div><!-- article -->
 
@@ -562,6 +562,6 @@
 </div><!-- wp -->
 </div><!-- container -->
 
-</div>
+
 
 <!--{template common/footer}-->
