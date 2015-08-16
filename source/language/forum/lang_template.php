@@ -1227,7 +1227,7 @@ $lang = array (
   'published_in_floor' => '查看楼层',
   'rate_total' => '总评分',
   'replies_recommended' => '回帖推荐',
-  'pay_comment' => '本主题需向作者支付 <strong>{$thread[price]} {$_G[setting][extcredits][$_G[setting][creditstransextra][1]][unit]}{$_G[setting][extcredits][$_G[setting][creditstransextra][1]][title]}</strong> 才能浏览，成为<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup&do=list" class="tobevip">VIP会员</a>全站资源免费下载，无需回复即可查看隐藏内容。',
+  'pay_comment' => '<p class="u-msg-paysub">本主题需向作者支付 <strong>{$thread[price]} {$_G[setting][extcredits][$_G[setting][creditstransextra][1]][unit]}{$_G[setting][extcredits][$_G[setting][creditstransextra][1]][title]}</strong> 才能浏览。</p><p class="u-msg-tobevip">成为<a href="http://www.jx3pve.com/vip" class="tobevip" target="_blank">VIP会员</a>全站资源免费下载，无需回复即可查看隐藏内容。</p>',
   'pay_free_time' => '本主题购买截止日期为 $thread[endtime]，到期后将免费',
   'people_buy' => '人购买',
   'poll_count_down' => '距结束还有',
