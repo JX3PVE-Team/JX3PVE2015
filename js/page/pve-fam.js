@@ -24,12 +24,6 @@ H.ready(['jquery', 'fixSidebar','treeview'], function() {
 			$link.attr('href','http://www.jx3pve.com/raid')
 		} 
 
-		//捷报发布页面处理
-		if(getRequest('action')=='newthread' && getRequest('sortid')=='12' && getRequest('fid')=='369'){
-			$("#e_body").addClass('noedit')
-			$("#c-editor-extend").hide()
-		}
-
 		//导航栏激活
 		H.curpage('.u-fam')
 
@@ -37,7 +31,7 @@ H.ready(['jquery', 'fixSidebar','treeview'], function() {
 		H.fixSidebar('.pve-sidebar', 96, 105, 100)
 
 		//树形菜单
-		$("#fam-map").treeview();
+		//$("#fam-map").treeview();
 
 		//帮助
     	H.route(55)

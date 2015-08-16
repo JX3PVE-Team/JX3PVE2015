@@ -10,7 +10,8 @@ H.ready(['jquery'], function(){
             $star = $(".w-hotstar"),
             $index_tg = $("#w-index-tg"),
             $index = $("#w-index-list"),
-            $filter = $("#w-filter .w-filter-font .item .label")
+            $filter = $("#w-filter .w-filter-font .item .label"),
+            $filter_tg = $("#w-filter-tg")
             
 
     	//w_weibo:新浪微博
@@ -77,7 +78,9 @@ H.ready(['jquery'], function(){
                 $label.toggleClass('on');
                 $value.slideToggle()
             })
-
+        })
+        $filter_tg.on('click',function(){
+            alert('请点击下方筛选条件之一进行展开与关闭')
         })
 
 

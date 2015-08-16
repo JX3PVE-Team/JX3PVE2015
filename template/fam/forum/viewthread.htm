@@ -1,19 +1,16 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: PVE
- * HTML: template/$pve/*
- * Style: pve/pve-*.less
- * Description: pve
+ * Project: FAM
  * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.7.12
+ * Update : iRuxu 2015.8.16
  -->
 
 <!-- jx3pve:code -->
 <script src="http://js.jx3pve.com/js/page/pve-fam.js"></script>
 
 <!-- jx3pve:pve -->
-<div class="pve-container fam-container fam-viewpage">
+<div class="viewpage-container pve-container fam-container pve-viewpage fam-viewpage">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">var fid = parseInt('$_G[fid]'), tid = parseInt('$_G[tid]');</script>
@@ -47,15 +44,16 @@
 		<!--{subtemplate forum/sidebar}-->
 	</div>
 
+	<!-- jx3pve:content -->	
 	<div class="pve-content">
 
 		<!-- jx3pve:primary -->
 
-		<!-- jx3pve:content -->	
+		<!-- jx3pve:article -->		
 		<div class="pve-article " id="ct">
 
 			<!-- jx3pve:route -->
-			<!--{subtemplate jx3pve/w_route_viewthread}-->
+			<!--{subtemplate jx3pve/w_route}-->
 
 			<!-- dz:w-pages -->
 			<div id="pgt" class="w-pages w-pages-top pgs mbm cl {if $modmenu['thread']}pbm bbs{/if}">
@@ -143,7 +141,7 @@
 				</div>
 			<!--{/if}-->
 			<!--{if $modmenu['thread']}-->
-				<div id="modmenu" class="w-post-adminbar xi2 pbm">
+				<div id="modmenu" class="w-post-adminbar w-post-adminbar-top xi2 pbm">
 					<!--{eval $modopt=0;}-->
 					<!--{if $_G['forum']['ismoderator']}-->
 						<!--{if $_G['group']['allowdelpost']}--><!--{eval $modopt++}--><a href="javascript:;" onclick="modthreads(3, 'delete')">{lang modmenu_deletethread}</a><span class="pipe">|</span><!--{/if}-->
@@ -240,7 +238,7 @@
 								<!--{if $threadsorts && $_G['forum_thread']['sortid']}-->
 									<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_G[forum_thread][sortid]">[{$_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}]</a>
 								<!--{/if}-->
-								<span id="thread_subject">$_G[forum_thread][subject]</span>
+								<a href="forum.php?mod=viewthread&tid=$_G[tid]" id="thread_subject" target="_blank">$_G[forum_thread][subject]</a>
 							</h1>
 							<span class="xg1">
 								<!--{if $_G['forum_thread'][displayorder] == -2}-->({lang moderating})
@@ -263,7 +261,7 @@
 								<!--{if $_G['forum_thread']['closed'] == 1}-->
 									&nbsp;<img src="{IMGDIR}/locked.gif" alt="{lang close}" title="{lang close}" class="vm" />
 								<!--{/if}-->
-								<a href="forum.php?mod=viewthread&tid=$_G[tid]$fromuid" onclick="return copyThreadUrl(this, '$_G[setting][bbname]')" {if $fromuid}title="{lang share_url_copy_comment}"{/if}>[{lang share_url_copy}]</a>
+								<!--<a href="forum.php?mod=viewthread&tid=$_G[tid]$fromuid" onclick="return copyThreadUrl(this, '$_G[setting][bbname]')" {if $fromuid}title="{lang share_url_copy_comment}"{/if}>[{lang share_url_copy}]</a>-->
 							</span>
 							<!--{hook/viewthread_title_extra}-->
 						</td>
@@ -366,7 +364,7 @@
 					<!--{if $rushreply && $_GET['checkrush'] && $post['rewardfloor'] != 1}-->
 						<!--{eval continue;}-->
 					<!--{/if}-->
-					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+					<div class="c-fli {if $post[first]==1}c-fli-first{/if}" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 						<!--{subtemplate forum/viewthread_node}-->
 					</div>
 					<!--{eval $postcount++;}-->
@@ -383,7 +381,7 @@
 	
 			<!-- dz:admin bar -->
 			<!--{if $modmenu['thread']}-->
-				<div class="w-post-adminbar xi2 mbm pbm bbs">
+				<div class="w-post-adminbar w-post-adminbar-bottom xi2 mbm pbm bbs">
 				<script type="text/javascript">
 					$('modmenu').lastChild.style.visibility = 'hidden';
 					document.write($('modmenu').innerHTML);
@@ -473,7 +471,7 @@
 			<!--{if !IS_ROBOT && $_G['setting']['threadmaxpages'] > 1}-->
 				<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, <!--{if $page > 1}-->1<!--{else}-->0<!--{/if}-->, <!--{if $page < $_G['setting']['threadmaxpages'] && $page < $_G['page_next']}-->1<!--{else}-->0<!--{/if}-->, 'forum.php?mod=viewthread&tid=$_G[tid]<!--{if $_GET[authorid]}-->&authorid=$_GET[authorid]<!--{/if}-->', $page);}</script>
 			<!--{/if}-->
-			</div>
+
 
 		</div><!-- article -->
 
@@ -562,7 +560,5 @@
 
 </div><!-- wp -->
 </div><!-- container -->
-
-</div>
 
 <!--{template common/footer}-->

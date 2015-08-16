@@ -1,52 +1,62 @@
-<div class="m-fam-nav">
-	<h2>攻略导航<a class="pub-btn"  href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=369&extra=page%3D1%26filter%3Dsortid%26sortid%3D20&sortid=20" target="_blank">发布</a></h2>
-	<ul id="fam-map" class="filetree">
-		<li><span class="folder">90年代</span>
-			<ul>
-				<li><span class="file"><a href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbname=2&orderby=dateline">夜守孤城</a></span></li>
-				<li><span class="file"><a href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbname=3&orderby=dateline">逐虎驱狼</a></span></li>
-				<li><span class="file"><a href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbname=1&orderby=dateline">璨翠海厅</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/portal.php?mod=topic&topicid=35">秦皇陵</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/fxdxc">稻香村</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/portal.php?mod=topic&topicid=34">墨家密殿</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/topic-cmm.html">春明门</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/xuezhan">血战天策</a></span></li>
-			</ul>
-		</li>
-		<li class="closed"><span class="folder">80年代</span>
-			<ul>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/portal.php?mod=topic&topicid=21">大明宫</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/jxk">战宝军械库</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/hg">南诏皇宫</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/hz">会战唐门</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/cghyl">持国回忆录</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/zld">烛龙殿</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/lyz">龙渊泽</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/dh">荻花圣殿</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/dhdk">荻花洞窟</a></span></li>
-			</ul>
-		</li>
-		<li class="closed"><span class="folder">70年代</span>
-			<ul>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/dhhs">荻花后山</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/cg">持国天王殿</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/gz">宫中神武遗迹</a></span></li>
-				<li><span class="file"><a target="_blank" href="http://www.jx3pve.com/fb/zb">战宝迦兰</a></span></li>
-			</ul>
-		</li>
-	</ul>
+<!-- jx3pve:攻略搜索 -->
+<h2>攻略搜索</h2>
+<div class="m-fam-search m-pve-search">
+	<form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&amp;fid=369&amp;filter=sortid&amp;sortid=20">
+         <div class="item fam-name">
+            <span class="label">副本名称:</span>
+            <span class="select" id="select_fbname">
+                <select name="searchoption[211][value]" id="fbname" class="ps vm">
+                    <option value="0">请选择</option>
+                    <option value="1">五人副本 </option>
+                    <option value="2">夜守孤城 </option>
+                    <option value="3">逐虎驱狼 </option>
+                    <option value="4">秦皇陵 </option>
+                    <option value="5">风雪稻香村 </option>
+                    <option value="6">血战天策 </option>
+                    <option value="7">大明宫 </option>
+                    <option value="8">战宝军械库 </option>
+                    <option value="9">南诏皇宫 </option>
+                    <option value="10">会战唐门 </option>
+                    <option value="11">持国回忆录 </option>
+                    <option value="12">烛龙殿 </option>
+                    <option value="13">龙渊泽 </option>
+                    <option value="14">荻花圣殿 </option>
+                    <option value="15">荻花洞窟 </option>
+                    <option value="16">荻花后山 </option>
+                    <option value="17">持国天王殿 </option>
+                    <option value="18">宫中神武遗迹 </option>
+                    <option value="19">战宝珈蓝 </option>
+                </select>
+            </span>
+        </div>
+        <div class="item boss-name">
+	        <span class="label">BOSS名称:</span>
+	        <input type="text" name="searchoption[212][value]" size="15" class="px vm" value="">
+	    </div>
+	    <button type="submit" class="u-button-search" name="searchsortsubmit">搜索</button>
+    </form>
 </div>
 
-<div class="m-fam-herald">
-	<h2>最新捷报<a class="pub-btn"  href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=369&extra=page%3D1%26filter%3Dsortid%26sortid%3D20&sortid=12" target="_blank">发布</a></h2>
-	<a class="all" href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=12">《查看历史五甲捷报》</a>
-	<br/>
-	<!-- 没有捷报 -->
-	<span class="nothing">暂无新资料片角逐成绩</span>
-	<!-- 最新捷报 -->
-	<!--{block/1013}-->
+<!-- jx3pve:专题导航 -->
+<h2>专题导航</h2>
+<div class="m-fam-ztsd">
+	<a href="http://www.jx3pve.com/fb/" target="_blank"></a>
 </div>
 
-<div class="m-ad-sidebar">
-	<!--{subtemplate jx3pve/c_banner_b}-->
+<!-- jx3pve:帮助文档 -->
+<h2>帮助文档<a class="u-btn-pub2" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=2" target="_blank"><i></i>分享</a></h2>
+<div class="m-fam-help m-alist">
+	<!--{block/1289}-->
+</div>
+
+<!-- jx3pve:成就攻略 -->
+<h2>副本成就指南<a class="u-btn-pub2" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=369" target="_blank"><i></i>分享</a></h2>
+<div class="m-fam-chengjiu m-alist">
+	<!--{block/1293}-->
+</div>
+
+<!-- jx3pve:任务 -->
+<h2>任务奖励<a class="more" href="http://www.jx3pve.com/home.php?mod=task" target="_blank"></a></h2>
+<div class="m-fam-task m-tasklist">
+	<!--{block/1292}-->
 </div>
