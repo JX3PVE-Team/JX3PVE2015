@@ -1,16 +1,13 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: BBS
- * HTML: template/bbs/*
- * Style: pve/pve-*.less
- * Description: pve
+ * Project: FEEDBACK
  * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.8.2
+ * Update : iRuxu 2015.8.16
  -->
 
 <!-- jx3pve:pve -->
-<div class="pve-container bbs-container bbs-listpage">
+<div class="listpage-container pve-container bbs-container pve-listpage bbs-listpage">
 
 	<!-- dz:style & js -->
 	<!--{if $_G['forum']['ismoderator']}-->
@@ -39,16 +36,17 @@
 		<!--{subtemplate forum/sidebar}-->
 	</div>
 
+	<!-- jx3pve:content -->	
 	<div class="pve-content">
 
 		<!-- jx3pve:primary -->
 		<!--{subtemplate forum/primary}-->
 
-		<!-- jx3pve:content -->	
+		<!-- jx3pve:article -->	
 		<div class="pve-article " id="ct">
 
 			<!-- jx3pve:route -->
-			<!--{subtemplate jx3pve/w_route_forumdisplay}-->
+			<!--{subtemplate jx3pve/w_route}-->
 
 			<!-- dz:commend & diy -->
 			<!--{if $leftside}-->
@@ -381,38 +379,12 @@
 					<!--{hook/forumdisplay_postbutton_top}-->
 				</div>
 
-				<!-- dz:category nav -->
-				<!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
-					<ul class="w-category-nav ttp bm cl" id="thread_types">
-						<!--{hook/forumdisplay_threadtype_inner}-->
-						<li id="ttp_all" {if !$_GET['typeid'] && !$_GET['sortid']}class="xw1 a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_G['forum']['threadsorts']['defaultshow']}&filter=sortall&sortall=1{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">{lang forum_viewall}</a></li>
-						<!--{if $_G['forum']['threadtypes']}-->
-							<!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
-								<!--{if $_GET['typeid'] == $id}-->
-								<li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a></li>
-								<!--{else}-->
-								<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a></li>
-								<!--{/if}-->
-							<!--{/loop}-->
-						<!--{/if}-->
+				<!-- jx3pve:w-category-nav -->
+				<!--{subtemplate jx3pve/w_category_nav}-->
+				<!-- jx3pve:w-order -->
+				<!--{subtemplate jx3pve/w_order}-->
 
-						<!--{if $_G['forum']['threadsorts']}-->
-							<!--{if $_G['forum']['threadtypes']}--><li><span class="pipe">|</span></li><!--{/if}-->
-							<!--{loop $_G['forum']['threadsorts']['types'] $id $name}-->
-								<!--{if $_GET['sortid'] == $id}-->
-								<li class="xw1 a"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><span class="xg1 num">$showthreadclasscount[sortid][$id]</span><!--{/if}--></a></li>
-								<!--{else}-->
-								<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$id$forumdisplayadd[sortid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><span class="xg1 num">$showthreadclasscount[sortid][$id]</span><!--{/if}--></a></li>
-								<!--{/if}-->
-							<!--{/loop}-->
-						<!--{/if}-->
-						<!--{hook/forumdisplay_filter_extra}-->
-					</ul>
-					<script type="text/javascript">showTypes('thread_types');</script>
-				<!--{/if}-->
-				<!--{hook/forumdisplay_threadtype_extra}-->
-
-				<!-- dz:sort nav -->
+				<!-- dz:list loop -->
 				<!--{if empty($_G['forum']['sortmode'])}-->
 					<!--{subtemplate forum/forumdisplay_list}-->
 				<!--{else}-->
@@ -507,7 +479,7 @@
 			</div>
 			<!--{/if}-->
 
-			<div class="m-banner-bottom"><!--{ad/custom_3}--></div>
+			
 		</div><!-- article -->
 
 		<!-- dz:发布按钮下拉扩展菜单 -->

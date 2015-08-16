@@ -1,17 +1,14 @@
 <!--{template common/header}-->
 
 <!-- 
- * Project: PVE
- * HTML: template/$pve/*
- * Style: pve/pve-*.less
- * Description: pve
+ * Project: FEEDBACK
  * Creat: iRuxu 2015.7.9
- * Update : iRuxu 2015.7.12
+ * Update : iRuxu 2015.8.17
  -->
 
 
 <!-- jx3pve:pve -->
-<div class="pve-container bbs-container bbs-postpage">
+<div class="postpage-container pve-container bbs-container pve-postpage bbs-postpage">
 
 	<!-- dz:style & js -->
 	<script type="text/javascript">
@@ -107,11 +104,11 @@
 
 	<div class="pve-content">
 
-		<!-- jx3pve:content -->	
+		<!-- jx3pve:article -->	
 		<div class="pve-article " id="ct">
 
 			<!-- jx3pve:route -->
-			<!--{subtemplate jx3pve/w_route_post}-->
+			<!--{subtemplate jx3pve/w_route}-->
 
 			<!-- jx3pve:tips -->
 			<div class="feedback-post-tips">
@@ -466,7 +463,7 @@
 			<script type="text/javascript" src="{$_G['setting']['jspath']}at.js?{VERHASH}"></script>
 			<!--{/if}-->
 			
-		</div>
+		</div><!-- article -->
 	</div><!-- content -->
 
 </div><!-- main -->
