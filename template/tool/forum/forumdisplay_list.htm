@@ -464,8 +464,10 @@
 						</script>
 					<!--{/if}-->
 					<!--{else}-->
-							<!-- dz:无帖子时 -->
-							<tbody class="bw0_all"><tr><th colspan="{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}6{else}5{/if}"><p class="emp">{lang forum_nothreads}</p></th></tr></tbody>
+					
+							<!-- jx3pve:无相关内容时 -->
+							<!--{template jx3pve/w_listnull_tips}-->
+
 						</table><!-- end of table "forum_G[fid]" branch 3/3 -->
 					<!--{/if}-->
 					

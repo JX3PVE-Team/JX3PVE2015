@@ -17,16 +17,18 @@
 	.pstatus{}
 
 	//隐藏可见
-	.showhide,.locked{
-		border:1px dashed @bluex;
-		background-color:#fafdff;
-		font-size:12px;line-height:2;letter-spacing:0.5px;
+	.locked,.showhide{
+		.fz(12px,2);letter-spacing:0.5px;
 	}
 	.locked{
-		color:@bluex;
-		a{color:@bluex;}
+		.color(#555,@bluex,#c00) !important;
+		.tips(yel);
+		.x(left) !important;
+		strong{.bold;.color(#f00);}
 	}
 	.showhide{
+		color:@bluex;
+		border:1px dashed @bluex;
 		h4{
 			color:@bluex;border-bottom:1px solid #cceafe;
 			line-height:26px;height:26px;
@@ -44,6 +46,34 @@
 			.fz(12px,2);
 			a{.fz(12px,2);}
 		}
+	}
+}
+
+//帖子需要收费时
+.c-paysub{
+	//购买按钮
+	.u-btn-buysub{
+		.db;.fr;.size(66px,30px);.lh(30px);
+		border-radius:3px;border:1px solid darken(#f5d80e,3%);
+		background-position:12px center;
+		padding-left:32px;
+		color:#c00;
+		&:hover{
+			border-color:#C7B010;
+			color:lighten(#c00,1%);
+		}
+	}
+	//本主题需向作者支付 2 米币 才能浏览。
+	.u-btn-buysub{
+
+	}
+	//成为VIP会员全站资源免费下载，无需回复即可查看隐藏内容。
+	.u-msg-tobevip{
+
+	}
+	//已有购买数（隐藏）
+	.u-haspay{
+		.none;
 	}
 }
 
@@ -261,18 +291,6 @@
 			.w(100%);
 			.pct{
 				.pcb{
-
-					//0.出售帖子
-					.locked{
-						.tips(yel);
-						strong{color:#cc0000;}
-						a{color:#555;}
-
-						.u-msg-paysub{}
-						.u-msg-tobevip{
-							.db;.clear;
-						}
-					}
 
 					//1.分类信息
 					.typeoption{
