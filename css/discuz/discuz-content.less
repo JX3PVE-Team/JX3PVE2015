@@ -51,21 +51,27 @@
 
 //帖子需要收费时
 .c-paysub{
+	@h:30px;
+	padding: 5px 8px 5px 24px !important;
+
 	//购买按钮
 	.u-btn-buysub{
-		.db;.fr;.size(66px,30px);.lh(30px);
-		border-radius:3px;border:1px solid darken(#f5d80e,3%);
-		background-position:12px center;
-		padding-left:32px;
-		color:#c00;
+		.db;.fr;
+		.fzlh(12px,@h);.bold;color:#c00;
+		padding:0 10px;
+		background:#fff;border:1px solid darken(#f5d80e,3%);border-radius:3px;
 		&:hover{
-			border-color:#C7B010;
+			border-color:darken(#f5d80e,5%);
 			color:lighten(#c00,1%);
+		}
+		i{
+			background:url('@{url}icon/viewpay.gif') no-repeat center center;
+			.size(16px,@h);.y(top);margin-right:5px;.dbi;
 		}
 	}
 	//本主题需向作者支付 2 米币 才能浏览。
-	.u-btn-buysub{
-
+	.u-msg-paysub{
+		.fz(12px,@h + 2px);
 	}
 	//成为VIP会员全站资源免费下载，无需回复即可查看隐藏内容。
 	.u-msg-tobevip{
