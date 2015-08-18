@@ -193,6 +193,7 @@
 									<!--{if $thread['readperm']}--> - [{lang readperm} <span class="xw1">$thread[readperm]</span>]<!--{/if}-->
 
 									<!--{if $thread['price'] > 0}-->
+									<span style="display:none;">
 									<!--{if $thread['special'] == '3'}-->
 									- <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=specialtype&specialtype=reward$forumdisplayadd[specialtype]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}&rewardtype=1" title="{lang show_rewarding_only}"><span class="xi1">[{lang thread_reward} <span class="xw1">$thread[price]</span> {$_G[setting][extcredits][$_G['setting']['creditstransextra'][2]][unit]}{$_G[setting][extcredits][$_G['setting']['creditstransextra'][2]][title]}]</span></a>
 									<!--{else}-->
@@ -200,6 +201,7 @@
 									<!--{/if}-->
 									<!--{elseif $thread['special'] == '3' && $thread['price'] < 0}-->
 										- <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=specialtype&specialtype=reward$forumdisplayadd[specialtype]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}&rewardtype=2" title="{lang show_rewarded_only}">[{lang reward_solved}]</a>
+									</span>
 									<!--{/if}-->
 
 									<!--{if $thread['attachment'] == 2}-->
