@@ -1,0 +1,17 @@
+//金价单价取1元钱可以买的金币数
+[
+	6883:{					//你们的服务器ID
+		"lowest":"100",		//最便宜
+		"highest":"200",	//最贵
+		"average":"120",	//平均，非上面的平均值，取所有该服务器挂的单子的值的平均值
+		"link":"http://www.uu898.com/6883/",		//该服务器买金的链接
+		"lowlink":"http://www.uu898.com/6883/zuipianyi"	//最便宜那一笔的链接
+	},
+	6883:{
+		"lowest":"100",
+		"highest":"200",
+		"average":"120",
+		"link":"http://www.uu898.com/6883/",
+		"lowlink":"http://www.uu898.com/6883/zuipianyi"
+	}
+]

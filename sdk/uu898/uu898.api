@@ -1,0 +1,4 @@
+所有大区
+http://service.uu898.com/API_8151/GetGameArea.aspx?typeid=150
+大区下辖服务器
+http://service.uu898.com/API_8151/GetGameServer.aspx?typeid=150&AreaId=大区ID
