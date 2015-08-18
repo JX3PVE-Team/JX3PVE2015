@@ -1,0 +1,35 @@
+@import url('../public/reset.less');		//重置
+@import url('../public/base.less');		//函数
+
+.m-atvbox{
+	ul{
+		.clearfix;
+	}
+	li{
+		.fl;
+	}
+	.panel{
+		*{.db;}
+		li{margin-right:50px;}
+		.avt{
+			.db;.size(160px);.r(160px);padding:5px;
+			box-shadow:0 0 10px #ddd;border:1px solid #ddd;
+			img{.full;.r(160px);}
+		}
+		.name,.info{
+			color:#888;.x;
+			.fz(14px,1.5);
+		}
+	}
+	.content{
+		li{
+			.none;
+			.size(1200px,240px);
+			border-radius:8px;
+			img{.full;.db;}
+			&.on{
+				.db;
+			}
+		}
+	}
+}

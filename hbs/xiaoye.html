@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title></title>
+<meta charset="utf-8"/>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui"/>
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+<link rel="stylesheet" href="../css/test/xiaoye.css" type="text/css"/>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(function(){
+	var $t = $("#m-atvbox-panel li"),
+		$r = $("#m-atvbox-content li")
+
+	$t.on('mouseenter',function(){
+		var i = $(this).index()
+		$r.removeClass('on').eq(i).addClass('on')
+	})
+});
+</script>
+</head>
+<body>
+
+	<div class="m-atvbox" id="m-atvbox">
+		<ul class="panel" id="m-atvbox-panel">
+			<li>
+				<a href="javascript:void(0)">
+					<span class="avt"><img src="http://ww3.sinaimg.cn/mw690/bcc700eegw1ev5n4u3bj5j206o08cjs9.jpg" alt=""></span>
+					<span class="info">北京 7岁</span>
+					<span class="name">名字</span>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0)">
+					<span class="avt"><img src="http://ww3.sinaimg.cn/mw690/bcc700eegw1ev5n4u3bj5j206o08cjs9.jpg" alt=""></span>
+					<span class="info">北京 7岁</span>
+					<span class="name">名字</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="content" id="m-atvbox-content">
+			<li class="on"><img src="http://ww3.sinaimg.cn/mw690/bcc700eegw1ev1ibh05jpj21hc0m8dso.jpg" alt=""></li>
+			<li><img src="http://ww3.sinaimg.cn/mw690/bcc700eegw1eiaxxgb5byj21hc0le79q.jpg" alt=""></li>
+		</ul>
+	</div>
+
+</body>
+</html>
