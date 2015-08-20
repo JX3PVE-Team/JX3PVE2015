@@ -1,0 +1,64 @@
+<!--{template common/header}-->
+<link id="style_css" rel="stylesheet" type="text/css" href="{STATICURL}topic/t1/style.css?{VERHASH}">
+<style id="diy_style" type="text/css"></style>
+<div id="widgets"></div>
+
+<link rel="stylesheet" href="http://css.jx3pve.com/css/sdk/jx3gold.css" type="text/css"/>
+<script src="http://js.jx3pve.com/js/sdk/jx3gold.js"></script>
+
+<div class="container">
+	<h1>剑网3全区全服实时金价表</h1>
+	<div class="header">
+		<p class="m-time"></p>
+		<p class="m-mode" id="pricemode">
+			<label for="price1"><input type="radio" id="price1" name="pricemode" value="1" checked="checked" /><span>一元模式</span></label>
+			<label for="price2"><input type="radio" id="price2" name="pricemode" value="2" /><span>百元模式</span></label>
+		</p>
+	</div>
+	<div class="content">
+		<table class="table">
+			<tbody id="jx3gold">
+				<tr class="th">
+					<th>
+						<em>服务器</em>
+					</th>
+					<th>
+						<em class="til">5173</em> 
+						<span>最低</span>
+						<span>平均</span>
+						<span>最高</span>
+					</th>
+					<th>
+						<em class="til">UU898</em>
+						<span>最低</span>
+						<span>平均</span>
+						<span>最高</span>
+					</th>
+					<th>
+						<em class="til">PK200</em>
+						<span>最低</span>
+						<span>平均</span>
+						<span>最高</span>
+					</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="cmt">
+		<!--{if $topic['allowcomment']==1}-->
+			{eval
+				$data = &$topic;
+				$common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+				$form_url = "portal.php?mod=portalcp&ac=comment";
+				$commentlist = portaltopicgetcomment($topicid);	}
+			<!--{template portal/portal_comment}-->
+		<!--{/if}-->
+	</div>
+	<div class="footer">
+		<p class="warning"></p>
+		<p class="copyright"></p>
+	</div>
+</div>
+
+<script src="misc.php?mod=diyhelp&action=get&type=topic&diy=yes&topicid=$topicid&r={echo random(4)}" type="text/javascript"></script>
+<!--{template common/footer}-->
