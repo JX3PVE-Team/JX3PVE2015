@@ -1,0 +1,9 @@
+<!--{if $topic['allowcomment']==1}-->
+	{eval
+		$data = &$topic;
+		$common_url = "portal.php?mod=comment&id=$topicid&idtype=topicid";
+		$form_url = "portal.php?mod=portalcp&ac=comment";
+		$commentlist = portaltopicgetcomment($topicid);	
+	}
+	<!--{template portal/portal_comment}-->
+<!--{/if}-->

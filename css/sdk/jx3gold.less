@@ -1,151 +1,166 @@
-@import url('reset.less');
-@import url('base.less');
+//@import url('../public/reset.less');
+@import url('public/base.less');
+@import url('public/shape.less');
+@import url('global/var.less');
 
 @bluex:#049abf;
 @bocolor:#ddd;
 
-body{
-	.fz(13px,2.5);
-	.color(#555,@bluex,#c00);
-	font-family:"\5FAE\8F6F\96C5\9ED1",Consolas,Arial,Helvetica,"\5B8B\4F53",sans-serif;
-}
-::selection{color:#fff;background-color:@bluex;}
-
-.container{
-	.auto(x);
-	padding:40px 0;
+.sdk-container{
+	.w(@wp);.auto(x);
+	.pr;
+	padding:20px 0;
+	min-height:800px;
 }
 
-h1{
-	.x;
-	.fz(24px,2);
+.sdk-sidebar{
+	.pa;.lt(0,0);
+	.w(220px);
 }
 
-.header{
-	.clearfix;
-	margin-bottom:20px;
-	.m-time{
-		.fl;
-	}
-	.m-mode{
-		.fr;
-		label{
-			.pointer;
-			margin-right:10px;
-			.db;.fl;
-		}
+.sdk-aside{
+	.w(320px);
+	.m-compare{}
+	.m-comment{}
+}
+.screen-xl{
+	.sdk-aside{
+		.pa;.lt(100%,0);
 	}
 }
 
-.content{
-
-	table{
-		.auto(x);
-	}
-
-	th,td{
-		border:1px solid #ddd;
-	}
-
-	tr{
-		&:hover{
-			background-color: #f7f7f7;
-			.fwq{
-				background-color:#0084ff;
-				color:#fff;
+.sdk-main{border:1px dashed #ddd;
+	margin:0 0 0 220px+20px;
+	.sdk-header{
+		h1{.fz(24px,2);.x;}
+		.clearfix;margin-bottom:20px;
+		.m-ac{.fl;}
+		.m-mode{
+			.fr;
+			.price{
+				.pointer;margin-right:10px;
+				.db;.fl;
 			}
 		}
 	}
+	.sdk-content{
+		.fz(12px,2.5);
 
-	td{
-		.clearfix;
+		table{
+			.auto(x);
+			min-width:920px;
+		}
 
-		span{
-			.db;.fl;.w(32%);.x;
-			min-width: 80px;
-			padding:5px 0;
-			//padding:0 8px;
-			border-right:1px solid #ddd;
+		th,td{
+			border:1px solid #ddd;
+		}
 
-			&:last-child{
-				border-right:none;
-			}
-
+		tr{
 			&:hover{
-				.go{
-					.tm(1);
-				}
-			}
-
-			&.ok{
-				.bold;
-				color:#07D238;
-			}
-
-			.go{
-				.normal;.db;
-				//.dbi;.y;
-				margin-left:5px;
-				color:#fff;
-				padding:0 3px;
-				border-radius:3px;
-				.fzlh(12px,18px);
-				.tm(0.2);
-			}
-			.go-1{
-				background-color:#f00;
-				&:hover{
-					background-color:lighten(#f00,10%);
-				}
-			}
-			.go-2{
-				background-color:#0084ff;
-				&:hover{
-					background-color:lighten(#0084ff,10%);
-				}
-			}
-			.go-3{
-				background-color:#F79805;
-				&:hover{
-					background-color:lighten(#F79805,10%);
+				background-color: #f7f7f7;
+				.fwq{
+					background-color:#0084ff;
+					color:#fff;
 				}
 			}
 		}
-		
-	}
 
+		td{
+			.clearfix;
+
+			span{
+				.db;.fl;.w(32%);.x;
+				min-width: 80px;
+				padding:5px 0;
+				//padding:0 8px;
+				border-right:1px solid #ddd;
+
+				&:last-child{
+					border-right:none;
+				}
+
+				&:hover{
+					.go{
+						.tm(1);
+					}
+				}
+
+				&.ok{
+					.bold;
+					color:#07D238;
+				}
+
+				.go{
+					.normal;.db;
+					//.dbi;.y;
+					margin-left:5px;
+					color:#fff;
+					padding:0 3px;
+					border-radius:3px;
+					.fzlh(12px,18px);
+					.tm(0.2);
+				}
+				.go-1{
+					background-color:#f00;
+					&:hover{
+						background-color:lighten(#f00,10%);
+					}
+				}
+				.go-2{
+					background-color:#0084ff;
+					&:hover{
+						background-color:lighten(#0084ff,10%);
+					}
+				}
+				.go-3{
+					background-color:#F79805;
+					&:hover{
+						background-color:lighten(#F79805,10%);
+					}
+				}
+			}
+			
+		}
+
+		.th{
+			background-color:#f7f7f7;
+			th{.x;}
+			.til{
+				.db;
+				border-bottom:1px solid #ddd;
+			}
+			span{
+				.db;.fl;.w(33%);.x;
+			}
+		}
+
+		.fwq{
+			.x;.pr;cursor:default;
+			.w(100px);
+			@keyframes showFWQ{
+			    from{opacity:0;transform:translateY(20%);}
+			    to{opacity:1;transform:translateY(0);}
+			}
+			.fwq-details{
+				.none;
+				.pa;.lb(50%,130%);.z(1);
+				.size(280px,auto);margin-left:-280px/2;
+				.x(left);
+				background-color:#0084ff;
+				border-radius: 3px;
+				padding: 5px;
+				box-shadow:0 0 2px #0cf;
+				.arrow(b,6px,#0084ff);
+			}
+			&:hover .fwq-details{
+				.db;
+				animation:showFWQ 0.5s ease-in-out forwards;
+			}
+		}
+	}
+	.sdk-footer{
+		.m-warning{}
+		.m-copyright{}
+	}
 }
 
-.th{
-	background-color:#f7f7f7;
-	.x;
-	.til{
-		.db;
-		border-bottom:1px solid #ddd;
-	}
-	span{
-		.db;.fl;.w(33%);.x;
-	}
-}
-
-.fwq{
-	.x;.pr;
-	.w(100px);
-	.fwq-details{
-		.none;
-		.pa;.lt(100%,0);.z(1);
-		.size(280px,auto);
-		.x(left);
-		background-color:#0084ff;
-		//border: 1px solid #0cf;
-		border-radius: 3px;
-		padding: 5px;
-		box-shadow:0 0 2px #0cf;
-
-	}
-	&:hover .fwq-details{
-		.db;
-	}
-}
-
-//评星
