@@ -22,7 +22,7 @@ H.ready(['jquery','getRequest'],function(){
 		$(".m-face-list-item").each(function(){
 			//多角度验证
 			var round = $(this).find('.u-face-round').text(),
-				isround = round.indexOf('nophotosmall') ==-1,
+				isround = round && round.indexOf('nophotosmall') ==-1,
 				$isround = $(this).find('.isround')
 			isround ? $isround.addClass('true') : $isround.addClass('false')
 			//角标验证

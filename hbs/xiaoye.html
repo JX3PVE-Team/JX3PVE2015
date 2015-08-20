@@ -15,11 +15,15 @@
 <script>
 $(function(){
 	var $t = $("#m-atvbox-panel li"),
-		$r = $("#m-atvbox-content li")
+		$r = $("#m-atvbox-content li"),
+		$b = $("#m-atvbox")
 
-	$t.on('mouseenter',function(){
+	$t.on('hover',function(){
 		var i = $(this).index()
 		$r.removeClass('on').eq(i).addClass('on')
+	})
+	$b.on('mouseleave',function(){
+		$r.removeClass('on')
 	})
 });
 </script>
@@ -44,7 +48,7 @@ $(function(){
 			</li>
 		</ul>
 		<ul class="content" id="m-atvbox-content">
-			<li class="on"><img src="http://ww3.sinaimg.cn/mw690/bcc700eegw1ev1ibh05jpj21hc0m8dso.jpg" alt=""></li>
+			<li><img src="http://ww3.sinaimg.cn/mw690/bcc700eegw1ev1ibh05jpj21hc0m8dso.jpg" alt=""></li>
 			<li><img src="http://ww3.sinaimg.cn/mw690/bcc700eegw1eiaxxgb5byj21hc0le79q.jpg" alt=""></li>
 		</ul>
 	</div>
