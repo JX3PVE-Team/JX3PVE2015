@@ -10,8 +10,8 @@
 			<h1>剑网3全区全服实时金价表</h1>
 			<div class="m-ac"><!--{block/1303}--></div>
 			<div class="m-mode" id="pricemode">
-				<label for="price1" class="price price-1"><input type="radio" id="price1" name="pricemode" value="1" checked="checked" /><i></i><span>一元模式</span></label>
-				<label for="price2" class="price price-2"><input type="radio" id="price2" name="pricemode" value="2" /><i></i><span>百元模式</span></label>
+				<label for="price1" class="price price-1"><input type="radio" id="price1" name="pricemode" value="1" checked="checked" disabled/><i></i><span>一元模式</span></label>
+				<label for="price2" class="price price-2"><input type="radio" id="price2" name="pricemode" value="2" disabled/><i></i><span>百元模式</span></label>
 			</div>
 		</div>
 		<div class="sdk-content">
@@ -39,6 +39,9 @@
 							<span>平均</span>
 							<span>最高</span>
 						</th>
+						<th>
+							参考均价
+						</th>
 					</tr>
 				</tbody>
 			</table>
@@ -58,3 +61,4 @@
 <script src="http://js.jx3pve.com/js/sdk/jx3gold.js"></script>
 
 <!--{template common/footer}-->
+

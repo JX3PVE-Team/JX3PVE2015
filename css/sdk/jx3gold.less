@@ -4,7 +4,6 @@
 @import url('global/var.less');
 
 @bluex:#049abf;
-@bocolor:#ddd;
 
 .sdk-container{
 	.w(@wp);.auto(x);
@@ -53,6 +52,7 @@
 
 		th,td{
 			border:1px solid #ddd;
+			min-width:60px;
 		}
 
 		tr{
@@ -67,59 +67,47 @@
 
 		td{
 			.clearfix;
+			.x;.color(#999,#555,#c00);
 
 			span{
-				.db;.fl;.w(32%);.x;
+				.db;.fl;.w(33%);
 				min-width: 80px;
-				padding:5px 0;
-				//padding:0 8px;
+				//padding:5px 0;
 				border-right:1px solid #ddd;
 
-				&:last-child{
+				.data{
+					.db;
+				}
+
+				&:last-child,&.last{
 					border-right:none;
 				}
 
+				&.null{
+					color:#999;
+				}
+
+				.ok{
+					.bold;
+					color:#f00;
+				}
+				.no{
+					.bold;
+					color:#FF6600;
+				}
+
 				&:hover{
+					.bold;
 					.go{
 						.tm(1);
 					}
 				}
-
-				&.ok{
-					.bold;
-					color:#07D238;
-				}
-
-				.go{
-					.normal;.db;
-					//.dbi;.y;
-					margin-left:5px;
-					color:#fff;
-					padding:0 3px;
-					border-radius:3px;
-					.fzlh(12px,18px);
-					.tm(0.2);
-				}
-				.go-1{
-					background-color:#f00;
-					&:hover{
-						background-color:lighten(#f00,10%);
-					}
-				}
-				.go-2{
-					background-color:#0084ff;
-					&:hover{
-						background-color:lighten(#0084ff,10%);
-					}
-				}
-				.go-3{
-					background-color:#F79805;
-					&:hover{
-						background-color:lighten(#F79805,10%);
-					}
-				}
 			}
 			
+		}
+
+		.avprice{
+			color:#00CC00;.bold;
 		}
 
 		.th{
@@ -144,8 +132,8 @@
 			.fwq-details{
 				.none;
 				.pa;.lb(50%,130%);.z(1);
-				.size(280px,auto);margin-left:-280px/2;
-				.x(left);
+				.size(180px,auto);margin-left:-180px/2;
+				//.x(left);
 				background-color:#0084ff;
 				border-radius: 3px;
 				padding: 5px;
@@ -157,6 +145,7 @@
 				animation:showFWQ 0.5s ease-in-out forwards;
 			}
 		}
+		
 	}
 	.sdk-footer{
 		.m-warning{}

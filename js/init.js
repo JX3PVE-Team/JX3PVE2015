@@ -1,6 +1,7 @@
 //加载公共模块
 H.load([
 	{'jquery':head_conf.CDNROOT+'lib/jquery-1-10-2.js'},
+	{'underscore':head_conf.CDNROOT+'lib/underscore.js'},
 	{'responsive':head_conf.CDNROOT+'plugin/responsive.js'},
 	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.js'},
 	{'macro':head_conf.CDNROOT+'plugin/Macro.js'},
