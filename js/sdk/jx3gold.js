@@ -3,53 +3,86 @@
 H.ready(['jquery','underscore'], function() {
 	jQuery(function($) {
 
-		function retrieve(url, name, cb){
-			$.ajax url, (data){
-				cb name, data
+		var 
+		API = {
+			'5173' : 'http://www.jx3pve.com/js/sdk/sample1.json',
+			'uu898': 'http://www.jx3pve.com/js/sdk/sample2.json',
+			'pk200': 'http://www.jx3pve.com/js/sdk/sample3.json'
+		},
+		DATA = {
+			'5173':{},
+			'uu898':{},
+			'pk200':{}
+		},
+		LEN = 0, 								//数据总长度
+		STATUS = 0, 							//ajax就绪状况
+		$box = $("#jx3gold"),					//tbody
+		$mode = $("input[name='pricemode']") 	//模式切换
+
+		//'http://www.pk200.com/api/game/getcount/'
+
+		function retrieve(url, name, callback){
+			$.getJSON(url,function(data){
+				DATA[name] = data
+				callback()
+			})
+		}
+
+		function insertData(fwq, data){
+			for (var key in fwq){
+				$box.children('tr[data-name="'+ key +'"]').find('td[data-name="'+ name +'"]').html(name)
 			}
 		}
 
 
-		function analysis(fwq, data){
-			for key in fwq
-				data[5173][key] 
-		}
-
-		//变量声明
-		var API = [
-				{5173： 'http://www.jx3pve.com/js/sdk/sample1.json'},
-				'http://www.jx3pve.com/js/sdk/sample2.json',
-				'http://www.jx3pve.com/js/sdk/sample3.json',
-			],
-			DATA = [], //存储全部json数据
-			LEN = 0, //数据总长度
-			STATUS = 0 //ajax就绪状况
-
-		//'http://www.pk200.com/api/game/getcount/'
-
-		//选择器
-		var $box = $("#jx3gold"),
-			$mode = $("input[name='pricemode']") //模式切换
-
-		//STEP.1 获取服务器数据
 		$.getJSON('http://www.jx3pve.com/js/sdk/fwq.json', function(fwq) {
 
 			//获取数据总长度
 			LEN = _.size(fwq)
 
-			//初始化表格，加载服务器数据，布局占位
+			//初始化表格，加载服务器数据
 			for (var key in fwq) {
 				$box.append(
-					'<tr data-name=>' + '<th class="fwq">' + key + '<em class="fwq-details">' + '[ ' + fwq[key][0] + ' ] ' + fwq[key][1] + ' - ' + key + '</em>' + '</th>' + '<td class="unit">loading..</td><td class="unit">loading..</td><td class="unit">loading..</td>' + '<td class="avprice"></td>' + '</tr>'
+					  '<tr data-name="' + key + '">' 
+					+ '<th class="fwq">' + key + '<em class="fwq-details">' + '[ ' + fwq[key][0] + ' ] ' + fwq[key][1] + ' - ' + key + '</em>' + '</th>' 
+					+ '<td data-name="5173"></td>'
+					+ '<td data-name="uu898"></td>'
+					+ '<td data-name="pk200"></td>'
+					+ '<td class="avprice"></td>'
+					+ '</tr>'
 				)
 			}
 
-			DATA = {
-				"5173": ''
+
+			//ajax加载数据
+			for(var name in API){
+				retrieve(API[name],name,insertData)
 			}
 
+
+		})
+
+
+
+
+		
+		
+
+
+		
+/*function analysis(fwq, data){
+			for(key in fwq){
+				data[5173][key] 
+			}
+		}*/
+
+		
+
+		
+
+		
 			//STEP.2 获取金价数据
-			TOTAL = 0
+			/*TOTAL = 0
 			for (var i = 0; i < API.length; i++) {
 				retrieve API[I], (NAME, RESULT){
 					DATA[NAME] = RESULT
@@ -92,7 +125,7 @@ H.ready(['jquery','underscore'], function() {
 						})()
 
 						//最低价处理
-						/*;(function comparePrice(){
+						;(function comparePrice(){
 
 							function min(arr) {
 								var result = Infinity,
@@ -156,10 +189,10 @@ H.ready(['jquery','underscore'], function() {
 								_data.eq(max_pos).addClass('no')
 								_avr.text(av_price)
 							}
-						})()*/
+						})()
 						
 						//切换模式开放
-						/*$mode.removeAttr('disabled')
+						$mode.removeAttr('disabled')
 						var $data = $(".data")
 						$mode.on('change',function(){
 							var mode = $(this).val()
@@ -186,14 +219,14 @@ H.ready(['jquery','underscore'], function() {
 									})
 								})
 							}
-						})*/
+						})
 
 					}
 
 				})
-			}
+			}*/
 
-		})
+		
 
 
 	})
