@@ -450,7 +450,7 @@ if($filter && $filter != 'hot') {
 	}
 	$simplestyle = true;
 }
-if(in_array($_G['fid'], array(321,294,384,369)) && !isset($_GET['orderby'])){
+if(in_array($_G['fid'], array(321,294,384,369,390)) && !isset($_GET['orderby'])){
 	$_GET['orderby'] = 'lastedit';
 }
 if(!empty($_GET['orderby']) && !$_G['setting']['closeforumorderby'] && in_array($_GET['orderby'], array('lastpost', 'lastedit', 'dateline', 'replies', 'views', 'recommends', 'heats', 'favtimes', 'price'))) {
@@ -602,6 +602,8 @@ if($_G['fid']==92)
 	$_G['tpp'] = 18;
 if($_G['fid']==283)
 	$_G['tpp'] = 24;
+if($_G['fid']==390)
+	$_G['tpp'] = 20;
 if($filter != 'hot' && @ceil($_G['forum_threadcount']/$_G['tpp']) < $page) {
 	$page = 1;
 }

@@ -12,9 +12,10 @@ H.load([
 	{'dialog':head_conf.CDNROOT+'mod/dialog.js'},
 	{'postdate':head_conf.CDNROOT+'mod/postdate.js'},
 	{'oldfb':head_conf.CDNROOT+'mod/oldfb.js'},
-	{'header':head_conf.ROOT+'mod/header.js'},
-	{'bbs':head_conf.ROOT+'mod/bbs.js'},
-	{'widget':head_conf.ROOT+'mod/widget.js'}
+	{'custombg':head_conf.CDNROOT+'mod/custombg.js'},
+	{'header':head_conf.CDNROOT+'mod/header.js'},
+	{'bbs':head_conf.CDNROOT+'mod/bbs.js'},
+	{'widget':head_conf.CDNROOT+'mod/widget.js'}
 ])
 
 //全局设置

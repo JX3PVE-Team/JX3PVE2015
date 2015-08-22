@@ -1,0 +1,100 @@
+//分类导航
+.m-book-sort{
+	margin-bottom:15px;
+	li{
+		.lh(40px);
+		border-bottom:1px solid #eee;
+		a{
+			.db;.full;transition:0.2s ease-in-out;
+			.fz(13px,40px);
+			.bold;
+			color:#049abf;
+			&:hover{background-color:#f2f2f2;}
+		}
+		i{
+			.dbi;.size(28px);.y;margin-right:10px;
+			background-color:#eee;
+			border:1px solid #eee;
+			background:url('@{url}book/navicon.png') no-repeat 0 0;
+		}
+		em{
+			.normal;
+			margin-left:10px;
+			text-transform:uppercase;
+			color:#888;
+			font-family:'Trebuchet MS',Tahoma,"\5FAE\8F6F\96C5\9ED1";
+		}
+		.legend i{background-position:-87px 0;}
+		.fiction i{background-position:-29px 0;}
+		.memoirs i{background-position:-58px 0;}
+		.plot i{background-position:0 0;}
+	}
+}
+
+//任务奖励
+.m-book-tasklist{
+	.u-list-1{background:url('@{url}medal/book_1.gif') no-repeat 0 center;}
+	.u-list-2{background:url('@{url}medal/book_2.gif') no-repeat 0 center;}
+}
+
+//排行榜
+.m-book-top{
+	margin-bottom:15px;
+	.fz(12px,2);
+	ul{
+		li{
+			margin-bottom:5px;
+			a{
+				.db;.nobreak;
+				.pr;
+				.top{
+					.dbi;.y;
+					.size(20px);line-height:20px;background-color:#eee;
+					.x;margin-right:2px;
+				}
+				.top-1,.top-2,.top-3{
+					color:#c00;
+				}
+				.views{
+					.pa;.rt(0,0);
+					background-color:#fff;
+					padding:0 2px 0 5px;
+					color:#999;
+					background-color:#f7f7f7;
+					border-radius:3px;
+				}
+			}
+		}
+	}
+}
+
+//搜索
+.m-book-search{
+	margin-bottom:15px;
+	form{
+		.pr;
+	}
+	.u-button-search{
+		.pa !important;.rt(0,0) !important;
+		.lh(63px);.w(54px);
+		padding:0 !important;
+		color:#777 !important;
+		&:hover{
+			color:#555 !important;
+		}
+	}
+	.vm{
+		.w(150px) !important;margin-left:5px;
+	}
+	.item{
+		margin-bottom:5px;
+		.label{
+			.dbi;.w(48px);
+		}
+	}
+}
+
+//主编推荐
+.m-book-recommond{
+
+}

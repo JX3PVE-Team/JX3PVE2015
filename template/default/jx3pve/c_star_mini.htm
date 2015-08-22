@@ -1,0 +1,34 @@
+<!-- 评分 -->
+<div class="c-star-mini">
+	<!--{if !IS_ROBOT && $post['first'] && !$_G['forum_thread']['archiveid']}-->
+	<!--{if $post['invisible'] == 0}-->
+		<div id="p_btn">
+
+			<!-- 收藏 -->
+			<a class="fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang activity_member_unit}{lang thread_favorite}'" title="{lang fav_thread}">
+				<i></i>
+				<em>收藏</em>
+				<span id="favoritenumber"{if !$_G['forum_thread']['favtimes']} style="display:none"{/if}>
+					$_G['forum_thread']['favtimes']
+				</span>
+			</a>
+
+			<!--{if ($_G['group']['allowrecommend'] || !$_G['uid']) && $_G['setting']['recommendthread']['status']}-->
+			<!-- 点赞 -->
+				<!--{if !empty($_G['setting']['recommendthread']['addtext'])}-->
+				<a class="zan" id="recommend_add" href="forum.php?mod=misc&action=recommend&do=add&tid=$_G[tid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', 'recommendupdate({$_G['group']['allowrecommend']})');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = $('recommendv_add').innerHTML + ' {lang activity_member_unit}$_G[setting][recommendthread][addtext]'" title="{lang maketoponce}">
+					<i></i>
+					<em>赞</em>
+					<span id="recommendv_add"{if !$_G['forum_thread']['recommend_add']} style="display:none"{/if}>
+						$_G[forum_thread][recommend_add]</span>
+					</a>
+				<!--{/if}-->
+			<!--{/if}-->
+
+			<!--{hook/viewthread_useraction}-->
+		</div>
+	<!--{/if}-->
+	<!--{/if}-->
+	<!--{hook/viewthread_postsightmlafter $postcount}-->
+	<!--{ad/thread/a_pb/1/$postcount}-->
+</div>

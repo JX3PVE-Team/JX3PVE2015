@@ -54,11 +54,13 @@ H.ready(['jquery','dialog','fixSidebar'],function(){
 		})
 
 		//自动添加最后更新时间
-    	var pstatus = $(".pstatus").text(),
+    	/*var pstatus = $(".pstatus").text(),
 	    	str_p = pstatus.search(/\u4e8e\s./),
 	    	str = pstatus.slice(str_p+1,str_p+11),
 	    	$pstatus_box = $("#u-post-lastupdate")
-    	$pstatus_box.text(str)
+    	$pstatus_box.text(str)*/
+    	var $lastedit = $("#u-post-lastupdate")
+    	$lastedit.text($('.c-fli-first .lastedit .e-time').text())
 
 
     	//导航栏激活

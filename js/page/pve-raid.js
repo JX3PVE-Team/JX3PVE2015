@@ -23,6 +23,14 @@ H.ready(['jquery','getRequest'],function(){
 			}
 		})
 
+		//当没有logo时
+		$raidlogo.find('.logo').each(function(){
+			var imgstatus = $(this).attr('src').indexOf('nophoto')
+			if(imgstatus != -1){
+				$(this).parent('.c-raidlogo').addClass('noraidbg')
+			}
+		})
+
 		//菜单栏（栏目局部）
 		/*if(!mod || aindex=='1') $nav.eq(0).addClass('on')
 		if(mod=='forumdisplay'&&sortid=='9') $nav.eq(1).addClass('on')

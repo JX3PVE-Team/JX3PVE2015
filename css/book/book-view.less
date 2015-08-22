@@ -1,0 +1,159 @@
+.book-viewpage{
+	.pvx-title{
+		.u-sort{.none;}
+	}
+	.c-fli-pvx-first{
+		.m-author{.none;}
+	}
+	.w-pages-top{
+		.none;
+	}
+	//管理
+	.w-post-adminbar{
+		.none;
+	}
+
+	.pvx-main{
+		.pr;
+		border-radius:0 6px 6px 6px;
+	}
+	.pvx-sidebar{
+		.none;
+	}
+	.pvx-sidebar-tg{
+		.pa;.lt(-40px,0);
+		.size(20px,100px);
+		padding:10px;
+		background-color:#D5FAFF;
+		border-radius:4px 0 0 4px;
+		border: 1px solid #ddd;
+		border-right: 0;
+		box-shadow: -2px 2px 0 rgba(255,255,255,.2);
+		.pointer;
+		user-select:none;
+		&:hover{
+			background-color:darken(#D5FAFF,2%);
+		}
+	}
+	.pvx-content{
+		.w(920px);
+	}
+}
+
+.m-custominfo{
+	.pa;.rt(0,0);
+	.w(200px - 20px*2);
+	margin:20px;
+	padding:20px;
+	background-color:#f7f7f7;
+
+	.m-book-view{
+		.ps;
+		padding:0;
+		margin:0;
+		.w(auto);
+		background: none;
+	}
+}
+.m-book-view{
+	.pa;.rt(0,0);
+	.w(200px - 20px*2);
+	margin:20px;
+	padding:20px;
+	background-color:#f7f7f7;
+
+	.book{.auto(x);}
+	.name{
+		.x;.fz(13px,2.2);
+		padding:5px 0 0 0;
+		.bold;
+	}
+	.author{
+		.x;.fz(12px,2);
+		.label{
+			color:#888;
+		}
+	}
+	.weibo{
+		.w(117px);
+		.auto(x);
+	}
+	.bookdown{
+		margin:10px 0;
+		#isdownload{
+			.none;
+		}
+		.btn{
+			color:#fff;
+			.db;.auto(x);
+			.u-btn-blue(b);
+			.size(120px,40px);
+			.fz(13px,40px);
+			.x;
+		}
+		.tips{
+			.w(88px);
+			margin:10px auto;
+			.fz(12px,20px);
+			padding:0 5px;
+			border-radius:3px;
+			b{color:@yel;}
+			background:url('@{url}icon/viewpay.gif') no-repeat 0 center;
+			padding-left:18px;
+		}
+	}
+
+}
+
+.book-open-sidebar{
+	.pvx-sidebar{
+		.db;
+		animation:sidebarTg 1s ease-in-out;
+	}
+	.pvx-content{
+		.w(840px);
+	}
+	.m-custominfo{
+		.ps;.fr;
+		margin:10px 0 10px 10px;
+	}
+}
+
+.c-star-mini{
+	#p_btn{
+		padding:0;
+		.fz(13px,20px);
+		.clearfix;
+		a,i{
+			background: none;
+			padding:0;margin:0;
+		}
+		a{
+			.db;
+			background-color:#fff;
+			border:1px solid #ddd;
+			border-radius:4px;
+			padding:5px;
+		}
+		i{
+			.size(20px);.dbi;.y(top);
+		}
+		.fav{
+			margin-bottom:5px;
+			i{background:url('@{url}book/fav.png') no-repeat center center;}
+			&:hover{
+				i{
+					animation:rotateRound 1s ease-in-out forwards;
+				}
+			}
+		}
+		.zan{
+			i{background:url('@{url}book/zan.png') no-repeat center center;}
+			&:hover{
+				i{
+					animation:heartZoom 0.5s ease-in-out 2 forwards;
+				}
+			}
+		}
+	}
+}

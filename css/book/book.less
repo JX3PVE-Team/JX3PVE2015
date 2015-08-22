@@ -1,0 +1,113 @@
+.e-book{
+	.book{
+		//书本区
+		.db;.pr;background-color:#fff;
+		transition:0.3s ease-in-out;
+		//图片
+		.img{
+			.db;
+			margin:0 1px 1px 1px;
+		}
+		//立体遮罩
+		.layout{
+			.pa;.lt(0,0);
+			.full;
+		}
+		//右下
+		.til,.author{
+			.db;.pa;.rb(1px,1px);
+			.tb(0,0,0,.5);
+			.fzlh(12px,24px);
+			padding:0 5px;
+			max-width:110px;
+			.nobreak(clip);
+			color:#eee;
+			//.x;
+		}
+		//默认封面
+		//小说
+		&.type-358{
+			background:url('@{url}book/type1-1.png') no-repeat 0 0;
+			&:hover{
+				background:url('@{url}book/type1-2.png') no-repeat 0 0;
+			}
+		}
+		//剧情
+		&.type-359{
+			background:url('@{url}book/type2-1.png') no-repeat 0 0;
+			&:hover{
+				background:url('@{url}book/type2-2.png') no-repeat 0 0;
+			}
+		}
+		//回忆录
+		&.type-360{
+			background:url('@{url}book/type3-1.png') no-repeat 0 0;
+			&:hover{
+				background:url('@{url}book/type3-2.png') no-repeat 0 0;
+			}
+		}
+		//江湖传说
+		&.type-361{
+			background:url('@{url}book/type4-1.png') no-repeat 0 0;
+			&:hover{
+				background:url('@{url}book/type4-2.png') no-repeat 0 0;
+			}
+		}
+		//角标
+		.mark{
+			.pa;.lt(0,0);
+			.size(85px);
+			em{.none;}
+		}
+		.mark-1,.mark-2,.mark-3{
+			background:url('@{url}book/mark.png') no-repeat 0 0;
+		}
+		.mark-1{
+			background-position:0 0;
+		}
+		.mark-2{
+			background-position:0 -170px;
+		}
+		.mark-3{
+			background-position:0 -85px;
+		}
+		&:hover{
+			-webkit-filter: brightness(120%) saturate(120%);
+		}
+	}
+}
+
+.e-book{
+	@e-book-w:145px;
+	@e-book-h:191px;
+	.book{
+		.size(@e-book-w,@e-book-h);
+		.img{
+			.size(@e-book-w - 2px,@e-book-h - 1px);
+		}
+		.layout{
+			background:url('@{url}book/book-layout.png') no-repeat 0 0;
+		}
+
+	}
+}
+
+.e-book-s{
+	@e-book-w:120px;
+	@e-book-h:158px;
+	.book{
+		.size(@e-book-w,@e-book-h);
+		.img{
+			.size(@e-book-w - 2px,@e-book-h - 1px);
+		}
+		.layout{
+			background:url('@{url}book/book-layout-s.png') no-repeat 0 0;
+		}
+	}
+}
+
+.e-book-shadow{
+	background:url('@{url}book/book-shadow.png') no-repeat 9px 4px;
+	//padding:20px;
+}
+

@@ -1,0 +1,88 @@
+<!--{eval
+$needhiddenreply = ($hiddenreplies && $_G['uid'] != $post['authorid'] && $_G['uid'] != $_G['forum_thread']['authorid'] && !$post['first'] && !$_G['forum']['ismoderator']);
+$postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatus'] == '-1' || ($post['authorid'] && !$post['username']) || ($post['groupid'] == 4 || $post['groupid'] == 5) || ($post['status'] & 1)));
+}-->
+<!--{block authorverifys}-->
+<!--{loop $post['verifyicon'] $vid}-->
+	<a href="home.php?mod=spacecp&ac=profile&op=verify&vid=$vid" target="_blank"><!--{if $_G['setting']['verify'][$vid]['icon']}--><img src="$_G['setting']['verify'][$vid]['icon']" class="vm" alt="$_G['setting']['verify'][$vid][title]" title="$_G['setting']['verify'][$vid][title]" /><!--{else}-->$_G['setting']['verify'][$vid]['title']<!--{/if}--></a>
+<!--{/loop}-->
+<!--{loop $post['unverifyicon'] $vid}-->
+	<a href="home.php?mod=spacecp&ac=profile&op=verify&vid=$vid" target="_blank"><img src="$_G['setting']['verify'][$vid]['unverifyicon']" class="vm" alt="$_G['setting']['verify'][$vid][title]" title="$_G['setting']['verify'][$vid][title]" /></a>
+<!--{/loop}-->
+<!--{/block}-->
+
+
+<!--{if $post['first'] &&  $_G['forum_threadstamp']}-->
+	<div id="threadstamp" class="w-stamp w-stamp $_G[forum_thread][stamp]">
+		<img src="{STATICURL}image/stamp/$_G[forum_threadstamp][url]" title="$_G[forum_threadstamp][text]" />
+	</div>
+<!--{/if}-->
+
+
+<!--{if empty($post['deleted'])}-->
+	<!-- dz:如果未被删除 -->
+
+	<!-- jx3pve:如果是回复 -->
+	<div class="c-fli-pvx c-fli-pvx-normal" id="pid$post[pid]" summary="pid$post[pid]" data-pubtime="$post[dateline]">
+		<!-- 作者信息 -->
+		<div class="m-author">
+			<!--{subtemplate jx3pve/c_replyer}-->
+		</div>
+
+		<!-- 内容区域 -->
+		<div class="m-content">
+			<!--{subtemplate forum/viewthread_node_body}-->
+			<div id="_postposition$post['pid']"></div>
+		</div>
+	</div>
+	
+	<!-- dz:如为图片模式 -->
+	<!--{if !empty($aimgs[$post[pid]])}-->
+	<script type="text/javascript" reload="1">
+		aimgcount[{$post[pid]}] = [<!--{echo dimplode($aimgs[$post[pid]]);}-->];
+		attachimggroup($post['pid']);
+		<!--{if empty($_G['setting']['lazyload'])}-->
+			<!--{if !$post['imagelistthumb']}-->
+				attachimgshow($post[pid]);
+			<!--{else}-->
+				attachimgshow($post[pid], 1);
+			<!--{/if}-->
+		<!--{/if}-->
+		var aimgfid = 0;
+		<!--{if $_G['forum']['picstyle'] && ($_G['forum']['ismoderator'] || $_G['uid'] == $_G['thread']['authorid'])}-->
+			aimgfid = $_G[fid];
+		<!--{/if}-->
+		<!--{if $post['imagelistthumb']}-->
+			attachimglstshow($post['pid'], <!--{echo intval($_G['setting']['lazyload'])}-->, aimgfid, '{$_G[setting][showexif]}');
+		<!--{/if}-->
+	</script>
+	<!--{/if}-->
+
+
+<!--{else}-->
+	<!-- dz:如果已被删除 -->
+	<table id="pid$post[pid]" summary="pid$post[pid]" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr>
+				<!--{if !$close_leftinfo}-->
+				<td class="pls"></td>
+				<!--{/if}-->
+				<td class="plc"<!--{if $close_leftinfo}--> style="width:100%"<!--{/if}-->>
+					<div class="pi">
+						<strong><a><!--{if !empty($postno[$post[number]])}-->$postno[$post[number]]<!--{else}--><em>{$post[number]}</em>{$postno[0]}<!--{/if}--></a></strong>
+					</div>
+					<div class="pct">{lang post_deleted}</div>
+				</td>
+			</tr>
+			<tr class="ad">
+				<!--{if !$close_leftinfo}-->
+				<td class="pls"></td>
+				<!--{/if}-->
+				<td class="plc"></td>
+			</tr>
+		</tbody>
+	</table>
+
+<!--{/if}-->
+
+<!--{hook/viewthread_endline $postcount}-->
