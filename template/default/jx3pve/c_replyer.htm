@@ -13,8 +13,23 @@
 	<!-- 用户组 -->
 	<a class="usergroup u-group u-group-$post[groupid]" href="home.php?mod=spacecp&ac=usergroup&gid=$post[groupid]"><em id="u-usergroup-id">$post[groupid]</em></a>
 
+	<!-- 楼层 -->
+	<a class="floor" href="{if $post[first]}forum.php?mod=viewthread&tid=$_G[tid]$fromuid{else}forum.php?mod=redirect&goto=findpost&ptid=$_G[tid]&pid=$post[pid]$fromuid{/if}"  {if $fromuid}title="{lang share_url_copy_comment}"{/if} id="postnum$post[pid]" onclick="setCopy(this.href, '{lang post_copied}');return false;">
+		<!--{if isset($post[isstick])}-->
+			<img src ="{IMGDIR}/settop.png" title="{lang replystick}" class="vm" /> {lang from} {$post[number]}{$postnostick}
+		<!--{elseif $post[number] == -1}-->
+			{lang recommend}
+		<!--{else}-->
+			<!--{if !empty($postno[$post[number]])}-->
+				$postno[$post[number]]
+			<!--{else}-->
+				<em>{$post[number]}</em>{$postno[0]}
+			<!--{/if}-->
+		<!--{/if}-->
+	</a>
+
 	<!-- 发布时间 -->
-	<span class="time"><em>POST ON</em>$post[dateline]</span>
+	<span class="time"><i></i>$post[dateline]</span>
 
 	<!-- 编辑操作 -->
 	<!--{if $post['invisible'] == 0}-->

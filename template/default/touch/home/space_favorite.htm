@@ -1,0 +1,48 @@
+<!--{template common/header}-->
+
+<div class="i-home-page">
+
+<header class="i-header i-list-header">
+	<a class="m-back" href="home.php?mod=space&uid={$_G[uid]}&do=profile&mycenter=1">
+		<i></i>
+		<span>返回</span>
+	</a>
+
+	<div class="m-title">
+		我的收藏
+	</div>
+</header>
+
+<!-- main collectlist start -->
+<!--{if $_GET['type'] == 'forum'}-->
+<div class="coll_list b_radius">
+	<ul>
+		<!--{if $list}-->
+			<!--{loop $list $k $value}-->
+			<li><a href="$value[url]">$value[title]</a></li>
+			<!--{/loop}-->
+		<!--{else}-->
+		<li>{lang no_favorite_yet}</li>
+		<!--{/if}-->
+
+	</ul>
+</div>
+<!--{else}-->
+<div class="threadlist">
+	<ul>
+		<!--{if $list}-->
+			<!--{loop $list $k $value}-->
+			<li><a href="$value[url]">$value[title]</a></li>
+			<!--{/loop}-->
+		<!--{else}-->
+		<li>{lang no_favorite_yet}</li>
+		<!--{/if}-->
+	</ul>
+</div>
+<!--{/if}-->
+<!-- main collectlist end -->
+$multi
+<!--{eval $nofooter = true;}-->
+
+</div>
+<!--{template common/footer}-->

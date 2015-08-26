@@ -1,0 +1,12 @@
+<header class="i-header i-post-header">
+	<a class="m-back" href="<!--{if $_GET[action] == 'newthread'}-->forum.php?mod=forumdisplay&fid=$_G[fid]&page=$_GET[page]<!--{else}-->forum.php?mod=redirect&goto=findpost&ptid=$_G[tid]&pid=$pid<!--{/if}-->">
+		<i></i>
+		<span><!--{if $_GET[action] == 'edit'}-->{lang edit}<!--{else}-->{lang send_threads}<!--{/if}--></span>
+	</a>
+
+	<div class="m-nav">
+		<button id="postsubmit" class="btn_pn <!--{if $_GET[action] == 'edit'}-->btn_pn_blue" disable="false"<!--{else}-->btn_pn_grey" disable="true"<!--{/if}-->><span><!--{if $_GET[action] == 'newthread'}-->{lang send_thread}<!--{elseif $_GET[action] == 'reply'}-->{lang join_thread}<!--{elseif $_GET[action] == 'edit'}-->{lang edit_save}<!--{/if}--></span></button>
+		<input type="hidden" name="{if $_GET[action] == 'newthread'}topicsubmit{elseif $_GET[action] == 'reply'}replysubmit{elseif $_GET[action] == 'edit'}editsubmit{/if}" value="yes">
+	</div>
+
+</header>

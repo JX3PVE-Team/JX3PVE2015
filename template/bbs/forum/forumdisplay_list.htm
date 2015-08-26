@@ -131,13 +131,6 @@
 									<img src="{IMGDIR}/folder_$thread[folder].gif" />
 								<!--{/if}-->
 								</a>
-								
-								<!-- 计数 -->
-								<a class="counts" href="forum.php?mod=viewthread&tid=$thread[tid]">
-									<span class="replys">$thread[allreplies]</span>
-									<em>/</em>
-									<span class="views"><!--{if $thread['isgroup'] != 1}-->$thread[views]<!--{else}-->{$groupnames[$thread[tid]][views]}<!--{/if}--></span>
-								</a>
 
 								<!-- 头像 -->
 								<!-- <a class="avatar" href="home.php?mod=space&uid=$thread[authorid]" c="1"{if $groupcolor[$thread[authorid]]} style="color: $groupcolor[$thread[authorid]];"{/if}><img src="http://static.jx3pve.com/uc_server/avatar.php?uid=$thread[authorid]&size=small" /></a> -->
@@ -268,6 +261,13 @@
 
 							<!-- 作者 -->
 							<td class="author">
+								<!-- 计数 -->
+								<a class="counts" href="forum.php?mod=viewthread&tid=$thread[tid]">
+									<span class="replys">$thread[allreplies]</span>
+									<em>/</em>
+									<span class="views"><!--{if $thread['isgroup'] != 1}-->$thread[views]<!--{else}-->{$groupnames[$thread[tid]][views]}<!--{/if}--></span>
+								</a>
+								
 								发布：
 								<!--{hook/forumdisplay_author $key}-->
 								<!--{if $thread['authorid'] && $thread['author']}-->

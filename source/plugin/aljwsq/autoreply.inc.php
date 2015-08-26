@@ -29,7 +29,7 @@ if ($_GET['act'] == 'addautoreply') {
                 }
                 $rand = rand(100, 999);
                 $pics = date("YmdHis") . $rand . $type;
-                $img_dir = 'source/plugin/aljwsq/images/logo/';
+                $img_dir = 'http://img.jx3pve.com/source/plugin/aljwsq/images/logo/';
                 if (!is_dir($img_dir)) {
                     mkdir($img_dir);
                 }
@@ -105,7 +105,7 @@ if ($_GET['act'] == 'addautoreply') {
                 }
                 $rand = rand(100, 999);
                 $pics = date("YmdHis") . $rand . $type;
-                $img_dir = 'source/plugin/aljwsq/images/logo/';
+                $img_dir = 'http://img.jx3pve.com/source/plugin/aljwsq/images/logo/';
                 if (!is_dir($img_dir)) {
                     mkdir($img_dir);
                 }

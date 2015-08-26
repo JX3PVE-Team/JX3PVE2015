@@ -1,0 +1,83 @@
+.i-post-page{
+	padding-top:@top;
+}
+
+.i-post-header{
+	
+}
+
+.post_from,.post_msg_from{
+	padding:10px;
+
+	.px,.pt{
+		.fz(14px,2);
+		border:1px solid #ddd;
+		.r(4px);
+		padding:5px 10px;
+		box-sizing:border-box;
+		background-color:#fff;
+		&:focus{
+			box-shadow:0 0 2px #0cf inset;
+		}
+	}
+	.sel{
+		padding:10px 5px;
+		border:1px solid #ddd;.r(4px);
+		.fz(13px,2);
+		background-color:#fff;
+	}
+	.pt{
+		min-height:280px;	
+	}
+	.del{
+		background-color:#c00;.color(#fff);
+		.fz(12px,1.5);
+		padding:2px 5px;
+		.r(2px);
+	}
+	.pn{
+		.w(100%);.x;
+		box-sizing:border-box;
+	}
+
+	.m-primary-til{
+		color:#777;.bold;
+	}
+	.primary{
+		padding:0;
+		textarea{
+			padding:10px;
+			border:1px solid #ddd;.r(4px);
+			.fz(13px,2);
+			&:focus{
+				box-shadow:0 0 2px #0cf inset;
+			}
+		}
+	}
+
+	.attach{
+		margin-top:10px;
+	}
+
+	.bl_line{
+		padding:0;border-bottom:none;
+		margin-bottom:5px;
+	}
+
+	.tfm{
+		.table(block);
+		.fz(13px,2);
+		tr{
+			//border-bottom:1px solid #ddd;
+			padding:5px 0;
+		}
+		th{
+			color:#777;.bold;
+		}
+	}
+}
+
+.post_msg_from li, .post_from li{
+	.fz(13px,2);
+	padding:0;
+}

@@ -27,5 +27,21 @@
 		<span class="time"><em>发布时间：</em><b class="e-time">$thread[dateline]</b></span>
 		<span class="lastedit"><em>最后更新：</em><b class="e-time">$thread[lastedit]</b></span>
 		<span class="views"><em>查看数：</em>$_G[forum_thread][views]</span>
+
+		<!-- 只看作者 -->
+		<!--{if $post['invisible'] == 0}-->
+			<!--{if !IS_ROBOT && !$_GET['authorid'] && !$_G['forum_thread']['archiveid']}-->
+				<a class="only" href="forum.php?mod=viewthread&tid=$post[tid]&page=$page&authorid=$post[authorid]" rel="nofollow">{lang thread_show_author}</a>
+			<!--{elseif !$_G['forum_thread']['archiveid']}-->
+				<a class="only" href="forum.php?mod=viewthread&tid=$post[tid]&page=$page" rel="nofollow">{lang thread_show_all}</a>
+			<!--{/if}-->
+		<!--{/if}-->
+
+		<div id="fj" class="goto">
+			<label class="z">{lang thread_redirect_postno}</label>
+			<input type="text" class="px p_fre z" size="2" onkeyup="$('fj_btn').href='forum.php?mod=redirect&ptid=$_G[tid]&authorid=$_GET[authorid]&postno='+this.value" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" title="{lang thread_redirect_postno_tips}" />
+			<a href="javascript:;" id="fj_btn" class="z" title="{lang thread_redirect_postno_tips}"><img src="{IMGDIR}/fj_btn.png" alt="{lang thread_redirect_postno_tips}" class="vm" /></a>
+		</div>
+		
 	</div>
 </div>

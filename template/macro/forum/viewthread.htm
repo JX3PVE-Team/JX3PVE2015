@@ -72,7 +72,7 @@
 					</a><!--{/if}-->
 				<!--{/if}-->
 				<!--{if $allowpostreply && !$_G['forum_thread']['archiveid']}-->
-					<a class="u-btn-publish" id="post_reply" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}">
+					<a class="u-btn-publish u-btn-reply" id="post_reply" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}">
 						<span>回复</span>
 						<img src="{IMGDIR}/pn_reply.png" alt="{lang reply}" />
 					</a>
@@ -417,7 +417,7 @@
 					</a>
 				<!--{/if}-->
 				<!--{if $allowpostreply && !$_G['forum_thread']['archiveid']}-->
-					<a class="u-btn-publish" id="post_replytmp" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}">
+					<a class="u-btn-publish u-btn-reply" id="post_replytmp" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}">
 					<span>回复</span>
 					<img src="{IMGDIR}/pn_reply.png" alt="{lang reply}" />
 					</a>

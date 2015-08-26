@@ -1,0 +1,29 @@
+.about-container{
+	//背景
+	background:#f7f7f7;
+
+	@about-sidebar-w:280px;
+
+	.pvx-main{
+		.w(1180px);
+		padding:20px 0;
+		background: none;
+	}
+
+	.pvx-sidebar{
+		.w(@about-sidebar-w);
+	}
+
+	.pvx-content{
+		.fr;
+		.w(@wp - @about-sidebar-w - 40px);
+		background: none;
+	}
+
+	#threadlist{
+		background: none;
+	}
+
+	.w-pages-top,.w-category-nav,.w-order{.none;}
+	.w-pages .u-btn-publish{.none;}
+}

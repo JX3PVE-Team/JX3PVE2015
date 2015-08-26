@@ -1,0 +1,61 @@
+.m-about-member{
+	ul{
+		li{
+			.clearfix;
+			background-color:#f9f9f9;
+			padding:10px 20px;
+			border-radius:4px;
+			margin-bottom:30px;
+			border:1px solid #eee;
+
+			.author{
+				.fr;margin-left:20px;
+				.fz(13px,2);.x;
+				a{.db;}
+				.avt{
+					.db;
+					.size(80px,80px);.r(80px);
+					border:1px solid #eee;
+					padding:2px;
+				}
+				.avt img{
+					.db;.full;.r(80px);
+					border:none;padding:0;
+				}
+				&:hover .avt img{
+					animation:rotateRound 0.5s ease-in-out forwards;
+				}
+			}
+			.info{
+				.db;
+				letter-spacing:0.5px;
+				em{margin-right:10px;}
+				b{color:#666;}
+				.fz(12px,2.5);
+
+			}
+			.details{
+				.fz(12px,2);
+				color:#666;
+				.indent(24px);
+				padding:0 20px;
+			}
+		}
+	}
+	
+}
+
+.about-container{
+	.typeoption{
+		table{
+			.table(reset);
+		}
+		.fz(12px,2.5);
+	}
+	.m-author{
+		margin-bottom:20px;
+	}
+	.pvx-postbox{
+		background: none;
+	}
+}

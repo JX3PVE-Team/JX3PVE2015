@@ -1,33 +1,16 @@
 .bbs-listpage{
 	//列表页内容
 	.c-flist .c-flist-list tbody{
-		.h(60px);
-		tr{.h(60px);}
+		.h(68px);
+		tr{.h(68px);}
 		td,th{.fzlh(12px,30px);}
+		.pr;
 
 		.status,.reply{.db;}
 
 		.status{
-			.statu-icon{.fl;}
+			.statu-icon{.fl;.none;}
 			.clearfix;
-
-			.counts{
-				padding:2px 5px;
-				/*background: #0084ff;
-				color: #fff;*/
-				.tips(grays);
-				.fl;margin-left:5px;
-				margin-top:3px;
-				display: block;
-				height: 20px;
-				line-height: 20px;
-				.replys{
-					color:#09f;
-				}
-				.views{
-
-				}
-			}
 
 			.avatar{
 				margin-left:5px;
@@ -40,12 +23,36 @@
 			}
 		}
 
+		.article{
+			.fz(14px,18px);color:#222;
+		}
+
+		.counts{
+			.pa;.rt(0,0);
+			padding:2px 5px;
+			/*background: #0084ff;
+			color: #fff;*/
+			.tips(grays);
+			.fl;margin-left:5px;
+			margin-top:5px;
+			display: block;
+			height: 20px;
+			line-height: 20px;
+			.replys{
+				color:#09f;
+			}
+			.views{
+
+			}
+		}
+
 		.til{
 			margin-left:5px;
 			min-width: 600px;
 		}
 
 		.author{
+			//.color(#666,#666,#222);
 			.w(auto);
 			.clear(left);
 			.fl;.x(left);
@@ -56,7 +63,7 @@
 		}
 
 		.reply{
-			.fr;
+			.fr;//.color(#666,#666,#222);
 			//.color(#999,#999,#d05);
 			.reply-time{
 				color:#999;

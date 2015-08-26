@@ -15,7 +15,7 @@ foreach ($threads as $thread) {
     $tmp = $this->getnews($thread['tid'], $news);
     if (empty($i)) {
         if (empty($tmp['picurl'])) {
-            $tmp['picurl'] = 'source/plugin/aljwsq/images/default.jpg';
+            $tmp['picurl'] = 'http://static.jx3pve.com/img/m/banner/default.png';
         }
     }
     $items[] = $tmp;

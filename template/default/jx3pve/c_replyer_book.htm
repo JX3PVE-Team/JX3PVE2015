@@ -1,0 +1,20 @@
+<!-- PVX版回复信息卡 -->
+<div class="c-replyer">
+
+	<!-- 头像 -->
+	<a class="avatar" href="home.php?mod=space&uid=$post[authorid]" target="_blank">$post[avatar]</a>
+
+	<!-- 用户名 -->
+	<a class="name" href="home.php?mod=space&uid=$post[authorid]" target="_blank" class="xi2"{if $post[groupcolor]} style="color: $post[groupcolor]"{/if}>$post[author]</a>
+
+	<!-- 认证 -->
+	<span class="verif">$authorverifys</span>
+
+	<!-- 用户组 -->
+	<a class="usergroup u-group u-group-$post[groupid]" href="home.php?mod=spacecp&ac=usergroup&gid=$post[groupid]"><em id="u-usergroup-id">$post[groupid]</em></a>
+
+	<!-- 发布时间 -->
+	<span class="time"><em>POST ON</em>$post[dateline]</span>
+
+	<!--{hook/viewthread_postaction $postcount}-->
+</div>

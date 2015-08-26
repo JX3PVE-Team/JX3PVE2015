@@ -1,0 +1,154 @@
+.i-view-page{
+	padding-top:@top;
+}
+
+.postlist{
+	margin:0 10px;
+	padding:10px 0;
+	
+	//标题
+	.m-title{
+		margin:0;
+		.fz(16px,1.8);
+	}
+
+	//单楼
+	.c-fli{
+		margin-bottom:5px;
+		padding-bottom:5px;
+	}
+
+	//单楼头部
+	.c-fli-header{
+		.pr;
+		padding:6px 0 10px 50px;
+		.avatar{
+			.pa;.lt(2px,10px);
+		}
+		.authi{
+			em{.fr;}
+			.clearfix;
+		}
+	}
+
+	//单楼内容
+	.c-fli-content{
+		margin:0;
+		padding:0;
+
+		.message{
+			img{
+				max-width:100% !important;
+				max-height:100% !important;
+			}
+
+			.showhide{
+				border:1px dashed @blue;
+				padding:5px;
+				h4{
+					.fz(12px,2);color:@blue;
+					a{color:#c00;text-decoration:underline;}
+				}
+			}
+			.locked{
+				border:1px dashed @blue;
+				padding:5px;
+				.fz(12px,2);color:@blue;
+				a{color:#c00;text-decoration:underline;}
+			}
+		}
+	}
+}
+
+//分类信息
+.i-sort{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	.i-sort-label{
+		color:#3361a7;
+		.fz(12px,2);
+		.bold;
+	}
+	.i-sort-value{
+
+	}
+}
+
+//信息
+.pstatus{
+	.db;
+	.fz(12px,2);
+	color:#c00;
+	.x;
+}
+
+.i-scrolltop{
+	.db;.pf;.rb(8px,8px);.z(100);
+	.size(38px);
+	background: rgba(64, 64, 64, .9);
+	border-radius: 1px;
+	box-shadow: 0 0 2px rgba(0,0,0,.3);
+	transform:rotate(180deg);
+	&.bot{
+		transform:rotate(0);
+	}
+
+	&:before{
+	  	content: "";
+		position: absolute;
+		top: 15px;
+		left: 10px;
+		display: inline-block;
+		border-left: 9px solid transparent;
+		border-right: 9px solid transparent;
+		border-bottom: 9px solid white;
+		border-top: 0;
+		-webkit-transform: scale(1,1.2222);
+		-webkit-transform: translate(0,1px);
+		transform: scale(1,1.2222);
+		transform: translate(0,1px);
+	}
+	&:after{
+		content: "";
+		position: absolute;
+		top: 11px;
+		left: 10px;
+		width: 18px;
+		height: 3px;
+		border-radius: 1px;
+		background: white;
+		border-radius: 1px;
+	}
+}
+
+//附件展示
+.i-attachshow{
+	.none;
+	.full;.pf;.lt(0,0);.z(200);
+	background-color:rgba(0,0,0,.56);
+
+	.close{
+		.pa;.rt(5%,5%);color:#fff;
+		border:1px solid #ccc;
+		background-color:rgba(0,0,0,.2);
+		padding:0 10px;
+		border-radius:4px;
+	}
+
+	.i-attachshow-box{
+		border:1px solid rgba(255,255,255,0.2);
+		.size(100%,300px);
+		box-sizing:border-box;
+		.pa;.lt(0,15%);
+		overflow:auto;
+	}
+}
+
+
+html.attachfix{
+	.full;.clip;
+	body{
+		.full;.clip;
+	}
+}

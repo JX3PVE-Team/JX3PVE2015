@@ -1,0 +1,195 @@
+/*
+ * Name: base-bak.less
+ * Description: 旧base被移除部分备用
+ * Creator: iRuxu
+ * Modify: iRuxu
+ * Update: 2015-4-5
+ */
+
+ 
+    
+//颜色
+
+    //局部定义a状态及a:hover时颜色
+    .acolor(@acolor,@ahovercolor:@acolor){
+        a{color:@acolor;}
+        a:hover{color:@ahovercolor;}
+    }
+    .acolors(@color,@acolor:@color,@ahovercolor:@acolor){
+        color:@color;
+        a{color:@acolor;}
+        a:hover{color:@ahovercolor;}
+    }
+
+    .nowrap(){//总是显示文字
+        white-space:nowrap;word-break:keep-all;overflow:visible; 
+    }
+
+    //inline-block布局替代float - 不确定元素（IE9+）
+    .iblocks(){font-size:0;white-space:nowrap;overflow:visible;
+        &>*{.dbi;.y(top);font-size:12px;white-space:normal;}
+    }
+
+
+//table-cell布局（不兼容IE6）
+    .cell(){display:table-cell;*display:inline-block;}
+    .cell(x){display:table-cell;width:5000px;*width:auto;*zoom:1;} //自适应宽
+    .cell(y){display:table-cell;*margin-bottom:-5000px;*padding-bottom:5000px;*float:left;} //等高布局
+
+ //字体修饰
+    .line(){text-decoration:underline;}
+    .line(no){text-decoration:none;}
+
+//通用排列 - 顶部
+    .ib(){.dbi;.y(top);}
+    //icon排列 - 文字底部
+    .icons(){.dbi;.y(text-bottom);}
+    //混合排列 - 居中
+    .im(){.dbi;.y(middle);}
+
+    .ct(m){display:-webkit-box;-webkit-box-align:center;}
+    .ct(x,pr,@width){width:unit(@width,px);position:relative;left:50%;@xmargin:unit(@width/2,px);margin-left:-@xmargin;} //占位居中移动
+
+    
+//多列
+    .cols(@width; @count; @gap) {
+      -webkit-column-width: @width;
+         -moz-column-width: @width;
+              column-width: @width;
+      -webkit-column-count: @count;
+         -moz-column-count: @count;
+              column-count: @count;
+      -webkit-column-gap: @gap;
+         -moz-column-gap: @gap;
+              column-gap: @gap;
+    }
+
+.ts3d(){
+        -webkit-backface-visibility:hidden;
+        -webkit-transform-style:preserve-3d;
+    }
+
+
+//Image
+//--------------------------------------------------------------
+
+    //满屏背景 - 添加到html元素上,背景图请作为body的第一个元素。
+        .fullscreen(){.full;overflow:hidden;}
+        .fix-bg(...){
+            .fullscreen;
+            body,.bg{.fullscreen;}
+            .bg{.fullscreen;.pa;.z(-100);}
+        }
+        .fix-bg(auto,x){
+            .bg img{width:100%;height:auto;}
+        }
+        .fix-bg(auto,y){
+            .bg img{height:100%;width:auto;}
+        }
+        .fix-bg(full){
+            .bg img{.full;}
+        }
+
+
+    //背景属性补充简写
+    .bgc(@background-color){background-color:@background-color;}
+    .bgs(@background-size){background-size:@background-size;}
+    .bgr(){background-repeat:repeat;}
+    .bgr(no){background-repeat:no-repeat;}
+    .bgr(x){background-repeat:repeat-x;}
+    .bgr(y){background-repeat:repeat-y;}
+
+//Other
+//--------------------------------------------------------------
+
+    //border 上下边框
+    .bo(x,@x){border-top:@x;border-bottom:@x;}
+    .bo(y,@y){border-left:@y;border-right:@y;}
+    .bo(l,@l){border-left:@l;}
+    .bo(r,@r){border-right:@r;}
+    .bo(t,@t){border-top:@t;}
+    .bo(b,@b){border-bottom:@b;}
+    .bo(o,@o){border:@o;}
+
+    //margin 外边距
+    .ml(@ml){margin-left:@ml;}
+    .mr(@mr){margin-right:@mr;}
+    .mt(@mt){margin-top:@mt;}
+    .mb(@mb){margin-bottom:@mb;}
+
+    .m(o,@num){margin:@num;}
+    .m(x,@num){margin-left:@num;margin-right:@num;}
+    .m(y,@num){margin-top:@num;margin-bottom:@num;}
+    .m(l,@num){margin-left:@num;}
+    .m(r,@num){margin-right:@num;}
+    .m(t,@num){margin-top:@num;}
+    .m(b,@num){margin-bottom:@num;}
+
+    //padding 内边距
+    .p(o,@num){padding:@num;}
+    .p(x,@num){padding-left:@num;padding-right:@num;}
+    .p(y,@num){padding-top:@num;padding-bottom:@num;}
+    .p(l,@num){padding-left:@num;}
+    .p(r,@num){padding-right:@num;}
+    .p(t,@num){padding-top:@num;}
+    .p(b,@num){padding-bottom:@num;}
+
+    //圆角
+    .r(lt,@radius){border-top-left-radius:@radius;}
+    .r(rt,@radius){border-top-right-radius:@radius;}
+    .r(lb,@radius){border-bottom-left-radius:@radius;}
+    .r(rb,@radius){border-bottom-right-radius:@radius;}
+
+
+//占位符提示文字
+    .tips(@color,@fz,@lh:1,@align:left){
+        &:-moz-placeholder {
+            color: @color;
+            font-size:@fz;
+            line-height:@lh;
+            text-align:@align;
+        }
+        &:-ms-input-placeholder {
+            color: @color;
+            font-size:@fz;
+            line-height:@lh;
+            text-align:@align;
+        }
+        &::-webkit-input-placeholder {
+            color: @color;
+            font-size:@fz;
+            line-height:@lh;
+            text-align:@align;
+        }
+    }
+
+    //input text 占位符提示组合，第一个值为默认颜色，第二个值为焦点色，第三个值为输入文字的颜色
+    .txt-tips(@a,@b,@c){
+        &:-moz-placeholder {
+            color: @a;
+        }
+        &:-ms-input-placeholder {
+            color: @a;
+        }
+        &::-webkit-input-placeholder {
+            color: @a;
+        }
+
+        &:focus{
+            &:-moz-placeholder {
+                color: @b;
+            }
+            &:-ms-input-placeholder {
+                color: @b;
+            }
+            &::-webkit-input-placeholder {
+                color: @b;
+            }
+        }
+        color:@c;
+    }
+
+//鼠标默认
+.cursor{
+  cursor: default;
+}

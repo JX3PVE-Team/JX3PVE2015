@@ -604,6 +604,8 @@ if($_G['fid']==283)
 	$_G['tpp'] = 24;
 if($_G['fid']==390)
 	$_G['tpp'] = 20;
+if($_G['fid']==392)
+	$_G['tpp'] = 8;
 if($filter != 'hot' && @ceil($_G['forum_threadcount']/$_G['tpp']) < $page) {
 	$page = 1;
 }

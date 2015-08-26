@@ -1,21 +1,30 @@
 .book-viewpage{
 	.pvx-title{
 		.u-sort{.none;}
+		.only{
+			background-color:#c00;color:#fff;padding:2px 5px;.r(4px);
+			&:hover{
+				background-color:#f00;
+			}
+		}
+		.goto{
+			.fr;
+		}
 	}
-	.c-fli-pvx-first{
-		.m-author{.none;}
+	.m-book-copyright{
+		padding: 5px;
+		border: 1px solid #eee;
+		background: #f8f8f8;
+		border-radius: 4px;
+		margin: 10px 0;
+		text-align: right;
+		color: #888;
 	}
 	.w-pages-top{
 		.none;
 	}
-	//管理
 	.w-post-adminbar{
 		.none;
-	}
-
-	.pvx-main{
-		.pr;
-		border-radius:0 6px 6px 6px;
 	}
 	.pvx-sidebar{
 		.none;
@@ -35,26 +44,38 @@
 			background-color:darken(#D5FAFF,2%);
 		}
 	}
+	.pvx-main{
+		.pr;.w(@wp - 200px - 20px*2);
+		border-radius:0 6px 6px 6px;
+		left:100px;
+	}
 	.pvx-content{
-		.w(920px);
+		.w(auto);float:none;
+	}
+	.m-custominfo{
+		.pa;.lt(-220px,-20px);
+		.w(200px - 20px*2);
+		margin:20px;
+		padding:20px;
+		background-color:#f7f7f7;
+		.r(4px 0 0 4px);
+
+		.m-book-view{
+			.ps;
+			padding:0;
+			margin:0;
+			.w(auto);
+			background: none;
+		}
+	}
+	.u-msg-replytip{
+		.banner{.none;}
+	}
+	.m-author{
+		margin:0 0 10px 10px;
 	}
 }
 
-.m-custominfo{
-	.pa;.rt(0,0);
-	.w(200px - 20px*2);
-	margin:20px;
-	padding:20px;
-	background-color:#f7f7f7;
-
-	.m-book-view{
-		.ps;
-		padding:0;
-		margin:0;
-		.w(auto);
-		background: none;
-	}
-}
 .m-book-view{
 	.pa;.rt(0,0);
 	.w(200px - 20px*2);

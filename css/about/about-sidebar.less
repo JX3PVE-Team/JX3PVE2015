@@ -1,0 +1,43 @@
+.m-about-logo{
+    .m-logo{
+        .db;.size(100%,100px);
+        background:url('@{url}about/logo.png') no-repeat center center;
+        .indent;
+    }
+}
+
+.about-container{
+    .pvx-header{.none;}
+}
+
+.m-about-nav{
+    ul {
+        //.bo(x, 2px solid #545454);
+        border-top:2px solid #545454;
+        li {
+            .size(100%, 88px);
+            .bo(b, 1px solid #ddd);
+            * {
+                .db;
+            }
+            a {
+                .x;
+                .size(100%, 48px);
+                .p(y, 20px);
+                .color(#333);
+                transition:0.2s ease-in-out;
+                &:hover,&.on{
+                    .color(#E182C3);
+                    //background-image: url('@{url}about/bg.png');
+                }
+                b {
+                    .fz(18px, 24px);
+                }
+                span {
+                    .fz(12px, 24px);
+                }
+            }
+        }
+    }
+}
+

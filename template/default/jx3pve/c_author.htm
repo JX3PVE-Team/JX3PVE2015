@@ -44,15 +44,6 @@
 	<!-- 用户DIY扩展信息 -->
 	<div class="diyinfo">{eval viewthread_profile_node('left', $post);}</div>
 
-	<!-- 只看作者 -->
-	<!--{if $post['invisible'] == 0}-->
-		<!--{if !IS_ROBOT && !$_GET['authorid'] && !$_G['forum_thread']['archiveid']}-->
-			<a class="only" href="forum.php?mod=viewthread&tid=$post[tid]&page=$page&authorid=$post[authorid]" rel="nofollow">{lang thread_show_author}</a>
-		<!--{elseif !$_G['forum_thread']['archiveid']}-->
-			<a class="only" href="forum.php?mod=viewthread&tid=$post[tid]&page=$page" rel="nofollow">{lang thread_show_all}</a>
-		<!--{/if}-->
-	<!--{/if}-->
-
 	<!-- 电梯直达 -->
 	<!--{if !$postcount && !$_G['forum_thread']['archiveid'] && $post['first'] }-->
 	<div id="fj" class="goto m-fj">

@@ -1,0 +1,23 @@
+<div class="m-about-member">
+	<ul>
+	[loop]
+		<li>
+			<a class="none" href="{subject_url}">{subject}</a>
+			<span class="author">
+				<a class="avt" href="{author_url}"><img src="{avatar_small}" alt=""></a>
+				<a class="name" href="{author_url}">{author}</a>
+			</span>
+			<span class="info">
+				<em class="role"><b>职位：</b>{join_role_value}</em>
+				<em class="area1"><b>主辖：</b>{join_main_value}</em>
+				<em class="area2"><b>副辖：</b>{join_other_value}</em>
+				<em class="time"><b>加入时间：</b>{join_date_value}</em>
+				<em class="email"><b>email：</b>{join_email_value}</em>
+			</span>
+			<span class="details">
+				{join_about_value}
+			</span>
+		</li>
+	[/loop]
+	</ul>
+</div>

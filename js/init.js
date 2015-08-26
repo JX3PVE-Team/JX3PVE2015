@@ -13,7 +13,7 @@ H.load([
 	{'postdate':head_conf.CDNROOT+'mod/postdate.js'},
 	{'oldfb':head_conf.CDNROOT+'mod/oldfb.js'},
 	{'custombg':head_conf.CDNROOT+'mod/custombg.js'},
-	{'header':head_conf.CDNROOT+'mod/header.js'},
+	{'header':head_conf.ROOT+'mod/header.js'},
 	{'bbs':head_conf.CDNROOT+'mod/bbs.js'},
 	{'widget':head_conf.CDNROOT+'mod/widget.js'}
 ])

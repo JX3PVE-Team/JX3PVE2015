@@ -1,0 +1,33 @@
+<div class="m-about-join">
+	<ul>
+		<li class="th">
+			<span class="default">
+				<span class="role">岗位</span>
+				<span class="channel">栏目</span>
+				<span class="date">发布日期</span>
+				<span class="sms">在线留言</span>
+				<span class="email">邮件</span>
+				<span class="go"></span>
+			</span>
+		</li>
+	[loop]
+		<li>
+			<a class="none" href="{subject_url}">{subject}</a>
+			<span class="default">
+				<span class="role">{join_role_value}</span>
+				<span class="channel">{join_main_value}</span>
+				<span class="date">{join_date2_value}</span>
+				<a class="sms" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{join_contactid_value}&touid={join_contactid_value}&pmid=0&daterange=1" onclick="showWindow('sendpm', this.href);" title="发消息"><i></i>发消息</a>
+				<span class="email">{join_email_value}</span>
+				<a class="go" href="javascript:void(0)">详情</a>
+			</span>
+			<span class="details">
+				{join_works_value}
+			</span>
+		</li>
+	[/loop]
+	</ul>
+</div>
+
+
+

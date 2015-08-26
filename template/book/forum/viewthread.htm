@@ -37,18 +37,16 @@
 <div class="pvx-main">
 	
 	<!-- jx3pve:tg sidebar -->
-	<div class="pvx-sidebar-tg" id="pvx-sidebar-tg"><em>展开</em>侧边栏</div>
+	<!-- <div class="pvx-sidebar-tg" id="pvx-sidebar-tg"><em>展开</em>侧边栏</div> -->
 
 	<!-- jx3pve:sidebar -->
-	<div class="pvx-sidebar">
-		<!--{subtemplate forum/sidebar}-->
-	</div>
+	<!-- <div class="pvx-sidebar"></div> -->
 
 	<!-- jx3pve:content -->	
 	<div class="pvx-content">
 
 		<!-- jx3pve:article -->	
-		<div class="pvx-article " id="ct">
+		<div class="pvx-article" id="ct">
 
 			<!-- dz:w-pages -->
 			<div id="pgt" class="w-pages w-pages-top pgs mbm cl {if $modmenu['thread']}pbm bbs{/if}">
@@ -179,6 +177,9 @@
 
 				<!-- jx3pve:pvx-title -->
 				<!--{subtemplate jx3pve/c_portal_title}-->
+
+				<!-- jx3pve:copyright -->
+				<div class="m-book-copyright"><!--{block/1311}--></div>
 
 				<table class="none" cellspacing="0" cellpadding="0">
 					<tr>
@@ -355,10 +356,6 @@
 					<!--{if $post[first]==1}-->
 					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 						<!--{subtemplate forum/viewthread_node_first}-->
-						<!-- ad -->
-						<!--{subtemplate jx3pve/c_banner_a}-->
-						<!-- cmt title -->
-						<div class="m-cmt-title">评论<span>COMMENT</span></div>
 					</div>
 					<!--{else}-->
 					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
@@ -379,9 +376,6 @@
 				<!--{/if}-->
 			</div>
 
-			<!-- jx3pve:tips & folder list -->
-			<!--{subtemplate jx3pve/u_msg_posttips}-->
-	
 			<!-- dz:admin bar -->
 			<!--{if $modmenu['thread']}-->
 				<div class="w-post-adminbar w-post-adminbar-bottom xi2 mbm pbm bbs">
