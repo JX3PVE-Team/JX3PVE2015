@@ -1,23 +1,21 @@
-<div id="comment" class="c-cmt bm portal-cmt">
-	<div class="c-cmt-header bm_h cl">
+<div id="comment" class="bm fb-comment">
+	<div class="bm_h cl">
 		<!--{if $data[commentnum]}--><a href="$common_url" class="xi2 fr">{lang view_all_comments}(<em id="_commentnum">$data[commentnum]</em>)</a><!--{/if}-->
 		<h3 class="portal-pbcmt">发表评论</h3>
 	</div>
-	<div class="c-cmt-top bm_c" id="comment_ul">
+	<div id="comment_ul" class="bm_c">
 		<!--{if !$data[htmlmade]}-->
 			<form id="cform" name="cform" action="$form_url" method="post" autocomplete="off">
-				
-				<div class="c-cmt-avt portal-cmtavt">
-					<a href="http://www.jx3pve.com/home.php" title="{lang myos}">
-						<img class="portal-cmtavt-me" src="http://www.jx3pve.com/uc_server/avatar.php?uid=$_G[uid]&size=big" />
-					</a>
+				<div class="portal-cmtavt">
+				<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=jx3" title="{lang myos}"><img class="portal-cmtavt-me" src="http://www.jx3pve.com/uc_server/avatar.php?uid=$_G[uid]&size=big" /></a>
+				<span><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup&do=list">$_G[groupicon]</a></span>
 				</div>
-
-				<div class="c-cmt-textarea tedt portal-cmtbox">
+				<div class="tedt portal-cmtbox">
 					<div class="area">
 						<textarea name="message" class="portal-cmtarea" rows="3" class="pt" id="message" onkeydown="ctrlEnter(event, 'commentsubmit_btn');"></textarea>
 					</div>
 				</div>
+				<div class="clear"></div>
 				<!--{if $secqaacheck || $seccodecheck}-->
 					<!--{block sectpl}--><sec> <span id="sec<hash>" onclick="showMenu(this.id);"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div><!--{/block}-->
 					<div class="mtm"><!--{subtemplate common/seccheck}--></div>
@@ -35,16 +33,13 @@
 				<input type="hidden" name="formhash" value="{FORMHASH}">
 				<input type="hidden" name="replysubmit" value="true">
 				<input type="hidden" name="commentsubmit" value="true" />
-
 				<p class="ptn">
-					<button class="c-cmt-pub portal-cmbt" type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true">发布</button>
+				<button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="portal-cmbt">  </button>
+				<div class="clear"></div>
 				</p>
 			</form>
 		<!--{/if}-->
-
-	</div>
 		
-	<div class="c-cmt-content">
 		<!--{loop $commentlist $comment}-->
 		<!--{template portal/comment_li}-->
 		<!--{if !empty($aimgs[$comment[cid]])}-->
@@ -55,5 +50,6 @@
 			<p class="mtn mbn y">{lang hide_portal_comment}</p>
 		<!--{/if}-->
 		<!--{if $data[commentnum]}--><p class="ptm pbm"><a href="$common_url" class="xi2">{lang view_all_comments}(<em id="_commentnum">$data[commentnum]</em>)</a></p><!--{/if}-->
-	</div>	
+		
+	</div>
 </div>

@@ -1,0 +1,237 @@
+.fb-content{
+	.m-block{
+		.clear;
+		background-color:#fff;
+		.r(4px);
+		margin-bottom:20px;
+
+		&.folder{
+			h2{
+				.r(4px);
+			}
+			h2 i{
+				background-position:0 0;
+			}
+			.m-ct{
+				.none;
+			}
+		}
+	}
+
+	h2{
+		.pr;
+		.fz(13px,3);.bold;
+		padding:0 10px;
+		border-bottom:1px solid #ddd;
+		background-color:#f7f7f7;
+		.r(4px 4px 0 0);
+		span{
+			color:#888;
+			.fz(12px);
+			margin-left:10px;
+			.normal;
+		}
+		i{
+			.pa;.rt(10px,5px);
+			.size(24px);
+			.db;
+			background:url('@{url}fb/arrow.png') no-repeat 0 -24px;
+			.pointer;
+			user-select:none;
+		}
+	}
+
+	.m-ct{
+		padding:10px;
+		.color(#666,@bluex,#c00);
+		.fz(12px,2);
+		min-height:100px;
+		.clearfix;
+	}
+
+	h3{
+		color:#444;
+	}
+
+	h3 i{
+		.size(16px);.dbi;.y(-3px);margin-right:3px;
+	}
+
+	.m-tabbox{
+		.navbox{
+			.clearfix;
+			border:1px solid #ddd;
+			li{
+				.fl;border-right:1px solid #ddd;
+				padding:3px 8px;.pointer;
+				&.on,&:hover{
+					background-color:#f2f2f2;
+					.bold;
+				}
+				&.on{
+					color:#444;
+					&:hover{
+						color:#444;
+					}
+				}
+				&:hover{
+					color:#c00;
+				}
+				user-select:none;
+			}
+		}
+		.ctbox{
+			.ctbox-item{
+				padding:10px;
+			}
+		}
+	}
+
+	table{
+		border-color:#ccc;
+		color:#555;
+		td,th{
+			.fz(12px,2);
+			padding:2px 5px;
+		}
+	}
+
+	/*最新改动*/
+	.m-fb-news{
+		.m-news{
+			.fl;
+			.w(460px);
+			h3{
+				.bold;.fz(12px,2.5);
+				border-bottom:1px dotted #ddd;margin-bottom:5px;
+			}
+			.m-gaidong{
+				margin-bottom:20px;
+				h3 i{
+					background:url('@{url}fb/news.png') no-repeat 0 0;
+				}
+				.edit{
+					.fr;.pointer;color:#000;
+					i{
+						background:url('@{url}fb/edit.png') no-repeat 0 0;
+					}
+				}
+			}
+			.m-peizhi{
+				h3 i{
+					background:url('@{url}fb/group.png') no-repeat 0 0;
+				}
+				/*background:url('@{url}fb/peizhi.png') no-repeat 10px 10px;
+				min-height:84px;
+				padding-left:150px;*/
+			}
+		}
+		.m-jieshuo{
+			.fr;
+			.w(400px);
+			min-height:300px;
+			padding:0px 10px 10px 10px;
+			border:1px solid #ddd;.r(2px);
+			background:url('@{url}header/jx3pve-logo-white.png') #f2f2f2 no-repeat center center;
+			h3{
+				.x;.bold;
+				.fz(13px,2.5);
+				i{
+					background:url('@{url}fb/tv.png') no-repeat 0 center;
+					.y(-1px);
+				}
+				.more{
+					margin-left:5px;
+				}
+			}
+		}
+	}
+
+	/*精华攻略*/
+	.m-fb-gl{
+	}
+
+	/*全部攻略*/
+	.m-fb-allgl{
+		ul{}
+		li{
+			border-bottom:1px dashed #ddd;
+			padding:3px 0;
+			&:hover{
+				background-color:#f9f9f9;
+			}
+		}
+		a{
+			.db;
+			.color(#369,#c00);
+			.avt{
+				.size(28px);.r(28px);.y;
+				margin-right:3px;
+			}
+			.stars{
+				.fr;
+				margin-right:5px;
+				margin-top:5px;
+			}
+
+			.time{
+				.fr;color:#999;
+			}
+		}
+		.m-more{
+			.db;.fz(13px,2);.x;
+			padding-bottom:10px;
+			color:#222;
+			&:hover{
+				color:#369;
+			}
+			i{
+				.dbi;.size(24px);.y(-7px);margin-right:5px;
+				background:url('@{url}fb/more.png') no-repeat 0 0;
+			}
+		}
+	}
+
+	/*评论*/
+	#comment{
+		
+	}
+
+	/*壁纸*/
+	.m-fb-wall{
+		ul{
+			.clearfix;
+		}
+		li{
+			.fl;margin-right:10px;
+			background-color:#fff;
+			border:1px solid #ddd;
+			padding:5px;
+		}
+		a{
+			.db;.pr;
+			max-width:260px;
+			img{
+				.db;
+				.full(x);
+			}
+			.mask{
+				.pa;.lt(0,0);.full;
+				.tb(0,0,0,.5);.none;
+			}
+			em{
+				.x;.color(#fff);
+				.fzlh(13px,20px);
+				.ct(y,20px);.size(100%,20px);
+				left:0;.none;
+			}
+			&:hover{
+				.mask,em{
+					.db;
+					animation:fadeIn 0.3s ease-in-out forwards;
+				}
+			}
+		}
+	}
+
+}

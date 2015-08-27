@@ -1,0 +1,58 @@
+.fb-header{
+
+	.size(100%,120px);
+	.pr;
+
+	.m-fb-logo{
+		.pa;.lt(0,0);
+		.size(@fb-logo-w,100%);
+		.til{
+			.fz(52px);
+		}
+	}
+
+	.m-fb-nav{
+		.fr;
+		margin-left:@fb-logo-w + 20px;
+		background-color:#fff;
+		border:1px solid #eee;
+		.r(2px);
+		.h(100px);padding:10px 10px;
+
+		ul{.clearfix;}
+		li{.fl;margin:0 10px;}
+		a{
+			.db;
+			.boss{
+				background-repeat:no-repeat;
+				background-position:0 0;
+				.db;.size(@fb-boss-size);
+				border:2px solid #eee;
+				box-shadow:0 0 2px #ddd;
+				.shark();
+			}
+			span{
+				.db;.x;
+				.fz(13px,2);.bold;
+				transition:0.1s ease-in-out;
+			}
+			&:hover,&.on{
+				.boss{
+					border-color:#FDC205;
+				}
+				span{
+					color:#c00;
+				}
+			}
+		}
+
+		.bossnav(@n,@i:1) when (@i =< @n) {
+			.boss-@{i} i{
+				background-position:-@fb-boss-size*(@i - 1) 0;
+			}
+			.bossnav(@n,(@i + 1));
+		}
+		.bossnav(20);
+	}
+
+}

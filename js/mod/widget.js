@@ -40,6 +40,9 @@ H.ready(['jquery'], function(){
         $star.each(function(){
             var num = parseInt($(this).text())
             switch(num){
+                case num>100:
+                    $(this).addClass('w-hotstar-2')
+                    break;
                 case num>200:
                     $(this).addClass('w-hotstar-2')
                     break;
@@ -47,9 +50,6 @@ H.ready(['jquery'], function(){
                     $(this).addClass('w-hotstar-2')
                     break;
                 case num>1000:
-                    $(this).addClass('w-hotstar-2')
-                    break;
-                case num>2000:
                     $(this).addClass('w-hotstar-2')
                     break;
                 default:

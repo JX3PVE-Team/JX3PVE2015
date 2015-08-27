@@ -1,0 +1,131 @@
+.fb-sidebar{
+	h2{
+		.color(#997d1d);//.x;
+		border-bottom:1px solid #ddd;
+		.fz(13px,3);.bold;
+		letter-spacing:0.5px;
+		margin-bottom:10px;
+		.indent(5px);
+		.pr;
+		//background:url('@{url}fb/h2.png') no-repeat center bottom;
+	}
+}
+
+.m-fb-toplist{
+	margin-bottom:10px;
+}
+
+.c-toplist{
+	li{}
+	a{
+		.db;
+		.nobreak;
+		.fz(12px,2);
+		span{
+			//color:#ff9;//.bold;
+			color:#666;//.bold;
+			em{
+				.normal;
+				margin-left:5px;
+				font-size:8px !important;
+				color:#999;
+				font-family:'minifont',Verdana,Arial,Consolas,'Trebuchet MS';
+			}
+		}
+		.icon{
+			.dbi;.fl;.pr;
+			//background-color:#eee;color:#888;
+			.indent;
+			.size(25px);.r(30px);.y;
+			margin:0 5px 0 0;
+			.x;.fz(12px,20px);
+			transition:0.1s ease-in-out;
+		}
+		&:hover{
+			span{
+				color:#c00;
+				em{
+					color:#666;
+				}
+			}
+		}
+	}
+	.top-1,.top-2,.top-3{
+		.icon{
+			transition:0.1s ease-in-out;
+			color:#997d1d;
+			background:url('@{url}fb/toplist-s.png') no-repeat 0 0;
+			.pr;.clip;
+			.shark{
+				.db;.pa;.lt(-150%,0);.full;
+		        transform: skewx(-25deg);
+		        background-image: -webkit-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));
+		    }
+		}
+		a:hover{
+			.icon{
+				-webkit-filter:brightness(120%);
+			}
+			.icon .shark{
+		        left: 150%;
+		        transition: .5s;
+		    }
+		}
+	}
+	.top-1{
+		.icon{background-position: 0 0;}
+	}
+	.top-2{
+		.icon{background-position:-26px 0;}
+	}
+	.top-3{
+		.icon{background-position:-52px 0;}
+	}
+
+}
+
+.fb-sidebar{
+	.pub-jiebao{
+		.h(20px);.pa;.rt(0,10px);
+		.db;padding-left:35px;
+		transition:0.1s ease-in-out;
+
+		background:url('@{url}fb/juanzhou-s.png') #fff no-repeat 10px 0;
+		span{
+			.db;letter-spacing:0;
+			.fz(12px,22px);color:#c00;
+		}
+
+		&:hover{
+			background:url('@{url}fb/juanzhou2-s.png') #fff no-repeat 10px 0;
+			span{color:#f00;}
+		}
+		
+	}
+}
+
+.m-fb-share{
+	.bdsharebuttonbox{
+		margin:10px auto;
+		.w(186px);
+	}
+}
+
+.m-fb-author{
+	.pr;
+	.fz(12px,2);
+	background-color:#fff;
+	/*h2{
+		.pa;.lt(10px,-15px);
+		.fz(13px,30px);
+		//background-color:#555;color:#fff;
+		background-color:#fff;color:#997d1d;
+		.r(4px);
+		padding:0 8px;
+		.bold;
+	}*/
+	p{
+		padding:0 8px;
+		span{color:#666;}
+	}
+}
