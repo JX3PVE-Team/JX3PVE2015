@@ -228,13 +228,6 @@
 								
 							</h1>
 							<span class="xg1">
-								<!--{if $_G['forum_thread'][displayorder] == -2}-->({lang moderating})
-								<!--{elseif $_G['forum_thread'][displayorder] == -3}-->({lang have_ignored})
-								<!--{elseif $_G['forum_thread'][displayorder] == -4}-->({lang draft})
-									<!--{if $post['first'] && $post['invisible'] == -3}-->
-										<a class="psave" href="forum.php?mod=misc&action=pubsave&tid=$_G[tid]">{lang published}</a>
-									<!--{/if}-->
-								<!--{/if}-->
 								<!--{if $_G['setting']['threadhidethreshold'] && $_G['forum_thread']['hidden'] >= $_G['setting']['threadhidethreshold']}-->						
 									<!--{if $_G['forum_thread']['authorid'] == $_G['uid']}--><a class="psave" id="hiderecover" title="{lang hiderecover_tips}" href="forum.php?mod=misc&action=hiderecover&tid=$_G[tid]&formhash={FORMHASH}" onclick="showWindow(this.id, this.href, 'get', 0);">{lang hidden}</a><!--{else}-->({lang hidden})<!--{/if}-->
 									&nbsp;

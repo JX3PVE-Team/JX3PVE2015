@@ -1,5 +1,14 @@
 <div class="pvx-title">
 	<div class="m-title">
+		<span class="sp">
+		<!--{if $_G['forum_thread'][displayorder] == -2}-->({lang moderating})
+		<!--{elseif $_G['forum_thread'][displayorder] == -3}-->({lang have_ignored})
+		<!--{elseif $_G['forum_thread'][displayorder] == -4}-->({lang draft})
+			<!--{if $post['first'] && $post['invisible'] == -3}-->
+				<a class="psave" href="forum.php?mod=misc&action=pubsave&tid=$_G[tid]">{lang published}</a>
+			<!--{/if}-->
+		<!--{/if}-->
+		</span>
 		<a href="forum.php?mod=viewthread&tid=$_G[tid]$fromuid">$_G[forum_thread][subject]</a>
 	</div>
 	<div class="m-info">

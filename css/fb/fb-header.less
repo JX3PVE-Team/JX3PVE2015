@@ -1,19 +1,27 @@
 .fb-header{
-
-	.size(100%,120px);
+	@h:120px;
+	.size(100%,@h);
 	.pr;
 
 	.m-fb-logo{
 		.pa;.lt(0,0);
-		.size(@fb-logo-w,100%);
+		.h(100%);
+		//padding:0 20px;
+		.x;
 		.til{
-			.fz(52px);
+			.db;.fl;
+			.fz(52px,@h);
+			.size(240px,100%);
+		}
+		.name{
+			.db;.fl;
+			.fz(24px);
+			em{.db;}
 		}
 	}
 
 	.m-fb-nav{
 		.fr;
-		margin-left:@fb-logo-w + 20px;
 		background-color:#fff;
 		border:1px solid #eee;
 		.r(2px);
@@ -31,13 +39,29 @@
 				box-shadow:0 0 2px #ddd;
 				.shark();
 			}
+			&.goback{
+				i{
+					.db;.h(80px);
+				}
+			}
+			&.goback-1{
+				i{border:2px solid #FDC205;}
+				span{color:#222;}
+			}
+			&.goback-2{
+				i{
+					border:2px solid #eee;
+					background:url('@{url}fb/fb.png') no-repeat 0 0;
+					.size(@fb-boss-size);
+				}
+			}
 			span{
 				.db;.x;
 				.fz(13px,2);.bold;
 				transition:0.1s ease-in-out;
 			}
 			&:hover,&.on{
-				.boss{
+				.boss,.sc{
 					border-color:#FDC205;
 				}
 				span{
