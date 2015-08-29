@@ -39,22 +39,16 @@ H.ready(['jquery'], function(){
         //热度加星
         $star.each(function(){
             var num = parseInt($(this).text())
-            switch(num){
-                case num>100:
-                    $(this).addClass('w-hotstar-2')
-                    break;
-                case num>200:
-                    $(this).addClass('w-hotstar-2')
-                    break;
-                case num>500:
-                    $(this).addClass('w-hotstar-2')
-                    break;
-                case num>1000:
-                    $(this).addClass('w-hotstar-2')
-                    break;
-                default:
-                    $(this).addClass('w-hotstar-1')
-                    break;
+            if(num>1000){
+                $(this).addClass('w-hotstar-5')
+            }else if(num>500){
+                $(this).addClass('w-hotstar-4')
+            }else if(num>200){
+                $(this).addClass('w-hotstar-3')
+            }else if(num>100){
+                $(this).addClass('w-hotstar-2')
+            }else{
+                $(this).addClass('w-hotstar-1')
             }
         })
 

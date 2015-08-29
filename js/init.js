@@ -8,6 +8,7 @@ H.load([
 	{'fixSidebar':head_conf.CDNROOT+'plugin/fixSidebar.js'},
 	{'treeview':head_conf.CDNROOT+'plugin/jquery.treeview.js'},
 	{'cookie':head_conf.CDNROOT+'plugin/jquery.cookie.js'},
+	{'swiper':head_conf.CDNROOT+'plugin/swiper2.min.js'},
 	{'footer':head_conf.CDNROOT+'mod/footer.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.js'},
 	{'postdate':head_conf.CDNROOT+'mod/postdate.js'},
