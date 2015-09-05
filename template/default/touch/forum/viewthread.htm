@@ -43,7 +43,6 @@
 					</em><b>
 					<!--{if $post['authorid'] && $post['username'] && !$post['anonymous']}-->
 						<a href="home.php?mod=space&uid=$post[authorid]" class="blue">$post[author]</a></b>
-
 					<!--{else}-->
 						<!--{if !$post['authorid']}-->
 						<a href="javascript:;">{lang guest} <em>$post[useip]{if $post[port]}:$post[port]{/if}</em></a>
@@ -106,8 +105,11 @@
                         <!--{elseif $post['status'] & 1}-->
                             <div class="grey quote">{lang admin_message_single_banned}</div>
                         <!--{/if}-->
+
                         <!--{if $_G['forum_thread']['price'] > 0 && $_G['forum_thread']['special'] == 0}-->
-                            {lang pay_threads}: <strong>$_G[forum_thread][price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]} </strong> <a href="forum.php?mod=misc&action=viewpayments&tid=$_G[tid]" >{lang pay_view}</a>
+                            <div class="m-pay-tips">
+                            	{lang pay_threads}: <strong>$_G[forum_thread][price] {$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][unit]}{$_G['setting']['extcredits'][$_G['setting']['creditstransextra'][1]][title]} </strong> <a class="record" href="forum.php?mod=misc&action=viewpayments&tid=$_G[tid]" >{lang pay_view}</a>
+                            </div>
                         <!--{/if}-->
 
                         <!--{if $post['first'] && $threadsort && $threadsortshow}-->
@@ -141,6 +143,7 @@
 											</div>
 										<!--{/if}-->
 									<!--{/if}-->
+									</div>
                                 <!--{/if}-->
                             <!--{/if}-->
                         <!--{/if}-->

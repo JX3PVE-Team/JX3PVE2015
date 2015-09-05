@@ -66,12 +66,31 @@
                                     {lang has_expired}
                                 <!--{else}-->
                                     <div class="box_ex2 viewsort">
-                                        <h4>$_G[forum][threadsorts][types][$_G[forum_thread][sortid]]</h4>
-                                    <!--{loop $threadsortshow['optionlist'] $option}-->
-                                        <!--{if $option['type'] != 'info'}-->
-                                            $option[title]: <!--{if $option['value']}-->$option[value] $option[unit]<!--{else}--><span class="xg1">--</span><!--{/if}--><br />
+                                    <!--{if $threadsort && $threadsortshow}-->
+                                        <!--{if $threadsortshow['typetemplate']}-->
+                                            $threadsortshow[typetemplate]
+                                        <!--{elseif $threadsortshow['optionlist']}-->
+                                            <div class="typeoption">
+                                                <!--{if $threadsortshow['optionlist'] == 'expire'}-->
+                                                    {lang has_expired}
+                                                <!--{else}-->
+                                                    <table summary="{lang threadtype_option}" cellpadding="0" cellspacing="0" class="cgtl mbm">
+                                                        <caption>$_G[forum][threadsorts][types][$_G[forum_thread][sortid]]</caption>
+                                                        <tbody>
+                                                            <!--{loop $threadsortshow['optionlist'] $option}-->
+                                                                <!--{if $option['type'] != 'info'}-->
+                                                                    <tr>
+                                                                        <th>$option[title]:</th>
+                                                                        <td><!--{if $option['value'] !== ''}-->$option[value] $option[unit]<!--{else}-->-<!--{/if}--></td>
+                                                                    </tr>
+                                                                <!--{/if}-->
+                                                            <!--{/loop}-->
+                                                        </tbody>
+                                                    </table>
+                                                <!--{/if}-->
+                                            </div>
                                         <!--{/if}-->
-                                    <!--{/loop}-->
+                                    <!--{/if}-->
                                     </div>
                                 <!--{/if}-->
                             <!--{/if}-->
