@@ -32,6 +32,7 @@ H.ready(['jquery','getRequest'],function(){
 			$main.hasClass('book-open-sidebar') ? $tgtext.text('折叠') : $tgtext.text('展开')
 		})
 
+		
 		//检测是否有文件
 		if($isdown.text() == '否'){
 			$bookdown.hide()

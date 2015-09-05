@@ -1,31 +1,30 @@
 <header class="i-header i-view-header">
-	<a class="m-back" href="<!--{if $_GET[fromguid] == 'hot'}-->forum.php?mod=guide&view=hot&page=$_GET[page]<!--{else}-->forum.php?mod=forumdisplay&fid=$_G[fid]&<!--{eval echo rawurldecode($_GET[extra]);}--><!--{/if}-->">
-		<i></i>
-		<span><!--{eval echo strip_tags($_G['forum']['name']) ? strip_tags($_G['forum']['name']) : $_G['forum']['name'];}--></span>
-	</a>
 
-	<div class="m-nav">
+	<div class="i-header-nav">
+		<a class="back" href="<!--{if $_GET[fromguid] == 'hot'}-->forum.php?mod=guide&view=hot&page=$_GET[page]<!--{else}-->forum.php?mod=forumdisplay&fid=$_G[fid]&<!--{eval echo rawurldecode($_GET[extra]);}--><!--{/if}-->">
+			<i></i><span><!--{eval echo strip_tags($_G['forum']['name']) ? strip_tags($_G['forum']['name']) : $_G['forum']['name'];}--></span>
+		</a>
+	</div>
+
+	<div class="i-header-panel">
 		<!-- 只看楼主 -->
-		<div class="m-only">
+		<div class="only">
 			<!--{if !IS_ROBOT && !$_GET['authorid'] && !$_G['forum_thread']['archiveid']}-->
 				<a class="onlyauthor" href="forum.php?mod=viewthread&tid=$_G[tid]&page=$page&authorid=$_G[forum_thread][authorid]" rel="nofollow">{lang viewonlyauthorid}</a>
 			<!--{elseif !$_G['forum_thread']['archiveid']}-->
 				<a class="showall" href="forum.php?mod=viewthread&tid=$_G[tid]&page=$page" rel="nofollow">显示全部</a>
 			<!--{/if}-->
 		</div>
-
-		<!-- 搜索 -->
-		<div class="m-search">
-			
-		</div>
-
-		<!-- 更多 -->
-		<div class="m-more" id="i-view-moretg">
-			<ul>
-				<li><a class="fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]"><i></i>收藏</a></li>
-				<li><a class="reply" id="replyid" href="javascript:void(0)"><i></i>回复</a></li>
-			</ul>
-		</div>
-
+		<!-- 更多交互 -->
+		<a class="more" href="javascript:void(0)" id="i-header-more"></a>
 	</div>
+
+	<div class="i-header-extend" id="i-header-extend">
+		<ul>
+			<li><a class="fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]"><i></i>收藏</a></li>
+			<li><a class="reply" id="replyid" href="javascript:void(0)"><i></i>回复</a></li>
+			<li><a class="qcsearch" href="search.php?mod=forum"><i></i>{lang search}</a></li>
+		</ul>
+	</div>
+
 </header>

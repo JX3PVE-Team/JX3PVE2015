@@ -1,0 +1,83 @@
+body{
+	overflow-x:hidden;
+}
+.i-sidebar{
+	background-color:#141827;
+	.color(#cfd8e5,#cfd8e5,#fff);
+
+	.pf;.lt(0,0);.z(95);
+	.size(180px,100%);
+	.wrapper{
+		padding-top:@top;
+	}
+	left:-180px;
+	transition:0.5s ease-in-out;
+	&.show{
+		left:0;
+	}
+	//height:~"calc(100% - @{top})";
+
+
+	.m-profile{
+		padding:20px 0;
+		.x;
+		.avt{
+			.db;.auto(x);
+			.size(48px);.r(48px);
+			padding:2px;background-color:#fff;border:1px solid #ddd;
+			img{
+				.size(48px);.r(48px);
+				.db;
+			}
+		}
+		.noavt{
+			background:~"url('@{url}common/jx3logo.png') #fff no-repeat center center / 48px auto";
+		}
+		.name{
+			.db;
+			padding:10px 0;
+		}
+	}
+
+	.m-private{
+		ul{
+			li{
+				//.x;
+				padding:0 30px;
+				margin-bottom:5px;
+				a{
+					.db;
+					.fz(13px,32px);
+					padding-left: 38px;
+					background:url('@{url}m/icon2.png') no-repeat;
+					background-size: 32px auto;
+				}
+			}
+			.fav{
+				background-position:0 -831px;
+				background-size:38px auto;
+			}
+			.thread{
+				background-position: 0 -37px;
+			}
+			.msg{
+				background-position:0 0;
+			}
+		}
+	}
+
+	.m-exit{
+		.pa;.lb(0,0);.full(x);
+		border-top:1px solid #212430;
+		background-color:#090D1A;
+		.color(#8598B5,#8598B5,#fff);
+		a{
+			.db;.w(50%);.fl;
+			.lh(35px);.x;
+		}
+		.exit{
+			box-sizing:border-box;
+			border-left:1px solid #212430;
+		}
+	}
+}

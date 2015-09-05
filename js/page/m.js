@@ -1,15 +1,31 @@
 $(function(){
 
+	//首页swiper
 	var mySwiper = new Swiper ('.swiper-container', {
 	    direction: 'horizontal',
 	    loop: true,
 	    pagination: '.swiper-pagination',
-  	})   
+  	})
+
+  	//头部菜单扩展
+	var $menu_t = $("#i-header-more"),
+		$menu = $("#i-header-extend")
+	$menu_t.on('click',function(){
+		$menu.slideToggle()
+	})
+
+	//个人中心面板
+	var $os_t = $("#i-header-os"),
+		$os = $("#i-sidebar"),
+		$mask = $("#u-mask")
+	$os_t.add($mask).on('click',function(){
+		$mask.toggle()
+		$os.toggleClass('show')
+	})
 
 
 	//unix时间戳格式化
   	function formatTime(selector,dividing){
-		var $ = jQuery
 		if(dividing == undefined) dividing='-'
 		$(selector).each(function(){
 			unixtime = $.trim($(this).text()),
@@ -26,11 +42,6 @@ $(function(){
 		})
 	} 
 	formatTime('.e-time');
-
-	//单页头部菜单扩展
-	$("#i-view-moretg").on('click',function(){
-		$(this).children('ul').slideToggle()
-	})
 
 	//单页底部跳转
 	var $body = $("body"),
@@ -74,6 +85,28 @@ $(function(){
 	})
 
 
+	//w_weibo:新浪微博
+	//当未填写微博UID时，隐藏关注按钮
+	var $wb_win = $("#w-weibo-win"),
+		$wb = $("#w-weibo")
+	if($wb.length){
+		if(!$wb.text()) $wb_win.remove()
+	} 
+
+	//宏库
+	$(".macro-ct").each(function(){
+		var text = $(this).html()
+		text = text.replace('[hide]','')
+		text = text.replace('[/hide]','')
+		$(this).html(text)
+	})
+
+	//茶馆
+	var $bookdown = $(".bookdown"),
+		$isdown = $("#isdownload")
+	if($isdown.text() == '否'){
+		$bookdown.hide()
+	}
 
 
 

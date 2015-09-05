@@ -1,13 +1,14 @@
 <header class="i-header i-list-header">
-	<a class="m-back" href="forum.php?forumlist=1">
-		<i></i>
-		<span>导航</span>
-	</a>
-
-	<div class="m-nav">
-		<a class="pub" href="forum.php?mod=post&action=newthread&fid=$_G[fid]" title="{lang send_threads}">发布</a>
+	<div class="i-header-nav">
+		<a class="back" href="forum.php?forumlist=1">
+			<i></i><span>导航</span>
+		</a>
 	</div>
 
+	<div class="i-header-panel">
+		<a class="pub" href="forum.php?mod=post&action=newthread&fid=$_G[fid]" title="{lang send_threads}">发布</a>
+	</div>
+	
 	<h1 class="m-title">
 		<!--{if $subexists && $_G['page'] == 1}-->
 		<span class="display name vm" href="#subname_list">

@@ -1,7 +1,9 @@
 H.ready(['jquery'], function(){
     jQuery(function($){
 
-    	var $wb_win = $("#w-weibo-win"),
+    	var $body = $("body"),
+            $html = $("html"),
+            $wb_win = $("#w-weibo-win"),
     		$wb = $("#w-weibo"),
     		$magic_t = $(".w-magic-tg"),
     		$magic = $(".w-magic"),
@@ -11,7 +13,9 @@ H.ready(['jquery'], function(){
             $index_tg = $("#w-index-tg"),
             $index = $("#w-index-list"),
             $filter = $("#w-filter .w-filter-font .item .label"),
-            $filter_tg = $("#w-filter-tg")
+            $filter_tg = $("#w-filter-tg"),
+            $imgorigin = $(".u-imgorigin"),
+            $mask = $("#u-mask")
             
 
     	//w_weibo:新浪微博
@@ -77,6 +81,28 @@ H.ready(['jquery'], function(){
             alert('请点击下方筛选条件之一进行展开与关闭')
         })
 
+        //查看脸型原图 imgorigin
+        $imgorigin.on('click',function(){
+            var img = $(this).find('img'),
+                src = img.attr('src')
+            if(src && src.indexOf('nophoto')==-1){
+                $mask.show()
+                $html.addClass('fixpage')
+                $body.append('<img class="u-imgorigin-fix" src="'+ src + '"/>')
+                var _img = $(".u-imgorigin-fix"),
+                    w = parseInt(_img.width())/2,
+                    h = parseInt(_img.height())/2
+                    _img.css('margin-left',-w)
+                        .css('margin-top',-h)
+            }
+        })
+        //脸型原图
+        $mask.on('click',function(){
+            var $imgoriginfix = $(".u-imgorigin-fix")
+            $mask.hide()
+            $imgoriginfix.remove()
+            $html.removeClass('fixpage')
+        })
 
     })
 })

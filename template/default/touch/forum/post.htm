@@ -3,7 +3,7 @@
 <div class="i-post-page">
 <!--{template forum/post_header}-->
 
-<!--{if $special != 2 && $special != 4}-->
+<!--{if $special != 2 && $special != 4  && !($isfirstpost && $sortid)}-->
 <!--{eval $adveditor = $isfirstpost && $special && ($_GET['action'] == 'newthread' || $_GET['action'] == 'reply' && !empty($_GET['addtrade']) || $_GET['action'] == 'edit' );}-->
 
 <form method="post" id="postform" 
@@ -77,13 +77,6 @@
 			</li>
 			<!--{/if}-->
 			
-			<!-- 分类信息 -->
-			<!--{template forum/post_sortoption}-->
-
-			<!-- {if $isfirstpost && $thread['sortid']} -->
-				<!--{template forum/post_sortoption}-->
-			<!--{/if}-->
-
 			<!-- 正文内容 -->
 			<h3 class="m-primary-til">正文内容</h3>
 			<li class="bl_none area primary">
@@ -108,11 +101,13 @@
 <!-- main postbox start -->
 </form>
 <!--{else}-->
-	<div class="box xg1">
+	<div class="c-msg-alert box xg1">
 	<!--{if $special == '2'}-->
 	{lang send_special_trade_error}
     <!--{elseif $special == '4'}-->
 	{lang send_special_activity_error}
+	<!--{elseif $isfirstpost && $sortid}-->
+	<div class="m-msg-sortalert"><i></i>本版首楼内容请在电脑上操作发布。</div>
     <!--{/if}-->
     </div>
 <!--{/if}-->

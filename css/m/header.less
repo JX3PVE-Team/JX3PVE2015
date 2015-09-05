@@ -1,3 +1,6 @@
+body{
+	padding-top:@top;
+}
 .i-header{
 	.pf;.lt(0,0);.z(100);
 	.w(100%);.lh(@top);
@@ -5,8 +8,55 @@
 	background: #262b42;
 	.color(#cfd8e5,#cfd8e5,#fff);
 
-	.m-back{
-		.pa;.lt(0,0);
+	.i-header-nav{.fl;}
+	.i-header-panel{.fr;}
+	.i-header-extend{
+		.pa;.rt(0,@top);.z(100);
+		.none;
+		text-align: left;
+		box-shadow: 2px 1px 1px rgba(0,0,0,.4);
+		li{
+			width: 120px;
+			background-color: #23283d;
+			border-top: 1px solid #1e2133;
+			a{
+				.db;
+				padding-left: 44px;
+				background:url('@{url}m/icon2.png') no-repeat;
+				background-size: 43px auto;
+			}
+			.exchange{
+				background-position:3px -1031px;
+			}
+			.fav{
+			  	background-position: 6px -937px;
+			}
+			.reply{
+				background-position:9px 5px;
+				background-size:34px auto;
+			}
+			.qcsearch{
+				background-size:34px auto;
+				background-position:9px -657px;
+			}
+		}
+	}
+
+
+	//个人中心菜单开关
+	.os{
+		.db;.fl;.indent;
+		.size(@top);
+		background:url('@{url}m/icon2.png') no-repeat 0 -815px;
+		background-size: 44px auto;
+	}
+	//logo
+	.logo{
+		.fz(14px,@top);
+	}
+	//返回
+	.back{
+		.fl;
 		padding-right:5px;
 		i{
 			position: absolute;
@@ -25,74 +75,60 @@
 		}
 	}
 
-	.m-nav{
-		.pa;.rt(0,0);
-		.pub{
-			.db;//.indent;
-			padding-left:32px;
-			background:url('@{url}m/icon2.png') no-repeat;
-			background-position:0 4px;
-			background-size:36px auto;
-			.size(43px,@top);
-		}
-		.m-only{
-			.fl;margin-right:5px;
-			a{
-				background:url('@{url}m/view.png') no-repeat 0 0;
-				padding-left:20px;
-				&.onlyauthor{
-					background-position:0 0;
-				}
-				&.showall{
-					background-position:0 -16px;
-					color:#fff;
-				}
-			}
-		}
-		.m-search{
-			.fl;.none;
-		}
-		.m-more{
-			.fl;.pr;
-			.size(40px,@top);
-			background:url('@{url}m/icon2.png') no-repeat;
-			background-size: 43px auto;
-			background-position: 8px -891px;
 
-			ul{
-				.pa;.rt(0,44px);.z(100);
-				.none;
-				text-align: left;
-				box-shadow: 2px 1px 1px rgba(0,0,0,.4);
-				li{
-					width: 120px;
-					background-color: #23283d;
-					border-top: 1px solid #1e2133;
-					a{
-						.db;
-						padding-left: 44px;
-						background:url('@{url}m/icon2.png') no-repeat;
-						background-size: 43px auto;
-					}
-					.fav{
-					  	background-position: 6px -937px;
-					}
-					.reply{
-						background-position:9px 5px;
-						background-size:34px auto;
-					}
-				}
-			}
-		}
+
+	//搜索
+	.search{
+		.db;.fl;.indent;
+		.size(40px,@top);padding:0;
+		background:url('@{url}m/icon2.png') no-repeat 0 -856px;
+		background-size: 44px auto;
 	}
-
-	.m-title{
-		.x;.fz(13px);.bold;
+	//更多
+	.more{
+		.fl;.size(40px,@top);
+		background:url('@{url}m/icon2.png') no-repeat;
+		background-size: 44px auto;
+		background-position: 8px -913px;
 	}
-
+	//发布
+	.pub{
+		.db;//.indent;
+		padding-left:32px;
+		background:url('@{url}m/icon2.png') no-repeat;
+		background-position:0 4px;
+		background-size:36px auto;
+		.size(43px,@top);
+	}
+	//发布页发布按钮
 	.btn_pn{
 		.r(4px);
 		margin-right:5px;
 	}
+	//只看楼主
+	.only{
+		.fl;margin-right:5px;
+		a{
+			background:url('@{url}m/view.png') no-repeat 0 0;
+			padding-left:20px;
+			&.onlyauthor{
+				background-position:0 0;
+			}
+			&.showall{
+				background-position:0 -16px;
+				color:#fff;
+			}
+		}
+	}
+
+	//列表页标题
+	.m-title{
+		.x;.fz(13px);.bold;
+	}
+
+	
 
 }
+
+
+

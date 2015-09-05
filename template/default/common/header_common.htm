@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:wb="http://open.weibo.com/wb">
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
 	<base href="{$_G['siteurl']}" />
 
 	<!-- TRANSFORM -->
+	<!--{if $_G['config']['output']['iecompatible']}--><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE{$_G['config']['output']['iecompatible']}" /><!--{/if}-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="Cache-Control" content="no-siteapp"/>
 	<!-- <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui"/> -->
 
 	<!-- SEO -->
-	<!--{if $_G['config']['output']['iecompatible']}--><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE{$_G['config']['output']['iecompatible']}" /><!--{/if}-->
 	<title><!--{if !empty($navtitle)}-->$navtitle <!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname']<!--{/if}--></title>
 	$_G['setting']['seohead']
 	<meta name="keywords" content="{if !empty($metakeywords)}{echo dhtmlspecialchars($metakeywords)}{/if}" />

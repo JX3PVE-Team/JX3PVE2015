@@ -1,4 +1,4 @@
-.i-nav,.header{
+/*.i-nav,.header{
 	//.pf;.lt(0,0);.z(999);
 	//.w(100%);.h(38px);
 	background-color:#fff;
@@ -17,60 +17,83 @@
 			.fr;
 		}
 	}
-}
+}*/
 
 .swiper-container {
     .size(100%,360px);
 }
 
-.minibox{
-	.color(#666,#666,#c00);
-}
+.i-index-page{
+	padding-top:20px;
 
-.oslist{
-	.clearfix;
-	.w(60px*4);
-	.auto(x);
-
-	li{
-		.db;.fl;
-		margin:8px;
+	.minibox{
+		.color(#666,#666,#c00);
 	}
-	li a{
-		.db;
-		.fz(12px,2);.x;
-		.color(#666,#666);
-		i{
-			.db;.size(40px);.r(4px);
-			background-repeat:no-repeat;
-			background-position:0 0;
-			background-size:100% 100%;
-			box-shadow: 0 0 4px #ddd;
-			border: 1px solid #ddd;
+
+
+	.oslist{
+		.clearfix;
+		.w(60px*4);
+		.auto(x);
+
+		li{
+			.db;.fl;
+			margin:8px;
+		}
+		li a{
+			.db;
+			.fz(12px,2);.x;
+			.color(#666,#666);
+			i{
+				.db;.size(40px);.r(4px);
+				background-repeat:no-repeat;
+				background-position:0 0;
+				background-size:100% 100%;
+				box-shadow: 0 0 4px #ddd;
+				border: 1px solid #ddd;
+			}
 		}
 	}
-	.macro i{background-image:url('@{url}m/1.png');}
-	.tool i{background-image:url('@{url}m/2.png');}
-	.role i{background-image:url('@{url}m/3.png');}
-	.fam i{background-image:url('@{url}m/4.png');}
-	.team i{background-image:url('@{url}m/5.png');}
-	.person i{background-image:url('@{url}m/6.png');}
-	.raid i{background-image:url('@{url}m/7.png');}
-	.face i{background-image:url('@{url}m/8.png');}
-	.book1 i{background-image:url('@{url}m/9.png');}
-	.book2 i{background-image:url('@{url}m/10.png');}
-	.book3 i{background-image:url('@{url}m/11.png');}
-	.book4 i{background-image:url('@{url}m/12.png');}
-	.pet i{background-image:url('@{url}m/13.png');}
-	.video i{background-image:url('@{url}m/14.png');}
-	.bbs i{background-image:url('@{url}m/15.png');}
-	.feedback i{background-image:url('@{url}m/17.png');}
+
+	.news{
+		margin:0 20px;
+		h2{
+			.fz(13px,2);
+			border-bottom:1px solid #ddd;
+			margin-bottom:5px;
+			.bold;
+			color:#1C2F84;
+		}
+		a{
+			.db;.nobreak;
+			.fz(12px,2);
+			em{
+				.none;
+			}
+		}
+	}
+
+	.oslist{
+		.bbs i{background-image:url('@{url}m/15.png');}
+
+		.macro i{background-image:url('@{url}m/12.png');}
+		.tool i{background-image:url('@{url}m/2.png');}
+		.role i{background-image:url('@{url}m/3.png');}
+		.fam i{background-image:url('@{url}m/4.png');}
+
+		.team i{background-image:url('@{url}m/1.png');}
+		.member i{background-image:url('@{url}m/6.png');}
+		
+		.face i{background-image:url('@{url}m/17.png');}
+		.book i{background-image:url('@{url}m/20.png');}
+		.pet i{background-image:url('@{url}m/16.png');}
+		.video i{background-image:url('@{url}m/21.png');}
+		
+		.feedback i{background-image:url('@{url}m/23.png');}
+
+		.peizhuang i{background-image:url('@{url}m/tool/j3pz.png');background-color:#fff;}
+	}
+
 }
 
-.news{
-	margin:20px;
-	a{
-		.db;.nobreak;
-		.fz(12px,2);
-	}
-}
+

@@ -16,7 +16,7 @@ H.load([
 	{'custombg':head_conf.CDNROOT+'mod/custombg.js'},
 	{'header':head_conf.ROOT+'mod/header.js'},
 	{'bbs':head_conf.CDNROOT+'mod/bbs.js'},
-	{'widget':head_conf.CDNROOT+'mod/widget.js'}
+	{'widget':head_conf.ROOT+'mod/widget.js'}
 ])
 
 //全局设置

@@ -26,6 +26,19 @@ H.ready(['jquery','getRequest'],function(){
 			if(isCMD) $mark.addClass('mark-3')
 		})
 
+		//脸型发布时间格式处理
+		var $time = $(".u-facetime")
+			$time.each(function(){
+				var ori = $(this).text(),
+					_time = new Date(ori.replace('-','/')),
+					time = _time.getFullYear() + '-' + (_time.getMonth()+1) + '-' + _time.getDate(),
+					arr = time.split('-');
+					for (var i = 0; i < 3; i++) {
+						if (arr[i] < 10 ) arr[i] = '0' + arr[i]
+					}
+					time = arr.join('-')
+					$(this).text(time)
+			})
 
 
 	})
