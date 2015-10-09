@@ -9,20 +9,38 @@
 }
 
 .u-tobevip{
-	.pointer;
-	.db;.lh(28px);
-	padding: 5px;margin: 10px 0;
+	//.pointer;
+	//.db;
+	//.lh(28px);
+	/*padding: 5px;margin: 10px 0;
 	color:#A97413;
 	background: #fffddf;
-	border: 1px dashed #f0ea8e;
-	&:hover{
+	border: 1px dashed #f0ea8e;*/
+
+	.fz(12px,2);
+	letter-spacing: .5px;
+	color: #555 !important;
+	text-align: left !important;
+	margin: 10px 0;
+	padding: 8px 8px 8px 24px;
+	background:url(http://static.jx3pve.com/static/image/common//locked.gif) no-repeat 6px 50%;
+	background-color: #fffddf;
+	border: 1px solid #f0ea8e;
+
+	/*&:hover{
 		color:#CC9300;
 		background-color:#FFFCCA;
+	}*/
+
+	b{
+		color:@bluex;
+		//text-decoration:underline;
 	}
 	i{
 		.size(84px,16px);.dbi;.y;
 		background:url('@{url}vip/vip.gif') no-repeat 0 0;
 		margin: 0 3px;
 		.pr;top:-1px;
+		.indent;
 	}
 }

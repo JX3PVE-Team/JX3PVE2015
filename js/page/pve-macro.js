@@ -11,13 +11,13 @@ H.ready(['jquery','macro','fixSidebar'],function(){
 		if(data_s.indexOf('回复可见') == -1){
 			new Macro("#macro-ct1",data_s)
 		}else{
-			$databox_s.html('<a class="u-tobevip" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup&do=list">本帖隐藏内容需回复可见，加入 <i class="u-vip"></i>VIP会员 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</a>')
+			$databox_s.html('<div class="u-tobevip">本帖隐藏内容需<b>回复可见</b>，加入 <a href="http://www.jx3pve.com/vip" target="_blank"><i class="u-vip">VIP会员</i></a> 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</div>')
 		}
 		if(data_f.indexOf('回复可见') == -1){
 			new Macro("#macro-ct2",data_f)
 		}
 		else{
-			$databox_f.html('<a class="u-tobevip" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup&do=list">本帖隐藏内容需回复可见，加入 <i class="u-vip"></i>VIP会员 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</a>')
+			$databox_f.html('<div class="u-tobevip">本帖隐藏内容需<b>回复可见</b>，加入 <a href="http://www.jx3pve.com/vip" target="_blank"><i class="u-vip">VIP会员</i></a> 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</div>')
 		}
 		
 
