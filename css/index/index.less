@@ -16,7 +16,7 @@
 		i{.dbi;.size(24px);.y(top);margin-right:5px;.tm(.8);}
 		.more{
 			.dbi;.fr;.size(40px,12px);.indent;
-			margin-top:(24px - 12px) / 2;
+			margin-top:5px;
 			background:url('@{url}icon/more.png') no-repeat 0 0;
 			&:hover{
 				background-position:0 -12px;
@@ -25,8 +25,14 @@
 		.misc{
 			//.dbi;.y(top);margin-left:30px;
 			.fr;
-			li{.fl;margin-right:10px;}
-			.fzlh(12px,24px);
+			ul{
+				.clearfix;
+			}
+			li{
+				.fl;margin:0;padding:0;margin-right:10px;
+				.fzlh(12px,24px);
+			}
+			a{}
 			.color(#888,#888,@bluex);
 			.normal;
 		}
@@ -112,9 +118,6 @@
 	.m-subtil{
 		i{
 			background:url('@{url}index/new.png') no-repeat 0 0;
-		}
-		.more{
-			margin-top:8px;
 		}
 	}
 }
