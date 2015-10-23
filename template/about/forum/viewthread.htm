@@ -345,8 +345,6 @@
 					<!--{if $post[first]==1}-->
 					<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 						<!--{subtemplate forum/viewthread_node_first}-->
-						<!-- ad -->
-						<!--{subtemplate jx3pve/c_banner_a}-->
 						<!-- cmt title -->
 						<div class="m-cmt-title">评论<span>COMMENT</span></div>
 					</div>
@@ -369,9 +367,6 @@
 				<!--{/if}-->
 			</div>
 
-			<!-- jx3pve:tips & folder list -->
-			<!--{subtemplate jx3pve/u_msg_posttips}-->
-	
 			<!-- dz:admin bar -->
 			<!--{if $modmenu['thread']}-->
 				<div class="w-post-adminbar w-post-adminbar-bottom xi2 mbm pbm bbs">

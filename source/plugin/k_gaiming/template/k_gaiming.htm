@@ -1,0 +1,39 @@
+<tr id="tr_username">
+	<th id="th_username">{lang k_gaiming:newusername}</th>
+	<td id="td_username">
+		<input type="text" name="newname" class="px" value="" tabindex="1" required="required"<!--{if !in_array($_G['member']['groupid'], $setting['usergroups']) || ($c < $setting['creditnum'])}--> disabled="disabled"<!--{/if}--> />
+        <div class="rq mtn" id="showerror_username"></div>
+        <p class="d"></p>
+	</td>
+</tr>
+<tr>
+	<th>&nbsp;</th>
+	<td colspan="2">
+		<input type="hidden" name="profilesubmit" value="true" />
+		<button type="submit" name="profilesubmitbtn" id="profilesubmitbtn" value="true" class="pn pnc"<!--{if !in_array($_G['member']['groupid'], $setting['usergroups']) || ($c < $setting['creditnum'])}--> disabled="disabled"<!--{/if}--> /><strong>{lang k_gaiming:save}</strong></button>
+		<span id="submit_result" class="rq">
+        	<!--{if $re}-->
+            	{$re}
+            <!--{elseif  !in_array($_G['member']['groupid'], $setting['usergroups'])}-->
+            	<font color="#FF0000">{lang k_gaiming:notp}</font>
+            <!--{else}-->
+            	<font class="xg1">{$setting['tips']}<!--{if $setting['creditnum'] && $setting['creditunit']}-->{lang k_gaiming:tipsunit}&nbsp;{$setting['creditnum']}&nbsp;{$_G['setting']['extcredits'][$setting['creditunit']]['unit']}{$_G['setting']['extcredits'][$setting['creditunit']]['title']}<!--{/if}--></font><!--{if $c < $setting['creditnum']}--><font color="#FF0000">&nbsp;({lang k_gaiming:nocredit})</font><!--{/if}-->
+            <!--{/if}-->
+        </span>
+        <div class="c-user-nicname"><!--{block/1495}--></div>
+	</td>
+</tr>
+<!--{if !in_array($_G['member']['groupid'], $setting['usergroups'])}-->
+<tr id="tr_allow_groups">
+	<th>{lang k_gaiming:allow_groups}</th>
+	<td colspan="2">
+    <ul class="cl">
+    	<!--{eval $gi = 1;}-->
+    	<!--{loop $grouptitle $group}-->
+        <li class="z">{$group}<!--{if $gi < $allowgroup['num']}-->&nbsp;,&nbsp;<!--{/if}--></li>
+        <!--{eval $gi++;}-->
+        <!--{/loop}-->
+    </ul>
+	</td>
+</tr>
+<!--{/if}-->

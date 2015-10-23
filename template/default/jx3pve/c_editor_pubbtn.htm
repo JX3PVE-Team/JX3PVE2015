@@ -1,0 +1,46 @@
+<div class="mtm mbm pnpost pve-postbtn">
+	<a href="home.php?mod=spacecp&ac=credit&op=rule&fid=$_G['fid']" class="y" target="_blank">{lang post_credits_rule}</a>
+	<button type="submit" id="postsubmit" class="u-postbtn pn pnc" value="true" name="{if $_GET[action] == 'newthread'}topicsubmit{elseif $_GET[action] == 'reply'}replysubmit{elseif $_GET[action] == 'edit'}editsubmit{/if}">
+	<!--{if $_GET[action] == 'newthread'}-->
+		<!--{if $special == 0}--><span>{lang post_newthread}</span>
+		<!--{elseif $special == 1}--><span>{lang post_newthreadpoll}</span>
+		<!--{elseif $special == 2}--><span>{lang post_newthreadtrade}</span>
+		<!--{elseif $special == 3}--><span>{lang post_newthreadreward}</span>
+		<!--{elseif $special == 4}--><span>{lang post_newthreadactivity}</span>
+		<!--{elseif $special == 5}--><span>{lang post_newthreaddebate}</span>
+		<!--{elseif $special == 127}-->
+			<span><!--{if $buttontext}-->$buttontext<!--{else}-->{lang post_newthread}<!--{/if}--></span>
+		<!--{/if}-->
+	<!--{elseif $_GET[action] == 'reply' && !empty($_GET['addtrade'])}--><span>{lang trade_add_post}</span>
+	<!--{elseif $_GET[action] == 'reply'}--><span>{lang join_thread}</span>
+	<!--{elseif $_GET[action] == 'edit' && $isfirstpost && $thread['displayorder'] == -4}-->
+		<span>{lang post_newthread}</span>
+	<!--{elseif $_GET[action] == 'edit'}--><span>{lang edit_save}</span>
+	<!--{/if}-->
+	</button>
+	<!--{if $_G['uid']}-->
+		<input type="hidden" id="postsave" name="save" value="" />
+		<!--{if $_GET[action] == 'newthread' && !$modnewthreads || $_GET[action] == 'edit' && $isfirstpost && !$modnewreplies && $thread['displayorder'] == -4}-->
+			<button type="button" id="postsubmit" class="pn u-postbtn u-postsave" value="true" onclick="$('postsave').value = 1;$('postsubmit').click();"><em>{lang save_draft} <span>(预览)</span></em></button>
+		<!--{/if}-->
+	<!--{/if}-->
+	<!--{hook/post_btn_extra}-->
+	<!--{if helper_access::check_module('follow') && $_GET[action] != 'edit'}-->
+	<span id="adddynamicspan" class="m-tofollows">
+		<label><input type="checkbox" name="adddynamic" id="adddynamic" value="true" class="pc" {if $_G['forum']['allowfeed'] && !$_G[tid] && empty($_G['forum']['viewperm'])}checked="checked"{/if} />{lang post_relay}</label>
+		<em class="m-tofollows-tips"><!--{block/1263}--></em>
+	</span>
+	<!--{/if}-->
+	<!--{if !empty($_G['setting']['pluginhooks']['post_sync_method'])}-->
+		<span>
+			{lang post_sync_method}:
+			<!--{hook/post_sync_method}-->
+		</span>
+	<!--{/if}-->
+	<!--{if $special == 2}-->
+		<label><input type="checkbox" name="continueadd" value="yes" class="pc" />{lang post_message2}</label>
+	<!--{/if}-->
+	<!--{if helper_access::check_module('group') && $mygroups && $_G['forum']['status'] != 3}-->
+	<span id="adddynamicspan" class="m-groups"><label>&nbsp;&nbsp;{lang fromgroup}:<select name="mygroupid"><option value="">{lang selectmygroup}</option><!--{loop $mygroups $mygroupid $mygroupname}--><option value="{$mygroupid}__{$mygroupname}" {if $selectgroupid == $mygroupid} selected{/if}>$mygroupname</option><!--{/loop}--></select></label></span>
+	<!--{/if}-->
+</div>
