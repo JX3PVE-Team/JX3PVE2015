@@ -87,24 +87,6 @@
 //幻灯
 .m-index-top{
 	background-color:#222;
-	.m-index-slider{
-		.size(auto,388px);.clip;
-		.swiper-container{.full;.pr;}
-		.swiper-pagination{
-			.pa;.lb(0,0);
-			.x;.full(x);.h(20px);
-			.swiper-pagination-switch{
-				.dbi;.size(10px);.r(10px);
-				background-color:#fff;
-				margin-right:5px;
-				.pointer;
-				.tm(0.5);
-			}
-			.swiper-active-switch{
-				.tm(1);
-			}
-		}
-	}
 }
 
 @index-news-w:460px;
@@ -131,14 +113,16 @@
 		margin-bottom:10px;
 	}
 	.m-key{
-		.w(480px);.fl;
+		//.w(480px);
+		//.fl;
 		.fz(12px,28px);
 		ul{
 			.clearfix;margin-bottom:5px;
 		}
 		h3{
 			.fl;
-			.w(48px);margin-right:10px;.x;
+			min-width: 58px;
+			margin-right:10px;.x;
 			background-color:#f2f2f2;.r(1px);padding:0 5px;
 		}
 		li{.fl;margin-right:15px;}
@@ -146,7 +130,7 @@
 			
 		}
 	}
-	.m-common{
+	.m-common{.none;
 		.fl;.w(178px);margin-left:10px;
 		li{
 			margin-bottom:5px;
@@ -197,6 +181,11 @@
 	}
 	.m-role{
 		
+	}
+	.misc{
+		max-width:300px;
+		height:24px;
+		overflow:hidden;
 	}
 }
 
@@ -477,29 +466,5 @@
 	}
 	.m-bbs{
 		ul{border-left:1px dotted #ddd;}
-	}
-}
-
-
-
-
-
-
-.zHome{
-	.slideshow,.slidebar{
-		text-shadow:none;
-	}
-} 
-.zHomeFocusH2{
-	a{
-		.fz(12px,2);
-		em{.fr;color:#888;margin-right:10px;}
-	}
-}
-
-.zHomeFocusH1{
-	.x;
-	a{
-		.fz(16px,2);
 	}
 }
