@@ -1,6 +1,6 @@
 @c-header-imgurl:"@{url}header/";
 .header-sprite(){
-	background:url('@{c-header-imgurl}header-sprite-2.png') no-repeat;
+	background:url('@{c-header-imgurl}header-sprite-20151028.png') no-repeat;
 }
 
 .c-header{
@@ -90,7 +90,15 @@
 				.bold;margin-right:10px;
 				i{
 					.dbi;.size(13px,8px);margin-left:3px;
-					.header-sprite;background-position:-26px 0;
+					.header-sprite;background-position:-44px 0;
+				}
+				&.on{
+					color:@blue;
+					i{background-position:-26px 0;}
+				}
+				&:hover{
+					color:#ffff00;
+					i{background-position:-26px 0;}
 				}
 			}
 

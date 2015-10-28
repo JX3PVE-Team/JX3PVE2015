@@ -7,10 +7,12 @@ H.ready(['jquery'], function(){
 		})
 
 		//os面板开关
-		$("#c-header-username").on('mouseenter',function(){
-			$("#myprompt_menu").hide()
+		$("#c-header-username").on('click',function(e){
+			e.preventDefault()
+			$(this).toggleClass('on')
+			$("#c-header-os").toggle();
 		})
-		H.fadeshow('#c-header-username','#c-header-os')
+		//H.fadeshow('#c-header-username','#c-header-os')
 
 		//vip图标
 		var $group = $("#c-header-usergroup"),

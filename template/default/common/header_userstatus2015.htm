@@ -1,5 +1,5 @@
 <!--{if $_G['uid']}-->
-<!-- A.已登录 -->
+	
 <div class="m-onlogin">
 
 	<span class="qd mod"><!--{hook/global_cpnav_extra2}--></span>
@@ -28,35 +28,39 @@
 	<!--{/if}-->
 
 	<span class="pipe mod">|</span><a class="exit mod" href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+
 </div>
+
 <!--{elseif !empty($_G['cookie']['loginuser'])}-->
-<div class="m-onlogin">
-	<a class="noborder" id="loginuser"><!--{echo dhtmlspecialchars($_G['cookie']['loginuser'])}--></a>
-	<span class="pipe mod">|</span><a class="mod" href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang activation}</a>
-	<span class="pipe mod">|</span><a class="mod" href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
-</div>
+<p>
+	<strong><a id="loginuser" class="noborder"><!--{echo dhtmlspecialchars($_G['cookie']['loginuser'])}--></a></strong>
+	<span class="pipe">|</span><a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang activation}</a>
+	<span class="pipe">|</span><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+</p>
 <!--{elseif !$_G[connectguest]}-->
-<!-- 未登录 -->
-<div class="m-nologin">
-	<p class="extend">
-		<a href="http://www.jx3pve.com/connect.php?mod=login&op=init&referer=http%3A%2F%2Fwww.jx3pve.com%2F.%2F&statfrom=login" class="qq" title="用QQ登陆"></a> 
-		<a href="http://www.jx3pve.com/mpage_weibo-login.html" class="wb" title="用新浪微博登陆"></a> 
-		<a href="http://www.jx3pve.com/wechat-login.html" class="wx" title="微信扫一扫登陆"></a> 
-	</p>
-	<p class="default">
-		<a href="member.php?mod=logging&action=login">{lang login}</a> | 
-		<a href="member.php?mod=register">{lang register}</a>
-	</p>
-</div>  
+	<!-- 未登录 -->
+	<div class="m-nologin">
+		<p class="extend">
+			<a href="http://www.jx3pve.com/connect.php?mod=login&op=init&referer=http%3A%2F%2Fwww.jx3pve.com%2F.%2F&statfrom=login" class="qq" title="用QQ登陆"></a> 
+			<a href="http://www.jx3pve.com/mpage_weibo-login.html" class="wb" title="用新浪微博登陆"></a> 
+			<a href="http://www.jx3pve.com/wechat-login.html" class="wx" title="微信扫一扫登陆"></a> 
+		</p>
+		<p class="default">
+			<a href="member.php?mod=logging&action=login">{lang login}</a> | 
+			<a href="member.php?mod=register">{lang register}</a>
+		</p>
+	</div>  
 <!--{else}-->
-<div class="m-onlogin">
-	<a class="avt mod" href="javascrip:void(0)" style="cursor:default;">
-		<!--{avatar(0,small)}-->
-	</a>
-	<a class="username mod" href="javascrip:void(0)" style="cursor:default;">
-		{$_G[member][username]}
+<div id="um">
+	<div class="avt y"><!--{avatar(0,small)}--></div>
+	<p>
+		<strong class="vwmy qq">{$_G[member][username]}</strong>
 		<!--{hook/global_usernav_extra1}-->
-	</a>
-	<span class="pipe mod">|</span><a class="exit mod" href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+		<span class="pipe">|</span><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+	</p>
+	<p>
+		<a href="home.php?mod=spacecp&ac=credit&showcredit=1">{lang credits}: 0</a>
+		<span class="pipe">|</span>{lang usergroup}: $_G[group][grouptitle]
+	</p>
 </div>
-<!--{/if}-->
+<!--{/if}
