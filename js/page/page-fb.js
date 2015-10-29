@@ -11,6 +11,7 @@ H.ready(['jquery'],function(){
 				arr[1] = '<em>' + arr[1] + '</em>'
 				text = arr.join('')
 				$(this).html(text)
+
 			})
 
 			//内容区块折叠
