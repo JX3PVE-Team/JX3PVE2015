@@ -1,0 +1,63 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes goUp {
+  49% {
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: .3;
+    transform: translateY(40%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@keyframes open {
+  from {
+    height: 0;
+  }
+  to {
+    height: auto;
+  }
+}
+@keyframes rotateRound {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes heartZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes sidebarTg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
