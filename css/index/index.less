@@ -7,42 +7,65 @@
 
 //通用
 .m-index-block{
-	.clearfix;margin-bottom:20px;
+	margin-bottom:20px;
+
+	.wp{
+		background-color:#fff;
+		border:1px solid #eee;
+		box-shadow:0 0 4px #eee;
+		.r(4px);
+	}
+
 	.m-subtil{
-		.fz(15px,24px);color:#333;padding-left:5px;
-		border-bottom:1px solid #ddd;.bold;
-		padding-bottom:6px;
-		margin-bottom:6px;
-		i{.dbi;.size(24px);.y(top);margin-right:5px;.tm(.8);}
+		.fz(15px,36px);.bold;
+		.clearfix;
+		//padding-left:5px;
+		//border-bottom:1px solid #ddd;
+		//padding-bottom:6px;
+		//margin-bottom:6px;
+		background-color:#444;
+		color:#eee;
+		padding:0 10px;
+		.r(4px 4px 0 0);
+		.til{
+			.fl;
+		}
+		//i{.dbi;.size(24px);.y(top);margin-right:5px;.tm(.8);}
 		.more{
 			.dbi;.fr;.size(40px,12px);.indent;
-			margin-top:5px;
-			background:url('@{url}icon/more.png') no-repeat 0 0;
+			margin-top:11px;
+			background:url('@{url}icon/more2.png') no-repeat 0 0;
 			&:hover{
-				background-position:0 -12px;
+				background-position:0 -46px;
 			}
 		}
+		.channel{
+			.fl;
+			margin-left:20px;
+		}
 		.misc{
-			//.dbi;.y(top);margin-left:30px;
 			.fr;
-			ul{
-				.clearfix;
-			}
+		}
+		.channel,.misc{
+			//.dbi;.y(top);margin-left:30px;
+			.clearfix;
 			li{
 				.fl;margin:0;padding:0;margin-right:10px;
-				.fzlh(12px,24px);
+				.fzlh(12px,36px);
 			}
 			a{}
-			.color(#888,#888,@bluex);
+			.color(#eee,#ccc,@blue);
 			.normal;
 		}
 	}
+
+	.m-index-subblock{
+		.clearfix;
+		//.r(4px);
+		padding:10px;
+	}
 }
-.m-index-subblock{
-	.clearfix;
-	padding:15px;
-	background-color:#fff;border:1px solid #eee;.r(2px);
-}
+
 .m-index-list-a{
 	ul li{
 		a{
@@ -446,9 +469,9 @@
 
 /*江湖告示*/
 .m-index-raid{
-	.m-subtil{
+	/*.m-subtil{
 		i{background:url('@{url}index/raid.png') no-repeat 0 0;}
-	}
+	}*/
 	.m-raid,.m-bbs{
 		.w(50%);.fl;
 		ul{
