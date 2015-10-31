@@ -1,7 +1,7 @@
 H.ready(['jquery','swiper'],function(){
 	jQuery(function($){
 
-		/*var mySwiper = new Swiper('.swiper-container',{
+		var mySwiper = new Swiper('.swiper-container',{
 			direction: 'horizontal',
 	    	loop: true,
 	    	effect: 'fade',
@@ -9,7 +9,7 @@ H.ready(['jquery','swiper'],function(){
 	    	paginationClickable: true,
 	    	autoplay: 5000,
 	    	autoplayDisableOnInteraction : false
-		}); */
+		}); 
 
 		var $slider = $("#jx3pve-slider"),
 			$imglist = $("#jx3pve-slider-imglist"),

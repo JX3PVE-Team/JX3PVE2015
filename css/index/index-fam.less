@@ -1,0 +1,39 @@
+@index-news-w:460px;
+@index-news-h:280px;
+
+.m-index-news{
+	.fl;margin-right:20px;
+	.w(440px);
+}
+
+.m-index-fam{
+	.fl;.w(@wp - 440px - 20px);
+	.m-fam{
+		.w(440px);.fl;
+	}
+	.m-fb{
+		.w(200px);.fl;
+		margin-left:20px;
+		padding:5px 0;
+		ul{
+			li{
+				margin-bottom:10px;
+				background-color:#fff;padding:5px;
+				border:1px solid #ddd;
+				a{
+					.db;
+					img{.db;.size(100%,80px);}
+					transition:0.2s ease-in-out;
+					&:hover{
+						-webkit-filter:brightness(120%);
+					}
+				}
+			}
+		}
+		.more{
+			border-top:1px solid #eee;
+			border-bottom:1px solid #eee;
+			a{.db;.x;.fz(12px,2);.color(@bluex,#c00);}
+		}
+	}
+}
