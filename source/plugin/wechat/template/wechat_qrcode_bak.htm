@@ -52,11 +52,24 @@
 						</div>
 					</form>
 				<!--{/if}-->
-				<!--{if $_G['uid'] && $qrauth}-->
-					<p>您已绑定微信</p>
-				<!--{/if}-->
-				<!--{if !$_G['uid']}-->
-					<p>您还没有登录，点击<a href="http://www.jx3pve.com/member.php?mod=logging&action=login" target="_blank">登录</a>或<a href="http://www.jx3pve.com/member.php?mod=register" target="_blank">注册</a></p>
+				<!--{if !$_G['uid'] || $_G['uid'] && $qrauth}-->
+					{eval $codelang = $_G['uid'] ? 'lang_wechat_bind' : 'lang_wechat_login';}
+					<h3 class="flb">
+						<em id="return_$_GET['handlekey']"><!--{if $_G['uid']}-->{lang wechat:wechat_bind}<!--{else}-->{lang wechat:wechat_login}<!--{/if}--></em>
+						<span>
+							<a href="javascript:;" class="flbc" onclick="clearTimeout(wechat_checkST);hideWindow('$_GET['handlekey']')" title="{lang close}">{lang close}</a>
+						</span>
+					</h3>
+					<div class="c" align='center'>
+						<img src="$qrcodeurl" width="200" height="200" />
+						<br />
+						<!--{if !$isqrapi}-->
+							{$_G['Plang'][$codelang]}<br />{lang wechat:wechat_qrcode_inputcode}
+							<h1 class="xs1 xi1">$code</h1>
+						<!--{else}-->
+							{$_G['Plang'][$codelang]}
+						<!--{/if}-->
+					</div>
 				<!--{/if}-->
 			</div>
 

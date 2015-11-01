@@ -8,9 +8,10 @@
 		<li$actives[password]><a href="home.php?mod=spacecp&ac=profile&op=password">密码邮箱</a></li>
 		<li$actives[avatar]><a href="home.php?mod=spacecp&ac=avatar">设置头像</a></li>
 		<li$actives[profile]><a href="home.php?mod=spacecp&ac=profile">详细资料</a></li>
-		<li{if ($_GET['mod']=="spacecp" && $_GET['ac']=="plugin" && $_GET['id']=="k_gaiming:k_gaiming")} class="a"{/if} ><a class="nicname" href="home.php?mod=spacecp&ac=plugin&op=profile&id=k_gaiming:k_gaiming">修改用户名</a></li>
+		<li$actives[invite]><a href="home.php?mod=spacecp&ac=invite">邀请码</a></li>
+		<li{if ($_GET['mod']=="spacecp" && $_GET['ac']=="plugin" && $_GET['id']=="k_gaiming:k_gaiming")} class="a"{/if}><a class="nicname" href="home.php?mod=spacecp&ac=plugin&op=profile&id=k_gaiming:k_gaiming">修改用户名</a></li>
 		<li$actives[credit]><a class="buy" href="home.php?mod=spacecp&ac=credit&op=buy">充  值</a></li>
-		<li{if ($_GET['mod']=="spacecp" && $_GET['ac']=="usergroup")} class="a"{/if} ><a class="vip" href="home.php?mod=spacecp&ac=usergroup&do=list">VIP会员</a></li>
+		<li$actives[usergroup]><a class="vip" href="home.php?mod=spacecp&ac=usergroup&do=list">VIP会员</a></li>
 	</ul>
 	<h3><span>[<em>-</em>]</span>账号绑定</h3>
 	<ul>
@@ -21,7 +22,7 @@
 				<!--{/if}-->
 			<!--{/loop}-->
 		<!--{/if}-->
-		<!-- <li><a href="wechat-login.html" target="_blank">微信绑定</a></li> -->
+		<li><a href="plugin.php?id=wechat:bind" target="_blank">微信绑定</a></li>
 	</ul>
 
 	<h3><span>[<em>-</em>]</span>社区资料</h3>
