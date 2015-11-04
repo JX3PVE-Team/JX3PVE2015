@@ -2,8 +2,12 @@ H.ready(['jquery','macro','fixSidebar'],function(){
 	jQuery(function($){
         /**
           Author: [huyinghuan](xiacijian@163.com)
-          Date: 2015.11.05
+          Date: 2015.11.03
           Desc: 修改高亮部位初始化DOM逻辑， 从基于ID变为基于class
+        
+          Author: [huyinghuan](xiacijian@163.com)
+          Date: 2015.11.04
+          Desc: 修复IE8下代码高亮问题
         **/
 		//定义所有需要高亮的数据所在的DOM的class
         var needHighlightDOMClass = "macro-ct";
@@ -11,7 +15,9 @@ H.ready(['jquery','macro','fixSidebar'],function(){
       
         //宏语法高亮
         $("." + needHighlightDOMClass).each(function(){
-          var content = $.trim($(this).text());
+          
+          var content = this.textContent || this.innerText
+          content = $.trim(content);
           if(content.indexOf('回复可见') === -1){
             new Macro(this, content);
           }else{
