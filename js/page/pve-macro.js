@@ -1,25 +1,29 @@
 H.ready(['jquery','macro','fixSidebar'],function(){
 	jQuery(function($){
-
-		
-    	//宏语法高亮
-    	var $databox_s = $('#macro-ct1'),
-    		$databox_f = $('#macro-ct2'),
-			data_s = $.trim($databox_s.text()),
-			data_f = $.trim($databox_f.text())
-
-		if(data_s.indexOf('回复可见') == -1){
-			new Macro("#macro-ct1",data_s)
-		}else{
-			$databox_s.html('<a class="u-tobevip" href="http://www.jx3pve.com/vip" target="_blank">本帖隐藏内容需<b>回复可见</b>，加入 <i class="u-vip">VIP会员</i> 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</a>')
-		}
-		if(data_f.indexOf('回复可见') == -1){
-			new Macro("#macro-ct2",data_f)
-		}
-		else{
-			$databox_f.html('<a class="u-tobevip" href="http://www.jx3pve.com/vip" target="_blank">本帖隐藏内容需<b>回复可见</b>，加入 <i class="u-vip">VIP会员</i> 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</a>')
-		}
-		
+        /**
+          Author: [huyinghuan](xiacijian@163.com)
+          Date: 2015.11.03
+          Desc: 修改高亮部位初始化DOM逻辑， 从基于ID变为基于class
+        
+          Author: [huyinghuan](xiacijian@163.com)
+          Date: 2015.11.04
+          Desc: 修复IE8下代码高亮问题
+        **/
+		//定义所有需要高亮的数据所在的DOM的class
+        var needHighlightDOMClass = "macro-ct";
+        var needVipTips = '<a class="u-tobevip" href="http://www.jx3pve.com/vip" target="_blank">本帖隐藏内容需<b>回复可见</b>，加入 <i class="u-vip">VIP会员</i> 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</a>';
+      
+        //宏语法高亮
+        $("." + needHighlightDOMClass).each(function(){
+          
+          var content = this.textContent || this.innerText
+          content = $.trim(content);
+          if(content.indexOf('回复可见') === -1){
+            new Macro(this, content);
+          }else{
+            $(this).html(needVipTips);
+          }
+        });
 
 		//辅助工具
 		var $toolbox = $('#macro_tools'),
