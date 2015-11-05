@@ -3,6 +3,16 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: editor.js 34614 2014-06-12 02:48:35Z nemohou $
+    
+    [Fix Bug]
+    Author: [huyinghuan](xiacijian@163.com)
+    Date: 2015.11.06
+    Effect: 515-520 Line
+    Desc:
+      修复chrome下回车换行bug
+    Test:
+      Linux x64: Chrome 46 , FireFox 41, 
+      Window XP x32:  IE8
 */
 
 var editorcurrentheight = 400, editorminheight = 400, savedataInterval = 30, editbox = null, editwin = null, editdoc = null, editcss = null, savedatat = null, savedatac = 0, autosave = 1, framemObj = null, cursor = -1, stack = [], initialized = false, postSubmited = false, editorcontroltop = false, editorcontrolwidth = false, editorcontrolheight = false, editorisfull = 0, fulloldheight = 0, savesimplodemode = null;
