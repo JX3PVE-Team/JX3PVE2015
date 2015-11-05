@@ -514,9 +514,10 @@ function writeEditorContents(text) {
 			text = '<!DOCTYPE html PUBLIC "-/' + '/W3C/' + '/DTD XHTML 1.0 Transitional/' + '/EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' +
 				'<html><head id="editorheader"><meta http-equiv="Content-Type" content="text/html; charset=' + charset + '" />' +
 				(BROWSER.ie && BROWSER.ie > 7 ? '<meta http-equiv="X-UA-Compatible" content="IE=7" />' : '' ) +
+                              '<script type="text/javascript">var preventSetNewLine =  function(e){if(e.keyCode === 13){ document.execCommand("insertHTML", false, "<br>");e.preventDefault ? e.preventDefault() : e.returnValue = false;return false;}};var ready = function(){if(document.body.addEventListener){document.body.addEventListener("keydown",preventSetNewLine)}else if(document.body.attachEvent){document.body.attachEvent("onkeydown",preventSetNewLine)}};</script>' +
 				'<link rel="stylesheet" type="text/css" href="misc.php?css=' + STYLEID + '_wysiwyg&' + VERHASH + '" />' +
 				(BROWSER.ie ? '<script>window.onerror = function() { return true; }</script>' : '') +
-				'</head><body>' + text + '</body></html>';
+				'</head><body onload="ready()">' + text + '</body></html>';
 			editdoc.designMode = allowhtml ? 'on' : 'off';
 			editdoc = editwin.document;
 			editdoc.open('text/html', 'replace');
@@ -850,7 +851,7 @@ function discuzcode(cmd, arg) {
 		}
 	} else if(cmd == 'downremoteimg') {
 		showDialog('<div id="remotedowninfo"><p class="mbn">正在下载远程附件，请稍等……</p><p><img src="' + STATICURL + 'image/common/uploading.gif" alt="" /></p></div>', 'notice', '', null, 1);
-		var message = wysiwyg ? html2bbcode(getEditorContents()) : (!editorform.parseurloff.checked ? parseurl(editorform.message.value) : editorform.message.value);
+    var message = wysiwyg ? html2bbcode(getEditorContents()) : (!editorform.parseurloff.checked ? parseurl(editorform.message.value) : editorform.message.value);
 		var oldValidate = editorform.onsubmit;
 		var oldAction = editorform.action;
 		editorform.onsubmit = '';
