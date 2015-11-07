@@ -27,10 +27,10 @@
 
 	<h3><span>[<em>-</em>]</span>社区资料</h3>
 	<ul>
-		<li><a href="forum.php?mod=guide&view=my">我的帖子</a></li>
-		<li><a href="home.php?mod=space&do=favorite&view=me">我的收藏</a></li>
-		<li><a href="home.php?mod=space&do=pm">我的消息</a></li>
-		<li><a href="home.php?mod=space&do=friend">我的好友</a></li>
+		<li {if ($_GET['mod']=="guide")} class="a"{/if}><a href="forum.php?mod=guide&view=my">我的帖子</a></li>
+		<li {if ($_GET['do']=="favorite")} class="a"{/if}><a href="home.php?mod=space&do=favorite&view=me">我的收藏</a></li>
+		<li {if ($_GET['do']=="pm" || $_GET['do']=="notice")} class="a"{/if}><a href="home.php?mod=space&do=pm">我的消息</a></li>
+		<li {if ($_GET['do']=="friend")} class="a"{/if}><a href="home.php?mod=space&do=friend">我的好友</a></li>
 		<!--{if $_G['setting']['sendmailday']}--><li$actives[sendmail]><a href="home.php?mod=spacecp&ac=sendmail">{lang memcp_sendmail}</a></li><!--{/if}-->
 		<li$actives[privacy]><a href="home.php?mod=spacecp&ac=privacy">{lang memcp_privacy}</a></li>
 	</ul>
