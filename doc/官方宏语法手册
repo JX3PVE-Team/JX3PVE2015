@@ -1,0 +1,234 @@
+<b>宏指令使用规则：</b><br>
+/动作指令 [条件1|条件2&amp;条件3] 动作指令参数<br>
+多个条件，用符号“|”或符号“&amp;”隔开<br>
+| ：或者条件<br>
+&amp; ：并且条件<br>
+条件限制为中文名称，每个宏限制128个字（这里指字符。字符 半角下1英文是1字符 1汉字也是1字符，如“/cast_四象轮回 ”就是10字符。）<br><br>
+
+<div align="left"><b>动作命令：</b></div>
+<div align="left"></div>
+<div align="left">
+<table cellspacing="0">
+<tbody>
+<tr>
+<td>动作指令</td>
+<td>用法</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>/cast</td>
+<td>/cast 技能名
+<br>/cast [条件1|条件2] 技能名
+<br>/cast [条件1&amp;条件2] 技能名
+<br>/cast [条件1&amp;条件2|条件3] 技能名</td>
+<td>1.有条件：条件成功后，释放某技能
+<br>2.没有条件：直接释放技能</td>
+</tr>
+<tr>
+<td>/fcast</td>
+<td>/fcast 技能名
+<br>/fcast [条件1&条件2|条件3] 技能名</td>
+<td>可用于在运功状态时施放其他招式</td>
+</tr>
+<tr>
+<td>/selectN</td>
+<td>/selectN npc名字
+<br>/selectN [条件1|条件2] npc名字
+<br>/selectN [条件1&amp;条件2] npc名字
+<br>/selectN [条件1&amp;条件2|条件3] npc名字</td>
+<td>1.有条件：条件成功，选择对应名字的npc为目标
+<br>2.没有条件：直接选择对应名字的npc为目标
+·该npc 一定要在同步范围内</td>
+</tr>
+<tr>
+<td>/selectP</td>
+<td>/selectP 玩家名字
+<br>/selectP myname
+<br>/selectP [条件1|条件2] npc名字
+<br>/selectP [条件1&amp;条件2] npc名字
+<br>/selectP [条件1&amp;条件2|条件3] npc名字</td>
+<td>1.有条件：条件成功，选择对应名字的玩家为目标
+<br>2.没有条件：直接选择对应名字的玩家为目标
+<br>3. /selectP myname 用来选择自己为目标
+·该玩家 一定要在同步范围内</td>
+</tr>
+<tr>
+<td>/use</td>
+<td>/use 道具名
+<br>/use [条件1|条件2] 道具名
+<br>/use [条件1&amp;条件2] 道具名
+<br>/use [条件1&amp;条件2|条件3] 道具名</td>
+<td>1.有条件：条件成功后 ，使用某个道具，比如血药，蓝药
+<br>2.没有条件：直接使用道具</td>
+</tr>
+<tr>
+<td>/msg</td>
+<td>/msg 消息
+<br>/msg [条件1|条件2] 消息
+<br>/msg [条件1&amp;条件2] 消息
+<br>/msg [条件1&amp;条件2|条件3] 消息</td>
+<td>1.有条件：条件成功后输出黄字消息
+<br>2.没有条件：直接输出黄字消息</td>
+</tr>
+</tbody>
+</table>
+</div><br>
+
+<div align="left"><b>自身条件：</b></div><table cellspacing="0">
+<tbody>
+<tr>
+<td>条件指令</td>
+<td>用法</td>
+<td>说明</td>
+<td>例子</td>
+</tr>
+<tr>
+<td>buff</td>
+<td>buff:buff名称1
+<br>buff:buff名称1&gt;=&lt;n层</td>
+<td>判断自己身上是否存在某增益或减益buff
+或者判断自己身上的某增益或减益buff是否大于，小于或等于几层</td>
+<td></td>
+</tr>
+<tr>
+<td>nobuff</td>
+<td>nobuff:buff名称1</td>
+<td>判断自己身上无某增益或减益buff</td>
+<td>/cast [nobuff:太极|bufftime:太极&lt;4] 太极无极</td>
+</tr>
+<tr>
+<td>bufftime</td>
+<td>bufftime:buff名称&gt;&lt;=3(秒)</td>
+<td>判断自己身上某增益或减益buff 持续时间大于，小于或等于多少秒</td>
+<td>/cast [nobuff:太极|bufftime:太极&lt;4] 太极无极</td>
+</tr>
+<tr>
+<td>life</td>
+<td>life&gt;&lt;=0.3</td>
+<td>生命值大于，小于或等于最大血量的百分之多少</td>
+<td>/cast [life&lt;0.3] 啸如虎</td>
+</tr>
+<tr>
+<td>mana</td>
+<td>mana&gt;&lt;=0.3</td>
+<td>内力值大于，小于或等于最大内力值的百分之多少</td>
+<td>/cast [mana&lt;0.3] 徐如林</td>
+</tr>
+<tr>
+<td>rage</td>
+<td>rage&gt;&lt;=剑气数值</td>
+<td>藏剑剑气 剑气值最大是为10
+剑气值大于或小于或等于多少</td>
+<td>/cast [rage&gt;8] 啸日</td>
+</tr>
+<tr>
+<td>qidian</td>
+<td>qidian&gt;&lt;=气点数值</td>
+<td>少林，纯阳 使用，气点值最大10
+气点值大于或小于或等于多少</td>
+<td>/cast [qidian&gt;7] 两仪化形
+<br>/cast [qidian&gt;2] 韦陀献杵</td>
+</tr>
+<tr>
+<td>energy</td>
+<td>energy&gt;&lt;=能量值</td>
+<td>唐门使用
+能量值大于或小于或等于多少</td>
+<td></td>
+</tr>
+<tr>
+<td>sun</td>
+<td>sun&gt;&lt;=日灵值
+<br>sun&gt;&lt;=moon</td>
+<td>明教使用
+日灵值大于或小于或等于 某值或者月魂值</td>
+<td>/cast [sun&gt;moon] 赤日轮
+<br>/cast [sun&lt;10] 赤日轮</td>
+</tr>
+<tr>
+<td>moon</td>
+<td>moon&gt;&lt;=月魂值
+<br>moon&gt;&lt;=sun</td>
+<td>明教使用
+月魂值大于或小于或等于 某值或者日灵值</td>
+<td>/cast [moon&gt;sun] 幽月轮
+<br>/cast [moon&lt;10] 幽月轮</td>
+</tr>
+<tr>
+<td>sun_power</td>
+<td></td>
+<td>明教使用
+日灵值充盈状态</td>
+<td>/cast [sun_power] 净世破魔击</td>
+</tr>
+<tr>
+<td>moon_power</td>
+<td></td>
+<td>明教使用
+月魂值充盈状态</td>
+<td>/cast [moon_power] 净世破魔击</td>
+</tr>
+<tr>
+<td>fight</td>
+<td></td>
+<td>在战斗状态</td>
+<td></td>
+</tr>
+</tbody>
+</table><br>
+<b>目标条件：</b>
+<table cellspacing="0">
+<tbody>
+<tr>
+<td>条件指令</td>
+<td>用法</td>
+<td>说明</td>
+<td>例子</td>
+</tr>
+<tr>
+<td>tbuff</td>
+<td>同自身条件的用法</td>
+<td>同自身的,只能用来判断自己加到目标上的增益或减益buff</td>
+<td>/cast [tbuff:致残] 龙牙</td>
+</tr>
+<tr>
+<td>tnobuff</td>
+<td>同自身条件的用法</td>
+<td>同自身的,只能用来判断自己加到目标上的增益或减益buff</td>
+<td>/cast [tnobuff:破风] 破风</td>
+</tr>
+<tr>
+<td>tbufftime</td>
+<td>同自身条件的用法</td>
+<td>同自身的,只能用来判断自己加到目标上的增益或减益buff大于，小于或等于多少秒</td>
+<td>/cast [tnobuff:破风|tbufftime:破风&lt;4] 破风</td>
+</tr>
+<tr>
+<td>target</td>
+<td>target:npc
+target:player
+target:all</td>
+<td>目标是否为 npc 或者 玩家
+all 为 npc或者玩家</td>
+<td></td>
+</tr>
+<tr>
+<td>notarget</td>
+<td>没有参数</td>
+<td>没有目标</td>
+<td></td>
+</tr>
+<tr>
+<td>distance</td>
+<td>distance&gt;&lt;=8(尺)</td>
+<td>离目标的距离大于，小于或等于多少尺</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>

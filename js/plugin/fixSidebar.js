@@ -17,6 +17,9 @@ H.ready(['jquery'], function(){
 
 		var $ = jQuery;
 
+		//移动端不触发
+		if(!$("html").hasClass('no-mobile')) return
+
 		//当内容高度需要高于窗口实际高度较多时才执行函数
 		if ($("body").height() < $(window).height()) return
 
