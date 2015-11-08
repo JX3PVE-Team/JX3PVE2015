@@ -1,0 +1,104 @@
+<div class="vip-pc-container">
+
+	<!-- 会员头banner -->
+	<div class="block">
+		<div class="vip-pc-header">
+			<!--{block/1269}-->
+		</div>
+	</div>
+
+	<!-- 当前状态 -->
+	<div class="block">
+		<h2 class="vip-pc-title">会员信息<span>VIP information &raquo;</span></h2>
+		<div class="vip-pc-status">
+			<div class="avt">
+				<a href="home.php?mod=spacecp&ac=jx3" target="_blank"><!--{avatar($_G[uid],small)}--></a>
+			</div>
+			<div class="profile">
+				<ul>
+					<li class="usergroup">
+						<label>用户组：</label>
+						<span>
+							<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup">
+								<img class="icon-groupicon" src=$groupicon />
+								$_G[group][grouptitle]
+							</a>
+						</span>
+					</li>
+					<li class="cre">
+						<label>{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}：</label>
+						<span>
+							<!--{echo getuserprofile('extcredits4');}-->
+							<i class="counts"></i>$usermoney
+						</span>
+					</li>
+					<li class="time">
+						<!--{loop $expirylist $groupid $group}-->
+						<label>$group[grouptitle]到期时间：</label>
+						<span>$group[time]</span>
+						<!--{/loop}-->
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- 开通会员 -->
+	<div class="block">
+		<h2 class="vip-pc-title">开通会员<span>Become a VIP member&raquo;</span></h2>
+		<div class="vip-pc-buy">
+
+			<h3 class="m-title">&raquo; 请选择开通/续费时间</h3>
+
+			<div class="m-days">
+				<form action="#">
+					<label class="tovevip-3month" for="tovevip-3month">
+						<input type="radio" id="tovevip-3month" name="days" value="90" />
+						<span>
+							<em class="time">3个月</em>
+							<em class="credit"><i>2880米币</i></em>
+						</span>
+					</label>
+					<label class="tovevip-6month" for="tovevip-6month">
+						<input type="radio" id="tovevip-6month" name="days" value="180" />
+						<span>
+							<em class="time">6个月</em>
+							<em class="credit"><i>5760米币</i></em>
+						</span>
+					</label>
+					<!-- 当被选中时添加.on样式名 -->
+					<label class="tovevip-12month on" for="tovevip-12month">
+						<!-- 默认选中第3条 -->
+						<input type="radio" id="tovevip-12month" name="days" value="360" checked="checked"/> 
+						<span>
+							<em class="time">12个月</em>
+							<em class="credit"><i>11520米币</i><b>9216米币</b></em>
+						</span>
+					</label>
+				</form>
+			</div>
+
+			<!-- 如果不方便处理，可以米币让他们自己先去充值，否则则可以去掉下方 -->
+			<p class="m-tips"><i class="warning"></i>您当前的米币为<b>$8888</b>，余额不足，请先<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=credit&op=buy" target="_blank">充值</a>。<a class="skip" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=1&messageid=30" target="_blank">（如何赚米币？）</a></p>
+
+			<button class="m-gobutton" type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true">
+				<strong>开通/续费会员</strong>
+			</button>
+
+		</div>
+	</div>
+
+	<!-- 会员简介 -->
+	<div class="block">
+		<h2 class="vip-pc-title">尊贵特权<span>Honorable privilege &raquo;</span></h2>
+		<ul class="vip-pc-intro"></ul>
+	</div>
+
+	<!-- 会员权利 -->
+	<div class="block">
+		<h2 class="vip-pc-title">全部特权<span>All VIP privileges &raquo;</span></h2>
+		<div class="vip-pc-details">
+			<!--{block/475}-->
+		</div>
+	</div>
+</div>
