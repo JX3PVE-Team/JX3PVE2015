@@ -17,6 +17,17 @@
 	<div class="mn">
 		<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
 		<div class="bm bw0">
+			<ul class="tb cl user-fav-nav">
+				<li$actives[all]><a href="home.php?mod=space&do=favorite&type=all">{lang favorite_all}</a></li>
+				<li$actives[thread]><a href="home.php?mod=space&do=favorite&type=thread">{lang favorite_thread}</a></li>
+				<li$actives[forum]><a href="home.php?mod=space&do=favorite&type=forum">{lang favorite_forum}</a></li>
+				<!--{if helper_access::check_module('group')}--><li$actives[group]><a href="home.php?mod=space&do=favorite&type=group">{lang favorite_group}</a></li><!--{/if}-->
+				<!--{if helper_access::check_module('blog')}--><li$actives[blog]><a href="home.php?mod=space&do=favorite&type=blog">{lang favorite_blog}</a></li><!--{/if}-->
+				<!--{if helper_access::check_module('album')}--><li$actives[album]><a href="home.php?mod=space&do=favorite&type=album">{lang favorite_album}</a></li><!--{/if}-->
+				<!--{if helper_access::check_module('portal')}--><li$actives[article]><a href="home.php?mod=space&do=favorite&type=article">{lang favorite_article}</a></li><!--{/if}-->
+				<!--{hook/space_favorite_nav_extra}-->
+			</ul>
+
 			<h1 class="mt bbs">
 				<img alt="favorite" src="{STATICURL}image/feed/favorite.gif" class="vm" />
 				<!--{if $_GET[type] == "thread"}-->{lang favorite_thread}
@@ -71,19 +82,7 @@
 		<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
 	</div>
 	<div class="appl">
-		<div class="tbn">
-			<h2 class="mt bbda">{lang favorite}</h2>
-			<ul>
-				<li$actives[all]><a href="home.php?mod=space&do=favorite&type=all">{lang favorite_all}</a></li>
-				<li$actives[thread]><a href="home.php?mod=space&do=favorite&type=thread">{lang favorite_thread}</a></li>
-				<li$actives[forum]><a href="home.php?mod=space&do=favorite&type=forum">{lang favorite_forum}</a></li>
-				<!--{if helper_access::check_module('group')}--><li$actives[group]><a href="home.php?mod=space&do=favorite&type=group">{lang favorite_group}</a></li><!--{/if}-->
-				<!--{if helper_access::check_module('blog')}--><li$actives[blog]><a href="home.php?mod=space&do=favorite&type=blog">{lang favorite_blog}</a></li><!--{/if}-->
-				<!--{if helper_access::check_module('album')}--><li$actives[album]><a href="home.php?mod=space&do=favorite&type=album">{lang favorite_album}</a></li><!--{/if}-->
-				<!--{if helper_access::check_module('portal')}--><li$actives[article]><a href="home.php?mod=space&do=favorite&type=article">{lang favorite_article}</a></li><!--{/if}-->
-				<!--{hook/space_favorite_nav_extra}-->
-			</ul>
-		</div>
+		<!--{subtemplate home/sidebar_l}-->
 	</div>
 </div>
 
