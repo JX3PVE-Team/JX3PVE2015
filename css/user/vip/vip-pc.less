@@ -23,6 +23,7 @@
 
 .vip-pc-status{
 
+
 	.avt{
 		.fl;.size(48px);
 		padding:2px;border:1px solid #ddd;border-radius:4px;box-shadow:0 0 4px #ddd;
@@ -45,7 +46,7 @@
 	.m-title{
 		.fz(13px,2.5);color:#777;
 	}
-	.m-days{
+	.m-days,.m-payway{
 		.auto(x);
 		.w(242px*3 - 20px);.clip;
 
@@ -56,7 +57,8 @@
 		label{
 			.db;.pointer;
 			*{*cursor:pointer;}
-			input{visibility:hidden;}
+			img{.db;}
+			input{.none;}
 
 			.size(220px,88px);
 			border:1px solid #ddd;
@@ -66,7 +68,7 @@
 
 			span{.db;.x;}
 			.time{.db;.fz(24px,26px);}
-			.credit{.db;.fz(14px,26px);}
+			.credit{.db;.fz(14px,26px);color:#666;}
 
 			&:hover,&.on{
 				border-color:@yel;
@@ -83,6 +85,12 @@
 				.db;.size(64px);.pa;.rt(0,0);
 				background:url('@{url}vip/zhekou.png') no-repeat right top;
 			}
+		}
+	}
+	.m-days{
+		margin-bottom:20px;
+		label span{
+			padding-top:20px;
 		}
 	}
 	.m-tips{
