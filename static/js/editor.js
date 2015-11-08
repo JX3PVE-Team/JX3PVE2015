@@ -4,13 +4,22 @@
 
 	$Id: editor.js 34614 2014-06-12 02:48:35Z nemohou $
     
-    [Fix Bug]
+    [Fix Bug] #1
     Author: [huyinghuan](xiacijian@163.com)
     Date: 2015.11.06
     Effect: 515-520 Line
     Desc:
       修复chrome下回车换行bug
     Test:
+      Linux x64: Chrome 46 , FireFox 41, 
+      Window XP x32:  IE8
+      
+    [Fix Bug] #2
+    Author: [huyinghuan](xiacijian@163.com)
+    Date: 2015.11.8
+    Effect: 537 Line
+    Desc:
+      修复#1 带来的新bug.(文字结尾不能换行) 并且忽略IE,FireFox的处理（IE, FireFox不受该#1 bug影响。）
       Linux x64: Chrome 46 , FireFox 41, 
       Window XP x32:  IE8
 */
@@ -524,7 +533,7 @@ function writeEditorContents(text) {
 			text = '<!DOCTYPE html PUBLIC "-/' + '/W3C/' + '/DTD XHTML 1.0 Transitional/' + '/EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' +
 				'<html><head id="editorheader"><meta http-equiv="Content-Type" content="text/html; charset=' + charset + '" />' +
 				(BROWSER.ie && BROWSER.ie > 7 ? '<meta http-equiv="X-UA-Compatible" content="IE=7" />' : '' ) +
-                              '<script type="text/javascript">var preventSetNewLine =  function(e){if(e.keyCode === 13){ document.execCommand("insertHTML", false, "<br>");e.preventDefault ? e.preventDefault() : e.returnValue = false;return false;}};var ready = function(){if(document.body.addEventListener){document.body.addEventListener("keydown",preventSetNewLine)}else if(document.body.attachEvent){document.body.attachEvent("onkeydown",preventSetNewLine)}};</script>' +
+                              '<script type="text/javascript">var preventSetNewLineEnd=function(e){if(e.keyCode===13){document.execCommand("formatBlock",false,"<p>");return false}};var ready=function(){if(!/chrome/i.test(navigator.userAgent)){return}document.body.addEventListener("keydown",preventSetNewLineEnd)};</script>' +
 				'<link rel="stylesheet" type="text/css" href="misc.php?css=' + STYLEID + '_wysiwyg&' + VERHASH + '" />' +
 				(BROWSER.ie ? '<script>window.onerror = function() { return true; }</script>' : '') +
 				'</head><body onload="ready()">' + text + '</body></html>';
