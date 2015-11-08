@@ -3,7 +3,7 @@
 	<item id="Title"><![CDATA[Discuz! Style]]></item>
 	<item id="Data">
 		<item id="name"><![CDATA[TEST]]></item>
-		<item id="templateid"><![CDATA[1000]]></item>
+		<item id="templateid"><![CDATA[10000]]></item>
 		<item id="tplname"><![CDATA[TEST]]></item>
 		<item id="directory"><![CDATA[./template/test]]></item>
 		<item id="copyright"><![CDATA[JX3PVE.COM]]></item>
