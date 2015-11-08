@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>VIP页面</title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui"/>
+<link rel="stylesheet" href="../css/__output/vip.css" type="text/css"/>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+<body style="width:auto;min-width:0;">
+
+	<!-- .none样式名等同于display:none -->
+
+	<!-- 开通页 -->
+	<div class="vip-m-container vip-m-kt">
+
+		<header class="vip-m-header">
+			<div class="m-card"><h1 class="card2"></h1></div>
+		</header>
+
+		<!-- 默认显示开通流程 -->
+		<div class="vip-m-buy">
+			<div class="m-time">
+				<h3 class="m-title">请选择开通/续费时间</h3>
+				<div class="m-days">
+					<form action="#">
+						<label class="tovevip-3month" for="tovevip-3month">
+							<input type="radio" id="tovevip-3month" name="days" value="90" />
+							<span>
+								<em class="time">3个月</em>
+								<em class="credit"><i>2880米币</i></em>
+							</span>
+						</label>
+						<label class="tovevip-6month" for="tovevip-6month">
+							<input type="radio" id="tovevip-6month" name="days" value="180" />
+							<span>
+								<em class="time">6个月</em>
+								<em class="credit"><i>5760米币</i></em>
+							</span>
+						</label>
+						<!-- 当被选中时添加.on样式名 -->
+						<label class="tovevip-12month on" for="tovevip-12month">
+							<!-- 默认选中第3条 -->
+							<input type="radio" id="tovevip-12month" name="days" value="360" checked="checked"/> 
+							<span>
+								<em class="time">12个月</em>
+								<em class="credit"><i>11520米币</i><b>9216米币</b></em>
+							</span>
+						</label>
+					</form>
+				</div>
+			</div>
+
+			<!-- 如果用户米币不够 -->
+			<div class="m-pay">
+				<h3 class="m-title">请选择支付方式</h3>
+				<div class="m-payway">
+					<form action="#">
+						<label class="tovevip-alipay on" for="apitype_alipay">
+							<input type="radio" id="apitype_alipay" name="bank_type" value="alipay" checked="checked" />
+							<span>
+								<strong><img src="http://img.jx3pve.com/img/vip/alipay-m.png" alt="支付宝"></strong>
+							</span>
+						</label>
+						<!-- 暂时只支持支付宝，后续开通微信扫一扫支付 -->
+
+						<!-- 当选择了支付宝方式时，显示下方提示，如选择微信不提示。暂时无需处理 -->
+						<p class="m-tips-alipay">如您选择支付宝,请注意交易接口页面输入的是“<b>支付密码</b>”而非"登录密码"。</p>
+					</form>
+				</div>
+			</div>
+
+			<button class="m-gobutton u-gobutton" type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true">
+				<strong>开通/续费会员</strong>
+			</button>
+		</div>
+
+		<!-- 点击开通后回调结果 -->
+		<div class="vip-m-msg none">
+			<!-- 开通完成后显示成功 -->
+			<div class="m-success">
+				<p class="ok result"><i></i>开通成功</p>
+				<p class="time tips">您的VIP到期时间为<em>2016年8月8日</em>。</p>
+				<!-- 返回default默认页面 -->
+				<a class="backbtn u-gobutton" href="#">返回</a>
+			</div>
+
+			<!-- 开通不成功提示充值（如果无法自动生成订单时的处理方案） -->
+			<div class="m-fail">
+				<p class="fail result"><i></i>余额不足</p>
+				<p class="addcredit tips">您的米币不足，请先充值。</p>
+				<a class="addbtn u-gobutton" href="#">充值</a>
+			</div>
+		</div>
+
+		<footer class="vip-m-footer">
+			&copy; www.jx3pve.com
+		</footer>
+
+	</div>
+
+
+</body>
+
+</html>

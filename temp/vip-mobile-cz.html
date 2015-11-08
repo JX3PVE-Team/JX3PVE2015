@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>VIP页面</title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui"/>
+<link rel="stylesheet" href="../css/__output/vip.css" type="text/css"/>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+<body style="width:auto;min-width:0;">
+
+	<!-- .none样式名等同于display:none -->
+
+	<!-- 充值页 -->
+	<div class="vip-m-container vip-m-cz">
+
+		<header class="vip-m-header">
+			<div class="m-card"><h1 class="card3"></h1></div>
+		</header>
+
+		<!-- 充值默认流程 -->
+		<div class="vip-m-buy">
+			<div class="m-time">
+				<h3 class="m-title">请输入要充值的米币数额<span>（最低3000）</span></h3>
+				<div class="m-credits">
+					<form action="#">
+						<!-- 当被选中时添加.on样式名 -->
+						<label class="buycredits-3000 on" for="buycredits-3000">
+							<input type="radio" id="buycredits-3000" name="days" value="3000" checked="checked"/>
+							<span>
+								<em class="time">3000米币</em>
+								<em class="credit"><i>¥30</i></em>
+							</span>
+						</label>
+						<label class="buycredits-6000" for="buycredits-6000">
+							<input type="radio" id="buycredits-3000" name="days" value="6000" />
+							<span>
+								<em class="time">6000米币</em>
+								<em class="credit"><i>¥60</i></em>
+							</span>
+						</label>
+						<label class="buycredits-10000" for="buycredits-10000">
+							<input type="radio" id="buycredits-3000" name="days" value="10000" />
+							<span>
+								<em class="time">10000米币</em>
+								<em class="credit"><i>¥100</i></em>
+							</span>
+						</label>
+						<!-- 自定义，默认数量3000，不低于3000 -->
+						<!-- 当使用自定义时，应取消上述单选 -->
+						<label class="buycredits-custom">
+							<input class="custom-credit" type="text" value="3000" placeholder="自定义数量">
+							<!-- 根据填入值自动计算此处值 -->
+							<span><em class="credit"><i>¥30</i></em></span>
+						</label>
+					</form>
+				</div>
+			</div>
+
+			<div class="m-pay">
+				<h3 class="m-title">请选择支付方式</h3>
+				<div class="m-payway">
+					<form action="#">
+						<label class="tovevip-alipay on" for="apitype_alipay">
+							<input type="radio" id="apitype_alipay" name="bank_type" value="alipay" checked="checked" />
+							<span>
+								<strong><img src="http://img.jx3pve.com/img/vip/alipay-m.png" alt="支付宝"></strong>
+							</span>
+						</label>
+						<!-- 暂时只支持支付宝，后续开通微信扫一扫支付 -->
+
+						<!-- 当选择了支付宝方式时，显示下方提示，如选择微信不提示。暂时无需处理 -->
+						<p class="m-tips-alipay">如您选择支付宝,请注意交易接口页面输入的是“<b>支付密码</b>”而非"登录密码"。</p>
+					</form>
+				</div>
+			</div>
+
+			<button class="m-gobutton u-gobutton" type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true">
+				<strong>充值</strong>
+			</button>
+		</div>
+
+		<!-- 充值完成后回调结果 -->
+		<div class="vip-m-msg none">
+			<!-- 成功 -->
+			<div class="m-success">
+				<p class="ok result"><i></i>充值成功</p>
+				<p class="time tips">米币余额<em>10000</em>。</p>
+				<!-- 返回default默认页面 -->
+				<a class="backbtn u-gobutton" href="#">返回</a>
+			</div>
+
+			<!-- 失败（低于3000时） -->
+			<div class="m-fail">
+				<p class="fail result"><i></i>订单未提交</p>
+				<p class="addcredit tips">最低充值不能低于3000。</p>
+				<!-- 返回充值页面本身 -->
+				<a class="addbtn u-gobutton" href="#">返回</a>
+			</div>
+		</div>
+
+		<footer class="vip-m-footer">
+			&copy; www.jx3pve.com
+		</footer>
+
+	</div>
+
+
+</body>
+
+</html>
