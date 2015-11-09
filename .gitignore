@@ -2,12 +2,14 @@
 Thumbs.db
 ehthumbs.db
 .idea
+
+
 # Folder config file
 Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
-static/js
+
 # Windows Installer files
 *.cab
 *.msi
