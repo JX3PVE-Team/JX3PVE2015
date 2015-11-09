@@ -1,3 +1,11 @@
+.vip-pc-nav{
+	.u-disabled{
+		cursor:default;
+	    color: #BDBABA;
+    	background-color: #eee;
+	}
+}
+
 .vip-pc-container{
 
 	padding: 0 10px;
@@ -5,7 +13,7 @@
 	//块头
 	.block{
 		.clearfix;
-		margin-bottom:10px;
+		margin:0 0 10px 0;
 	}
 
 	//标题
@@ -22,25 +30,67 @@
 }
 
 .vip-pc-status{
-
+	padding:0 10px;
+	.pr;
+	min-height:58px;
 
 	.avt{
-		.fl;.size(48px);
-		padding:2px;border:1px solid #ddd;border-radius:4px;box-shadow:0 0 4px #ddd;
+		.pa;.lt(10px,0);//.size(48px);
+		//padding:2px;border:1px solid #ddd;border-radius:4px;box-shadow:0 0 4px #ddd;
 	}
 	.profile{
 		margin-left:68px;
-		li{
-			.fz(12px,2);
-			img{.y;}
+		.pr;.fz(12px,2.2);
+
+		.baseinfo{
+			.clearfix;
+			li{
+				.fl;
+				img{.y(text-bottom);}
+				margin-right:20px;
+				label{cursor:text;}
+				span{.bold;}
+			}
+			.time{
+				span{color:@green;}
+				span em{.none;}
+				.expiry{
+					color:#f00;
+					em{color:#999;.di;}
+				}
+			}
 		}
-		.counts{
-			.dbi;.y(text-bottom);.size(16px);margin-right:5px;
-			background:url('@{url}icon/viewpay.gif') no-repeat 0 0;
+		.rights{
+			color:#777;
+			li{
+				.fl;margin-right:15px;
+			}
+			i{.size(14px,12px);.dbi;background-repeat:no-repeat;background-position:center center;}
+			.true{background-image:url('@{url}icon/data_valid.gif');}
+			.false{background-image:url('@{url}icon/data_invalid.gif');}
 		}
-		.addcre{
-			.color(@bluex,@blue);
-			text-decoration:underline;
+		.credit{
+			.fz(22px,24px);
+			.pa;.rt(0,0);
+			label{.fz(16px);}
+			.number{
+				margin-right:5px;
+				.bold;
+				.color(#F95706);
+			}
+			.addcre{
+				.color(@bluex,@blue);
+				//text-decoration:underline;
+				.db;
+				.fz(14px,16px);
+				padding:5px 10px;.x;
+				.u-btn-blue(b);
+				.r(3px);
+				margin-top:5px;
+				&:hover{
+					color:#fff;
+				}
+			}
 		}
 	}
 }
@@ -68,7 +118,7 @@
 			border:1px solid #ddd;
 			.r(3px);.fl;
 			margin-right:20px;
-			background-color:#f7f7f7;
+			background-color:#fffdfd;
 
 			span{.db;.x;}
 			.time{.db;.fz(24px,26px);}
@@ -111,9 +161,16 @@
 			b{color:#c00;.bold;}
 		}
 	}
-	.m-tips{
-		.fz(12px,16px);
+	.m-msg{
+		.fz(13px,16px);
 		margin:15px 0;.x;
+		padding:20px;
+		border:1px solid @yel;
+		.r(2px);
+		.w(600px);.auto(x);
+		background-color:#fff;
+
+
 		.warning{
 			.dbi;.size(16px);.y(top);margin-right:5px;
 			background:url('@{url}icon/icon-report-16.png') no-repeat left center;
@@ -123,6 +180,21 @@
 		.skip{
 			.color(#999,#777);
 			text-decoration:none;
+		}
+		.credit{
+			margin-left:3px;
+			.dbi;.y(text-bottom);.size(16px);margin-right:2px;
+			background:url('@{url}icon/viewpay.gif') no-repeat 0 0;
+		}
+		.u-crebtn{
+			.u-btn-blue(b);
+			.db;
+			.size(120px,32px);
+			.fz(13px,32px);
+			text-decoration:none;
+			.auto(x);
+			margin-top:10px;
+			&:hover{color:#fff;}
 		}
 	}
 	.m-gobutton{
@@ -142,10 +214,13 @@
 .vip-pc-intro{
 	background:url("@{url}vip/nav-bg.png") no-repeat center top;
 	height:109px;
+	margin:20px 0 10px;
 }
 
 .vip-pc-details{
 	padding-right:240px;
+	padding-left:20px;
+	margin:20px 0;
 	background:url("@{url}vip/mogubg.png") no-repeat right top;
 	table{width:100%;}
 	td{border:1px solid #ddd;padding:2px 5px;line-height:24px;color:#777;}

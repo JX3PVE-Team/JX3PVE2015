@@ -1,4 +1,4 @@
-<ul class="tb cl">
+<ul class="tb cl vip-pc-nav">
 	<!-- 当为用户组页面时 -->
 	<!--{if $usergroups}-->
 		<li class="y$activegs[my] showmenu" id="gmy" onmouseover="showMenu(this.id)"><a href="home.php?mod=spacecp&ac=usergroup">{lang my_usergroups}</a></li>
@@ -10,7 +10,7 @@
 	<li {if ($_GET['ac']=="usergroup")} class="a"{/if}><a href="home.php?mod=spacecp&ac=usergroup&do=list">会员中心</a></li>
 	<li {if ($_GET['ac']=="credit")} class="a"{/if}><a href="home.php?mod=spacecp&ac=usergroup&do=list">充值</a></li>
 	<!-- 积分兑换暂未开放 -->
-	<li><a class="u-disabled" href="javascript:void(0)">积分兑换</a></li>
+	<li><a class="u-disabled" href="javascript:void(0)" title="暂未开放">积分兑换</a></li>
 	
 	<!-- 暂时废弃论坛交流权限一栏 -->
 	<!-- <li$activeus[forum]><a href="home.php?mod=spacecp&ac=usergroup&do=forum">{lang my}{$_G['setting']['navs'][2]['navname']}{lang rights}</a></li> -->
