@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>VIP页面</title>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui"/>
+<link rel="stylesheet" href="../css/__output/vip.css" type="text/css"/>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+<body style="width:auto;min-width:0;">
+
+	<!-- .none样式名等同于display:none -->
+
+	<!-- 入口显示页 -->
+	<div class="vip-m-container vip-m-default">
+
+		<header class="vip-m-header">
+			<div class="m-card"><h1 class="card1"></h1></div>
+		</header>
+
+		<ul class="vip-m-list vip-m-list-icon" style="border-top:none;">
+			<li>
+				<span class="m_icon u_mibi"></span>
+				<!-- 点击进入充值页面 -->
+				<a href="javascript:void(0)">
+					<label>米币</label>
+					<span class="amount"><small></small>8888</span>
+				</a>
+			</li>
+			<li>
+				<span class="m_icon u_group"></span>
+				<!-- 点击进入开通续费页面 -->
+				<a href="javascript:void(0)">
+					<label>会员组</label>
+					<!-- 如果已经是VIP会员则显示“VIP会员” -->
+					<!-- <span class="amount">VIP会员</span> -->
+					<!-- 如果不是VIP会员则显示“开通会员”，并添加.govip样式名 -->
+					<span class="amount govip">开通会员</span>
+				</a>
+			</li>
+			<li>
+				<span class="m_icon u_expires"></span>
+				<a class="noextend" href="javascript:void(0)">
+					<label>VIP到期时间</label>
+					<!-- 当小于10天即将过期时添加.tobeexpired样式名 -->
+					<span class="amount tobeexpired">2016-08-08</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="vip-m-list vip-m-list-icon">
+			<li>
+				<span class="m_icon u_mogu"></span>
+				<a class="noextend" href="javascript:void(0)">
+					<label>蘑菇</label>
+					<span class="amount"><small></small>8888</span>
+				</a>
+			</li>
+			<li>
+				<span class="m_icon u_rongyu"></span>
+				<a class="noextend" href="javascript:void(0)">
+					<label>荣誉</label>
+					<!-- 如果是0，则添加.zero样式名 -->
+					<span class="amount zero"><small></small>0</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="vip-m-list vip-m-list-txt">
+			<li>
+				<a href="javascript:void(0)">
+					<label>积分兑换</label>
+					<span class="amount zero">暂未开放</span>
+				</a>
+			</li>
+		</ul>
+
+		<footer class="vip-m-footer">
+			&copy; www.jx3pve.com
+		</footer>
+
+	</div>
+
+</body>
+
+</html>

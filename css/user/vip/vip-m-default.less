@@ -1,0 +1,149 @@
+body{
+	background: #f5f5f5;
+}
+
+.vip-m-container{
+	user-select: none;
+}
+
+.vip-m-header{
+	height: 180px;
+	padding-top:20px;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    position: relative;
+
+    &:before{
+       	content: '';
+	    display: block;
+	    width: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: 0;
+        height: 138px;
+    	background-image: -webkit-gradient(linear,0 0,0 bottom,from(#111),to(#5a5b5c));
+    }
+
+    .m-card{
+	    .pr;
+	    .h(180px);
+
+	    h1{
+	    	background-repeat:no-repeat;
+	    	background-position:center top;
+	    	background-size:100% auto;
+	    	max-width:268px;
+	    	.w(88%);.auto(x);
+	    	height:100%;
+	    }
+
+	    .card1{
+	    	background-image:url('@{url}vip/vip-m-headerbg.png');
+	    }
+	    .card2{
+	    	background-image:url('@{url}vip/vip-m-kt.png');
+	    }
+	    .card3{
+	    	background-image:url('@{url}vip/vip-m-cz.png');
+	    }
+    }
+
+}
+
+.vip-m-footer{
+	text-transform:uppercase;
+	.x;
+	padding:10px 0;
+	color:#777;
+}
+
+.vip-m-list{
+    margin-bottom: 20px;
+    border: 1px solid rgba(169,169,169,.6);
+    border-width: 1px 0;
+    background-color: #fff;
+    .fz(14px);
+
+    li{
+    	padding:0 20px;
+    	position: relative;
+		min-height: 55px;
+		line-height: 55px;
+		clear: both;
+
+		.m_icon{
+		    display: inline-block;
+		    float: left;
+		    position: absolute;
+		    left: 20px;
+		    top: (55px - 30px) / 2;
+	        //background:url('@{url}vip/icon_menu_prepaid.png') no-repeat 0 0;
+         	background-size:100% auto;
+         	background-repeat:no-repeat;
+         	.size(30px);
+		}
+
+		.u_mibi{background-image:url('@{url}vip/icon_menu_prepaid.png');}
+		.u_mogu{background-image:url('@{url}vip/icon_menu_points.png');}
+		.u_rongyu{background-image:url('@{url}vip/icon_menu_coupons.png');}
+		.u_group{background-image:url('@{url}vip/icon_menu_profile.png');}
+		.u_expires{background-image:url('@{url}vip/icon_menu_bill.png');}
+
+		a{
+	 		.db;.pr;
+	 		border-bottom: 1px solid rgba(220,227,230,.6);
+			&:hover{color:#444;}
+
+			padding-right:20px;
+			&:after{
+				content: '';
+			    display: inline-block;
+			    position: absolute;
+			    top: 50%;
+			    right: 0;
+			    margin-top: -7px;
+			    width: 13px;
+			    height: 13px;
+			    background: url("@{url}vip/arrow.png") 50% 50% no-repeat;
+			    -webkit-background-size: contain;
+			    background-size: contain;
+			}
+
+			&.noextend{
+				padding-right:0;
+				&:after{
+					.none;
+				}
+			}
+		}
+		&:last-child{
+			a{border-bottom:none;}
+		}
+
+		.amount{
+			.fr;
+			&.zero{
+				color:#999;
+			}
+			&.govip{
+				color:@bluex;
+			}
+			&.tobeexpired{
+				color:@yel;
+			}
+		}
+
+    }
+}
+
+.vip-m-list-icon{
+	a{
+		margin: 0 0 0 50px;
+	}
+}
+.vip-m-list-txt{
+}
+
+ 

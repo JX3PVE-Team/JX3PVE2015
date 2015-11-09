@@ -1,0 +1,93 @@
+.vip-m-kt .vip-m-header{
+	background-color:#f5f5f5;
+}
+
+.vip-m-buy{
+	.fz(14px,1.8);
+	.m-title{
+		background-color:#555;
+		color:#eee;
+		padding:10px 20px;
+		span{color:#aaa;.fz(12px);.fr;}
+	}
+	form{
+		label{
+			.db;padding:0 20px 0 40px;
+			border-bottom:1px solid #ddd;
+			.fzlh(14px,40px);
+			.pr;
+			input{.pa;.lt(20px,13px);}
+			span{.db;.h(40px);.clip;}
+			.time{
+
+			}
+			.credit{
+				color:#999;
+				.fr;
+				i{.normal;}
+			}
+			&.on{
+				color:@yel;
+				background-color:#fff;
+				.bold;
+				.credit i{
+					color:#222;//.bold;
+				}
+			}
+		}
+		.tovevip-12month{
+			.credit i{text-decoration:line-through;margin-right:5px;}
+			.credit b{color:@green;.bold;}
+		}
+	}
+	.m-tips-alipay{
+		padding:5px 20px;
+		background-color:#f9f9f9;
+		border-bottom:1px solid #ddd;
+		b{color:#222;.bold;}
+	}
+}
+
+.vip-m-msg{
+	.x;
+	.fz(14px,16px);
+	p a{color:@bluex;}
+
+	.ok i,.fail i{
+		.dbi;.y(top);
+		.size(16px);
+		background-repeat:no-repeat;
+		background-position:0 0;
+		margin-right:5px;
+	}
+	.ok i{
+		background-image:url('@{url}icon/check_right.gif');
+	}
+	.fail i{
+		background-image:url('@{url}icon/check_error.gif');
+	}
+
+	.result{
+		padding:10px 0;
+	}
+
+	.tips{
+	}
+
+	.u-gobutton{
+		
+	}
+}
+
+.u-gobutton{
+	margin:20px auto;
+	.fz(14px,40px);
+	.size(80%,40px);.db;
+	background:@basecolor;color:#fff;
+	border:none;
+	.r(4px);.x;
+	&:hover{
+		background:lighten(@basecolor,5%);
+		color:#fff !important;
+	}
+}
