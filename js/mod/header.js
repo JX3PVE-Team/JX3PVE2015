@@ -15,9 +15,9 @@ H.ready(['jquery'], function(){
 		//H.fadeshow('#c-header-username','#c-header-os')
 
 		//vip图标
-		var $group = $("#c-header-usergroup"),
+		/*var $group = $("#c-header-usergroup"),
 		group = $("#c-header-usergroup").text()
-		$group.text().indexOf('VIP')!=-1 ?	$group.addClass('vip') : $group.removeClass('vip')
+		$group.text().indexOf('VIP')!=-1 ?	$group.addClass('vip') : $group.removeClass('vip')*/
 
 		//签到
 		var $qiandao_trigger = $(".user-qiandao")
