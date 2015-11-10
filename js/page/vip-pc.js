@@ -2,6 +2,11 @@
 * Author: [huyinghuan](xiacijian@163.com)
 * Date: 2015.11.10
 * Desc: VIP开通购买逻辑
+*
+{
+  status: 1, 　//1:成功, ０:失败
+  msg: "xxx"  //msg失败原因，成功时可以为空．　
+}
 **/
 H.ready(['jquery'], function() {
 	jQuery(function($) {
@@ -39,13 +44,13 @@ H.ready(['jquery'], function() {
         judgeCoinsEnough();
       });
       
-      $submitForm = $("form#buygroupform_")
+      $submitForm = $("form#buygroupform")
       
       $('div.vip-pc-buy button#editsubmit_btn').click(function(){
         //判断米币不足
-        if(!judgeCoinsEnough()){return;}
+      　if(!judgeCoinsEnough()){return;}
         //提交表单
-        var url = $submitForm.attr('action')
+        var url = "home.php?mod=spacecp&ac=usergroup&do=buy&groupid=22&inajax=1";
         var data = {
           days: $buyDays.val()
         }
@@ -54,10 +59,13 @@ H.ready(['jquery'], function() {
           data[$(this).attr('name')] = $(this).val()
         })
         
-        console.log(url, data)
-        
-        $.post(url, data, function(){
-          console.log(arguments)
+        $.post(url, data, function(result){
+          result = result || {};
+          if(result.code === 1){
+            location.reload();
+          }else{
+            $("div.vip-pc-buy div.m-msg").show();
+          }
         });
       });
       

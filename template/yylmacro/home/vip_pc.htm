@@ -115,7 +115,7 @@
 			</div>
 
 				<!-- 以下是原始的购买表单.暂时none隐藏 -->
-				<form class="none" id="buygroupform_{$groupid}" name="buygroupform_{$groupid}" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=usergroup&do=$do&groupid=$groupid"{if !empty($_GET['inajax'])} onsubmit="ajaxpost('buygroupform_{$groupid}', 'return_$_GET['handlekey']', 'return_$_GET['handlekey']', 'onerror');return false;"{/if}>
+				<form class="none" id="buygroupform" >
 					<input type="hidden" name="referer" value="{echo dreferer()}" />
 					<input type="hidden" name="buysubmit" value="true" />
 					<input type="hidden" name="gid" value="$_GET[gid]" />
@@ -187,7 +187,7 @@
 			<button class="m-gobutton"  type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true"><strong>开通/续费会员</strong></button>
 
 			<!-- Step3.如果米币不够，提示先充值 -->
-			<div class="m-msg">
+			<div class="m-msg" style="display: none">
 				<p class="u-tips">
 					<i class="warning"></i>您当前的米币为<b><!--{echo getuserprofile('extcredits4');}--></b>，余额不足，请先<i class="credit"></i><a href="http://www.jx3pve.com/buy" target="_blank">充值</a>。
 					<a class="skip" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=1&messageid=30" target="_blank">（如何赚米币？）</a>
