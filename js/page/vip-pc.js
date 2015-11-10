@@ -13,6 +13,9 @@ H.ready(['jquery'], function() {
       var $nowCoins = $("div.vip-pc-buy #cal_nowCoins");
       var $needCoins = $("div.vip-pc-buy #cal_needCoins");
       var $buyDays = $("div.vip-pc-buy #cal_days");
+      
+      var buyVipFail = $("div.vip-pc-buy div#buyVipFail")
+      
       //判断米币
       var judgeCoinsEnough = function(){
         var nowCoin = parseInt($nowCoins.val()) || 0;
@@ -20,12 +23,25 @@ H.ready(['jquery'], function() {
         if(needCoins === 0){return;}
         //米币不足,提示
         if(nowCoin < needCoins){
-          $("div.vip-pc-buy div.m-msg").show();
+          buyVipFail.show();
           return false;
         }
-        $("div.vip-pc-buy div.m-msg").hide();
+        buyVipFail.hide();
         return true;
-        
+      }
+      var $countDown = $("div.vip-pc-buy div.buyVipSuccess")
+      
+      var updateCountDown = function(cb){
+        $countDown.show();
+        $p = $countDown.find('p')
+        var n = 3
+        setInterval(function(){
+          n = n - 1
+          $p.html(n);
+          if(n == 0){
+            cb();
+          }
+        }, 1000)
       }
       
       $("div.vip-pc-buy .m-days").find('label').click(function(){
@@ -62,9 +78,9 @@ H.ready(['jquery'], function() {
         $.post(url, data, function(result){
           result = result || {};
           if(result.code === 1){
-            location.reload();
+            updateCountDown(function(){location.reload();});
           }else{
-            $("div.vip-pc-buy div.m-msg").show();
+            buyVipFail.show();
           }
         });
       });

@@ -187,14 +187,16 @@
 			<button class="m-gobutton"  type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true"><strong>开通/续费会员</strong></button>
 
 			<!-- Step3.如果米币不够，提示先充值 -->
-			<div class="m-msg" style="display: none">
+			<div class="m-msg" style="display: none" id="buyVipFail">
 				<p class="u-tips">
 					<i class="warning"></i>您当前的米币为<b><!--{echo getuserprofile('extcredits4');}--></b>，余额不足，请先<i class="credit"></i><a href="http://www.jx3pve.com/buy" target="_blank">充值</a>。
 					<a class="skip" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=1&messageid=30" target="_blank">（如何赚米币？）</a>
 				</p>
 				<a class="u-crebtn" href="http://www.jx3pve.com/buy" target="_blank">充值</a>
 			</div>
-
+            <div class="m-msg" style="display: none" id="buyVipSuccess">
+              开通VIP成功， <p>3</p>秒后刷新页面
+			</div>
 		</div>
 	</div>
 
