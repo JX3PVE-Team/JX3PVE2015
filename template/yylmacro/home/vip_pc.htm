@@ -1,9 +1,3 @@
-<script>
-	//移动端部分页面开发完成后，如果用户使用手机访问了PC版的这个页面则跳到微信版去
-	/*if( /Android|webOS| iPhone | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(navigator.userAgent) ) {
-		window.location = 'wap.html';
-	}*/
-</script>
 <div class="vip-pc-container">
 
 	<!-- 会员头banner -->
@@ -18,15 +12,14 @@
 		<h2 class="vip-pc-title">会员信息<span>VIP information &raquo;</span></h2>
 		<div class="vip-pc-status">
 			<div class="avt">
-				<a href="home.php?mod=spacecp&ac=jx3" target="_blank"><!--{avatar($_G[uid],small)}--></a>
+				<a href="home.php" target="_blank"><!--{avatar($_G[uid],small)}--></a>
 			</div>
 			<div class="profile">
 				<ul class="baseinfo">
 					<li class="usergroup">
 						<label>用户组：</label>
 						<span>
-							<!-- 点击进入查看权限 -->
-							<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup">
+							<a href="./vip">
 								<img class="icon-groupicon" src=$groupicon />
 								$_G[group][grouptitle]
 							</a>
@@ -61,6 +54,8 @@
 					<!-- 22 -->
 					<li>泛广告屏蔽：<i class="true"></i></li>
 					<!-- 22 -->
+					<li>栏目特权：<i class="false"></i></li>
+					<!-- 22 -->
 					<li>道具折扣：<i class="false"></i></li>
 				</ul>
 				<p class="credit">
@@ -68,7 +63,7 @@
 					<span>
 						<i class="counts"></i>
 						<b class="number"><!--{echo getuserprofile('extcredits4');}--></b>
-						<a class="addcre" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=credit&op=buy" target="_blank">+ 充值</a>
+						<a class="addcre" href="./buy" target="_blank">+ 充值</a>
 					</span>
 				</p>
 			</div>
@@ -190,7 +185,7 @@
 					<i class="warning"></i>您当前的米币为<b><!--{echo getuserprofile('extcredits4');}--></b>，余额不足，请先<i class="credit"></i><a href="http://www.jx3pve.com/buy" target="_blank">充值</a>。
 					<a class="skip" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=1&messageid=30" target="_blank">（如何赚米币？）</a>
 				</p>
-				<a class="u-crebtn" href="http://www.jx3pve.com/buy" target="_blank">充值</a>
+				<a class="u-crebtn" href="./buy" target="_blank">充值</a>
 			</div>
 
 		</div>

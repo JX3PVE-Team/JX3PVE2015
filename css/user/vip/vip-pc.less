@@ -23,6 +23,12 @@
 		span{.fr;padding-right:20px;text-transform:uppercase;font-family:Trebuchet MS;letter-spacing:0.5px;}
 	}
 
+	//警告图标
+	.u-icon-warning{
+		.dbi;.size(16px);.y(top);margin-right:5px;
+		background:url('@{url}icon/icon-report-16.png') no-repeat left center;
+	}
+
 }
 
 .vip-pc-header{
@@ -58,6 +64,7 @@
 					color:#f00;
 					em{color:#999;.di;}
 				}
+				.tab-btn{.color(@bluex,#c00);margin-right:10px;}
 			}
 		}
 		.rights{
@@ -104,7 +111,7 @@
 		.auto(x);
 		.w(242px*3 - 20px);
 
-		form{
+		form,.m-wrapper{
 			.w(242px*3);
 			.db;.clearfix;
 		}
@@ -121,8 +128,15 @@
 			background-color:#fffdfd;
 
 			span{.db;.x;}
-			.time{.db;.fz(24px,26px);}
-			.credit{.db;.fz(14px,26px);color:#666;}
+			small{.fz(12px);color:#666;}
+			.time{
+				.db;.fz(24px,26px);
+				small{margin-left:2px;}
+			}
+			.credit{
+				.db;.fz(14px,26px);color:#666;
+				small{.none;}
+			}
 
 			&:hover,&.on{
 				border-color:@yel;
@@ -147,20 +161,6 @@
 			padding-top:20px;
 		}
 	}
-	.m-payway{
-		padding-bottom:40px;
-		.tovevip-alipay{
-		}
-		.m-tips-alipay{
-			.w(450px);.x(left);
-			border:1px solid #ddd;
-			background-color:#f7f7f7;
-			padding:5px 10px;
-			.fz(12px,1.6);
-			margin-top:5px;
-			b{color:#c00;.bold;}
-		}
-	}
 	.m-msg{
 		.fz(13px,16px);
 		margin:15px 0;.x;
@@ -169,12 +169,7 @@
 		.r(2px);
 		.w(600px);.auto(x);
 		background-color:#fff;
-
-
-		.warning{
-			.dbi;.size(16px);.y(top);margin-right:5px;
-			background:url('@{url}icon/icon-report-16.png') no-repeat left center;
-		}
+		
 		b{.color(#f00);.bold;}
 		a{text-decoration:underline;.color(@bluex,@blue);}
 		.skip{
