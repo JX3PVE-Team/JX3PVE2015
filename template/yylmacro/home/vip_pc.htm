@@ -79,20 +79,22 @@
 	<div class="block">
 		<h2 class="vip-pc-title">开通会员<span>Become a VIP member&raquo;</span></h2>
 		<div class="vip-pc-buy">
-
+            <input type="hidden" id="cal_nowCoins" value="<!--{echo getuserprofile('extcredits4');}-->" />
+            <input type="hidden" id="cal_needCoins" value="9216"/>
+            <input type="hidden" id="cal_days" value="360"/>
 			<!-- Step1.如果用户米币够，则不需要充值，只显示下方，开通后自动切换到VIP用户组 -->
 			<div class="m-time">
 				<h3 class="m-title">&raquo; 请选择开通/续费时间</h3>
 				<div class="m-days">
 					<form action="#">
-						<label class="tovevip-3month" for="tovevip-3month">
+						<label class="tovevip-3month" for="tovevip-3month" data-need_coins=2880>
 							<input type="radio" id="tovevip-3month" name="days" value="90" />
 							<span>
 								<em class="time">3个月</em>
 								<em class="credit"><i>2880米币</i></em>
 							</span>
 						</label>
-						<label class="tovevip-6month" for="tovevip-6month">
+						<label class="tovevip-6month" for="tovevip-6month" data-need_coins=5760>
 							<input type="radio" id="tovevip-6month" name="days" value="180" />
 							<span>
 								<em class="time">6个月</em>
@@ -100,7 +102,7 @@
 							</span>
 						</label>
 						<!-- 当被选中时添加.on样式名 -->
-						<label class="tovevip-12month on" for="tovevip-12month">
+						<label class="tovevip-12month on" for="tovevip-12month" data-need_coins=11520>
 							<!-- 默认选中第3条 -->
 							<input type="radio" id="tovevip-12month" name="days" value="360" checked="checked"/> 
 							<span>
