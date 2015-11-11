@@ -29,12 +29,12 @@ H.ready(['jquery'], function() {
         buyVipFail.hide();
         return true;
       }
-      var $countDown = $("div.vip-pc-buy div.buyVipSuccess")
+      var $countDown = $("div.vip-pc-buy div#buyVipSuccess")
       
       var updateCountDown = function(cb){
         $countDown.show();
         $p = $countDown.find('p')
-        var n = 3
+        var n = 3;
         setInterval(function(){
           n = n - 1
           $p.html(n);
@@ -76,7 +76,7 @@ H.ready(['jquery'], function() {
         })
         
         $.post(url, data, function(result){
-          result = result || {};
+          result = result ? JSON.parse(result) : {};
           if(result.code === 1){
             updateCountDown(function(){location.reload();});
           }else{
