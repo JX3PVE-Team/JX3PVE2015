@@ -1,0 +1,66 @@
+<div class="block">
+	<h2 class="vip-pc-title">开通会员<span>Become a VIP member&raquo;</span></h2>
+	<div class="vip-pc-buy">
+		<!-- Step1.选择开通时间 -->
+        <input type="hidden" id="cal_nowCoins" value="<!--{echo getuserprofile('extcredits4');}-->" />
+        <input type="hidden" id="cal_needCoins" value="9216"/>
+        <input type="hidden" id="cal_days" value="360"/>
+		<div class="m-time">
+			<h3 class="m-title">&raquo; 请选择开通/续费时间</h3>
+			<div class="m-days">
+				<form action="#">
+					<label class="tovevip-3month" for="tovevip-3month" data-need_coins=2880>
+						<input type="radio" id="tovevip-3month" name="days" value="90" />
+						<span>
+							<em class="time">3个月</em>
+							<em class="credit"><i>2880米币</i></em>
+						</span>
+					</label>
+					<label class="tovevip-6month" for="tovevip-6month" data-need_coins=5760>
+						<input type="radio" id="tovevip-6month" name="days" value="180" />
+						<span>
+							<em class="time">6个月</em>
+							<em class="credit"><i>5760米币</i></em>
+						</span>
+					</label>
+					<!-- 当被选中时添加.on样式名 -->
+					<label class="tovevip-12month on" for="tovevip-12month" data-need_coins=9216>
+						<!-- 默认选中第3条 -->
+						<input type="radio" id="tovevip-12month" name="days" value="360" checked="checked"/> 
+						<span>
+							<em class="time">12个月</em>
+							<em class="credit"><i>11520米币</i><b>9216米币</b></em>
+						</span>
+					</label>
+				</form>
+				<!-- 原始表单 -->
+				<form class="none" id="buygroupform" >
+					<input type="hidden" name="referer" value="{echo dreferer()}" />
+					<input type="hidden" name="buysubmit" value="true" />
+					<input type="hidden" name="gid" value="$_GET[gid]" />
+					<!--{if $_G[inajax]}--><input type="hidden" name="handlekey" value="$_GET[handlekey]" /><!--{/if}-->
+					<input type="hidden" name="formhash" value="{FORMHASH}" />
+				</form>
+			</div>
+		</div>
+
+		<!-- Step2.点击开通按钮 -->
+		<button class="m-gobutton"  type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true"><strong>开通/续费会员</strong></button>
+
+		<!-- Step3.回调提示 -->
+		<div class="m-msg m-msg-false" id="buyVipFail" style="display:none;">
+			<p class="u-tips">
+				<i class="u-icon-error"></i><b>余额不足</b>
+			</p>
+			<p class="u-tips">您当前的米币为<b><!--{echo getuserprofile('extcredits4');}--></b>，余额不足，请先<i class="credit"></i><a href="./buy" target="_blank">充值</a>。
+				<a class="skip" href="misc.php?mod=faq&action=faq&id=1&messageid=30" target="_blank">（如何赚米币？）</a></p>
+			<a class="u-crebtn" href="./buy" target="_blank">充值</a>
+		</div>
+        <div class="m-msg m-msg-true" id="buyVipSuccess" style="display:none;">
+        	<p class="u-tips">
+        		<i class="u-icon-success"></i><b>恭喜你，开通VIP成功!</b>
+        	</p>
+        	<p><span id="u-vip-msg-countdown">3</span>秒后刷新页面</p>
+		</div>
+	</div>
+</div>

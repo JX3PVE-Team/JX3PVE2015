@@ -1,0 +1,56 @@
+<div class="block">
+	<h2 class="vip-pc-title">会员信息<span>VIP information &raquo;</span></h2>
+	<div class="vip-pc-status">
+		<div class="avt">
+			<a href="home.php" target="_blank"><!--{avatar($_G[uid],small)}--></a>
+		</div>
+		<div class="profile">
+			<ul class="baseinfo">
+				<li class="usergroup">
+					<label>用户组：</label>
+					<span>
+						<a href="./vip">
+							<img class="icon-groupicon" src=$groupicon />
+							$_G[group][grouptitle]
+						</a>
+					</span>
+				</li>
+				<li class="time">
+					<!-- 只显示ID22会员组的到期时间 -->
+					<!--{loop $expirylist $groupid $group}-->
+						<label>$group[grouptitle]到期时间：</label>
+						<!-- 如果到期时间小于10天，则添加.expiry样式名 -->
+						<span class="">$group[time]<em>（即将到期）</em></span>
+					<!--{/loop}-->
+				</li>
+			</ul>
+			<ul class="rights">
+				<!-- 当满足时，给i添加true，不满足时，添加false样式名 -->
+				<!-- 以下数字表示满足的groupid，其余组不满足 -->
+
+				<!-- 22,24,25,26,33,34,36 -->
+				<li>用户名高亮：<i class="true"></i></li>
+				<!-- 22,26,1,2,3,17,34,33,36 -->
+				<li>免回复隐藏：<i class="false"></i></li>
+				<!-- 22,1,2,17 -->
+				<li>免付费主题：<i class="true"></i></li>
+				<!-- 22,1,2,17 -->
+				<li>免付费下载：<i class="false"></i></li>
+				<!-- 22 -->
+				<li>泛广告屏蔽：<i class="true"></i></li>
+				<!-- 22 -->
+				<li>栏目特权：<i class="false"></i></li>
+				<!-- 22 -->
+				<li>道具折扣：<i class="false"></i></li>
+			</ul>
+			<p class="credit">
+				<label>{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}：</label>
+				<span>
+					<i class="counts"></i>
+					<b class="number"><!--{echo getuserprofile('extcredits4');}--></b>
+					<a class="addcre" href="./buy" target="_blank">+ 充值</a>
+				</span>
+			</p>
+		</div>
+	</div>
+</div>

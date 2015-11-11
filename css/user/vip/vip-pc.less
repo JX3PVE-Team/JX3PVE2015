@@ -29,6 +29,20 @@
 		background:url('@{url}icon/icon-report-16.png') no-repeat left center;
 	}
 
+	//成功图标
+	.u-icon-success,.u-icon-error{
+		.dbi;.size(34px);.y(top);
+		background-repeat:no-repeat;
+		background-position:center center;
+		margin-right: 5px;
+	}
+	.u-icon-success{
+		background-image:url('@{url}icon/right.gif');
+	}
+	.u-icon-error{
+		background-image:url('@{url}icon/error.gif');
+	}
+
 }
 
 .vip-pc-header{
@@ -165,7 +179,6 @@
 		.fz(13px,16px);
 		margin:15px 0;.x;
 		padding:20px;
-		border:1px solid @yel;
 		.r(2px);
 		.w(600px);.auto(x);
 		background-color:#fff;
@@ -191,7 +204,15 @@
 			margin-top:10px;
 			&:hover{color:#fff;}
 		}
+		.u-tips{
+			b{
+				.fz(16px,34px);
+			}
+		}
 	}
+	.m-msg-true{border:1px solid @green;}
+	.m-msg-false{border:1px solid @yel;}
+
 	.m-gobutton{
 		.db;.size(280px,80px);
 		margin:20px auto;

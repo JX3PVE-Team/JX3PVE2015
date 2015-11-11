@@ -15,6 +15,7 @@ H.ready(['jquery'], function() {
       var $buyDays = $("div.vip-pc-buy #cal_days");
       
       var buyVipFail = $("div.vip-pc-buy div#buyVipFail")
+      var buyVipSuccess = $("div.vip-pc-buy div#buyVipSuccess")
       
       //判断米币
       var judgeCoinsEnough = function(){
@@ -23,7 +24,7 @@ H.ready(['jquery'], function() {
         if(needCoins === 0){return;}
         //米币不足,提示
         if(nowCoin < needCoins){
-          buyVipFail.show();
+          buyVipFail.slideDown();
           return false;
         }
         buyVipFail.hide();
@@ -32,8 +33,8 @@ H.ready(['jquery'], function() {
       var $countDown = $("div.vip-pc-buy div#buyVipSuccess")
       
       var updateCountDown = function(cb){
-        $countDown.show();
-        $p = $countDown.find('p')
+        $countDown.slideDown();
+        $p = $('#u-vip-msg-countdown')
         var n = 3;
         setInterval(function(){
           n = n - 1
@@ -80,7 +81,7 @@ H.ready(['jquery'], function() {
           if(result.code === 1){
             updateCountDown(function(){location.reload();});
           }else{
-            buyVipFail.show();
+            buyVipFail.slideDown();
           }
         });
       });
