@@ -1,4 +1,4 @@
-<!--{if in_array($_GET['op'], array('base', 'buy', 'transfer', 'exchange'))}-->
+<!--{if in_array($_GET['op'], array('base', 'buy', 'transfer', 'exchange', 'log' , 'rule'))}-->
 <h2 class="vip-pc-title">积分信息<span>Credit information &raquo;</span></h2>
 <div class="vip-pc-status">
 	<div class="avt">
@@ -6,13 +6,11 @@
 	</div>
 	<div class="profile">
 		<ul class="baseinfo">
-			<li class="usergroup">
-				<label>米币：</label>
-				<span class="u-buy-pc-credit"><!--{echo getuserprofile('extcredits4');}--></span>
-			</li>
 			<li class="time">
+				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=buy">积分充值</a>
+				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=exchange">积分转换</a>
+				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=transfer">积分转账</a>
 				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=rule">积分规则</a>
-				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=transfer">积分转换</a>
 				<a class="tab-btn" href="home.php?mod=spacecp&ac=credit&op=log">积分记录</a>
 			</li>
 		</ul>
@@ -23,12 +21,9 @@
 				<!--{eval $creditid=$_G['setting']['creditstrans'];}-->
 				<!--{if $_G['setting']['extcredits'][$creditid]}-->
 					<!--{eval $credit=$_G['setting']['extcredits'][$creditid]; }-->
-					<li class="xi1 cl">
+					<li>
 						<em><!--{if $credit[img]}--> {$credit[img]}<!--{/if}--> {$credit[title]}: </em>
 						<!--{echo getuserprofile('extcredits'.$creditid);}--> {$credit[unit]} &nbsp; 
-						<!--{if ($_G['setting']['ec_ratio'] && ($_G['setting']['ec_tenpay_opentrans_chnid'] || $_G['setting'][ec_tenpay_bargainor] || $_G['setting']['ec_account'])) || $_G['setting']['card']['open']}-->
-							<a href="/buy" class="xi2">{lang card_use}&raquo;</a>
-						<!--{/if}-->
 					</li>
 				<!--{/if}-->
 			<!--{/if}-->
