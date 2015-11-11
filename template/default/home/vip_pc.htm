@@ -74,20 +74,22 @@
 	<div class="block">
 		<h2 class="vip-pc-title">开通会员<span>Become a VIP member&raquo;</span></h2>
 		<div class="vip-pc-buy">
-
+            <input type="hidden" id="cal_nowCoins" value="<!--{echo getuserprofile('extcredits4');}-->" />
+            <input type="hidden" id="cal_needCoins" value="9216"/>
+            <input type="hidden" id="cal_days" value="360"/>
 			<!-- Step1.如果用户米币够，则不需要充值，只显示下方，开通后自动切换到VIP用户组 -->
 			<div class="m-time">
 				<h3 class="m-title">&raquo; 请选择开通/续费时间</h3>
 				<div class="m-days">
 					<form action="#">
-						<label class="tovevip-3month" for="tovevip-3month">
+						<label class="tovevip-3month" for="tovevip-3month" data-need_coins=2880>
 							<input type="radio" id="tovevip-3month" name="days" value="90" />
 							<span>
 								<em class="time">3个月</em>
 								<em class="credit"><i>2880米币</i></em>
 							</span>
 						</label>
-						<label class="tovevip-6month" for="tovevip-6month">
+						<label class="tovevip-6month" for="tovevip-6month" data-need_coins=5760>
 							<input type="radio" id="tovevip-6month" name="days" value="180" />
 							<span>
 								<em class="time">6个月</em>
@@ -95,7 +97,7 @@
 							</span>
 						</label>
 						<!-- 当被选中时添加.on样式名 -->
-						<label class="tovevip-12month on" for="tovevip-12month">
+						<label class="tovevip-12month on" for="tovevip-12month" data-need_coins=9216>
 							<!-- 默认选中第3条 -->
 							<input type="radio" id="tovevip-12month" name="days" value="360" checked="checked"/> 
 							<span>
@@ -108,7 +110,7 @@
 			</div>
 
 				<!-- 以下是原始的购买表单.暂时none隐藏 -->
-				<form class="none" id="buygroupform_{$groupid}" name="buygroupform_{$groupid}" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=usergroup&do=$do&groupid=$groupid"{if !empty($_GET['inajax'])} onsubmit="ajaxpost('buygroupform_{$groupid}', 'return_$_GET['handlekey']', 'return_$_GET['handlekey']', 'onerror');return false;"{/if}>
+				<form class="none" id="buygroupform" >
 					<input type="hidden" name="referer" value="{echo dreferer()}" />
 					<input type="hidden" name="buysubmit" value="true" />
 					<input type="hidden" name="gid" value="$_GET[gid]" />
@@ -180,14 +182,16 @@
 			<button class="m-gobutton"  type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true"><strong>开通/续费会员</strong></button>
 
 			<!-- Step3.如果米币不够，提示先充值 -->
-			<div class="m-msg">
+			<div class="m-msg" style="display: none" id="buyVipFail">
 				<p class="u-tips">
 					<i class="warning"></i>您当前的米币为<b><!--{echo getuserprofile('extcredits4');}--></b>，余额不足，请先<i class="credit"></i><a href="http://www.jx3pve.com/buy" target="_blank">充值</a>。
 					<a class="skip" href="http://www.jx3pve.com/misc.php?mod=faq&action=faq&id=1&messageid=30" target="_blank">（如何赚米币？）</a>
 				</p>
 				<a class="u-crebtn" href="./buy" target="_blank">充值</a>
 			</div>
-
+            <div class="m-msg" style="display: none" id="buyVipSuccess">
+              恭喜你，开通VIP成功! <p>3</p>秒后刷新页面
+			</div>
 		</div>
 	</div>
 
