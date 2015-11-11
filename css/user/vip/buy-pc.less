@@ -1,0 +1,71 @@
+.u-buy-pc-credit{color:#c00;}
+
+.buy-pc-primary{
+	.m-days label span{padding-top:30px;}
+	.m-days label .credit{.none;}
+
+	.m-title{
+		margin-bottom:12px;
+	}
+
+	.m-wrapper{
+		.clearfix;
+	}
+
+	.tobuy-custom{
+		margin:10px auto;
+		.size(322px,42px);
+		.pr;
+		.u-text-buynum{
+			border:1px solid #ddd;
+			.r(2px);
+			.size(300px,40px) !important;
+			.fz(16px,40px);
+			.db;.auto(x);
+			box-shadow:0 0 2px #eee inset;
+			transition:0.2s ease-in-out;
+			.tip(custom,color,#ccc);
+		}
+		.price{
+			.pa;.rt(10px,10px);
+			.fz(14px);
+			color:#ccc;
+			transition:0.1s ease-in-out;
+		}
+		&.focus{
+			.u-text-buynum{
+				border:1px solid #019C01;
+				box-shadow:0 0 6px #eee inset;
+			}
+			.price{
+				color:#888;
+			}
+		}
+		&.error{
+			.u-text-buynum{
+				border-color:#f00;
+			}
+			.price{
+				color:#f00;
+			}
+		}
+	}
+
+	.u-buy-tips{
+		.x;
+		color:#019C01;
+	}
+
+	.m-payway{
+		.m-tips-alipay{
+			margin-top:20px;.x;
+			border:1px solid #ddd;
+			background-color:#f7f7f7;
+			padding:5px 10px;
+			.fz(12px,1.6);
+			b{color:#c00;.bold;}
+			.r(2px);
+		}
+	}
+
+}

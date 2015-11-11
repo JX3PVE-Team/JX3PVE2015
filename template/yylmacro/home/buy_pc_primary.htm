@@ -1,0 +1,74 @@
+<h2 class="vip-pc-title">充值订单<span>Credit order &raquo;</span></h2>
+<div class="buy-pc-primary vip-pc-buy">
+	<!--{if ($_GET['op'] == 'buy') || ($_GET['op'] == 'base') }-->
+		<!--{if ($_G[setting][ec_ratio] && ($_G[setting][ec_account] || $_G[setting][ec_tenpay_opentrans_chnid] || $_G[setting][ec_tenpay_bargainor])) || $_G[setting][card][open]}-->
+		<form class="c-buyform" id="addfundsform" name="addfundsform" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=credit&op=buy" onsubmit="ajaxpost(this.id, 'return_addfundsform');">
+			<input type="hidden" name="formhash" value="{FORMHASH}" />
+			<input type="hidden" name="addfundssubmit" value="true" />
+			<input type="hidden" name="handlekey" value="buycredit" />
+
+			<!-- A.选择购买数额 -->
+			<h3 class="m-title">&raquo; 请选择购买的数量</h3>
+			<div class="m-days">
+				<div class="m-wrapper">
+					<!-- 当被选中时添加.on样式名 -->
+					<label class="tobuy-3000 on" for="tovevip-3month">
+						<!-- 默认选中第1条 -->
+						<input type="radio" id="tovevip-3month" name="addfundamount" value="3000" checked="checked"/>
+						<span>
+							<em class="time">3000<small>米币 / ¥30</small></em>
+							<!-- <em class="credit"><i>¥30</i><small>.00</small></em> -->
+						</span>
+					</label>
+					<label class="tobuy-6000" for="tovevip-6month">
+						<input type="radio" id="tovevip-6month" name="addfundamount" value="6000" />
+						<span>
+							<em class="time">6000<small>米币 / ¥60</small></em>
+							<!-- <em class="credit"><i>¥60</i><small>.00</small></em> -->
+						</span>
+					</label>
+					<label class="tobuy-10000" for="tovevip-12month">
+						<input type="radio" id="tovevip-12month" name="addfundamount" value="10000"/> 
+						<span>
+							<em class="time">10000<small>米币 / ¥100</small></em>
+							<!-- <em class="credit"><i>¥100</i><small>.00</small></em> -->
+						</span>
+					</label>
+				</div>
+				<div class="m-custom">
+					<!-- 当自己输入时应清空选择项，当焦点时给p元素添加.focus样式名-->
+					<p class="tobuy-custom">
+						<!-- 当数值少于3000时，给p元素添加.error样式名 -->
+						<input class="u-text-buynum" type="text" size="5" id="addfundamount" name="addfundamount" placeholder="3000" onkeyup="addcalcredit()" />
+						<!-- 根据填入的数额计算金额,当输入值少于3000时，b元素内显示为“错误” -->
+						<span class="price">¥<b id="#">30</b></span>
+					</p>
+					<p class="u-buy-tips"><!--{block/1241}--></p>
+				</div>
+			</div>
+
+			<!-- B.选择支付方式 -->
+			<h3 class="m-title">&raquo; 请选择支付方式</h3>
+			<div class="m-payway">
+				<div class="m-wrapper">
+					<label class="tovevip-alipay on" for="apitype_alipay">
+						<!--{if $_G[setting][ec_ratio] && $_G[setting][ec_account]}-->
+							<input name="bank_type" type="radio" value="alipay" id="apitype_alipay"  onclick="checkValue(this)" checked/>
+						<!--{/if}-->
+						<span>
+							<strong><img src="http://img.jx3pve.com/img/vip/alipay.png" alt="支付宝"></strong>
+						</span>
+					</label>
+				</div>
+				<!-- 当选择了支付宝方式时，显示下方提示，如选择微信不提示。暂时无需处理 -->
+				<p class="m-tips-alipay"><i class="u-icon-warning"></i>如您选择支付宝,请注意交易接口页面输入的是“<b>支付密码</b>”而非"登录密码"。</p>
+			</div>
+
+			<!-- C.提交按钮 -->
+			<button class="m-gobutton m-gobutton-buy" type="submit" name="addfundssubmit_btn" id="addfundssubmit_btn" value="true"><em>{lang memcp_credits_addfunds}</em></button>
+
+		</form>
+		<span style="display: none" id="return_addfundsform"></span>
+		<!--{/if}-->
+	<!--{/if}-->
+</div>
